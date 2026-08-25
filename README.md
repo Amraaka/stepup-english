@@ -17,13 +17,18 @@ Kids lose momentum because resources are scattered: one app for vocabulary, anot
 - Open competitions (e.g. 500 words in a week → exam → award)
 - 30-day challenges (Grammar, and more)
 
-## Status
+## Stack
 
-🌱 Early stage — tech stack not yet decided. See [docs/tech-stack.md](docs/tech-stack.md).
+Next.js (App Router, TypeScript, Tailwind) · Supabase (Postgres, auth, storage) · Drizzle · Vercel — see [docs/tech-stack.md](docs/tech-stack.md).
 
-Planning and thinking live in an Obsidian vault (local); decisions that affect the code are mirrored in [docs/decisions/](docs/decisions/).
+## Development
 
-## Domain
+```bash
+npm install
+cp .env.example .env.local   # fill in Supabase keys
+npm run dev                  # http://localhost:3000
+```
 
-- easyenglish.space (owned, may redirect later)
-- stepupenglish.mn / .com — to check
+## Docs
+
+Decisions live in [docs/decisions/](docs/decisions/) (ADR style). Planning and research live in a local Obsidian vault.
