@@ -1,6 +1,8 @@
 # StepUp English — context for Claude
 
-English learning platform for Mongolian kids, built solo by Battsengel. Philosophy: small by small, step by step.
+All-in-one English learning platform for Mongolian teens and adults (all levels, placement-routed), built solo by Battsengel. Philosophy: small by small, step by step.
+
+Core: a progress tracker hub (streaks & study time first) that skill modules (grammar, vocabulary, listening, reading, writing, speaking, books, games, challenges) plug into over time. Mobile-first web/PWA. Free at first; later freemium with paid AI features (first: AI writing feedback with Mongolian explanations). Currently in a 2–4 week competitor-research phase (Duolingo, Anki/Quizlet, ELSA/Speak, LingQ/Readlang). See `docs/product-vision.md` and ADR 0003.
 
 ## Where things live
 
@@ -18,3 +20,4 @@ Next.js + Supabase (Postgres/auth/storage) + Drizzle + Vercel. No separate backe
 - Decisions: short ADRs in `docs/decisions/NNNN-title.md`
 - Avoid Vercel-only APIs so hosting stays portable
 - Secrets in `.env.local` (never committed); template in `.env.example`
+- Verifying UI changes: screenshot at a phone viewport first (390×844), then desktop (1440×900). Mobile is the primary target; desktop must still look intentional

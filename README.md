@@ -1,21 +1,23 @@
 # StepUp English
 
-An English learning platform for kids — everything gathered in one place, so kids actually learn. Step by step.
+An all-in-one English learning platform for Mongolian learners — track your progress, practice every skill, and find a massive library of resources in one place. Step by step.
 
 ## Vision
 
-Kids lose momentum because resources are scattered: one app for vocabulary, another site for grammar, videos somewhere else. StepUp English brings it all into a single path a child can follow, phase by phase.
+Learners lose momentum because resources are scattered: one app for vocabulary, another site for grammar, videos somewhere else — and none of them show you your overall progress. StepUp English brings everything into one user-friendly, mobile-first place, with a progress tracker as the spine and AI assistance woven into each module.
+
+Primary audience: Mongolian teens and adults, all levels (placement test routes users to leveled content). See [docs/product-vision.md](docs/product-vision.md).
 
 ## Planned features
 
-- Listening, Reading, Writing, Speaking, Grammar
-- Word memorization
-- Book archive
+- Progress tracking (the MVP spine): streaks, study time, goals, skill levels
+- Listening, Reading, Writing, Speaking, Grammar modules
+- Word memorization (spaced repetition)
+- Book archive & curated open resources
 - Interactive games
-- Progress tracking
-- AI-powered paid features
+- 30-day challenges (Grammar first)
+- AI paid features (first: AI writing feedback with Mongolian explanations)
 - Open competitions (e.g. 500 words in a week → exam → award)
-- 30-day challenges (Grammar, and more)
 
 ## Stack
 
