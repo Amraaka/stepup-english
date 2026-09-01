@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "StepUp English",
   description:
-    "English learning platform for kids — everything in one place, step by step.",
+    "All-in-one English learning platform — small by small, step by step.",
 };
 
 export default function RootLayout({
