@@ -1,7 +1,7 @@
 # 0004 — Brand identity: logo direction and palette
 
 Date: 2026-09-01
-Status: accepted (exploration phase; the final mark is still to be chosen)
+Status: accepted (mark chosen 2026-09-03 — see Final mark below)
 
 ## Context
 
@@ -85,6 +85,20 @@ about; LogoLounge and Dribbble ("language app logo") for volume; Behance for
 full case studies pairing icon, palette, and app screens. Look for marks that
 still read at 32px and work in one color. Pinterest is skipped — it recycles
 the same arrows.
+
+### Final mark (2026-09-03)
+
+An externally generated candidate (ascending-arc family: charcoal crescent,
+red trail + dot, gradient dart, gradient under-swoosh) was chosen and
+vectorized from the source JPEG (per-element binary trace + reapplied smooth
+linear gradients, ~11 KB). Lives at `public/logo.svg`; `src/app/icon.svg` is
+the favicon/app icon (replaces `favicon.ico`). The old exploration candidates
+in `public/brand/candidates/` were removed.
+
+Note: the mark uses fixed colors (crescent `#1B222C`), so it has low contrast
+on dark backgrounds — a dark-mode variant (lighter crescent or white keyline)
+is a follow-up. Gradients also deviate from the flat-fill palette rule; treat
+the palette tokens as the UI system and the mark as its own asset.
 
 ## Rejected alternatives
 

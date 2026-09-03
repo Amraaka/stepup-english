@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* `dark:` utilities follow the explicit toggle (data-theme is always stamped
+   before paint by the inline script in layout.tsx). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* Brand palette — see docs/decisions/0004-brand-identity.md.
    Two coral temperatures coexist until the mark is chosen. */
 :root {
@@ -37,25 +41,33 @@
   --color-coral-b: var(--coral-b);
   --color-coral-b-text: var(--coral-b-text);
 
-  --font-sans: system-ui, sans-serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --coral-a: #ff7a5c;
-    --coral-a-text: #ff7a5c;
-    --coral-b: #ff6b85;
-    --coral-b-text: #ff6b85;
+/* Dark tokens — applied only via the explicit toggle; default is light. */
+:root[data-theme="dark"] {
+  --coral-a: #ff7a5c;
+  --coral-a-text: #ff7a5c;
+  --coral-b: #ff6b85;
+  --coral-b-text: #ff6b85;
 
-    --background: var(--ink-950);
-    --foreground: var(--ink-100);
-    --muted: var(--ink-400);
-  }
+  --background: var(--ink-950);
+  --foreground: var(--ink-100);
+  --muted: var(--ink-400);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--coral-a) 25%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--coral-a);
+  outline-offset: 2px;
 }
