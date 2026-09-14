@@ -1,0 +1,20 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "title": "Нүүр · утас", "x": 0, "y": 0, "w": 390, "h": 1600 },
+    { "file": "Path.dc.html", "title": "Суралцах зам · утас", "x": 470, "y": 0, "w": 390, "h": 1480 },
+    { "file": "Quests.dc.html", "title": "Даалгавар · утас", "x": 940, "y": 0, "w": 390, "h": 1320 },
+    { "file": "League.dc.html", "title": "Лиг · утас", "x": 1410, "y": 0, "w": 390, "h": 1400 },
+    { "file": "Profile.dc.html", "title": "Профайл · утас", "x": 1880, "y": 0, "w": 390, "h": 1560 },
+    { "file": "Celebrate.dc.html", "title": "Streak баяр · утас", "x": 2350, "y": 0, "w": 390, "h": 844 },
+    { "file": "HomeDesktop.dc.html", "title": "Нүүр · компьютер", "x": 0, "y": 1760, "w": 1440, "h": 1000 },
+    { "file": "Mascot.dc.html", "title": "Маскот", "x": 1520, "y": 1760, "w": 320, "h": 320 },
+    { "file": "TabBar.dc.html", "title": "Доод цэс (компонент)", "x": 1520, "y": 2200, "w": 390, "h": 84 },
+    { "file": "Tokens.dc.html", "title": "Өнгө ба хэлбэр", "x": 1990, "y": 1760, "w": 760, "h": 600 }
+  ],
+  "annotations": [
+    { "id": "brief", "x": 0, "y": -200, "w": 520, "text": "StepUp English — gamified template v1\nЗам, streak, даалгавар, лиг, профайл. Coral брэнд + ур чадвар бүрт нэг өнгө.\nБүх нэр, оноо, хичээл нь ЖИШЭЭ дата." },
+    { "id": "research", "x": 600, "y": -200, "w": 560, "text": "Судалгаанаас (docs/research/gamified-learning-ui.md):\n• Streak хамгаалалт/засвар — буруутгах биш урамшуулах\n• Өдрийн зорилго ≠ streak (1 үйлдэл хангалттай)\n• Лиг opt-in, доош унах бүсгүй\n• Компьютер: зүүн sidebar + төв + баруун rail\n• Галын дүрс Монгол хэрэглэгчтэй туршиж үзэх" },
+    { "id": "mascot-note", "x": 1520, "y": 2340, "w": 390,"text": "Маскот: лого-ны сар + өсөх сум. Tweak: happy/cheer/think/calm" }
+  ],
+  "launch": { "view": "canvas" }
+}

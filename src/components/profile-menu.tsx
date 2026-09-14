@@ -3,7 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { signOut } from "@/app/login/actions";
 
-export function ProfileMenu({ name, email }: { name: string; email: string }) {
+export function ProfileMenu({
+  name,
+  email,
+  placement = "down",
+}: {
+  name: string;
+  email: string;
+  placement?: "down" | "up";
+}) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -39,7 +47,9 @@ export function ProfileMenu({ name, email }: { name: string; email: string }) {
       {open && (
         <div
           role="menu"
-          className="absolute right-0 top-11 z-20 w-56 overflow-hidden rounded-xl border border-ink-400/20 bg-background shadow-lg shadow-ink-950/10"
+          className={`absolute z-50 w-56 overflow-hidden rounded-xl border border-line bg-surface shadow-lg shadow-ink-950/10 ${
+            placement === "up" ? "bottom-12 left-0" : "right-0 top-11"
+          }`}
         >
           <div className="border-b border-ink-400/15 px-4 py-3">
             <p className="truncate text-sm font-bold">{name || "Сурагч"}</p>

@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="mn"><head><meta charset="utf-8">
+<title>StepUp Social Studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Rubik:wght@700;800;900&family=Caveat:wght@700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@700;800&family=Silkscreen&family=Noto+Sans+Mongolian&display=swap">
+<style>
+:root{--pg:#ececf0;--pfg:#1a1a1f;--pmut:#62626c;--pcard:#fff;--pline:#d6d6de;--coral:#ff5a3c}
+body.pd{--pg:#0b0b0e;--pfg:#ededf0;--pmut:#9a9aa6;--pcard:#17171c;--pline:#2a2a33}
+*{box-sizing:border-box}
+body{margin:0;background:var(--pg);color:var(--pfg);font-family:Manrope,system-ui,sans-serif}
+.bar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--pg) 88%,transparent);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--pline);display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 32px}
+.bar h1{font:800 1.15rem Manrope;letter-spacing:-.02em;margin:0 18px 0 0}
+.bar h1 span{color:var(--coral)}
+.btn{font:700 .8rem Manrope;padding:8px 14px;border-radius:999px;border:1px solid var(--pline);background:var(--pcard);color:var(--pfg);cursor:pointer}
+.btn.on{background:var(--pfg);color:var(--pg);border-color:var(--pfg)}
+.sp{flex:1}
+.stat{font:700 .8rem Manrope;color:var(--pmut)}
+.wrap{padding:8px 32px 120px;max-width:1500px}
+.sec{padding-top:44px}
+.sec>h2{font:800 1.7rem/1.2 Manrope;letter-spacing:-.03em;margin:0 0 6px}
+.sec>p{margin:0 0 20px;color:var(--pmut);max-width:80ch}
+.ideas{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.idea{background:var(--pcard);border:1px solid var(--pline);border-radius:16px;padding:16px 18px}
+.idea b{display:block;font-weight:800;margin-bottom:4px}
+.idea span{color:var(--pmut);font-size:.88rem}
+.idea a{color:var(--coral);font-weight:700;font-size:.8rem}
+.cards{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+.dir{margin-bottom:34px}
+.dirh h3{font:800 1.05rem Manrope;margin:0}
+.dirh p{margin:2px 0 12px;color:var(--pmut);font-size:.9rem}
+.card{margin:0}
+.cap{font:700 .72rem Manrope;letter-spacing:.08em;text-transform:uppercase;color:var(--pmut);margin:0 0 8px}
+.fr{overflow:hidden;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.16);cursor:zoom-in}
+.fr.k45{width:324px;height:405px}
+.fr.k45>*{transform:scale(.3);transform-origin:top left}
+.v1 .frame,.v2 .frame{cursor:zoom-in}
+.vote{display:flex;gap:6px;margin-top:8px}
+.vote button{font:700 .78rem Manrope;border:1px solid var(--pline);background:var(--pcard);color:var(--pfg);border-radius:999px;padding:6px 10px;cursor:pointer}
+.vote button.on[data-v="love"]{background:#ff5a3c;border-color:#ff5a3c;color:#fff}
+.vote button.on[data-v="maybe"]{background:#f5a524;border-color:#f5a524;color:#1a1a1f}
+.vote button.on[data-v="no"]{background:var(--pfg);border-color:var(--pfg);color:var(--pg)}
+.hide{display:none!important}
+.v1 .grid{padding:0!important}
+.v2 .set{padding:0 0 26px!important}
+.v2 .set h2{color:var(--pmut)!important}
+.v1 figcaption{color:var(--pmut)!important}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,8,10,.86);display:none;overflow:auto}
+.lb.open{display:block}
+.lb .tools{position:fixed;top:14px;right:18px;display:flex;gap:8px;z-index:2}
+.lb .stage{transform-origin:top left;position:absolute}
+.lb .hint{position:fixed;left:18px;top:18px;color:#fff;font:700 .85rem Manrope;opacity:.8}
+.out{width:100%;min-height:140px;margin-top:10px;font:500 .85rem ui-monospace,monospace;border-radius:12px;padding:12px;border:1px solid var(--pline);background:var(--pcard);color:var(--pfg)}
+.st .s{--bg:#f6f4ef;--fg:#16161a;--mut:#62626c;--card:#ffffff;--card2:#efece5;--line:#16161a;--acc:#ff5a3c;--acc2:#ffb020;--soft:#ffe1d8;--edge:#e5e1d8;
+  width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--bg);color:var(--fg);
+  font-family:Manrope,system-ui,sans-serif;display:flex;flex-direction:column;padding:64px 72px}
+.st .s.D{--bg:#0f0f13;--fg:#f2f2f5;--mut:#9a9aa6;--card:#1b1b22;--card2:#24242c;--line:#f2f2f5;--acc:#ff6a4a;--acc2:#ffc04d;--soft:#2c1a16;--edge:#2a2a33}
+.st .s *{box-sizing:border-box}
+.st .hd{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:3}
+.st .brand{display:flex;align-items:center;gap:18px}
+.st .brand .lg{width:78px;height:78px;border-radius:22px;background:#fff;display:grid;place-items:center;border:2px solid var(--edge)}
+.st .brand .lg img{width:56px;height:56px;display:block}
+.st .brand b{display:block;font:800 30px/1 Manrope;letter-spacing:-.02em}
+.st .brand b span{color:var(--acc)}
+.st .brand small{display:block;font:700 21px Manrope;color:var(--mut);margin-top:6px;letter-spacing:.02em}
+.st .tag{font:800 23px Manrope;letter-spacing:.12em;text-transform:uppercase;border:3px solid var(--line);border-radius:999px;padding:10px 22px}
+.st .tag.f{background:var(--acc);border-color:var(--acc);color:#fff}
+.st .mid{flex:1;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
+.st .ft{display:flex;justify-content:space-between;align-items:center;font:700 26px Manrope;color:var(--mut);position:relative;z-index:3}
+.st .ft .go{color:var(--fg);font-weight:800}
+.st .ey{font:800 26px Manrope;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.st .arc{position:absolute;inset:0;z-index:1;pointer-events:none}
+.st .steps{display:flex;align-items:flex-end;gap:10px}
+.st .steps i{display:block;width:26px;border-radius:6px;background:var(--card2)}
+.st .steps i.on{background:var(--acc)}
+.st .stepl{display:flex;align-items:center;gap:22px;font:800 26px Manrope;letter-spacing:.14em}
+.st .w1{font:800 112px/0.95 Manrope;letter-spacing:-.045em;margin:26px 0 0}
+.st .ipa{font:500 38px Manrope;color:var(--mut);margin-top:18px}
+.st .m1{font:800 60px/1.1 Manrope;color:var(--acc);margin-top:30px;letter-spacing:-.02em}
+.st .exc{margin-top:56px;background:var(--card);border-radius:36px;padding:40px 46px;border:2px solid var(--edge);max-width:800px}
+.st .exc .en{font:700 42px/1.35 Manrope}
+.st .exc .tr{font:500 34px/1.4 Manrope;color:var(--mut);margin-top:12px}
+.st .lv{display:inline-flex;gap:10px;margin-top:34px}
+.st .lv span{font:800 24px Manrope;padding:8px 18px;border-radius:12px;background:var(--card2);color:var(--mut)}
+.st .lv span.on{background:var(--fg);color:var(--bg)}
+.st .sl{display:flex;gap:34px;padding:36px 0;border-top:2px solid var(--edge);align-items:flex-start}
+.st .sl .n{font:800 30px Manrope;color:var(--acc);letter-spacing:.1em;flex:0 0 150px;padding-top:12px}
+.st .sl .t{font:800 50px/1.15 Manrope;letter-spacing:-.02em}
+.st .sl .d{font:500 34px/1.4 Manrope;color:var(--mut);margin-top:10px}
+.st .h1s{font:800 88px/1.02 Manrope;letter-spacing:-.04em;margin:24px 0 40px}
+.st .h1s em{font-style:normal;color:var(--acc)}
+.st .bento{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:22px;margin-top:40px}
+.st .bt{background:var(--card);border-radius:40px;padding:36px 40px;border:2px solid var(--edge);position:relative}
+.st .bt.span{grid-column:span 2}
+.st .bt.acc{background:var(--acc);border-color:var(--acc);color:#fff}
+.st .bt .k{font:800 22px Manrope;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.st .bt.acc .k{color:rgba(255,255,255,.8)}
+.st .bt .big{font:800 128px/1 Manrope;letter-spacing:-.05em;margin-top:10px}
+.st .bt .v{font:800 46px/1.2 Manrope;margin-top:12px;letter-spacing:-.01em}
+.st .bt .sm{font:500 32px/1.4 Manrope;color:var(--mut);margin-top:10px}
+.st .wave{display:flex;gap:8px;align-items:center;height:90px;margin-top:14px}
+.st .wave i{display:block;width:12px;border-radius:9px;background:var(--acc)}
+.st .uses{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.st .uses div{font:700 36px Manrope;display:flex;gap:16px;align-items:center}
+.st .uses div span{font-size:44px}
+.st .chat{margin-top:40px;background:var(--card);border-radius:48px;padding:40px 36px;border:2px solid var(--edge);display:flex;flex-direction:column;gap:22px}
+.st .chead{display:flex;align-items:center;gap:18px;padding-bottom:26px;border-bottom:2px solid var(--edge)}
+.st .av{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#ffb020,#ff5a3c);display:grid;place-items:center;font-size:38px}
+.st .chead b{font:800 34px Manrope;display:block}
+.st .chead small{font:600 24px Manrope;color:#22b573}
+.st .bub{max-width:78%;padding:24px 32px;border-radius:36px;font:700 40px/1.3 Manrope;position:relative}
+.st .bub.l{background:var(--card2);color:var(--mut);align-self:flex-start;border-bottom-left-radius:10px}
+.st .bub.l s{text-decoration-thickness:4px;text-decoration-color:var(--acc)}
+.st .bub.r{background:var(--acc);color:#fff;align-self:flex-end;border-bottom-right-radius:10px}
+.st .lab{font:800 20px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.st .lab.r{align-self:flex-end;color:var(--acc)}
+.st .typing{align-self:flex-end;background:var(--acc);border-radius:36px;padding:26px 30px;display:flex;gap:10px;opacity:.55}
+.st .typing i{width:16px;height:16px;border-radius:50%;background:#fff;display:block}
+.st .sbar{margin-top:46px;background:var(--card);border-radius:999px;padding:30px 44px;display:flex;align-items:center;gap:26px;
+  font:700 44px Manrope;border:3px solid var(--edge);box-shadow:0 20px 50px rgba(0,0,0,.10)}
+.st .s.D .sbar{box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.st .caret{display:inline-block;width:4px;height:52px;background:var(--acc);vertical-align:middle;margin-left:4px}
+.st .sugg{margin:18px 30px 0;background:var(--card);border-radius:36px;border:2px solid var(--edge);overflow:hidden}
+.st .sg{display:flex;align-items:center;gap:26px;padding:26px 40px;border-bottom:2px solid var(--edge);font:700 40px Manrope}
+.st .sg:last-child{border:0}
+.st .sg .ic{color:var(--mut);font-size:34px}
+.st .sg b{font-weight:800}
+.st .sg small{margin-left:auto;font:600 28px Manrope;color:var(--mut)}
+.st .sg.hit{background:var(--soft)}
+.st .sg.hit b{color:var(--acc)}
+.st .best{margin-top:40px;display:flex;gap:20px;align-items:center;font:800 40px Manrope}
+.st .best .pill{background:var(--fg);color:var(--bg);border-radius:999px;padding:14px 28px;font-size:30px}
+.st .s.E{--bg:#f3efe6}
+.st .s.E.D{--bg:#0d0d10}
+.st .rule{height:3px;background:var(--line)}
+.st .meta{display:flex;justify-content:space-between;font:800 24px Manrope;letter-spacing:.14em;text-transform:uppercase;padding:18px 0}
+.st .serif{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.03em;line-height:.8}
+.st .ed-row{display:grid;grid-template-columns:1fr 330px;gap:30px;align-items:end;padding:30px 0}
+.st .ed-w{font-size:330px}
+.st .ed-w.it{font-style:italic;color:var(--acc)}
+.st .ed-d{font:600 32px/1.4 Manrope;padding-bottom:40px}
+.st .ed-d b{display:block;font:800 24px Manrope;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+.st .ed-d i{font-style:normal;color:var(--acc);font-weight:800}
+.st .s.N{--bg:#ffffff;--yel:#d9a100}
+.st .s.N.D{--bg:#1c1c1e;--yel:#ffd60a}
+.st .ntool{display:flex;justify-content:space-between;align-items:center;color:var(--yel);font:600 40px Manrope}
+.st .ndate{text-align:center;font:600 26px Manrope;color:var(--mut);margin-top:40px}
+.st .ntitle{font:800 68px/1.12 Manrope;letter-spacing:-.025em;margin-top:30px}
+.st .nl{margin-top:36px;display:flex;flex-direction:column;gap:30px}
+.st .ni{display:flex;gap:26px;align-items:flex-start}
+.st .ck{flex:0 0 52px;height:52px;border-radius:50%;border:4px solid var(--mut);margin-top:4px}
+.st .ck.on{background:var(--yel);border-color:var(--yel);display:grid;place-items:center;color:#000;font:900 30px Manrope}
+.st .ni .bad{font:600 40px/1.3 Manrope;color:var(--mut);text-decoration:line-through;text-decoration-color:var(--acc);text-decoration-thickness:4px}
+.st .ni .good{font:700 60px/1.05 Caveat,cursive;color:var(--acc);margin-top:6px}
+.st .s.M{background:
+  radial-gradient(620px 620px at 10% 95%,rgba(155,18,48,.55),transparent 70%),
+  radial-gradient(700px 700px at 95% 10%,rgba(240,145,63,.65),transparent 70%),
+  radial-gradient(600px 600px at 80% 80%,rgba(255,90,60,.45),transparent 70%),#fbf3ee}
+.st .s.M.D{background:
+  radial-gradient(620px 620px at 10% 95%,rgba(155,18,48,.85),transparent 70%),
+  radial-gradient(700px 700px at 95% 10%,rgba(240,145,63,.7),transparent 70%),
+  radial-gradient(600px 600px at 80% 80%,rgba(255,90,60,.5),transparent 70%),#0f0f13}
+.st .glass{background:rgba(255,255,255,.55);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:2px solid rgba(255,255,255,.7);border-radius:36px}
+.st .s.D .glass{background:rgba(20,20,26,.45);border-color:rgba(255,255,255,.14)}
+.st .ladder{display:flex;flex-direction:column;gap:22px;margin-top:50px}
+.st .rung{display:flex;align-items:center;gap:30px;padding:30px 40px}
+.st .rung .lvl{font:800 28px Manrope;background:var(--fg);color:var(--bg);border-radius:14px;padding:8px 16px}
+.st .rung .wd{font:800 58px Manrope;letter-spacing:-.02em}
+.st .rung .ar{margin-left:auto;font:800 44px Manrope;color:var(--acc)}
+.st .s.M .h1s em{color:#c8361b}
+.st .s.M.D .h1s em{color:#ffb38f}
+.st .stack{position:relative;height:720px;margin-top:40px}
+.st .fc{position:absolute;left:50%;top:50%;width:760px;height:560px;border-radius:48px;border:3px solid var(--line);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.st .fc.b3{background:var(--acc2);transform:translate(-50%,-50%) rotate(9deg) translate(40px,-30px)}
+.st .fc.b2{background:var(--acc);transform:translate(-50%,-50%) rotate(-6deg) translate(-30px,-10px)}
+.st .fc.b1{background:var(--card);transform:translate(-50%,-50%) rotate(1.5deg);box-shadow:16px 16px 0 var(--line)}
+.st .fc .fk{font:800 24px Manrope;letter-spacing:.2em;color:var(--mut)}
+.st .fc .fw{font:800 124px/1 Manrope;letter-spacing:-.045em;margin:24px 0}
+.st .fc .fh{font:700 34px Manrope;color:var(--mut)}
+.st .dots{display:flex;gap:12px;justify-content:center;margin-top:10px}
+.st .dots i{width:18px;height:18px;border-radius:50%;background:var(--card2);display:block}
+.st .dots i.on{background:var(--acc);width:48px;border-radius:9px}
+.st .cap2{text-align:center;font:800 48px/1.2 Manrope;margin-top:36px;letter-spacing:-.02em}
+.st .tk{margin-top:44px;background:var(--card);border-radius:44px;overflow:hidden;border:2px solid var(--edge);position:relative}
+.st .tk-h{background:var(--acc);color:#fff;padding:34px 46px;display:flex;justify-content:space-between;align-items:center}
+.st .tk-h .city{font:800 76px/1 Manrope;letter-spacing:-.03em}
+.st .tk-h .city small{display:block;font:700 22px Manrope;letter-spacing:.16em;opacity:.85;margin-top:8px}
+.st .tk-h .plane{font-size:64px}
+.st .tk-meta{display:flex;gap:50px;padding:26px 46px;font:800 22px Manrope;letter-spacing:.14em;color:var(--mut);border-bottom:3px dashed var(--edge)}
+.st .tk-meta b{display:block;font:800 40px "JetBrains Mono",monospace;letter-spacing:0;color:var(--fg);margin-top:4px}
+.st .tk-l{padding:12px 46px 20px}
+.st .tk-i{padding:22px 0;border-bottom:2px solid var(--edge)}
+.st .tk-i:last-child{border:0}
+.st .tk-i .en{font:800 42px/1.2 Manrope}
+.st .tk-i .mn{font:500 30px Manrope;color:var(--mut);margin-top:6px}
+.st .perf{height:0;border-top:4px dashed var(--edge);position:relative;margin:0 30px}
+.st .perf:before,.st .perf:after{content:"";position:absolute;top:-26px;width:48px;height:48px;border-radius:50%;background:var(--bg)}
+.st .perf:before{left:-58px}
+.st .perf:after{right:-58px}
+.st .stub{display:flex;justify-content:space-between;align-items:center;padding:26px 46px}
+.st .bar{width:420px;height:74px;background:repeating-linear-gradient(90deg,var(--fg) 0 4px,transparent 4px 9px,var(--fg) 9px 16px,transparent 16px 20px)}
+.st .stub .code{font:800 30px "JetBrains Mono",monospace;letter-spacing:.1em}
+.st .hud{display:flex;justify-content:space-between;align-items:center;margin-top:44px;font:400 30px Silkscreen,monospace}
+.st .xp{flex:1;margin:0 30px;height:40px;border:5px solid var(--line);background:var(--card2);position:relative}
+.st .xp i{position:absolute;inset:0 32% 0 0;background:repeating-linear-gradient(90deg,var(--acc) 0 30px,var(--acc2) 30px 36px)}
+.st .qbox{margin-top:50px;border:5px solid var(--line);background:var(--card);padding:48px;box-shadow:16px 16px 0 var(--line)}
+.st .qbox .qk{font:400 28px Silkscreen,monospace;color:var(--acc)}
+.st .qbox .qt{font:800 64px/1.2 Manrope;margin-top:18px;letter-spacing:-.02em}
+.st .qbox .blank{display:inline-block;width:170px;border-bottom:8px solid var(--acc);margin:0 6px}
+.st .grid4{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
+.st .ob{border:5px solid var(--line);background:var(--card);padding:30px 36px;font:800 52px Manrope;display:flex;gap:24px;align-items:center;box-shadow:10px 10px 0 var(--line)}
+.st .ob b{font:400 34px Silkscreen,monospace;background:var(--fg);color:var(--bg);padding:6px 16px}
+.st .ob.pick{background:var(--acc);color:#fff}
+.st .s.MG{--mb:#1d4f9c;--gold:#d99a1e;--red:#c4272f}
+.st .s.MG.D{--mb:#7aa5ff;--gold:#f2b53a;--red:#ff5a4f;--bg:#0c1224;--card:#141c33;--card2:#1c2642;--edge:#26304d}
+.st .band{height:36px;background:var(--gold);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2744%27%20height%3D%2744%27%3E%3Cpath%20d%3D%27M2%2042V2h40v32H12V12h20v12h-10%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%275%27/%3E%3C/svg%3E") repeat-x left center/36px 36px;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2744%27%20height%3D%2744%27%3E%3Cpath%20d%3D%27M2%2042V2h40v32H12V12h20v12h-10%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%275%27/%3E%3C/svg%3E") repeat-x left center/36px 36px}
+.st .bandv{width:36px;background:var(--gold);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2744%27%20height%3D%2744%27%3E%3Cg%20transform%3D%27rotate%2890%2022%2022%29%27%3E%3Cpath%20d%3D%27M2%2042V2h40v32H12V12h20v12h-10%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%275%27/%3E%3C/g%3E%3C/svg%3E") repeat-y center top/36px 36px;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2744%27%20height%3D%2744%27%3E%3Cg%20transform%3D%27rotate%2890%2022%2022%29%27%3E%3Cpath%20d%3D%27M2%2042V2h40v32H12V12h20v12h-10%27%20fill%3D%27none%27%20stroke%3D%27black%27%20stroke-width%3D%275%27/%3E%3C/g%3E%3C/svg%3E") repeat-y center top/36px 36px}
+.st .ofr{position:absolute;inset:26px;pointer-events:none;z-index:1}
+.st .ofr .t,.st .ofr .b{position:absolute;left:0;right:0}
+.st .ofr .t{top:0}
+.st .ofr .b{bottom:0;transform:scaleY(-1)}
+.st .ofr .l,.st .ofr .r{position:absolute;top:36px;bottom:36px}
+.st .ofr .l{left:0}
+.st .ofr .r{right:0;transform:scaleX(-1)}
+.st .s.MG.fr4{padding:96px 100px}
+.st .ulz{width:170px;height:170px;background:var(--gold);-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Cg%20transform%3D%27rotate%2845%2060%2060%29%27%20stroke-width%3D%277%27%20fill%3D%27none%27%20stroke%3D%27black%27%3E%3Crect%20x%3D%2736%27%20y%3D%2736%27%20width%3D%2748%27%20height%3D%2748%27/%3E%3Cpath%20d%3D%27M52%2036V84M68%2036V84M36%2052H84M36%2068H84%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Cg%20transform%3D%27rotate%2845%2060%2060%29%27%20stroke-width%3D%277%27%20fill%3D%27none%27%20stroke%3D%27black%27%3E%3Crect%20x%3D%2736%27%20y%3D%2736%27%20width%3D%2748%27%20height%3D%2748%27/%3E%3Cpath%20d%3D%27M52%2036V84M68%2036V84M36%2052H84M36%2068H84%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+.st .ulzbg{position:absolute;inset:0;background:var(--mb);opacity:.07;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Cg%20transform%3D%27rotate%2845%2060%2060%29%27%20stroke-width%3D%277%27%20fill%3D%27none%27%20stroke%3D%27black%27%3E%3Crect%20x%3D%2736%27%20y%3D%2736%27%20width%3D%2748%27%20height%3D%2748%27/%3E%3Cpath%20d%3D%27M52%2036V84M68%2036V84M36%2052H84M36%2068H84%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3C/g%3E%3C/svg%3E") 0 0/150px 150px repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27120%27%20height%3D%27120%27%20viewBox%3D%270%200%20120%20120%27%3E%3Cg%20transform%3D%27rotate%2845%2060%2060%29%27%20stroke-width%3D%277%27%20fill%3D%27none%27%20stroke%3D%27black%27%3E%3Crect%20x%3D%2736%27%20y%3D%2736%27%20width%3D%2748%27%20height%3D%2748%27/%3E%3Cpath%20d%3D%27M52%2036V84M68%2036V84M36%2052H84M36%2068H84%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2736%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2736%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3Ccircle%20cx%3D%2784%27%20cy%3D%2784%27%20r%3D%2713%27/%3E%3C/g%3E%3C/svg%3E") 0 0/150px 150px repeat;z-index:0}
+.st .ctr{text-align:center;align-items:center}
+.st .ts-t{font:900 96px/1.02 Rubik,Manrope;letter-spacing:-.02em;margin-top:30px}
+.st .ts-t em{font-style:normal;color:var(--red)}
+.st .ts-l{width:100%;margin-top:44px;display:flex;flex-direction:column;gap:18px}
+.st .ts-i{background:var(--card);border:2px solid var(--edge);border-radius:28px;padding:26px 34px;text-align:left;display:flex;gap:26px;align-items:center}
+.st .ts-i .e{font-size:64px}
+.st .ts-i .en{font:800 42px/1.2 Manrope}
+.st .ts-i .mn{font:600 30px Manrope;color:var(--mut);margin-top:4px}
+.st .mb-wrap{display:grid;grid-template-columns:260px 1fr;gap:50px;align-items:stretch;margin-top:30px;flex:1}
+.st .mscript{writing-mode:vertical-lr;font:400 250px/1 "Noto Sans Mongolian",serif;color:var(--acc);background:var(--card);border-radius:40px;border:2px solid var(--edge);display:flex;align-items:center;justify-content:center;padding:30px 0}
+.st .tri{display:flex;flex-direction:column;justify-content:center}
+.st .tri .lab{font:800 22px Manrope;letter-spacing:.18em;color:var(--mut);text-transform:uppercase;margin-top:34px}
+.st .tri .big{font:800 150px/0.95 Manrope;letter-spacing:-.05em}
+.st .tri .cy{font:900 96px/1 Rubik,Manrope;color:var(--mb)}
+.st .tri .ex{font:700 38px/1.4 Manrope;margin-top:40px;padding-top:30px;border-top:3px solid var(--edge)}
+.st .tri .ex span{color:var(--acc)}
+.st .s.ST{--fg:#16161a;padding:0}
+.st .s.ST.D{--fg:#f2f2f5}
+.st .sky{position:absolute;inset:0;background:linear-gradient(#9fd3ff,#e9f5ff 55%,#fff1dc)}
+.st .s.ST.D .sky{background:linear-gradient(#070d24,#14224d 60%,#2a2f5c)}
+.st .scene{position:absolute;left:0;right:0;bottom:0;width:1080px;height:760px}
+.st .st-in{position:relative;z-index:2;padding:64px 72px;display:flex;flex-direction:column;height:100%}
+.st .st-t{font:900 92px/1.02 Rubik,Manrope;margin-top:50px;letter-spacing:-.02em}
+.st .st-t em{font-style:normal;color:var(--acc)}
+.st .chips{display:flex;flex-wrap:wrap;gap:16px;margin-top:auto;margin-bottom:30px}
+.st .chips span{background:rgba(255,255,255,.92);color:#16161a;border-radius:999px;padding:16px 30px;font:800 38px Manrope;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.st .chips span small{font:600 26px Manrope;color:#62626c;margin-left:10px}
+.st .s.ST.D .chips span{background:rgba(20,24,48,.85);color:#fff}
+.st .s.ST.D .chips span small{color:#a9b0cc}
+.st .s.ST .ft{color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.st .s.ST .ft .go{color:#fff}
+.st .nd{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.st .nd div{border-radius:32px;padding:0 0 34px;color:#fff;text-align:center;overflow:hidden;position:relative}
+.st .nd div:nth-child(1),.st .nd div:nth-child(3){background:var(--red)}
+.st .nd div:nth-child(2){background:#015197}
+.st .s.D .nd div:nth-child(2){background:#2a64c9}
+.st .nd .band{background:var(--gold);height:30px;-webkit-mask-size:30px 30px;mask-size:30px 30px}
+.st .nd .e{font-size:120px;margin-top:40px;display:block}
+.st .nd b{display:block;font:800 44px Manrope;margin-top:18px}
+.st .nd small{display:block;font:600 28px Manrope;opacity:.85;margin-top:6px}
+.st .nd-ex{margin-top:44px;background:var(--card);border:2px solid var(--edge);border-radius:30px;padding:32px 40px;font:700 38px/1.4 Manrope}
+.st .nd-ex span{color:var(--mut);font-weight:500;display:block;font-size:32px;margin-top:6px}
+.st .pv{position:relative;z-index:2}
+.st .pv .mnq{font:900 104px/1.05 Rubik,Manrope;letter-spacing:-.02em}
+.st .pv .mnq em{font-style:normal;color:var(--mb)}
+.st .pv .div{display:flex;align-items:center;gap:24px;margin:56px 0}
+.st .pv .div i{flex:1;height:3px;background:var(--edge)}
+.st .pv .div .ulz{width:90px;height:90px}
+.st .pv .enq{font:400 92px/1.05 "Instrument Serif",Georgia,serif;font-style:italic;color:var(--acc)}
+.st .pv .note{font:600 34px/1.4 Manrope;color:var(--mut);margin-top:34px}
+.st .s.RT{--bg:#efe3c8;--fg:#1a1411;--red:#d42a1f;padding:0}
+.st .s.RT.D{--bg:#0e0c0b;--fg:#efe3c8;--red:#e8392b}
+.st .rays{position:absolute;left:640px;top:170px;width:1100px;height:1100px;border-radius:50%;transform:translate(-50%,-50%);
+  background:repeating-conic-gradient(var(--red) 0 7deg,transparent 7deg 18deg);opacity:.22}
+.st .diag{position:absolute;left:-120px;right:-120px;top:800px;height:260px;background:var(--red);transform:rotate(-9deg)}
+.st .rt-in{position:relative;z-index:2;padding:64px 72px;display:flex;flex-direction:column;height:100%}
+.st .rt-star{font:900 170px/1 Rubik;color:var(--red);margin-top:30px}
+.st .rt-h{font:900 140px/.95 Rubik,Manrope;text-transform:uppercase;letter-spacing:-.03em}
+.st .rt-band{position:absolute;left:0;right:0;top:872px;transform:rotate(-9deg);color:#fff;font:900 84px/1 Rubik;white-space:nowrap;text-transform:uppercase;text-align:center;letter-spacing:.01em}
+.st .rt-band small{display:block;font:800 36px Manrope;letter-spacing:.3em;margin-top:18px}
+.st .s.RT .brand .lg{border-color:var(--fg)}
+.st .s.RT .ft{color:var(--fg)}
+.st .rc{margin:40px auto 0;width:760px;background:var(--card);padding:56px 60px 70px;position:relative;font-family:"JetBrains Mono",monospace;
+  box-shadow:0 30px 60px rgba(0,0,0,.18);transform:rotate(-1.5deg)}
+.st .rc:after{content:"";position:absolute;left:0;right:0;bottom:-30px;height:30px;
+  background:linear-gradient(135deg,var(--card) 50%,transparent 50%) 0 0/40px 30px repeat-x,linear-gradient(225deg,var(--card) 50%,transparent 50%) 0 0/40px 30px repeat-x}
+.st .rc .c{text-align:center;font-weight:800;font-size:38px;letter-spacing:.08em}
+.st .rc .c2{text-align:center;font-size:24px;color:var(--mut);margin-top:8px;font-weight:700}
+.st .rc .hr{border-top:4px dashed var(--edge);margin:30px 0}
+.st .rc .ln{display:flex;justify-content:space-between;font-size:32px;font-weight:700;padding:9px 0}
+.st .rc .ln span:last-child{color:var(--mut)}
+.st .rc .tot{display:flex;justify-content:space-between;font-size:44px;font-weight:800}
+.st .rc .tot span:last-child{color:var(--acc)}
+.st .rc .bar{width:100%;height:80px;margin-top:34px}
+.st .rc .ty{text-align:center;font-size:26px;font-weight:800;letter-spacing:.14em;margin-top:18px}
+.st .s.RC{--bg:#ffe1d8}
+.st .s.RC.D{--bg:#0f0f13}
+.st .wd-grid{display:grid;grid-template-columns:repeat(5,150px);gap:16px;justify-content:center;margin-top:50px}
+.st .wd-grid span{height:150px;display:grid;place-items:center;font:800 80px Manrope;border:5px solid var(--edge);background:var(--card)}
+.st .wd-grid .x{background:#8a8a94;border-color:#8a8a94;color:#fff}
+.st .s.D .wd-grid .x{background:#3a3a44;border-color:#3a3a44}
+.st .wd-grid .p{background:var(--acc2);border-color:var(--acc2);color:#1a1a1f}
+.st .wd-grid .ok{background:var(--acc);border-color:var(--acc);color:#fff}
+.st .hint{margin-top:46px;text-align:center;font:700 40px Manrope}
+.st .hint b{color:var(--acc)}
+.st .leg{display:flex;justify-content:center;gap:30px;margin-top:26px;font:700 28px Manrope;color:var(--mut)}
+.st .leg i{display:inline-block;width:28px;height:28px;vertical-align:-4px;margin-right:10px}
+.st .s.NP{--bg:#fbeee9}
+.st .s.NP.D{--bg:#121212}
+.st .art{width:620px;height:620px;margin:40px auto 0;border-radius:30px;background:linear-gradient(145deg,#9B1230,#FF5A3C 55%,#F0913F);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:44px;color:#fff;box-shadow:0 30px 60px rgba(155,18,48,.35);position:relative;overflow:hidden}
+.st .art:before{content:"🧊";position:absolute;right:40px;top:30px;font-size:190px;transform:rotate(12deg)}
+.st .art b{font:900 86px/0.95 Rubik;text-transform:uppercase}
+.st .art small{font:800 24px Manrope;letter-spacing:.2em;opacity:.85;margin-top:14px}
+.st .trk{display:flex;justify-content:space-between;align-items:center;margin-top:44px}
+.st .trk b{display:block;font:800 52px Manrope;letter-spacing:-.02em}
+.st .trk small{font:600 30px Manrope;color:var(--mut)}
+.st .trk .hrt{font-size:52px;color:var(--acc)}
+.st .prog{height:12px;border-radius:9px;background:var(--card2);margin-top:30px;position:relative}
+.st .prog i{position:absolute;inset:0 62% 0 0;background:var(--fg);border-radius:9px}
+.st .prog i:after{content:"";position:absolute;right:-12px;top:-8px;width:28px;height:28px;border-radius:50%;background:var(--fg)}
+.st .tm{display:flex;justify-content:space-between;font:600 24px Manrope;color:var(--mut);margin-top:14px}
+.st .ctl{display:flex;justify-content:center;align-items:center;gap:70px;font-size:56px;margin-top:10px}
+.st .ctl .pl{width:120px;height:120px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-size:50px}
+.st .lyr{margin-top:30px;background:var(--acc);color:#fff;border-radius:28px;padding:28px 36px;font:800 38px/1.3 Manrope}
+.st .lyr small{display:block;font:600 28px Manrope;opacity:.85;margin-top:6px}
+.st .hm{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:40px}
+.st .hm i{aspect-ratio:1;border-radius:18px;background:var(--card2);display:block}
+.st .hm i.l1{background:color-mix(in srgb,var(--acc) 30%,var(--card2))}
+.st .hm i.l2{background:color-mix(in srgb,var(--acc) 60%,var(--card2))}
+.st .hm i.l3{background:var(--acc)}
+.st .hm i.today{outline:6px solid var(--fg);outline-offset:3px}
+.st .hmstats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:40px}
+.st .hmstats div{background:var(--card);border:2px solid var(--edge);border-radius:28px;padding:24px 28px}
+.st .hmstats b{display:block;font:800 60px Manrope;letter-spacing:-.03em}
+.st .hmstats small{font:700 24px Manrope;color:var(--mut)}
+.st .s.WX{--bg:#dff0ff}
+.st .s.WX.D{--bg:#0a1330}
+.st .wx{background:linear-gradient(160deg,#5aa9ff,#2f6fd6);color:#fff;border-radius:48px;padding:50px;margin-top:40px}
+.st .s.D .wx{background:linear-gradient(160deg,#1b2d63,#0f1a3d);border:2px solid #243b7a}
+.st .wx .city{font:700 40px Manrope}
+.st .wx .deg{font:300 230px/1 Manrope;letter-spacing:-.06em;margin-top:6px}
+.st .wx .cond{font:800 56px Manrope}
+.st .wx .cond small{display:block;font:600 32px Manrope;opacity:.85;margin-top:6px}
+.st .wx .hrs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;border-top:2px solid rgba(255,255,255,.3);padding-top:30px}
+.st .wx .hrs div{text-align:center;font:700 30px Manrope}
+.st .wx .hrs b{display:block;font:800 40px Manrope;margin:8px 0}
+.st .wx .hrs em{font-style:normal;font-size:52px;display:block}
+.st .th{margin-top:50px;background:var(--card);border:2px solid var(--edge);border-radius:44px;padding:50px}
+.st .th .who{display:flex;align-items:center;gap:22px}
+.st .th .who .lg{width:96px;height:96px;border-radius:50%;background:#fff;display:grid;place-items:center;border:2px solid var(--edge)}
+.st .th .who .lg img{width:66px}
+.st .th .who b{font:800 38px Manrope;display:block}
+.st .th .who small{font:600 28px Manrope;color:var(--mut)}
+.st .th .tx{font:700 64px/1.25 Manrope;letter-spacing:-.02em;margin-top:40px}
+.st .th .tx em{font-style:normal;color:var(--acc)}
+.st .th .ic{display:flex;gap:60px;font-size:48px;color:var(--mut);margin-top:44px}
+.v2{--ink:#1a1a1f;--ink-950:#121215;--muted:#5c5c66;--cream:#fbf8f1;--grid:#e9e4d8;--coral:#ff5a3c;--coral-d:#c8361b;--amber:#f5a524;--teal:#159a8c;--blue:#3b6fe0}
+.v2 .set{padding:0 0 26px}
+.v2 .set h2{font:800 1rem Manrope;letter-spacing:.08em;text-transform:uppercase;margin:0 0 12px}
+.v2 .row{display:flex;flex-wrap:wrap;gap:22px}
+.v2 .frame{width:324px;height:405px;overflow:hidden;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,.14)}
+.v2 .frame>.p{transform:scale(.3);transform-origin:top left}
+.v2 .p{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--cream);background-image:linear-gradient(var(--grid) 2px,transparent 2px),linear-gradient(90deg,var(--grid) 2px,transparent 2px);background-size:54px 54px;display:flex;flex-direction:column;padding:64px 72px;color:var(--ink);font-family:Manrope,system-ui,sans-serif}
+.v2 .p.dark{background:var(--ink-950);background-image:none;color:#f1f1f3}
+.v2 .p.white{background:#fff;background-image:none}
+.v2 .top{display:flex;align-items:center;justify-content:space-between}
+.v2 .lock{display:flex;align-items:center;gap:16px;background:#fff;border:3px solid var(--ink);border-radius:999px;padding:8px 26px 8px 8px}
+.v2 .lock img{width:58px;height:58px;display:block}
+.v2 .lock b{font:800 28px/1 Manrope;letter-spacing:-.02em;color:var(--ink)}
+.v2 .lock b span{color:var(--coral)}
+.v2 .count{font:800 26px Manrope;background:var(--ink);color:#fff;border-radius:999px;padding:10px 20px}
+.v2 .p.dark .count{background:var(--coral);color:var(--ink)}
+.v2 .bot{display:flex;align-items:center;justify-content:space-between;font:800 26px Manrope;letter-spacing:.06em}
+.v2 .p.dark .bot{color:#a0a0aa}
+.v2 .fill{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative}
+.v2 .hook{font:900 112px/1.02 Rubik,Manrope;letter-spacing:-.02em;text-transform:uppercase;text-align:center;margin:0}
+.v2 .hook .c{color:var(--coral)}
+.v2 .hook .t{color:var(--teal)}
+.v2 .hook .a{color:var(--amber)}
+.v2 .hook .b{color:var(--blue)}
+.v2 .sub{font:700 40px Manrope;text-align:center;margin-top:34px;color:var(--muted)}
+.v2 .note{font:700 58px/1.1 Caveat,cursive;color:var(--coral-d)}
+.v2 .stk{position:absolute;font-size:120px;line-height:1;filter:drop-shadow(0 8px 10px rgba(0,0,0,.18))}
+.v2 .star{position:absolute;color:var(--amber);font-size:54px}
+.v2 .tape{display:inline-block;background:var(--coral);color:#fff;font:800 34px Manrope;padding:12px 26px;transform:rotate(-3deg);border-radius:6px}
+.v2 .pair{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;text-align:center}
+.v2 .pair .emo{font-size:190px;line-height:1.1}
+.v2 .chip{display:inline-block;background:#f3e7c9;border-radius:20px;padding:14px 30px;font:800 54px Rubik,Manrope;margin-top:20px}
+.v2 .pair .mn{font:700 50px Manrope;margin-top:26px}
+.v2 .verdict{margin-top:70px;background:#fff;border:4px solid var(--ink);border-radius:34px;padding:40px 48px;box-shadow:12px 12px 0 var(--ink)}
+.v2 .verdict .k{font:800 30px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.v2 .verdict .v{font:800 58px/1.2 Manrope;margin-top:12px}
+.v2 .verdict .e{font:600 38px/1.4 Manrope;color:var(--muted);margin-top:18px}
+.v2 .cc .en{font:800 84px/1.25 Manrope;letter-spacing:-.02em}
+.v2 .cc .mn{font:700 60px/1.35 Manrope;color:#c9c9d1;margin-top:60px}
+.v2 .u1{color:var(--coral)}
+.v2 .u2{color:var(--amber)}
+.v2 .u3{color:#39c7b5}
+.v2 .u4{color:#7fa2ff}
+.v2 .cc .u1,.v2 .cc .u2,.v2 .cc .u3,.v2 .cc .u4{border-bottom:8px solid currentColor}
+.v2 .legend{margin-top:70px;display:flex;flex-wrap:wrap;gap:16px}
+.v2 .legend span{font:800 32px Manrope;border-radius:999px;padding:10px 24px;background:#1f1f26}
+.v2 .rebus{font:900 120px/1.2 Rubik,Manrope;text-align:center;letter-spacing:-.02em}
+.v2 .rebus i{font-style:normal;font-size:150px}
+.v2 .ask{text-align:center;font:800 50px Manrope;margin-top:70px}
+.v2 .blanks{display:flex;justify-content:center;gap:22px;margin-top:40px}
+.v2 .blanks span{width:130px;height:12px;background:var(--ink);border-radius:9px}
+.v2 .q2{font:800 70px/1.2 Manrope;text-align:center}
+.v2 .q2 .hl{color:var(--coral)}
+.v2 .photo{margin:56px auto 0;width:780px;height:560px;border-radius:30px;border:5px dashed #cfc7b4;background:#fff;display:grid;place-items:center;text-align:center;font:700 38px Manrope;color:#a39a86;transform:rotate(-1.5deg)}
+.v2 .photo small{display:block;font-size:28px;margin-top:10px}
+.v2 .words{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:50px}
+.v2 .words span{background:#fff;border:3px solid var(--ink);border-radius:999px;padding:12px 28px;font:800 36px Manrope}
+.v2 .opts{display:flex;flex-direction:column;gap:30px;margin-top:70px}
+.v2 .opt{background:#fff;border:4px solid var(--ink);border-radius:30px;padding:36px 44px;font:800 52px Manrope;display:flex;gap:30px;box-shadow:10px 10px 0 var(--ink)}
+.v2 .opt b{color:var(--coral)}
+.v2 .li{display:flex;gap:34px;align-items:flex-start;padding:34px 0;border-bottom:3px dashed #d7cfbd}
+.v2 .li:last-child{border:0}
+.v2 .li .n{flex:0 0 96px;height:96px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font:900 48px Rubik}
+.v2 .li .en{font:800 54px/1.15 Manrope}
+.v2 .li .mn{font:600 38px/1.3 Manrope;color:var(--muted);margin-top:8px}
+.v2 .cta{text-align:center}
+.v2 .cta .big{font:900 104px/1.05 Rubik,Manrope;text-transform:uppercase}
+.v2 .acts{display:flex;justify-content:center;gap:28px;margin-top:70px}
+.v2 .acts div{width:210px;background:#fff;border:4px solid var(--ink);border-radius:30px;padding:30px 0;font:800 32px Manrope;box-shadow:8px 8px 0 var(--ink)}
+.v2 .acts em{display:block;font-style:normal;font-size:84px;margin-bottom:10px}
+.v1{--ink-950:#121215; --ink-900:#1a1a1f; --ink-600:#5c5c66; --ink-400:#a0a0aa; --ink-100:#ededf0; --ink-50:#f6f6f8; --coral:#ff5a3c; --coral-text:#c8361b}
+.v1 .grid{display:flex;flex-wrap:wrap;gap:28px;padding:24px 0 40px;align-items:flex-start}
+.v1 figure{margin:0}
+.v1 figcaption{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:0 0 8px}
+.v1 .frame{width:432px;height:432px;overflow:hidden;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.14)}
+.v1 .frame > .post{transform:scale(.4);transform-origin:top left}
+.v1 .post{width:1080px;height:1080px;position:relative;display:flex;overflow:hidden;font-family:Manrope,system-ui,sans-serif;background:#fff;color:var(--ink-900)}
+.v1 .post.dark{background:var(--ink-950);color:var(--ink-100)}
+.v1 .post.coral{background:var(--coral);color:var(--ink-900)}
+.v1 .rail{width:120px;flex:0 0 120px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:44px 0;background:var(--ink-900)}
+.v1 .post.dark .rail{background:#000}
+.v1 .post.coral .rail{background:var(--ink-900)}
+.v1 .rail .chip{width:80px;height:80px;border-radius:22px;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.v1 .rail .chip img{width:56px;height:56px;display:block}
+.v1 .rail .handle{writing-mode:vertical-rl;transform:rotate(180deg);color:var(--ink-400);font-size:20px;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.v1 .rail .dot{width:14px;height:14px;border-radius:50%;background:var(--coral)}
+.v1 .body{flex:1;padding:76px 72px;display:flex;flex-direction:column;position:relative}
+.v1 .eyebrow{font-size:24px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--coral)}
+.v1 .post.coral .eyebrow{color:var(--ink-900);opacity:.7}
+.v1 .spacer{flex:1}
+.v1 .foot{display:flex;align-items:center;justify-content:space-between;font-size:22px;font-weight:700;color:var(--ink-600)}
+.v1 .post.dark .foot{color:var(--ink-400)}
+.v1 .post.coral .foot{color:var(--ink-900);opacity:.75}
+.v1 .pill{background:var(--coral);color:#fff;padding:10px 22px;border-radius:999px;font-size:22px;font-weight:800}
+.v1 .post.coral .pill{background:var(--ink-900);color:#fff}
+.v1 .word{font-size:132px;font-weight:800;letter-spacing:-.04em;line-height:.95;margin:34px 0 0}
+.v1 .ipa{font-size:38px;font-weight:500;color:var(--ink-400);margin-top:16px}
+.v1 .mn{font-size:52px;font-weight:800;color:var(--coral);margin-top:26px;letter-spacing:-.02em}
+.v1 .ex{font-size:36px;line-height:1.45;margin-top:40px}
+.v1 .ex .en{font-weight:700}
+.v1 .ex .tr{color:var(--ink-400);font-weight:500;margin-top:10px}
+.v1 .post:not(.dark) .ipa,.v1 .post:not(.dark) .ex .tr{color:var(--ink-600)}
+.v1 .row{display:flex;align-items:flex-start;gap:26px;margin-top:40px}
+.v1 .mark{font-size:52px;font-weight:800;line-height:1;flex:0 0 auto}
+.v1 .bad .mark{color:#c8361b}
+.v1 .good .mark{color:#1f9d55}
+.v1 .row .txt{font-size:60px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.v1 .bad .txt{text-decoration:line-through;text-decoration-thickness:5px;color:var(--ink-600)}
+.v1 .why{margin-top:46px;padding:30px 34px;border-left:8px solid var(--coral);background:var(--ink-50);font-size:32px;line-height:1.45}
+.v1 .post.dark .why{background:#1c1c22}
+.v1 .q{font-size:86px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:30px 0 0}
+.v1 .opts{margin-top:56px;display:flex;flex-direction:column;gap:24px}
+.v1 .opt{background:#fff;border-radius:22px;padding:30px 36px;font-size:46px;font-weight:700;display:flex;gap:24px}
+.v1 .opt b{color:var(--coral-text)}
+.v1 .post.dark .opt{background:#1c1c22}
+.v1 .quote{font-size:96px;font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-top:30px}
+.v1 .quote em{color:var(--coral);font-style:normal}
+.v1 .streak{display:flex;gap:14px;margin-top:56px}
+.v1 .streak span{width:74px;height:74px;border-radius:20px;background:#1c1c22;display:grid;place-items:center;font-size:34px}
+.v1 .streak span.on{background:var(--coral)}
+.v1 .post:not(.dark) .streak span{background:var(--ink-50)}
+.v1 .h2{font-size:72px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:26px 0 0}
+.v1 .num{font-size:150px;font-weight:800;color:var(--coral);line-height:1;letter-spacing:-.05em}
+.v1 .lead{font-size:36px;line-height:1.45;margin-top:32px;color:var(--ink-600)}
+.v1 .post.dark .lead{color:var(--ink-400)}
+.v1 .swipe{font-size:26px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.v1 .phone{margin-top:44px;width:520px;border-radius:44px;background:#fff;padding:34px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.v1 .phone .k{font-size:28px;font-weight:700;color:var(--ink-600)}
+.v1 .phone .v{font-size:104px;font-weight:800;letter-spacing:-.04em;color:var(--ink-900);line-height:1}
+.v1 .phone .bar{height:18px;border-radius:99px;background:var(--ink-50);margin-top:28px;overflow:hidden}
+.v1 .phone .bar i{display:block;height:100%;width:68%;background:var(--coral)}
+.v1 .phone .days{display:flex;gap:10px;margin-top:26px}
+.v1 .phone .days span{flex:1;height:54px;border-radius:14px;background:var(--ink-50)}
+.v1 .phone .days span.on{background:var(--coral)}
+</style></head><body>
+<div class="bar">
+  <h1>StepUp <span>Social Studio</span></h1>
+  <button class="btn on" data-f="all">Бүгд</button>
+  <button class="btn" data-f="love">❤️ Таалагдсан</button>
+  <button class="btn" data-f="maybe">🤔 Магадгүй</button>
+  <button class="btn" data-f="no">✕ Үгүй</button>
+  <button class="btn" data-f="none">Үнэлээгүй</button>
+  <span class="sp"></span>
+  <span class="stat" id="stat"></span>
+  <button class="btn" id="pd">🌙 IG dark дэвсгэр</button>
+  <button class="btn" id="copy">Үр дүн хуулах</button>
+</div>
+
+<div class="wrap">
+
+<section class="sec" id="about">
+  <h2>Хэрхэн ашиглах вэ</h2>
+  <p>Пост бүрийн доор ❤️ / 🤔 / ✕ дарж үнэл (энэ браузерт хадгалагдана). Дээрх <b>“Үр дүн хуулах”</b>-г дараад
+  Claude-д paste хийвэл сонгосон чиглэлээр нь цааш нь хөгжүүлнэ. Пост дээр дарвал томорно — тэнд <b>1:1</b> дарж
+  бодит хэмжээгээр (1080px) дэлгэцийн зураг авна.</p>
+  <textarea class="out hide" id="out" readonly></textarea>
+</section>
+
+<section class="sec">
+  <h2>Санаанууд ба эх сурвалж</h2>
+  <p>2026 оны график дизайны трэнд + Монголын англи хэлний дансуудын ажиглалт. Доорх загварууд бүгд эдгээрээс санаа авсан <b>оригинал</b> дизайн — StepUp-ийн coral/charcoal брэнд дотор.</p>
+  <div class="ideas">
+    <div class="idea"><b>Өөрийн дүр төрх: “Ascend”</b><span>Логоны өгсөх нум (arc) + STEP 01–05 шат + A2–C1 түвшний badge. Хэн ч хуулж чадахгүй StepUp-ийн гарын үсэг.</span></div>
+    <div class="idea"><b>Bento grid</b><span>Модуль хайрцагт мэдээлэл — нэг харахад уншигддаг.</span> <a href="https://digitalsynopsis.com/design/graphic-design-trends-2026/" target="_blank">Digital Synopsis ↗</a></div>
+    <div class="idea"><b>Editorial / Bold minimalism</b><span>Том serif, нимгэн шугам, дугаарлалт — premium мэдрэмж.</span> <a href="https://digitalsynopsis.com/design/graphic-design-trends-2026/" target="_blank">Trends 2026 ↗</a></div>
+    <div class="idea"><b>Neo / soft brutalism</b><span>Бүдүүн хүрээ, хатуу сүүдэр, найрсаг фонт.</span> <a href="https://fireart.studio/blog/the-best-web-design-trends/" target="_blank">Fireart ↗</a></div>
+    <div class="idea"><b>UI mock: чат, хайлт, Notes</b><span>Хүмүүс өдөр бүр хардаг интерфэйс — scroll-ыг зогсоодог, relatable.</span></div>
+    <div class="idea"><b>Gradient + glass</b><span>Логоны улаан→улбар шар градиентаас mesh дэвсгэр.</span></div>
+    <div class="idea"><b>Pixel / game</b><span>Pixel art revival + XP, амь, түвшин — тест постыг тоглоом болгоно.</span></div>
+    <div class="idea"><b>Scrapbook / collage</b><span>Торон цаас, наалт, гар бичмэл — @rinco_ed-ийн хэв маяг (доор B хэсэг).</span> <a href="https://www.instagram.com/rinco_ed/" target="_blank">@rinco_ed ↗</a></div>
+    <div class="idea"><b>Монгол хээ, орчин үеийн хэлбэрээр</b><span>Өлзий, алхан хээ — уламжлалт хээ орчин үеийн график, текстиль дизайнд эргэн орж байна.</span> <a href="https://www.alexandralunn.com/research/how-traditional-mongolian-craft-influences-current-design-practices" target="_blank">A. Lunn судалгаа ↗</a> <a href="https://www.amicusmongolia.com/mongolian-patterns.html" target="_blank">Хээний утга ↗</a></div>
+    <div class="idea"><b>Өдөр тутмын app формат</b><span>Receiptify, Spotify, Wordle, weather — хүмүүс шууд таньж, share хийдэг.</span> <a href="https://piktochart.com/blog/creative-social-media-posts/" target="_blank">Piktochart ↗</a></div>
+    <div class="idea"><b>Цуврал + хадгалагдах контент</b><span>Боловсролын пост хамгийн их save/share авдаг; нэг удаагийн биш, давтагддаг цуврал хий.</span> <a href="https://posteverywhere.ai/blog/100-instagram-content-ideas" target="_blank">PostEverywhere ↗</a></div>
+    <div class="idea"><b>Өнгөөр холбосон орчуулга</b><span>Англи/монгол хэсгийг ижил өнгөөр — @colorenglish.mn-ийн арга.</span> <a href="https://www.instagram.com/colorenglish.mn/" target="_blank">@colorenglish.mn ↗</a></div>
+  </div>
+</section>
+
+<section class="sec st">
+  <h2>01 · Өөрийн загвар — “Ascend” (light + dark)</h2>
+  <p>StepUp-ийн үндсэн template. Нүүр болон дотор хуудас, хоёр горимтой. Бусад бүх цуврал энэ header/footer, өнгө, фонтыг хуваалцана.</p>
+  <div class="cards"><figure class="card" data-id="ascend-cover-light"><figcaption class="cap">Ascend · нүүр · Light</figcaption><div class="fr k45"><div class="s L"><svg class="arc" viewBox="0 0 1080 1350" preserveAspectRatio="none"><defs><linearGradient id="gaaL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9B1230"/><stop offset=".55" stop-color="#FF5A3C"/><stop offset="1" stop-color="#F0913F"/></linearGradient></defs>
+<path d="M-80 1420 C 260 1330 760 1050 1180 210" stroke="url(#gaaL)" stroke-width="170" fill="none" stroke-linecap="round" opacity=".16"/>
+<path d="M-40 1380 C 300 1290 780 1010 1010 470" stroke="url(#gaaL)" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="1010" cy="470" r="22" fill="#F0913F"/></svg><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Өдрийн үг</div></div>
+<div class="mid"><div class="stepl"><div class="steps"><i class="on" style="height:18px"></i><i class="on" style="height:32px"></i><i class="on" style="height:46px"></i><i class="" style="height:60px"></i><i class="" style="height:74px"></i></div><span>STEP 03 / 05</span></div>
+<div class="w1">procrastinate</div><div class="ipa">/prəˈkræs.tɪ.neɪt/ · verb</div>
+<div class="m1">ажлаа хойш тавих,<br>цааш нь хойшлуулах</div>
+<div class="lv"><span>A2</span><span>B1</span><span class="on">B2</span><span>C1</span></div>
+<div class="exc"><div class="en">“Stop procrastinating and start your essay.”</div><div class="tr">Хойшлуулахаа боль, эссэгээ эхэл.</div></div></div>
+<div class="ft"><span>Хадгалаад маргааш давт 🔖</span><span class="go">Swipe →</span></div></div></div></figure><figure class="card" data-id="ascend-cover-dark"><figcaption class="cap">Ascend · нүүр · Dark</figcaption><div class="fr k45"><div class="s D"><svg class="arc" viewBox="0 0 1080 1350" preserveAspectRatio="none"><defs><linearGradient id="gaaD" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9B1230"/><stop offset=".55" stop-color="#FF5A3C"/><stop offset="1" stop-color="#F0913F"/></linearGradient></defs>
+<path d="M-80 1420 C 260 1330 760 1050 1180 210" stroke="url(#gaaD)" stroke-width="170" fill="none" stroke-linecap="round" opacity=".16"/>
+<path d="M-40 1380 C 300 1290 780 1010 1010 470" stroke="url(#gaaD)" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="1010" cy="470" r="22" fill="#F0913F"/></svg><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Өдрийн үг</div></div>
+<div class="mid"><div class="stepl"><div class="steps"><i class="on" style="height:18px"></i><i class="on" style="height:32px"></i><i class="on" style="height:46px"></i><i class="" style="height:60px"></i><i class="" style="height:74px"></i></div><span>STEP 03 / 05</span></div>
+<div class="w1">procrastinate</div><div class="ipa">/prəˈkræs.tɪ.neɪt/ · verb</div>
+<div class="m1">ажлаа хойш тавих,<br>цааш нь хойшлуулах</div>
+<div class="lv"><span>A2</span><span>B1</span><span class="on">B2</span><span>C1</span></div>
+<div class="exc"><div class="en">“Stop procrastinating and start your essay.”</div><div class="tr">Хойшлуулахаа боль, эссэгээ эхэл.</div></div></div>
+<div class="ft"><span>Хадгалаад маргааш давт 🔖</span><span class="go">Swipe →</span></div></div></div></figure><figure class="card" data-id="ascend-inner-light"><figcaption class="cap">Ascend · дотор хуудас · Light</figcaption><div class="fr k45"><div class="s L"><svg class="arc" viewBox="0 0 1080 1350" preserveAspectRatio="none"><defs><linearGradient id="gabL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9B1230"/><stop offset=".55" stop-color="#FF5A3C"/><stop offset="1" stop-color="#F0913F"/></linearGradient></defs>
+<path d="M-80 1420 C 260 1330 760 1050 1180 210" stroke="url(#gabL)" stroke-width="170" fill="none" stroke-linecap="round" opacity=".16"/>
+</svg><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">2 / 5</div></div>
+<div class="mid" style="justify-content:flex-start;padding-top:60px"><div class="stepl"><div class="steps"><i class="on" style="height:18px"></i><i class="on" style="height:32px"></i><i class="" style="height:46px"></i><i class="" style="height:60px"></i><i class="" style="height:74px"></i></div><span>STEP 02 / 05</span></div>
+<div class="h1s">Үгийг <em>мартахгүй</em><br>цээжлэх 3 алхам</div>
+<div class="sl"><div class="n">STEP 01</div><div><div class="t">Өгүүлбэрт хий</div><div class="d">Жагсаалт биш — өөрийн амьдралаас нэг өгүүлбэр.</div></div></div>
+<div class="sl"><div class="n">STEP 02</div><div><div class="t">1 · 3 · 7 өдөр давт</div><div class="d">Мартах гэж байхад нь эргэж хар — spaced repetition.</div></div></div>
+<div class="sl"><div class="n">STEP 03</div><div><div class="t">Ярианд ашигла</div><div class="d">Өнөөдөр нэг удаа чангаар хэл. Тэгвэл чинийх болно.</div></div></div></div>
+<div class="ft"><span>@stepupenglish.mn</span><span class="go">Дараах →</span></div></div></div></figure><figure class="card" data-id="ascend-inner-dark"><figcaption class="cap">Ascend · дотор хуудас · Dark</figcaption><div class="fr k45"><div class="s D"><svg class="arc" viewBox="0 0 1080 1350" preserveAspectRatio="none"><defs><linearGradient id="gabD" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9B1230"/><stop offset=".55" stop-color="#FF5A3C"/><stop offset="1" stop-color="#F0913F"/></linearGradient></defs>
+<path d="M-80 1420 C 260 1330 760 1050 1180 210" stroke="url(#gabD)" stroke-width="170" fill="none" stroke-linecap="round" opacity=".16"/>
+</svg><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">2 / 5</div></div>
+<div class="mid" style="justify-content:flex-start;padding-top:60px"><div class="stepl"><div class="steps"><i class="on" style="height:18px"></i><i class="on" style="height:32px"></i><i class="" style="height:46px"></i><i class="" style="height:60px"></i><i class="" style="height:74px"></i></div><span>STEP 02 / 05</span></div>
+<div class="h1s">Үгийг <em>мартахгүй</em><br>цээжлэх 3 алхам</div>
+<div class="sl"><div class="n">STEP 01</div><div><div class="t">Өгүүлбэрт хий</div><div class="d">Жагсаалт биш — өөрийн амьдралаас нэг өгүүлбэр.</div></div></div>
+<div class="sl"><div class="n">STEP 02</div><div><div class="t">1 · 3 · 7 өдөр давт</div><div class="d">Мартах гэж байхад нь эргэж хар — spaced repetition.</div></div></div>
+<div class="sl"><div class="n">STEP 03</div><div><div class="t">Ярианд ашигла</div><div class="d">Өнөөдөр нэг удаа чангаар хэл. Тэгвэл чинийх болно.</div></div></div></div>
+<div class="ft"><span>@stepupenglish.mn</span><span class="go">Дараах →</span></div></div></div></figure></div>
+</section>
+
+<section class="sec st">
+  <h2>02 · Анхаарал татах 9 шинэ чиглэл</h2>
+  <p>Чиглэл бүр light + dark хувилбартай. Таалагдсанаа ❤️ дараарай — 2–3 цувралыг сонгож тогтмол формат болгоно.</p>
+  <div class="dir"><div class="dirh"><h3>02 Bento grid</h3><p>Bento grid — 2026-ийн #1 layout трэнд</p></div><div class="cards"><figure class="card" data-id="bento-light"><figcaption class="cap">02 Bento grid · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Phrasal verb</div></div>
+<div class="mid"><div class="bento">
+<div class="bt span"><div class="k">Өнөөдрийн</div><div class="big">take off</div></div>
+<div class="bt acc"><div class="k">Утга</div><div class="v">хөөрөх · тайлах · огцом өсөх</div></div>
+<div class="bt"><div class="k">Дуудлага</div><div class="v">/teɪk ɒf/</div><div class="wave"><i style="height:20px"></i><i style="height:46px"></i><i style="height:70px"></i><i style="height:38px"></i><i style="height:84px"></i><i style="height:56px"></i><i style="height:28px"></i><i style="height:64px"></i><i style="height:40px"></i><i style="height:18px"></i><i style="height:52px"></i><i style="height:30px"></i></div></div>
+<div class="bt span"><div class="k">3 нөхцөл</div><div class="uses"><div><span>✈️</span>The plane took off at 9.</div><div><span>🧥</span>Take off your coat.</div><div><span>📈</span>Her career really took off.</div></div></div>
+</div></div>
+<div class="ft"><span>Аль утгыг нь мэдэхгүй байсан бэ?</span><span class="go">💬</span></div></div></div></figure><figure class="card" data-id="bento-dark"><figcaption class="cap">02 Bento grid · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Phrasal verb</div></div>
+<div class="mid"><div class="bento">
+<div class="bt span"><div class="k">Өнөөдрийн</div><div class="big">take off</div></div>
+<div class="bt acc"><div class="k">Утга</div><div class="v">хөөрөх · тайлах · огцом өсөх</div></div>
+<div class="bt"><div class="k">Дуудлага</div><div class="v">/teɪk ɒf/</div><div class="wave"><i style="height:20px"></i><i style="height:46px"></i><i style="height:70px"></i><i style="height:38px"></i><i style="height:84px"></i><i style="height:56px"></i><i style="height:28px"></i><i style="height:64px"></i><i style="height:40px"></i><i style="height:18px"></i><i style="height:52px"></i><i style="height:30px"></i></div></div>
+<div class="bt span"><div class="k">3 нөхцөл</div><div class="uses"><div><span>✈️</span>The plane took off at 9.</div><div><span>🧥</span>Take off your coat.</div><div><span>📈</span>Her career really took off.</div></div></div>
+</div></div>
+<div class="ft"><span>Аль утгыг нь мэдэхгүй байсан бэ?</span><span class="go">💬</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>03 Chat</h3><p>Мессенжер/iMessage — хүмүүс өөрийгөө таньдаг формат</p></div><div class="cards"><figure class="card" data-id="chat-light"><figcaption class="cap">03 Chat · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Real English</div></div>
+<div class="mid"><div class="h1s" style="font-size:76px;margin:0">Сурах бичиг <em>vs</em><br>жинхэнэ яриа</div>
+<div class="chat"><div class="chead"><div class="av">🙋</div><div><b>Native friend</b><small>● online</small></div></div>
+<div class="lab">📘 Сурах бичиг</div>
+<div class="bub l"><s>I am fine, thank you. And you?</s></div>
+<div class="lab r">Native</div>
+<div class="bub r">Not bad! You? 😄</div>
+<div class="bub l"><s>I don’t understand.</s></div>
+<div class="bub r">Sorry, I didn’t catch that.</div>
+<div class="typing"><i></i><i></i><i></i></div></div></div>
+<div class="ft"><span>Та алийг нь хэрэглэдэг вэ?</span><span class="go">Коммент →</span></div></div></div></figure><figure class="card" data-id="chat-dark"><figcaption class="cap">03 Chat · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Real English</div></div>
+<div class="mid"><div class="h1s" style="font-size:76px;margin:0">Сурах бичиг <em>vs</em><br>жинхэнэ яриа</div>
+<div class="chat"><div class="chead"><div class="av">🙋</div><div><b>Native friend</b><small>● online</small></div></div>
+<div class="lab">📘 Сурах бичиг</div>
+<div class="bub l"><s>I am fine, thank you. And you?</s></div>
+<div class="lab r">Native</div>
+<div class="bub r">Not bad! You? 😄</div>
+<div class="bub l"><s>I don’t understand.</s></div>
+<div class="bub r">Sorry, I didn’t catch that.</div>
+<div class="typing"><i></i><i></i><i></i></div></div></div>
+<div class="ft"><span>Та алийг нь хэрэглэдэг вэ?</span><span class="go">Коммент →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>04 Search bar</h3><p>Google хайлт/autocomplete — "би ч гэсэн хайж байсан" мэдрэмж</p></div><div class="cards"><figure class="card" data-id="search-light"><figcaption class="cap">04 Search bar · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Хайлт</div></div>
+<div class="mid"><div class="ey">Та хайж байсан уу?</div>
+<div class="sbar"><span>🔍</span><span>“залхуу” англиар<span class="caret"></span></span></div>
+<div class="sugg">
+<div class="sg"><span class="ic">↗</span><b>lazy</b><small>ерөнхий, бага зэрэг муу</small></div>
+<div class="sg hit"><span class="ic">↗</span><b>can’t be bothered</b><small>яриандаа</small></div>
+<div class="sg"><span class="ic">↗</span><b>procrastinate</b><small>хойшлуулах</small></div>
+<div class="sg"><span class="ic">↗</span><b>couch potato</b><small>😅 хошин</small></div></div>
+<div class="best"><span class="pill">Хамгийн natural</span><span>“I can’t be bothered today.”</span></div></div>
+<div class="ft"><span>Дараагийн үгийг коммент дээр хүс</span><span class="go">🔍</span></div></div></div></figure><figure class="card" data-id="search-dark"><figcaption class="cap">04 Search bar · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Хайлт</div></div>
+<div class="mid"><div class="ey">Та хайж байсан уу?</div>
+<div class="sbar"><span>🔍</span><span>“залхуу” англиар<span class="caret"></span></span></div>
+<div class="sugg">
+<div class="sg"><span class="ic">↗</span><b>lazy</b><small>ерөнхий, бага зэрэг муу</small></div>
+<div class="sg hit"><span class="ic">↗</span><b>can’t be bothered</b><small>яриандаа</small></div>
+<div class="sg"><span class="ic">↗</span><b>procrastinate</b><small>хойшлуулах</small></div>
+<div class="sg"><span class="ic">↗</span><b>couch potato</b><small>😅 хошин</small></div></div>
+<div class="best"><span class="pill">Хамгийн natural</span><span>“I can’t be bothered today.”</span></div></div>
+<div class="ft"><span>Дараагийн үгийг коммент дээр хүс</span><span class="go">🔍</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>05 Editorial</h3><p>Editorial / Swiss — premium, сэтгүүл маягийн том serif</p></div><div class="cards"><figure class="card" data-id="editorial-light"><figcaption class="cap">05 Editorial · Light</figcaption><div class="fr k45"><div class="s E L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Grammar</div></div>
+<div class="mid" style="justify-content:flex-start;padding-top:40px"><div class="rule"></div>
+<div class="meta"><span>Nº 07</span><span>Цаг хугацаа</span><span>B1</span></div><div class="rule"></div>
+<div class="ed-row"><div class="serif ed-w it">since</div><div class="ed-d"><b>01 · Цэг</b>Эхэлсэн <i>мөч</i>.<br>since 2021, since Monday</div></div>
+<div class="rule"></div>
+<div class="ed-row"><div class="serif ed-w">for</div><div class="ed-d"><b>02 · Урт</b>Үргэлжилсэн <i>хугацаа</i>.<br>for 3 years, for an hour</div></div>
+<div class="rule"></div>
+<div style="font:600 36px/1.4 Manrope;padding-top:30px">I’ve lived here <b style="color:var(--acc)">since</b> 2021 — <b style="color:var(--acc)">for</b> 5 years.</div></div>
+<div class="ft"><span>Editorial series</span><span class="go">Хадгал →</span></div></div></div></figure><figure class="card" data-id="editorial-dark"><figcaption class="cap">05 Editorial · Dark</figcaption><div class="fr k45"><div class="s E D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Grammar</div></div>
+<div class="mid" style="justify-content:flex-start;padding-top:40px"><div class="rule"></div>
+<div class="meta"><span>Nº 07</span><span>Цаг хугацаа</span><span>B1</span></div><div class="rule"></div>
+<div class="ed-row"><div class="serif ed-w it">since</div><div class="ed-d"><b>01 · Цэг</b>Эхэлсэн <i>мөч</i>.<br>since 2021, since Monday</div></div>
+<div class="rule"></div>
+<div class="ed-row"><div class="serif ed-w">for</div><div class="ed-d"><b>02 · Урт</b>Үргэлжилсэн <i>хугацаа</i>.<br>for 3 years, for an hour</div></div>
+<div class="rule"></div>
+<div style="font:600 36px/1.4 Manrope;padding-top:30px">I’ve lived here <b style="color:var(--acc)">since</b> 2021 — <b style="color:var(--acc)">for</b> 5 years.</div></div>
+<div class="ft"><span>Editorial series</span><span class="go">Хадгал →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>06 Notes app</h3><p>iPhone Notes screenshot — жинхэнэ, албан бус, share хийгддэг</p></div><div class="cards"><figure class="card" data-id="notes-light"><figcaption class="cap">06 Notes app · Light</figcaption><div class="fr k45"><div class="s N L"><div class="ntool"><span>‹ Notes</span><span>⤴ &nbsp;⋯</span></div>
+<div class="ndate">14 September 2026 at 21:04</div>
+<div class="mid" style="justify-content:flex-start"><div class="ntitle">Англиар эвгүй сонсогддог 4 зүйл 😬</div><div class="nl"><div class="ni"><div class="ck on">✓</div><div><div class="bad">“Teacher, teacher!”</div><div class="good">→ Excuse me,</div></div></div><div class="ni"><div class="ck on">✓</div><div><div class="bad">“I very like it.”</div><div class="good">→ I really like it.</div></div></div><div class="ni"><div class="ck on">✓</div><div><div class="bad">“Give me water.”</div><div class="good">→ Could I get some water?</div></div></div><div class="ni"><div class="ck on">✓</div><div><div class="bad">“Open the light.”</div><div class="good">→ Turn on the light.</div></div></div></div></div>
+<div class="ft"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><span class="go">Хадгал 🔖</span></div></div></div></figure><figure class="card" data-id="notes-dark"><figcaption class="cap">06 Notes app · Dark</figcaption><div class="fr k45"><div class="s N D"><div class="ntool"><span>‹ Notes</span><span>⤴ &nbsp;⋯</span></div>
+<div class="ndate">14 September 2026 at 21:04</div>
+<div class="mid" style="justify-content:flex-start"><div class="ntitle">Англиар эвгүй сонсогддог 4 зүйл 😬</div><div class="nl"><div class="ni"><div class="ck on">✓</div><div><div class="bad">“Teacher, teacher!”</div><div class="good">→ Excuse me,</div></div></div><div class="ni"><div class="ck on">✓</div><div><div class="bad">“I very like it.”</div><div class="good">→ I really like it.</div></div></div><div class="ni"><div class="ck on">✓</div><div><div class="bad">“Give me water.”</div><div class="good">→ Could I get some water?</div></div></div><div class="ni"><div class="ck on">✓</div><div><div class="bad">“Open the light.”</div><div class="good">→ Turn on the light.</div></div></div></div></div>
+<div class="ft"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><span class="go">Хадгал 🔖</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>07 Gradient glass</h3><p>Gradient mesh + frosted glass — логоны градиентаас</p></div><div class="cards"><figure class="card" data-id="mesh-light"><figcaption class="cap">07 Gradient glass · Light</figcaption><div class="fr k45"><div class="s M L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag f">Level up</div></div>
+<div class="mid"><div class="h1s">“Very good”-оо<br><em>дээшлүүл</em></div><div class="ladder"><div class="glass rung" style="margin-left:0px"><span class="lvl">A2</span><span class="wd">very good</span><span class="ar"></span></div><div class="glass rung" style="margin-left:50px"><span class="lvl">B1</span><span class="wd">excellent</span><span class="ar"></span></div><div class="glass rung" style="margin-left:100px"><span class="lvl">B2</span><span class="wd">outstanding</span><span class="ar"></span></div><div class="glass rung" style="margin-left:150px"><span class="lvl">C1</span><span class="wd">exceptional</span><span class="ar">↗</span></div></div></div>
+<div class="ft"><span>Та одоо аль шатан дээр байна?</span><span class="go">💬</span></div></div></div></figure><figure class="card" data-id="mesh-dark"><figcaption class="cap">07 Gradient glass · Dark</figcaption><div class="fr k45"><div class="s M D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag f">Level up</div></div>
+<div class="mid"><div class="h1s">“Very good”-оо<br><em>дээшлүүл</em></div><div class="ladder"><div class="glass rung" style="margin-left:0px"><span class="lvl">A2</span><span class="wd">very good</span><span class="ar"></span></div><div class="glass rung" style="margin-left:50px"><span class="lvl">B1</span><span class="wd">excellent</span><span class="ar"></span></div><div class="glass rung" style="margin-left:100px"><span class="lvl">B2</span><span class="wd">outstanding</span><span class="ar"></span></div><div class="glass rung" style="margin-left:150px"><span class="lvl">C1</span><span class="wd">exceptional</span><span class="ar">↗</span></div></div></div>
+<div class="ft"><span>Та одоо аль шатан дээр байна?</span><span class="go">💬</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>08 Flashcard stack</h3><p>Flashcard — swipe хийлгэдэг, тоглоом шиг</p></div><div class="cards"><figure class="card" data-id="flash-light"><figcaption class="cap">08 Flashcard stack · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Flashcard 1/10</div></div>
+<div class="mid"><div class="stack"><div class="fc b3"></div><div class="fc b2"></div>
+<div class="fc b1"><div class="fk">FRONT</div><div class="fw">awkward</div><div class="fh">Утгыг нь мэдэх үү? 🤔</div></div></div>
+<div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+<div class="cap2">Swipe хийгээд ар талыг хар →</div></div>
+<div class="ft"><span>Хэдийг зөв таасан бэ?</span><span class="go">/10</span></div></div></div></figure><figure class="card" data-id="flash-dark"><figcaption class="cap">08 Flashcard stack · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Flashcard 1/10</div></div>
+<div class="mid"><div class="stack"><div class="fc b3"></div><div class="fc b2"></div>
+<div class="fc b1"><div class="fk">FRONT</div><div class="fw">awkward</div><div class="fh">Утгыг нь мэдэх үү? 🤔</div></div></div>
+<div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+<div class="cap2">Swipe хийгээд ар талыг хар →</div></div>
+<div class="ft"><span>Хэдийг зөв таасан бэ?</span><span class="go">/10</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>09 Boarding pass</h3><p>Тасалбар/ticket — utilitarian дизайн, сэдвийн контент</p></div><div class="cards"><figure class="card" data-id="ticket-light"><figcaption class="cap">09 Boarding pass · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Travel English</div></div>
+<div class="mid"><div class="tk"><div class="tk-h"><div class="city">ULN<small>УЛААНБААТАР</small></div><div class="plane">✈</div><div class="city" style="text-align:right">LHR<small>LONDON</small></div></div>
+<div class="tk-meta"><div>GATE<b>B12</b></div><div>SEAT<b>12A</b></div><div>LEVEL<b>A2</b></div></div>
+<div class="tk-l"><div class="tk-i"><div class="en">Where is gate B12?</div><div class="mn">B12 хаалга хаана байдаг вэ?</div></div><div class="tk-i"><div class="en">Is this seat taken?</div><div class="mn">Энэ суудал хүнтэй юу?</div></div><div class="tk-i"><div class="en">My luggage is missing.</div><div class="mn">Миний ачаа алга болсон.</div></div><div class="tk-i"><div class="en">Can I get a window seat?</div><div class="mn">Цонхны суудал авч болох уу?</div></div></div><div class="perf"></div>
+<div class="stub"><div class="bar"></div><div class="code">STEP·UP</div></div></div></div>
+<div class="ft"><span>Аялахаасаа өмнө хадгал ✈️</span><span class="go">Хадгал →</span></div></div></div></figure><figure class="card" data-id="ticket-dark"><figcaption class="cap">09 Boarding pass · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Travel English</div></div>
+<div class="mid"><div class="tk"><div class="tk-h"><div class="city">ULN<small>УЛААНБААТАР</small></div><div class="plane">✈</div><div class="city" style="text-align:right">LHR<small>LONDON</small></div></div>
+<div class="tk-meta"><div>GATE<b>B12</b></div><div>SEAT<b>12A</b></div><div>LEVEL<b>A2</b></div></div>
+<div class="tk-l"><div class="tk-i"><div class="en">Where is gate B12?</div><div class="mn">B12 хаалга хаана байдаг вэ?</div></div><div class="tk-i"><div class="en">Is this seat taken?</div><div class="mn">Энэ суудал хүнтэй юу?</div></div><div class="tk-i"><div class="en">My luggage is missing.</div><div class="mn">Миний ачаа алга болсон.</div></div><div class="tk-i"><div class="en">Can I get a window seat?</div><div class="mn">Цонхны суудал авч болох уу?</div></div></div><div class="perf"></div>
+<div class="stub"><div class="bar"></div><div class="code">STEP·UP</div></div></div></div>
+<div class="ft"><span>Аялахаасаа өмнө хадгал ✈️</span><span class="go">Хадгал →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>10 Level-up game</h3><p>Pixel / game HUD — pixel revival + gamification</p></div><div class="cards"><figure class="card" data-id="game-light"><figcaption class="cap">10 Level-up game · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Quiz game</div></div>
+<div class="mid"><div class="hud"><span>❤️❤️🤍</span><div class="xp"><i></i></div><span>LVL 7</span></div>
+<div class="qbox"><div class="qk">&gt; MISSING WORD</div><div class="qt">I’m looking forward<span class="blank"></span>meeting you.</div></div>
+<div class="grid4"><div class="ob"><b>A</b>to</div><div class="ob"><b>B</b>for</div><div class="ob"><b>C</b>at</div><div class="ob"><b>D</b>with</div></div></div>
+<div class="ft"><span>Хариугаа коммент дээр: A B C D</span><span class="go">+50 XP</span></div></div></div></figure><figure class="card" data-id="game-dark"><figcaption class="cap">10 Level-up game · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Quiz game</div></div>
+<div class="mid"><div class="hud"><span>❤️❤️🤍</span><div class="xp"><i></i></div><span>LVL 7</span></div>
+<div class="qbox"><div class="qk">&gt; MISSING WORD</div><div class="qt">I’m looking forward<span class="blank"></span>meeting you.</div></div>
+<div class="grid4"><div class="ob"><b>A</b>to</div><div class="ob"><b>B</b>for</div><div class="ob"><b>C</b>at</div><div class="ob"><b>D</b>with</div></div></div>
+<div class="ft"><span>Хариугаа коммент дээр: A B C D</span><span class="go">+50 XP</span></div></div></div></figure></div></div>
+</section>
+
+<section class="sec st">
+  <h2>03 · Монгол хэв маяг</h2>
+  <p>Хээ, монгол бичиг, тал нутаг, наадам, зүйр үг, ретро плакат — орчин үеийн хэлбэрээр. Брэндийн лого өөрөө олон улсын хэвээр (ADR 0004); монгол өнгө аяс нь зөвхөн контентын цувралд.</p>
+  <div class="dir"><div class="dirh"><h3>M1 Цагаан сар · алхан хээ</h3><p>Алхан хээн хүрээ + өлзий — баярын цуврал</p></div><div class="cards"><figure class="card" data-id="tsagaansar-light"><figcaption class="cap">M1 Цагаан сар · алхан хээ · Light</figcaption><div class="fr k45"><div class="s MG fr4 L"><div class="ofr"><div class="band t"></div><div class="band b"></div><div class="bandv l"></div><div class="bandv r"></div></div><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Цагаан сар</div></div>
+<div class="mid ctr"><div class="ulz"></div><div class="ts-t">Цагаан сарын<br><em>англи</em> хэллэг</div><div class="ts-l"><div class="ts-i"><span class="e">🌙</span><div><div class="en">Happy Tsagaan Sar!</div><div class="mn">Сар шинэдээ сайхан шинэлээрэй!</div></div></div><div class="ts-i"><span class="e">🙏</span><div><div class="en">Are you doing well?</div><div class="mn">Амар байна уу? (золгохдоо)</div></div></div><div class="ts-i"><span class="e">🥟</span><div><div class="en">Would you like some buuz?</div><div class="mn">Бууз идэх үү?</div></div></div></div></div>
+<div class="ft"><span>Гадаад найздаа илгээ 🎁</span><span class="go">Хадгал →</span></div></div></div></figure><figure class="card" data-id="tsagaansar-dark"><figcaption class="cap">M1 Цагаан сар · алхан хээ · Dark</figcaption><div class="fr k45"><div class="s MG fr4 D"><div class="ofr"><div class="band t"></div><div class="band b"></div><div class="bandv l"></div><div class="bandv r"></div></div><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Цагаан сар</div></div>
+<div class="mid ctr"><div class="ulz"></div><div class="ts-t">Цагаан сарын<br><em>англи</em> хэллэг</div><div class="ts-l"><div class="ts-i"><span class="e">🌙</span><div><div class="en">Happy Tsagaan Sar!</div><div class="mn">Сар шинэдээ сайхан шинэлээрэй!</div></div></div><div class="ts-i"><span class="e">🙏</span><div><div class="en">Are you doing well?</div><div class="mn">Амар байна уу? (золгохдоо)</div></div></div><div class="ts-i"><span class="e">🥟</span><div><div class="en">Would you like some buuz?</div><div class="mn">Бууз идэх үү?</div></div></div></div></div>
+<div class="ft"><span>Гадаад найздаа илгээ 🎁</span><span class="go">Хадгал →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>M2 Гурван бичиг</h3><p>Монгол бичиг · кирилл · англи — нэг үг гурван хэлбэр (Noto Sans Mongolian)</p></div><div class="cards"><figure class="card" data-id="bichig-light"><figcaption class="cap">M2 Гурван бичиг · Light</figcaption><div class="fr k45"><div class="s MG L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">3 бичиг</div></div>
+<div class="band" style="margin-top:40px"></div>
+<div class="mb-wrap"><div class="mscript">ᠠᠯᠬᠤᠮ</div>
+<div class="tri"><div class="lab" style="margin-top:0">English</div><div class="big">step</div>
+<div class="lab">Кирилл</div><div class="cy">алхам</div>
+<div class="lab">Монгол бичиг</div><div style="font:700 34px Manrope;color:var(--mut)">← зүүн талд · alqum</div>
+<div class="ex"><span>Step by step</span> — алхам алхмаар.<br><span>Small by small</span> — бага багаар.</div></div></div>
+<div class="ft" style="margin-top:40px"><span>Нэг үг · гурван бичиг</span><span class="go">Хадгал →</span></div></div></div></figure><figure class="card" data-id="bichig-dark"><figcaption class="cap">M2 Гурван бичиг · Dark</figcaption><div class="fr k45"><div class="s MG D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">3 бичиг</div></div>
+<div class="band" style="margin-top:40px"></div>
+<div class="mb-wrap"><div class="mscript">ᠠᠯᠬᠤᠮ</div>
+<div class="tri"><div class="lab" style="margin-top:0">English</div><div class="big">step</div>
+<div class="lab">Кирилл</div><div class="cy">алхам</div>
+<div class="lab">Монгол бичиг</div><div style="font:700 34px Manrope;color:var(--mut)">← зүүн талд · alqum</div>
+<div class="ex"><span>Step by step</span> — алхам алхмаар.<br><span>Small by small</span> — бага багаар.</div></div></div>
+<div class="ft" style="margin-top:40px"><span>Нэг үг · гурван бичиг</span><span class="go">Хадгал →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>M3 Тал нутаг</h3><p>Хөх тэнгэр, толгод, гэр — өдөр/шөнийн хувилбар</p></div><div class="cards"><figure class="card" data-id="steppe-light"><figcaption class="cap">M3 Тал нутаг · Light</figcaption><div class="fr k45"><div class="s ST L"><div class="sky"></div><svg class="scene" viewBox="0 0 1080 760" preserveAspectRatio="none"><circle cx="850" cy="110" r="70" fill="#ffd166" opacity=".95"/>
+<path d="M0 360 C 200 250 380 330 560 270 C 760 200 900 300 1080 250 V760 H0Z" fill="#9ccc7a"/>
+<path d="M0 470 C 240 400 420 480 640 430 C 820 390 950 450 1080 420 V760 H0Z" fill="#74b05b"/><g transform="translate(700 215)"><path d="M0 120 V60 Q110 -10 220 60 V120 Z" fill="#fffaf0"/><path d="M0 60 Q110 -10 220 60" fill="none" stroke="#c8b99a" stroke-width="6"/><rect x="92" y="70" width="36" height="50" fill="#d0442f"/><rect x="100" y="16" width="20" height="10" fill="#8a6d3b"/></g>
+<path d="M0 600 C 260 540 520 620 760 570 C 900 545 1000 580 1080 560 V760 H0Z" fill="#4f8f45"/></svg><div class="st-in"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Хөдөө</div></div>
+<div class="st-t">Хөдөө гарахад<br><em>хэрэгтэй</em> үгс</div>
+<div class="chips"><span>steppe<small>тал нутаг</small></span><span>herd<small>сүрэг</small></span><span>ger<small>гэр</small></span><span>fresh air<small>цэвэр агаар</small></span><span>countryside<small>хөдөө</small></span></div>
+<div class="ft"><span>Зуны амралтаас өмнө хадгал</span><span class="go">→</span></div></div></div></div></figure><figure class="card" data-id="steppe-dark"><figcaption class="cap">M3 Тал нутаг · Dark</figcaption><div class="fr k45"><div class="s ST D"><div class="sky"></div><svg class="scene" viewBox="0 0 1080 760" preserveAspectRatio="none"><circle cx="120" cy="40" r="3" fill="#fff" opacity=".8"/><circle cx="300" cy="90" r="3" fill="#fff" opacity=".8"/><circle cx="480" cy="30" r="3" fill="#fff" opacity=".8"/><circle cx="640" cy="120" r="3" fill="#fff" opacity=".8"/><circle cx="980" cy="60" r="3" fill="#fff" opacity=".8"/><circle cx="220" cy="180" r="3" fill="#fff" opacity=".8"/><circle cx="560" cy="200" r="3" fill="#fff" opacity=".8"/><circle cx="1020" cy="210" r="3" fill="#fff" opacity=".8"/><circle cx="840" cy="120" r="56" fill="#f4f1d0"/><circle cx="866" cy="104" r="50" fill="#14224d"/>
+<path d="M0 360 C 200 250 380 330 560 270 C 760 200 900 300 1080 250 V760 H0Z" fill="#1f3b2e"/>
+<path d="M0 470 C 240 400 420 480 640 430 C 820 390 950 450 1080 420 V760 H0Z" fill="#17302a"/><g transform="translate(700 215)"><path d="M0 120 V60 Q110 -10 220 60 V120 Z" fill="#d9d4c7"/><path d="M0 60 Q110 -10 220 60" fill="none" stroke="#8a8373" stroke-width="6"/><rect x="92" y="70" width="36" height="50" fill="#e0a526"/><rect x="100" y="16" width="20" height="10" fill="#8a6d3b"/><rect x="96" y="76" width="28" height="44" fill="#ffcf5a" opacity=".6"/></g>
+<path d="M0 600 C 260 540 520 620 760 570 C 900 545 1000 580 1080 560 V760 H0Z" fill="#10241f"/></svg><div class="st-in"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Хөдөө</div></div>
+<div class="st-t">Хөдөө гарахад<br><em>хэрэгтэй</em> үгс</div>
+<div class="chips"><span>steppe<small>тал нутаг</small></span><span>herd<small>сүрэг</small></span><span>ger<small>гэр</small></span><span>fresh air<small>цэвэр агаар</small></span><span>countryside<small>хөдөө</small></span></div>
+<div class="ft"><span>Зуны амралтаас өмнө хадгал</span><span class="go">→</span></div></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>M4 Наадам</h3><p>Далбааны улаан/хөх/алт өнгө + хээтэй карт</p></div><div class="cards"><figure class="card" data-id="naadam-light"><figcaption class="cap">M4 Наадам · Light</figcaption><div class="fr k45"><div class="s MG L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Наадам</div></div>
+<div class="mid"><div class="h1s" style="font-family:Rubik,Manrope;font-weight:900">Эрийн гурван наадам <em style="color:var(--red)">англиар</em></div>
+<div class="nd"><div><div class="band"></div><span class="e">🤼</span><b>wrestling</b><small>бөх</small></div>
+<div><div class="band"></div><span class="e">🏹</span><b>archery</b><small>сур харваа</small></div>
+<div><div class="band"></div><span class="e">🐎</span><b>horse racing</b><small>морины уралдаан</small></div></div>
+<div class="nd-ex">“Naadam is Mongolia’s biggest summer festival.”<span>Наадам бол Монголын хамгийн том зуны баяр.</span></div></div>
+<div class="ft"><span>Гадаад жуулчинд тайлбарлаж чадах уу?</span><span class="go">💬</span></div></div></div></figure><figure class="card" data-id="naadam-dark"><figcaption class="cap">M4 Наадам · Dark</figcaption><div class="fr k45"><div class="s MG D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Наадам</div></div>
+<div class="mid"><div class="h1s" style="font-family:Rubik,Manrope;font-weight:900">Эрийн гурван наадам <em style="color:var(--red)">англиар</em></div>
+<div class="nd"><div><div class="band"></div><span class="e">🤼</span><b>wrestling</b><small>бөх</small></div>
+<div><div class="band"></div><span class="e">🏹</span><b>archery</b><small>сур харваа</small></div>
+<div><div class="band"></div><span class="e">🐎</span><b>horse racing</b><small>морины уралдаан</small></div></div>
+<div class="nd-ex">“Naadam is Mongolia’s biggest summer festival.”<span>Наадам бол Монголын хамгийн том зуны баяр.</span></div></div>
+<div class="ft"><span>Гадаад жуулчинд тайлбарлаж чадах уу?</span><span class="go">💬</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>M5 Зүйр үг</h3><p>Өлзий хээн дэвсгэр · монгол зүйр үг ↔ англи хувилбар</p></div><div class="cards"><figure class="card" data-id="proverb-light"><figcaption class="cap">M5 Зүйр үг · Light</figcaption><div class="fr k45"><div class="s MG L"><div class="ulzbg"></div><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Зүйр үг</div></div>
+<div class="mid pv"><div class="mnq">Дуслыг хураавал <em>далай</em></div>
+<div class="div"><i></i><div class="ulz"></div><i></i></div>
+<div class="enq">“Little drops of water make the mighty ocean.”</div>
+<div class="note">Англи хэл ч гэсэн тийм — өдөр бүр жаахан. 💧<br>Small by small, step by step.</div></div>
+<div class="ft"><span>Монгол зүйр үг ↔ англи хувилбар</span><span class="go">Хадгал →</span></div></div></div></figure><figure class="card" data-id="proverb-dark"><figcaption class="cap">M5 Зүйр үг · Dark</figcaption><div class="fr k45"><div class="s MG D"><div class="ulzbg"></div><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Зүйр үг</div></div>
+<div class="mid pv"><div class="mnq">Дуслыг хураавал <em>далай</em></div>
+<div class="div"><i></i><div class="ulz"></div><i></i></div>
+<div class="enq">“Little drops of water make the mighty ocean.”</div>
+<div class="note">Англи хэл ч гэсэн тийм — өдөр бүр жаахан. 💧<br>Small by small, step by step.</div></div>
+<div class="ft"><span>Монгол зүйр үг ↔ англи хувилбар</span><span class="go">Хадгал →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>M6 Ретро уриа</h3><p>80-аад оны Улаанбаатарын плакат — Gen Z nostalgic</p></div><div class="cards"><figure class="card" data-id="retro-light"><figcaption class="cap">M6 Ретро уриа · Light</figcaption><div class="fr k45"><div class="s RT L"><div class="rays"></div><div class="diag"></div><div class="rt-in"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Уриа №1</div></div>
+<div class="rt-star">★</div><div class="rt-h">Англи хэл<br>бол зуршил!</div>
+<div class="rt-band">Өдөр бүр 10 минут<small>EVERY DAY · 10 MINUTES</small></div>
+<div class="ft" style="margin-top:auto"><span>StepUp English · 2026</span><span class="go">Нэгдэх үү? ✊</span></div></div></div></div></figure><figure class="card" data-id="retro-dark"><figcaption class="cap">M6 Ретро уриа · Dark</figcaption><div class="fr k45"><div class="s RT D"><div class="rays"></div><div class="diag"></div><div class="rt-in"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Уриа №1</div></div>
+<div class="rt-star">★</div><div class="rt-h">Англи хэл<br>бол зуршил!</div>
+<div class="rt-band">Өдөр бүр 10 минут<small>EVERY DAY · 10 MINUTES</small></div>
+<div class="ft" style="margin-top:auto"><span>StepUp English · 2026</span><span class="go">Нэгдэх үү? ✊</span></div></div></div></div></figure></div></div>
+</section>
+
+<section class="sec st">
+  <h2>04 · Нэмэлт 6 чиглэл</h2>
+  <p>Хүмүүсийн өдөр тутам хардаг формат: баримт, Wordle, хөгжим, streak, цаг агаар, Threads.</p>
+  <div class="dir"><div class="dirh"><h3>11 Баримт</h3><p>Receiptify маягийн 7 хоногийн “баримт” — share хийгддэг</p></div><div class="cards"><figure class="card" data-id="receipt-light"><figcaption class="cap">11 Баримт · Light</figcaption><div class="fr k45"><div class="s RC L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Долоо хоног</div></div>
+<div class="mid"><div class="rc"><div class="c">STEPUP ENGLISH</div><div class="c2">WEEKLY RECEIPT · 2026-09-14</div><div class="hr"></div><div class="ln"><span>resilient</span><span>1</span></div><div class="ln"><span>break the ice</span><span>1</span></div><div class="ln"><span>take off</span><span>1</span></div><div class="ln"><span>since vs for</span><span>1</span></div><div class="ln"><span>Speaking practice</span><span>15 min</span></div>
+<div class="hr"></div><div class="ln"><span>Words learned</span><span>12</span></div><div class="ln"><span>Minutes</span><span>148</span></div><div class="ln"><span>Streak</span><span>🔥 5 days</span></div>
+<div class="hr"></div><div class="tot"><span>TOTAL XP</span><span>+340</span></div><div class="bar"></div><div class="ty">THANK YOU FOR LEARNING</div></div></div>
+<div class="ft"><span>Таны энэ 7 хоногийн баримт?</span><span class="go">💬</span></div></div></div></figure><figure class="card" data-id="receipt-dark"><figcaption class="cap">11 Баримт · Dark</figcaption><div class="fr k45"><div class="s RC D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Долоо хоног</div></div>
+<div class="mid"><div class="rc"><div class="c">STEPUP ENGLISH</div><div class="c2">WEEKLY RECEIPT · 2026-09-14</div><div class="hr"></div><div class="ln"><span>resilient</span><span>1</span></div><div class="ln"><span>break the ice</span><span>1</span></div><div class="ln"><span>take off</span><span>1</span></div><div class="ln"><span>since vs for</span><span>1</span></div><div class="ln"><span>Speaking practice</span><span>15 min</span></div>
+<div class="hr"></div><div class="ln"><span>Words learned</span><span>12</span></div><div class="ln"><span>Minutes</span><span>148</span></div><div class="ln"><span>Streak</span><span>🔥 5 days</span></div>
+<div class="hr"></div><div class="tot"><span>TOTAL XP</span><span>+340</span></div><div class="bar"></div><div class="ty">THANK YOU FOR LEARNING</div></div></div>
+<div class="ft"><span>Таны энэ 7 хоногийн баримт?</span><span class="go">💬</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>12 Wordle</h3><p>Өдөр бүрийн 5 үсэгтэй таавар — коммент татна</p></div><div class="cards"><figure class="card" data-id="wordle-light"><figcaption class="cap">12 Wordle · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Wordle</div></div>
+<div class="mid"><div class="h1s" style="text-align:center;margin:0">Өнөөдрийн <em>5 үсэг</em></div>
+<div class="wd-grid"><span class="x">S</span><span class="x">T</span><span class="p">E</span><span class="p">A</span><span class="x">M</span><span class="x">G</span><span class="ok">R</span><span class="ok">A</span><span class="x">D</span><span class="ok">E</span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+<div class="hint">Сэжүүр: <b>айдасгүй, баатарлаг</b> 🦁</div>
+<div class="leg"><span><i style="background:var(--acc)"></i>зөв байр</span><span><i style="background:var(--acc2)"></i>байгаа</span><span><i style="background:#8a8a94"></i>байхгүй</span></div></div>
+<div class="ft"><span>Хариугаа коммент дээр 👇</span><span class="go">3/6</span></div></div></div></figure><figure class="card" data-id="wordle-dark"><figcaption class="cap">12 Wordle · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Wordle</div></div>
+<div class="mid"><div class="h1s" style="text-align:center;margin:0">Өнөөдрийн <em>5 үсэг</em></div>
+<div class="wd-grid"><span class="x">S</span><span class="x">T</span><span class="p">E</span><span class="p">A</span><span class="x">M</span><span class="x">G</span><span class="ok">R</span><span class="ok">A</span><span class="x">D</span><span class="ok">E</span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+<div class="hint">Сэжүүр: <b>айдасгүй, баатарлаг</b> 🦁</div>
+<div class="leg"><span><i style="background:var(--acc)"></i>зөв байр</span><span><i style="background:var(--acc2)"></i>байгаа</span><span><i style="background:#8a8a94"></i>байхгүй</span></div></div>
+<div class="ft"><span>Хариугаа коммент дээр 👇</span><span class="go">3/6</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>13 Now playing</h3><p>Хөгжмийн тоглуулагч — idiom-ыг “дуу” болгосон</p></div><div class="cards"><figure class="card" data-id="nowplaying-light"><figcaption class="cap">13 Now playing · Light</figcaption><div class="fr k45"><div class="s NP L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Now learning</div></div>
+<div class="mid"><div class="art"><b>Break<br>the ice</b><small>IDIOMS · VOL. 1</small></div>
+<div class="trk"><div><b>Break the ice</b><small>StepUp English · Idioms</small></div><span class="hrt">♥</span></div>
+<div class="prog"><i></i></div><div class="tm"><span>1:12</span><span>3:04</span></div>
+<div class="ctl"><span>⏮</span><span class="pl">▶</span><span>⏭</span></div>
+<div class="lyr">“Tell a joke to break the ice.”<small>Хошигноод эвгүй чимээгүйг эвд.</small></div></div>
+<div class="ft"><span>Дараагийн “track” юу байх вэ?</span><span class="go">💬</span></div></div></div></figure><figure class="card" data-id="nowplaying-dark"><figcaption class="cap">13 Now playing · Dark</figcaption><div class="fr k45"><div class="s NP D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Now learning</div></div>
+<div class="mid"><div class="art"><b>Break<br>the ice</b><small>IDIOMS · VOL. 1</small></div>
+<div class="trk"><div><b>Break the ice</b><small>StepUp English · Idioms</small></div><span class="hrt">♥</span></div>
+<div class="prog"><i></i></div><div class="tm"><span>1:12</span><span>3:04</span></div>
+<div class="ctl"><span>⏮</span><span class="pl">▶</span><span>⏭</span></div>
+<div class="lyr">“Tell a joke to break the ice.”<small>Хошигноод эвгүй чимээгүйг эвд.</small></div></div>
+<div class="ft"><span>Дараагийн “track” юу байх вэ?</span><span class="go">💬</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>14 Streak heatmap</h3><p>GitHub маягийн 30 өдрийн challenge — апп-тай шууд холбоотой</p></div><div class="cards"><figure class="card" data-id="heatmap-light"><figcaption class="cap">14 Streak heatmap · Light</figcaption><div class="fr k45"><div class="s L"><svg class="arc" viewBox="0 0 1080 1350" preserveAspectRatio="none"><defs><linearGradient id="gahL" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9B1230"/><stop offset=".55" stop-color="#FF5A3C"/><stop offset="1" stop-color="#F0913F"/></linearGradient></defs>
+<path d="M-80 1420 C 260 1330 760 1050 1180 210" stroke="url(#gahL)" stroke-width="170" fill="none" stroke-linecap="round" opacity=".16"/>
+</svg><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag f">30 хоног</div></div>
+<div class="mid"><div class="h1s" style="margin:0">30 өдрийн<br><em>challenge</em></div>
+<div class="hm"><i class="l2"></i><i class="l1"></i><i class="l3"></i><i class="l2"></i><i class=""></i><i class=""></i><i class="l3"></i><i class=""></i><i class="l2"></i><i class="l3"></i><i class=""></i><i class="l3"></i><i class="l1"></i><i class=""></i><i class=""></i><i class="l3"></i><i class="l3"></i><i class=""></i><i class="l1"></i><i class=""></i><i class="l3"></i><i class="l3"></i><i class=""></i><i class="l3"></i><i class=""></i><i class="l1"></i><i class="l2"></i><i class="l2"></i><i class="l3"></i><i class="l3 today"></i></div>
+<div class="hmstats"><div><b>🔥 12</b><small>өдөр дараалан</small></div><div><b>186</b><small>минут</small></div><div><b>94</b><small>шинэ үг</small></div></div></div>
+<div class="ft"><span>Нэгдэх бол <b style="color:var(--acc)">IN</b> гэж коммент</span><span class="go">Өнөөдөр эхэл →</span></div></div></div></figure><figure class="card" data-id="heatmap-dark"><figcaption class="cap">14 Streak heatmap · Dark</figcaption><div class="fr k45"><div class="s D"><svg class="arc" viewBox="0 0 1080 1350" preserveAspectRatio="none"><defs><linearGradient id="gahD" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9B1230"/><stop offset=".55" stop-color="#FF5A3C"/><stop offset="1" stop-color="#F0913F"/></linearGradient></defs>
+<path d="M-80 1420 C 260 1330 760 1050 1180 210" stroke="url(#gahD)" stroke-width="170" fill="none" stroke-linecap="round" opacity=".16"/>
+</svg><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag f">30 хоног</div></div>
+<div class="mid"><div class="h1s" style="margin:0">30 өдрийн<br><em>challenge</em></div>
+<div class="hm"><i class="l2"></i><i class="l1"></i><i class="l3"></i><i class="l2"></i><i class=""></i><i class=""></i><i class="l3"></i><i class=""></i><i class="l2"></i><i class="l3"></i><i class=""></i><i class="l3"></i><i class="l1"></i><i class=""></i><i class=""></i><i class="l3"></i><i class="l3"></i><i class=""></i><i class="l1"></i><i class=""></i><i class="l3"></i><i class="l3"></i><i class=""></i><i class="l3"></i><i class=""></i><i class="l1"></i><i class="l2"></i><i class="l2"></i><i class="l3"></i><i class="l3 today"></i></div>
+<div class="hmstats"><div><b>🔥 12</b><small>өдөр дараалан</small></div><div><b>186</b><small>минут</small></div><div><b>94</b><small>шинэ үг</small></div></div></div>
+<div class="ft"><span>Нэгдэх бол <b style="color:var(--acc)">IN</b> гэж коммент</span><span class="go">Өнөөдөр эхэл →</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>15 Цаг агаар</h3><p>Weather app · Улаанбаатарын −32° · хүйтний үгс</p></div><div class="cards"><figure class="card" data-id="weather-light"><figcaption class="cap">15 Цаг агаар · Light</figcaption><div class="fr k45"><div class="s WX L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Цаг агаар</div></div>
+<div class="mid"><div class="wx"><div class="city">Улаанбаатар ⌖</div><div class="deg">−32°</div>
+<div class="cond">❄️ It’s freezing!<small>Хүйтэн жавартай байна!</small></div>
+<div class="hrs"><div><em>🧥</em><b>chilly</b>−5°</div><div><em>🥶</em><b>freezing</b>−20°</div><div><em>🧊</em><b>bitterly cold</b>−32°</div></div></div>
+<div class="nd-ex" style="margin-top:34px">“It’s bitterly cold outside — wear a hat!”<span>Гадаа тачигнасан хүйтэн — малгайгаа өмс!</span></div></div>
+<div class="ft"><span>Та өнөөдөр аль нь вэ?</span><span class="go">❄️</span></div></div></div></figure><figure class="card" data-id="weather-dark"><figcaption class="cap">15 Цаг агаар · Dark</figcaption><div class="fr k45"><div class="s WX D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Цаг агаар</div></div>
+<div class="mid"><div class="wx"><div class="city">Улаанбаатар ⌖</div><div class="deg">−32°</div>
+<div class="cond">❄️ It’s freezing!<small>Хүйтэн жавартай байна!</small></div>
+<div class="hrs"><div><em>🧥</em><b>chilly</b>−5°</div><div><em>🥶</em><b>freezing</b>−20°</div><div><em>🧊</em><b>bitterly cold</b>−32°</div></div></div>
+<div class="nd-ex" style="margin-top:34px">“It’s bitterly cold outside — wear a hat!”<span>Гадаа тачигнасан хүйтэн — малгайгаа өмс!</span></div></div>
+<div class="ft"><span>Та өнөөдөр аль нь вэ?</span><span class="go">❄️</span></div></div></div></figure></div></div><div class="dir"><div class="dirh"><h3>16 Hot take</h3><p>Threads/X пост маяг — маргаан, коммент</p></div><div class="cards"><figure class="card" data-id="thread-light"><figcaption class="cap">16 Hot take · Light</figcaption><div class="fr k45"><div class="s L"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Hot take</div></div>
+<div class="mid"><div class="th"><div class="who"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp English</b><small>@stepupenglish.mn · 2ц</small></div></div>
+<div class="tx">Unpopular opinion: дүрэм цээжлэхээс өмнө <em>1000 үг</em> сур. Үггүй бол дүрэм юу ч биш. 🤷</div>
+<div class="ic"><span>♡</span><span>💬</span><span>↻</span><span>➤</span></div></div>
+<div class="cap2">Санал нэг үү, эсрэг үү? 👇</div></div>
+<div class="ft"><span>@stepupenglish.mn</span><span class="go">Коммент →</span></div></div></div></figure><figure class="card" data-id="thread-dark"><figcaption class="cap">16 Hot take · Dark</figcaption><div class="fr k45"><div class="s D"><div class="hd"><div class="brand"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp <span>English</span></b><small>@stepupenglish.mn</small></div></div><div class="tag">Hot take</div></div>
+<div class="mid"><div class="th"><div class="who"><div class="lg"><img src="logo.svg" alt=""></div><div><b>StepUp English</b><small>@stepupenglish.mn · 2ц</small></div></div>
+<div class="tx">Unpopular opinion: дүрэм цээжлэхээс өмнө <em>1000 үг</em> сур. Үггүй бол дүрэм юу ч биш. 🤷</div>
+<div class="ic"><span>♡</span><span>💬</span><span>↻</span><span>➤</span></div></div>
+<div class="cap2">Санал нэг үү, эсрэг үү? 👇</div></div>
+<div class="ft"><span>@stepupenglish.mn</span><span class="go">Коммент →</span></div></div></div></figure></div></div>
+</section>
+
+<section class="sec v2">
+  <h2>05 · Өмнөх: 4:5 carousel (rinco / colorenglish хэв маяг)</h2>
+  <p>Эхний хувилбар.</p>
+  
+  <section class="set"><h2>A · Idiom carousel (rinco хэв маяг) — 4 хуудас</h2><div class="row">
+
+<div class="frame"><div class="p">
+  <div class="top"><div class="lock"><img src="logo.svg" alt=""><b>StepUp <span>English</span></b></div><div class="count">1/4</div></div>
+  <div class="fill">
+    <div class="star" style="top:40px;left:20px">★</div><div class="star" style="top:120px;right:40px">★</div>
+    <div class="stk" style="top:10px;right:90px;transform:rotate(12deg)">🍰</div>
+    <div class="stk" style="bottom:40px;left:30px;transform:rotate(-10deg)">🐱</div>
+    <div class="stk" style="bottom:70px;right:40px">🌧️</div>
+    <p class="hook">Шууд <span class="c">орчуулбал</span><br>утгагүй<br><span class="t">болдог</span> <span class="a">3</span><br>хэллэг</p>
+    <div class="sub">Хэдийг нь мэдэх вэ? 👀</div>
+  </div>
+  <div class="bot"><span>@STEPUPENGLISH.MN</span><span class="note">swipe →</span></div>
+</div></div>
+
+<div class="frame"><div class="p">
+  <div class="top"><div class="lock"><img src="logo.svg" alt=""><b>StepUp <span>English</span></b></div><div class="count">2/4</div></div>
+  <div class="fill">
+    <div class="pair">
+      <div><div class="emo">🍰</div><div class="chip">PIECE OF CAKE</div><div class="mn">Бялууны хэсэг?</div></div>
+      <div><div class="emo">😎</div><div class="chip" style="background:#ffd9cf">EASY</div><div class="mn">Маш амархан</div></div>
+    </div>
+    <div class="verdict"><div class="k">Жишээ</div>
+      <div class="v">“The test was a piece of cake.”</div>
+      <div class="e">Шалгалт ёстой амархан байсан.</div></div>
+  </div>
+  <div class="bot"><span>@STEPUPENGLISH.MN</span><span class="note">дараах →</span></div>
+</div></div>
+
+<div class="frame"><div class="p">
+  <div class="top"><div class="lock"><img src="logo.svg" alt=""><b>StepUp <span>English</span></b></div><div class="count">3/4</div></div>
+  <div class="fill">
+    <div class="pair">
+      <div><div class="emo">🐈🐕</div><div class="chip">CATS &amp; DOGS</div><div class="mn">Муур нохой бороо?</div></div>
+      <div><div class="emo">⛈️</div><div class="chip" style="background:#ffd9cf">HEAVY RAIN</div><div class="mn">Аадар бороо</div></div>
+    </div>
+    <div class="verdict"><div class="k">Жишээ</div>
+      <div class="v">“It’s raining cats and dogs.”</div>
+      <div class="e">Гадаа аадар бороо орж байна.</div></div>
+  </div>
+  <div class="bot"><span>@STEPUPENGLISH.MN</span><span class="note">дараах →</span></div>
+</div></div>
+
+<div class="frame"><div class="p">
+  <div class="top"><div class="lock"><img src="logo.svg" alt=""><b>StepUp <span>English</span></b></div><div class="count">4/4</div></div>
+  <div class="fill cta">
+    <div class="stk" style="top:30px;left:40px;transform:rotate(-12deg)">📌</div>
+    <div class="big">Хадгалаад<br><span style="color:var(--coral)">найздаа</span><br>илгээ</div>
+    <div class="acts"><div><em>🔖</em>Хадгал</div><div><em>📤</em>Илгээ</div><div><em>💬</em>3 дахь нь?</div></div>
+    <div class="sub">Та 3 дахь хэллэгийг коммент хэсэгт таагаарай</div>
+  </div>
+  <div class="bot"><span>@STEPUPENGLISH.MN</span><span class="tape">Follow ✦</span></div>
+</div></div>
+
+</div>
+</section>
+
+<section class="sec v1">
+  <h2>06 · Өмнөх: 1:1 дөрвөлжин</h2>
+  <p>Хамгийн анхны хувилбар — зүүн талд логотой тууз.</p>
+  
+  <div class="grid">
+
+<!-- 1 -->
+<figure><figcaption>01 · Өдрийн үг (dark)</figcaption><div class="frame">
+<div class="post dark">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Өдрийн үг · B1</div>
+    <div class="word">resilient</div>
+    <div class="ipa">/rɪˈzɪl.i.ənt/ · adj.</div>
+    <div class="mn">тэсвэртэй, бууж өгдөггүй</div>
+    <div class="ex">
+      <div class="en">“She is resilient — she never gives up.”</div>
+      <div class="tr">Тэр тэсвэртэй — хэзээ ч бууж өгдөггүй.</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="foot"><span>Өдөрт 1 үг</span><span class="pill">Хадгал →</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 2 -->
+<figure><figcaption>02 · Буруу → Зөв (light)</figcaption><div class="frame">
+<div class="post">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Түгээмэл алдаа</div>
+    <div class="row bad"><div class="mark">✕</div><div class="txt">I am agree with you.</div></div>
+    <div class="row good"><div class="mark">✓</div><div class="txt">I agree with you.</div></div>
+    <div class="why"><b>Яагаад?</b> “agree” бол үйл үг, тэмдэг нэр биш.
+      Тиймээс “am/is/are” хэрэггүй — шууд “I agree” гэнэ.</div>
+    <div class="spacer"></div>
+    <div class="foot"><span>Grammar fix #12</span><span class="pill">Дахин уншаарай</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 3 -->
+<figure><figcaption>03 · Асуулт / carousel нүүр (coral)</figcaption><div class="frame">
+<div class="post coral">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Тест · 10 сек</div>
+    <div class="q">Аль нь<br>зөв бэ?</div>
+    <div class="opts">
+      <div class="opt"><b>A</b><span>I have been here since 3 years.</span></div>
+      <div class="opt"><b>B</b><span>I have been here for 3 years.</span></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="foot"><span class="swipe">Хариу → swipe</span><span class="pill">Коммент бич</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 4 -->
+<figure><figcaption>04 · Урам / streak (dark)</figcaption><div class="frame">
+<div class="post dark">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Small by small</div>
+    <div class="quote">Өдөрт <em>10 минут</em> — 7 хоногт 70 минут.</div>
+    <div class="lead">Долоо хоног тутам таслахгүй байх нь 3 цагийг нэг дор суухаас илүү үр дүнтэй.</div>
+    <div class="streak"><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span class="on">🔥</span><span>·</span><span>·</span></div>
+    <div class="spacer"></div>
+    <div class="foot"><span>Streak өнөөдөр эхлэх үү?</span><span class="pill">Тийм →</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 5 -->
+<figure><figcaption>05 · Phrasal verb (light)</figcaption><div class="frame">
+<div class="post">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Phrasal verb</div>
+    <div class="word" style="font-size:112px">give up</div>
+    <div class="mn">бууж өгөх, орхих</div>
+    <div class="ex">
+      <div class="en">“Don’t give up on your English.”</div>
+      <div class="tr">Англи хэлээ бүү орхи.</div>
+    </div>
+    <div class="why" style="margin-top:38px"><b>Анхаар:</b> “give up <i>on</i> + хүн/зорилго”, харин
+      “give up + үйл (giving up smoking)”.</div>
+    <div class="spacer"></div>
+    <div class="foot"><span>Өдөр бүр 1 phrasal verb</span><span class="pill">Хадгал</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 6 -->
+<figure><figcaption>06 · Carousel дотор хуудас (light)</figcaption><div class="frame">
+<div class="post">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="num">03</div>
+    <div class="h2">Үгийг жагсаалтаар бус, өгүүлбэрээр цээжил</div>
+    <div class="lead">Тархи тусдаа үгийг биш, контекстийг санадаг. Шинэ үг бүрийг өөрийн амьдралаас
+      авсан нэг өгүүлбэрт хийж бич — санах ой 2 дахин сайжирна.</div>
+    <div class="spacer"></div>
+    <div class="foot"><span>5 аргаас 3 дахь нь</span><span class="swipe">Дараах →</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 7 -->
+<figure><figcaption>07 · Бүтээгдэхүүний зар (dark)</figcaption><div class="frame">
+<div class="post dark">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Удахгүй</div>
+    <div class="h2">Хичээлээ хаана ч хийсэн<br>нэг дороос харагдана</div>
+    <div class="phone">
+      <div class="k">Энэ долоо хоног</div>
+      <div class="v">148<span style="font-size:38px"> мин</span></div>
+      <div class="bar"><i></i></div>
+      <div class="days"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="foot"><span>Progress tracker · beta</span><span class="pill">Bio-оос бүртгүүл</span></div>
+  </div>
+</div></div></figure>
+
+<!-- 8 -->
+<figure><figcaption>08 · Хариу / шийдэл (coral)</figcaption><div class="frame">
+<div class="post coral">
+  <div class="rail"><div class="chip"><img src="logo.svg" alt=""></div><div class="dot"></div><div class="handle">stepupenglish.mn</div></div>
+  <div class="body">
+    <div class="eyebrow">Хариу</div>
+    <div class="q" style="font-size:76px">B — for 3 years</div>
+    <div class="why" style="background:rgba(255,255,255,.55);border-color:var(--ink-900);margin-top:44px">
+      <b>since</b> = эхэлсэн <i>цаг хугацааны цэг</i> (since 2021, since Monday)<br><br>
+      <b>for</b> = үргэлжилсэн <i>хугацааны урт</i> (for 3 years, for two hours)</div>
+    <div class="spacer"></div>
+    <div class="foot"><span>Чи зөв хариуллаа юу?</span><span class="pill">Дараагийн тест</span></div>
+  </div>
+</div></div></figure>
+
+</div>
+
+
+</section>
+</div>
+
+<div class="lb" id="lb"><div class="hint">Esc — хаах</div><div class="tools"><button class="btn" id="fit">Багтаах</button><button class="btn" id="one">1:1 (1080px)</button><button class="btn" id="cls">✕</button></div><div class="stage" id="stage"></div></div>
+
+<script>
+const KEY='stepup-studio-votes-v1';
+let votes={};try{votes=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(votes))}catch(e){}};
+const frames=[...document.querySelectorAll('.st .fr, .v1 .frame, .v2 .frame')];
+const items=frames.map((fr,i)=>{
+  const sec=fr.closest('.sec');
+  let host=fr.closest('figure');
+  if(!host){host=document.createElement('div');host.className='card';fr.before(host);host.appendChild(fr)}
+  let id=host.dataset.id, name;
+  if(!id){
+    const cap=host.querySelector('figcaption');
+    const set=fr.closest('.set');
+    const idx=set?[...set.querySelectorAll('.frame')].indexOf(fr)+1:'';
+    name=cap?cap.textContent:((set?set.querySelector('h2').textContent:'')+' #'+idx);
+    id=(sec.classList.contains('v1')?'old-1x1-':'old-4x5-')+name.replace(/\W+/g,'-').toLowerCase().slice(0,50)+'-'+i;
+  } else name=host.querySelector('.cap').textContent;
+  const v=document.createElement('div');v.className='vote';
+  v.innerHTML='<button data-v="love">❤️</button><button data-v="maybe">🤔</button><button data-v="no">✕</button>';
+  fr.after(v);
+  const it={id,name,fr,host,vote:v,wrap:[...sec.classList].find(c=>['st','v1','v2'].includes(c))};
+  v.onclick=e=>{const b=e.target.closest('button');if(!b)return;votes[id]=votes[id]===b.dataset.v?undefined:b.dataset.v;if(!votes[id])delete votes[id];save();paint()};
+  fr.onclick=()=>openLb(it);
+  return it});
+let filter='all';
+function paint(){
+  let c={love:0,maybe:0,no:0};
+  items.forEach(it=>{const s=votes[it.id];if(s)c[s]++;
+    it.vote.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.v===s));
+    const show=filter==='all'||(filter==='none'?!s:s===filter);
+    it.host.classList.toggle('hide',!show)});
+  document.getElementById('stat').textContent=`❤️ ${c.love} · 🤔 ${c.maybe} · ✕ ${c.no} / ${items.length}`;
+}
+document.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{filter=b.dataset.f;document.querySelectorAll('[data-f]').forEach(x=>x.classList.toggle('on',x===b));paint()});
+document.getElementById('pd').onclick=e=>{document.body.classList.toggle('pd');e.target.classList.toggle('on')};
+document.getElementById('copy').onclick=()=>{
+  const g=k=>items.filter(it=>votes[it.id]===k).map(it=>'- '+it.name.trim()).join('\n')||'- (байхгүй)';
+  const txt=`StepUp Social Studio — үнэлгээ\n\n❤️ Таалагдсан:\n${g('love')}\n\n🤔 Магадгүй:\n${g('maybe')}\n\n✕ Үгүй:\n${g('no')}`;
+  const out=document.getElementById('out');out.value=txt;out.classList.remove('hide');out.select();
+  (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>{document.getElementById('copy').textContent='Хуулагдлаа ✓'},()=>{document.execCommand&&document.execCommand('copy')});
+};
+const lb=document.getElementById('lb'),stage=document.getElementById('stage');let cur=null;
+function openLb(it){cur=it;stage.className='stage '+it.wrap;const post=it.fr.firstElementChild.cloneNode(true);post.style.transform='none';
+  const inner=document.createElement('div');inner.className=it.wrap==='v1'?'frame':'';inner.style.cssText='width:auto;height:auto;overflow:visible;box-shadow:none;border-radius:0';
+  inner.appendChild(post);stage.innerHTML='';
+  if(it.wrap==='v2'||it.wrap==='v1'){const s=document.createElement('div');s.className=it.wrap==='v2'?'set':'grid';s.style.padding='0';s.appendChild(inner);stage.appendChild(s)}else stage.appendChild(inner);
+  lb.classList.add('open');fit()}
+function fit(){const p=stage.querySelector('.s,.p,.post');const w=1080,h=p.offsetHeight||1350;const k=Math.min((innerWidth-40)/w,(innerHeight-80)/h);
+  stage.style.transform=`scale(${k})`;stage.style.left=((innerWidth-w*k)/2)+'px';stage.style.top='60px'}
+document.getElementById('fit').onclick=fit;
+document.getElementById('one').onclick=()=>{stage.style.transform='none';stage.style.left='20px';stage.style.top='60px'};
+const close=()=>lb.classList.remove('open');
+document.getElementById('cls').onclick=close;
+addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+addEventListener('resize',()=>{if(lb.classList.contains('open'))fit()});
+paint();
+</script>
+</body></html>

@@ -30,3 +30,7 @@ next-env.d.ts
 *.tsbuildinfo
 .vercel
 .playwright-mcp/
+
+# Social post renders (regenerate with post/templates/render.sh)
+post/**/*.png
+post/index.html

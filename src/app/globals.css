@@ -4,8 +4,9 @@
    before paint by the inline script in layout.tsx). */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* Brand palette — see docs/decisions/0004-brand-identity.md.
-   Two coral temperatures coexist until the mark is chosen. */
+/* Brand palette — docs/decisions/0004-brand-identity.md.
+   Coral leads; four supporting tones map to the four skills
+   (docs/decisions/0007-gamified-app-shell.md). */
 :root {
   --ink-950: #121215;
   --ink-900: #1a1a1f;
@@ -18,14 +19,58 @@
   --coral-a-text: #c8361b;
   --coral-b: #ff4d6d;
   --coral-b-text: #c81e42;
+  --coral-soft: #ffe4dd;
+  --coral-deep: #c8361b;
+
+  --sky: #2f7ff0;
+  --sky-soft: #dcebff;
+  --sky-text: #1459b8;
+  --sky-deep: #1d5fc0;
+
+  --mint: #1fb57a;
+  --mint-soft: #d5f4e6;
+  --mint-text: #0b7a50;
+  --mint-deep: #138a5a;
+
+  --sun: #f5a300;
+  --sun-soft: #ffefc7;
+  --sun-text: #8f5500;
+  --sun-icon: #d98e00;
+  --sun-deep: #b87900;
+
+  --violet: #7b5cfa;
+  --violet-soft: #e7e1ff;
+  --violet-text: #4e2fd0;
+  --violet-deep: #5a3ee0;
+
+  --teal: #12a594;
+  --teal-soft: #d3f3ee;
+  --teal-text: #0b6b60;
+  --teal-deep: #0c7f72;
+
+  --rose: #ec4f86;
+  --rose-soft: #ffe1ec;
+  --rose-text: #b3174f;
+  --rose-deep: #bf2f63;
+
+  --locked: #e4e4ea;
+  --locked-deep: #c9c9d1;
 
   --background: #ffffff;
+  --canvas: #f6f6f8;
+  --surface: #ffffff;
+  --night: #1a1a1f;
+  --line: rgb(160 160 170 / 0.22);
   --foreground: var(--ink-900);
   --muted: var(--ink-600);
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-night: var(--night);
+  --color-line: var(--line);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
 
@@ -40,6 +85,29 @@
   --color-coral-a-text: var(--coral-a-text);
   --color-coral-b: var(--coral-b);
   --color-coral-b-text: var(--coral-b-text);
+  --color-coral-soft: var(--coral-soft);
+
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-sky-text: var(--sky-text);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-mint-text: var(--mint-text);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-sun-text: var(--sun-text);
+  --color-sun-icon: var(--sun-icon);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-violet-text: var(--violet-text);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-teal-text: var(--teal-text);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-rose-text: var(--rose-text);
+
+  --color-locked: var(--locked);
 
   --font-sans: var(--font-manrope), system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
@@ -51,16 +119,40 @@
   --coral-a-text: #ff7a5c;
   --coral-b: #ff6b85;
   --coral-b-text: #ff6b85;
+  --coral-soft: rgb(255 122 92 / 0.16);
+  --coral-deep: #b23a22;
+
+  --sky-soft: rgb(47 127 240 / 0.18);
+  --sky-text: #8bbcff;
+  --mint-soft: rgb(31 181 122 / 0.18);
+  --mint-text: #6fe0b1;
+  --sun-soft: rgb(245 163 0 / 0.16);
+  --sun-text: #ffc85a;
+  --sun-icon: #ffc85a;
+  --violet-soft: rgb(123 92 250 / 0.2);
+  --violet-text: #b9a8ff;
+  --teal-soft: rgb(18 165 148 / 0.18);
+  --teal-text: #5fe0cf;
+  --rose-soft: rgb(236 79 134 / 0.18);
+  --rose-text: #ff93b8;
+
+  --locked: #2c2c33;
+  --locked-deep: #1f1f25;
 
   --background: var(--ink-950);
+  --canvas: var(--ink-950);
+  --surface: var(--ink-900);
+  --night: #26262d;
+  --line: rgb(237 237 240 / 0.1);
   --foreground: var(--ink-100);
   --muted: var(--ink-400);
 }
 
 body {
-  background: var(--background);
+  background: var(--canvas);
   color: var(--foreground);
   font-family: var(--font-sans);
+  scrollbar-color: rgb(160 160 170 / 0.45) transparent;
 }
 
 ::selection {
@@ -70,4 +162,40 @@ body {
 :focus-visible {
   outline: 2px solid var(--coral-a);
   outline-offset: 2px;
+}
+
+/* Tactile 3D press: set --press to the tone's deep shade. */
+.press {
+  box-shadow: 0 5px 0 var(--press, var(--coral-deep));
+  transition:
+    transform 120ms ease-out,
+    box-shadow 120ms ease-out;
+}
+.press:is(button, a):active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--press, var(--coral-deep));
+}
+
+@keyframes pop-in {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); }
+}
+@keyframes rise-in {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes sheet-up {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.animate-pop { animation: pop-in 650ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both; }
+.animate-rise { animation: rise-in 550ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-sheet { animation: sheet-up 280ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pop,
+  .animate-rise,
+  .animate-sheet { animation: none; }
+  .press { transition: none; }
 }

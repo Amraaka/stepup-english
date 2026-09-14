@@ -27,32 +27,62 @@ export function computeStreak(activeDays: Set<string>, today: string): number {
   return streak;
 }
 
+/** Longest run of consecutive active days in the set. */
+export function computeLongestStreak(activeDays: Set<string>): number {
+  let best = 0;
+  let run = 0;
+  let prev: string | null = null;
+  for (const day of [...activeDays].sort()) {
+    run = prev !== null && prevDay(day) === prev ? run + 1 : 1;
+    best = Math.max(best, run);
+    prev = day;
+  }
+  return best;
+}
+
 export type DayAgg = { points: number; durationSec: number };
 export type WeekDay = { day: string; points: number; durationSec: number };
 
 export type TrackerStats = {
   streak: number;
+  longestStreak: number;
   totalPoints: number;
   totalMinutes: number;
   todayPoints: number;
   todayMinutes: number;
+  /** Last 7 days, oldest first; the last entry is today. */
   week: WeekDay[];
+  /** Last 35 days (5 weeks), oldest first. */
+  days: WeekDay[];
+  /** Logged minutes per activity module. */
+  moduleMinutes: Record<string, number>;
 };
 
-export function buildStats(byDay: Map<string, DayAgg>, today: string, totals: DayAgg): TrackerStats {
-  const week: WeekDay[] = [];
+const HISTORY_DAYS = 35;
+
+export function buildStats(
+  byDay: Map<string, DayAgg>,
+  today: string,
+  totals: DayAgg,
+  moduleMinutes: Record<string, number> = {},
+): TrackerStats {
+  const days: WeekDay[] = [];
   let d = today;
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < HISTORY_DAYS; i++) {
     const v = byDay.get(d) ?? { points: 0, durationSec: 0 };
-    week.unshift({ day: d, ...v });
+    days.unshift({ day: d, ...v });
     d = prevDay(d);
   }
+  const active = new Set(byDay.keys());
   return {
-    streak: computeStreak(new Set(byDay.keys()), today),
+    streak: computeStreak(active, today),
+    longestStreak: computeLongestStreak(active),
     totalPoints: totals.points,
     totalMinutes: Math.floor(totals.durationSec / 60),
     todayPoints: byDay.get(today)?.points ?? 0,
     todayMinutes: Math.floor((byDay.get(today)?.durationSec ?? 0) / 60),
-    week,
+    week: days.slice(-7),
+    days,
+    moduleMinutes,
   };
 }

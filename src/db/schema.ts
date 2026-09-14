@@ -1,3 +1,4 @@
+import { sql } from "drizzle-orm";
 import {
   bigint,
   index,
@@ -9,13 +10,23 @@ import {
   uuid,
 } from "drizzle-orm/pg-core";
 
-// Mirrors supabase/migrations/*_init_core.sql (Supabase CLI owns migrations;
+// Mirrors supabase/migrations/*.sql (Supabase CLI owns migrations;
 // Drizzle is used for typed queries only).
+
+/** Self-assessed level until the placement test exists. */
+export const ENGLISH_LEVELS = ["beginner", "elementary", "intermediate", "advanced", "unsure"] as const;
+export type EnglishLevel = (typeof ENGLISH_LEVELS)[number];
+
+export const LEARNING_GOALS = ["school", "work", "exam", "travel", "self"] as const;
+export type LearningGoal = (typeof LEARNING_GOALS)[number];
 
 export const profiles = pgTable("profiles", {
   id: uuid("id").primaryKey(),
   displayName: text("display_name").notNull().default(""),
   timezone: text("timezone").notNull().default("Asia/Ulaanbaatar"),
+  englishLevel: text("english_level").$type<EnglishLevel>(),
+  learningGoals: text("learning_goals").array().$type<LearningGoal[]>().notNull().default(sql`'{}'::text[]`),
+  onboardedAt: timestamp("onboarded_at", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 

@@ -29,7 +29,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label="Гэрэлтэй / харанхуй горим солих"
-      className="rounded-lg p-2 text-muted transition-colors hover:bg-ink-50 hover:text-foreground dark:hover:bg-ink-900"
+      className="grid size-11 shrink-0 place-items-center rounded-xl text-muted transition-colors hover:bg-canvas hover:text-foreground"
     >
       {/* sun — shown in dark mode (tap → light) */}
       <svg {...icon} className="hidden dark:block">

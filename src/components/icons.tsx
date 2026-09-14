@@ -83,6 +83,177 @@ export function UserIcon(p: P) {
   );
 }
 
+export function TargetIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <circle cx="10" cy="10" r="7" />
+      <circle cx="10" cy="10" r="3.5" />
+      <circle cx="10" cy="10" r="0.6" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function ShieldCheckIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M10 2.5 16 5v5c0 3.8-2.6 6.4-6 7.5C6.6 16.4 4 13.8 4 10V5l6-2.5Z" />
+      <path d="m7.5 9.7 1.8 1.8 3.2-3.3" />
+    </svg>
+  );
+}
+
+export function MapIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M3.5 5.5 8 3.5l4 2 4.5-2v11L12 16.5l-4-2-4.5 2v-11ZM8 3.5v11M12 5.5v11" />
+    </svg>
+  );
+}
+
+export function BoltIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M11 2.5 4.5 11H10l-1 6.5L15.5 9H10l1-6.5Z" />
+    </svg>
+  );
+}
+
+export function GiftIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M3.5 8h13v3h-13zM4.5 11h11v6h-11zM10 8v9M10 8C8 4.5 5 5 6.5 7.5M10 8c2-3.5 5-3 3.5-.5" />
+    </svg>
+  );
+}
+
+export function CheckIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="m5 10.5 3.2 3L15 6.5" />
+    </svg>
+  );
+}
+
+export function ChevronRightIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="m8 5 5 5-5 5" />
+    </svg>
+  );
+}
+
+export function ArrowUpIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M10 15V5M5.5 9.5 10 5l4.5 4.5" />
+    </svg>
+  );
+}
+
+export function MedalIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <circle cx="10" cy="8" r="4.5" />
+      <path d="m7.5 12-1.5 5.5 4-2 4 2-1.5-5.5" />
+    </svg>
+  );
+}
+
+export function CalendarIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="3.5" y="4.5" width="13" height="12" rx="2" />
+      <path d="M3.5 8.5h13M7 3v3M13 3v3" />
+    </svg>
+  );
+}
+
+export function PlusIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M10 4v12M4 10h12" />
+    </svg>
+  );
+}
+
+export function XIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="m5 5 10 10M15 5 5 15" />
+    </svg>
+  );
+}
+
+export function VocabularyIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="3.5" y="4" width="13" height="12" rx="2" />
+      <path d="m6.3 13 2.1-6 2.1 6M7.1 11h2.6M13.6 9.3v3.7M12.3 10.4c.4-.7 1.1-1.1 1.9-1" />
+    </svg>
+  );
+}
+
+export function GrammarIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M4 5.5h10M4 9.5h7M4 13.5h5M11.5 13.8l2 2 3.5-3.8" />
+    </svg>
+  );
+}
+
+export function PanelCloseIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="3" y="3.5" width="14" height="13" rx="2" />
+      <path d="M8 3.5v13M13.6 8.2 11.8 10l1.8 1.8" />
+    </svg>
+  );
+}
+
+export function PanelOpenIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="3" y="3.5" width="14" height="13" rx="2" />
+      <path d="M8 3.5v13M11.6 8.2 13.4 10l-1.8 1.8" />
+    </svg>
+  );
+}
+
+export function HeadphonesIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M3.5 13v-2.5a6.5 6.5 0 0 1 13 0V13" />
+      <rect x="3" y="11.5" width="3.5" height="5" rx="1.3" />
+      <rect x="13.5" y="11.5" width="3.5" height="5" rx="1.3" />
+    </svg>
+  );
+}
+
+export function BookIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M10 5.5C8.5 4.2 6.3 3.8 3.5 4v11c2.8-.2 5 .2 6.5 1.5M10 5.5c1.5-1.3 3.7-1.7 6.5-1.5v11c-2.8-.2-5 .2-6.5 1.5M10 5.5v11" />
+    </svg>
+  );
+}
+
+export function PencilIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M12.5 4.5 15.5 7.5M3.5 16.5l.8-3.6 9.3-9.3a1.5 1.5 0 0 1 2.1 0l.7.7a1.5 1.5 0 0 1 0 2.1l-9.3 9.3-3.6.8Z" />
+    </svg>
+  );
+}
+
+export function MicIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="7.5" y="2.5" width="5" height="9" rx="2.5" />
+      <path d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v2.5" />
+    </svg>
+  );
+}
+
 export function SignInIcon(p: P) {
   return (
     <svg {...base(p)}>

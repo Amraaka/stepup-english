@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+  <style>
+    body { margin: 0; background: #F6F6F8; font-family: Manrope, "Segoe UI", system-ui, sans-serif; color: #1A1A1F; -webkit-font-smoothing: antialiased; }
+    a { color: #C8361B; } a:hover { color: #FF5A3C; }
+    p, h1, h2, h3 { margin: 0; }
+    .i { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .num { font-variant-numeric: tabular-nums; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 1600px; background: #F6F6F8; position: relative; overflow: hidden;">
+  <div style="position: absolute; left: 0; right: 0; top: 0; height: 340px; background: radial-gradient(80% 70% at 85% 0%, rgba(255,90,60,0.16), rgba(255,90,60,0) 70%);"></div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 16px; padding: 12px 16px 110px;">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; height: 48px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="width: 32px; height: 32px; border-radius: 10px; background: #1A1A1F; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path d="M4 14 Q9 11 15 5" stroke="#FF5A3C" stroke-width="2.4" stroke-linecap="round" fill="none"></path><circle cx="15.5" cy="4.5" r="2" fill="#FF4D6D"></circle></svg>
+        </div>
+        <span style="font-size: 16px; font-weight: 800; letter-spacing: -0.02em;">StepUp</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 14px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 6px 18px -10px rgba(18,18,21,0.25);">
+          <span style="display: flex; align-items: center; gap: 4px; color: #FF5A3C;"><svg class="i" viewBox="0 0 20 20" style="fill: #FF5A3C; stroke: #FF5A3C;"><path d="M10 2.5c.6 2.6-.8 3.9-2.3 5.4C6.2 9.4 5 10.9 5 13a5 5 0 0 0 10 0c0-1.6-.6-3-1.6-4.3-.4 1-.9 1.6-1.9 2.2.3-2.9-.2-6-1.5-8.4Z"></path></svg><b class="num" style="font-size: 15px; color: #1A1A1F;">12</b></span>
+          <span style="width: 1px; height: 18px; background: rgba(160,160,170,0.35);"></span>
+          <span style="display: flex; align-items: center; gap: 4px;"><svg class="i" viewBox="0 0 20 20" style="fill: #F5A300; stroke: #F5A300;"><path d="M11 2.5 4.5 11H10l-1 6.5L15.5 9H10l1-6.5Z"></path></svg><b class="num" style="font-size: 15px;">1 240</b></span>
+        </div>
+        <div style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px -10px rgba(18,18,21,0.25); position: relative;">
+          <svg class="i" viewBox="0 0 20 20"><path d="M5 14V9a5 5 0 0 1 10 0v5l1.5 1.5h-13Z M8.5 17.5h3"></path></svg>
+          <span style="position: absolute; top: 10px; right: 11px; width: 8px; height: 8px; border-radius: 50%; background: #FF5A3C; border: 2px solid #FFFFFF;"></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+      <div style="display: flex; flex-direction: column; gap: 6px;">
+        <h1 style="font-size: 26px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em;">Сайн уу,<br>Тэмүүлэн!</h1>
+        <p style="font-size: 14px; line-height: 1.45; color: #5C5C66; max-width: 22ch;">12 хоног дараалан. Өнөөдөр 8 минут л үлдлээ.</p>
+      </div>
+      <div style="width: 112px; height: 112px; flex-shrink: 0;">
+        <dc-import name="Mascot" mood="happy" hint-size="112px,112px"></dc-import>
+      </div>
+    </div>
+
+    <div style="background: #FF5A3C; border-radius: 28px; padding: 20px; display: flex; align-items: center; gap: 16px; box-shadow: 0 18px 36px -18px rgba(255,90,60,0.7); color: #121215;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+        <p style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em;">ӨДРИЙН ЗОРИЛГО</p>
+        <p class="num" style="font-size: 34px; line-height: 1; font-weight: 800; letter-spacing: -0.03em;">12<span style="font-size: 20px; opacity: 0.6;"> / 20 мин</span></p>
+        <p style="font-size: 13px; font-weight: 600; opacity: 0.8;">Дахиад 8 минут — өдрөө биелүүл</p>
+        <div style="margin-top: 8px; display: flex;">
+          <div style="display: flex; align-items: center; gap: 6px; height: 44px; padding: 0 18px; border-radius: 999px; background: #121215; color: #FFFFFF; font-size: 14px; font-weight: 800;">Одоо эхлэх <svg class="i" viewBox="0 0 20 20" style="width: 16px; height: 16px;"><path d="M4 10h12M11 5l5 5-5 5"></path></svg></div>
+        </div>
+      </div>
+      <div style="width: 104px; height: 104px; position: relative; flex-shrink: 0;">
+        <svg viewBox="0 0 104 104" style="width: 104px; height: 104px; transform: rotate(-90deg);">
+          <circle cx="52" cy="52" r="42" stroke="rgba(255,255,255,0.35)" stroke-width="12" fill="none"></circle>
+          <circle cx="52" cy="52" r="42" stroke="#121215" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="158 264"></circle>
+        </svg>
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <span class="num" style="font-size: 22px; font-weight: 800;">60%</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <p style="font-size: 15px; font-weight: 800;">Энэ 7 хоног</p>
+        <span style="display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 700; color: #1459B8; background: #DCEBFF; padding: 5px 10px; border-radius: 999px;"><svg class="i" viewBox="0 0 20 20" style="width: 14px; height: 14px;"><path d="M10 2.5 16 5v5c0 3.8-2.6 6.4-6 7.5C6.6 16.4 4 13.8 4 10V5l6-2.5Z"></path></svg>Хамгаалалт 2</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px;">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 700; color: #5C5C66;">Да</span><div style="width: 38px; height: 38px; border-radius: 50%; background: #FF5A3C; display: flex; align-items: center; justify-content: center; color: #121215;"><svg class="i" viewBox="0 0 20 20" style="stroke-width: 2.6; width: 18px; height: 18px;"><path d="M5 10.5l3.2 3L15 6.5"></path></svg></div></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 700; color: #5C5C66;">Мя</span><div style="width: 38px; height: 38px; border-radius: 50%; background: #FF5A3C; display: flex; align-items: center; justify-content: center; color: #121215;"><svg class="i" viewBox="0 0 20 20" style="stroke-width: 2.6; width: 18px; height: 18px;"><path d="M5 10.5l3.2 3L15 6.5"></path></svg></div></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 700; color: #5C5C66;">Лх</span><div style="width: 38px; height: 38px; border-radius: 50%; background: #FF5A3C; display: flex; align-items: center; justify-content: center; color: #121215;"><svg class="i" viewBox="0 0 20 20" style="stroke-width: 2.6; width: 18px; height: 18px;"><path d="M5 10.5l3.2 3L15 6.5"></path></svg></div></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 700; color: #5C5C66;">Пү</span><div style="width: 38px; height: 38px; border-radius: 50%; background: #DCEBFF; display: flex; align-items: center; justify-content: center; color: #1459B8;"><svg class="i" viewBox="0 0 20 20" style="width: 18px; height: 18px;"><path d="M10 2.5 16 5v5c0 3.8-2.6 6.4-6 7.5C6.6 16.4 4 13.8 4 10V5l6-2.5Z"></path></svg></div></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 700; color: #5C5C66;">Ба</span><div style="width: 38px; height: 38px; border-radius: 50%; background: #FF5A3C; display: flex; align-items: center; justify-content: center; color: #121215;"><svg class="i" viewBox="0 0 20 20" style="stroke-width: 2.6; width: 18px; height: 18px;"><path d="M5 10.5l3.2 3L15 6.5"></path></svg></div></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 800; color: #C8361B;">Бя</span><div style="width: 38px; height: 38px; box-sizing: border-box; border-radius: 50%; border: 3px dashed #FF5A3C; display: flex; align-items: center; justify-content: center; color: #FF5A3C;"><svg class="i" viewBox="0 0 20 20" style="fill: #FF5A3C; width: 16px; height: 16px;"><path d="M10 2.5c.6 2.6-.8 3.9-2.3 5.4C6.2 9.4 5 10.9 5 13a5 5 0 0 0 10 0c0-1.6-.6-3-1.6-4.3-.4 1-.9 1.6-1.9 2.2.3-2.9-.2-6-1.5-8.4Z"></path></svg></div></div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;"><span style="font-size: 11px; font-weight: 700; color: #A0A0AA;">Ня</span><div style="width: 38px; height: 38px; border-radius: 50%; background: #EDEDF0;"></div></div>
+      </div>
+      <p style="font-size: 12px; color: #5C5C66; line-height: 1.45;">Пүрэв гаригт хамгаалалт ашиглаж streak-ээ хадгалсан. Санаа зоволтгүй — нэг өдөр алгасах нь зүгээр.</p>
+    </div>
+
+    <div style="background: #1A1A1F; border-radius: 24px; padding: 18px; display: flex; align-items: center; gap: 14px; color: #EDEDF0;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+        <p style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #FF7A5C;">ҮРГЭЛЖЛҮҮЛЭХ</p>
+        <p style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em;">Кафед захиалга өгөх</p>
+        <p style="font-size: 12px; color: #A0A0AA;">Сонсгол · A2 · 3-р хичээл</p>
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 6px;">
+          <div style="flex: 1; height: 8px; border-radius: 999px; background: rgba(237,237,240,0.14); overflow: hidden;"><div style="width: 60%; height: 100%; border-radius: 999px; background: #FF7A5C;"></div></div>
+          <span class="num" style="font-size: 12px; font-weight: 700; color: #A0A0AA;">60%</span>
+        </div>
+      </div>
+      <div style="width: 60px; height: 60px; border-radius: 50%; background: #FF5A3C; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 5px 0 #C8361B;">
+        <svg viewBox="0 0 20 20" style="width: 22px; height: 22px; margin-left: 3px;"><path d="M6 4.5v11l9-5.5-9-5.5Z" fill="#121215"></path></svg>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 6px;">
+      <h2 style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em;">Ур чадвар</h2>
+      <a href="#" style="font-size: 13px; font-weight: 700; text-decoration: none;">Бүгдийг харах</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+      <div style="background: #DCEBFF; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; color: #2F7FF0; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20" style="width: 24px; height: 24px;"><path d="M3.5 13v-2.5a6.5 6.5 0 0 1 13 0V13 M4.3 11.5h1.4a.8.8 0 0 1 .8.8v3.4a.8.8 0 0 1-.8.8H4.3a1.3 1.3 0 0 1-1.3-1.3v-2.4a1.3 1.3 0 0 1 1.3-1.3Z M14.3 11.5h1.4a1.3 1.3 0 0 1 1.3 1.3v2.4a1.3 1.3 0 0 1-1.3 1.3h-1.4a.8.8 0 0 1-.8-.8v-3.4a.8.8 0 0 1 .8-.8Z"></path></svg></div>
+        <div><p style="font-size: 16px; font-weight: 800;">Сонсгол</p><p style="font-size: 12px; color: #1459B8; font-weight: 600;">A2 · 3/12 хичээл</p></div>
+        <div style="height: 8px; border-radius: 999px; background: rgba(20,89,184,0.14); overflow: hidden;"><div style="width: 25%; height: 100%; background: #2F7FF0; border-radius: 999px;"></div></div>
+      </div>
+      <div style="background: #D5F4E6; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; color: #1FB57A; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20" style="width: 24px; height: 24px;"><path d="M10 5.5C8.5 4.2 6.3 3.8 3.5 4v11c2.8-.2 5 .2 6.5 1.5M10 5.5c1.5-1.3 3.7-1.7 6.5-1.5v11c-2.8-.2-5 .2-6.5 1.5M10 5.5v11"></path></svg></div>
+        <div><p style="font-size: 16px; font-weight: 800;">Унших</p><p style="font-size: 12px; color: #0B7A50; font-weight: 600;">A2 · 7/12 хичээл</p></div>
+        <div style="height: 8px; border-radius: 999px; background: rgba(11,122,80,0.14); overflow: hidden;"><div style="width: 58%; height: 100%; background: #1FB57A; border-radius: 999px;"></div></div>
+      </div>
+      <div style="background: #FFEFC7; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; color: #D98E00; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20" style="width: 24px; height: 24px;"><path d="M12.5 4.5 15.5 7.5M3.5 16.5l.8-3.6 9.3-9.3a1.5 1.5 0 0 1 2.1 0l.7.7a1.5 1.5 0 0 1 0 2.1l-9.3 9.3-3.6.8Z"></path></svg></div>
+        <div><p style="font-size: 16px; font-weight: 800;">Бичих</p><p style="font-size: 12px; color: #8F5500; font-weight: 600;">A1 · 2/10 бичвэр</p></div>
+        <div style="height: 8px; border-radius: 999px; background: rgba(143,85,0,0.14); overflow: hidden;"><div style="width: 20%; height: 100%; background: #F5A300; border-radius: 999px;"></div></div>
+      </div>
+      <div style="background: #E7E1FF; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="width: 44px; height: 44px; border-radius: 14px; background: #FFFFFF; color: #7B5CFA; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20" style="width: 24px; height: 24px;"><path d="M12.5 5a2.5 2.5 0 0 0-5 0v4.5a2.5 2.5 0 0 0 5 0V5Z M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v2.5"></path></svg></div>
+        <div><p style="font-size: 16px; font-weight: 800;">Ярих</p><p style="font-size: 12px; color: #4E2FD0; font-weight: 600;">A1 · 1/10 дасгал</p></div>
+        <div style="height: 8px; border-radius: 999px; background: rgba(78,47,208,0.14); overflow: hidden;"><div style="width: 10%; height: 100%; background: #7B5CFA; border-radius: 999px;"></div></div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 6px;">
+      <h2 style="font-size: 18px; font-weight: 800; letter-spacing: -0.01em;">Өнөөдрийн даалгавар</h2>
+      <span style="font-size: 12px; font-weight: 700; color: #5C5C66;">14 цаг үлдсэн</span>
+    </div>
+    <div style="background: #FFFFFF; border-radius: 24px; padding: 6px 16px; display: flex; flex-direction: column;">
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(160,160,170,0.18);">
+        <div style="width: 40px; height: 40px; border-radius: 12px; background: #FFE4DD; color: #FF5A3C; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20"><path d="M17 10a7 7 0 1 1-14 0a7 7 0 1 1 14 0Z M10 6.5V10l2.4 1.7"></path></svg></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between;"><p style="font-size: 14px; font-weight: 700;">20 минут суралц</p><span class="num" style="font-size: 12px; font-weight: 700; color: #5C5C66;">12/20</span></div>
+          <div style="height: 8px; border-radius: 999px; background: #EDEDF0; overflow: hidden;"><div style="width: 60%; height: 100%; background: #FF5A3C; border-radius: 999px;"></div></div>
+        </div>
+        <div style="width: 36px; height: 36px; color: #D98E00; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20" style="width: 26px; height: 26px;"><path d="M3.5 8h13v3h-13z M4.5 11h11v6h-11z M10 8v9 M10 8C8 4.5 5 5 6.5 7.5 M10 8c2-3.5 5-3 3.5-.5"></path></svg></div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(160,160,170,0.18);">
+        <div style="width: 40px; height: 40px; border-radius: 12px; background: #D5F4E6; color: #1FB57A; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20"><path d="M10 5.5C8.5 4.2 6.3 3.8 3.5 4v11c2.8-.2 5 .2 6.5 1.5M10 5.5c1.5-1.3 3.7-1.7 6.5-1.5v11c-2.8-.2-5 .2-6.5 1.5M10 5.5v11"></path></svg></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between;"><p style="font-size: 14px; font-weight: 700;">10 шинэ үг сур</p><span class="num" style="font-size: 12px; font-weight: 800; color: #0B7A50;">10/10</span></div>
+          <div style="height: 8px; border-radius: 999px; background: #EDEDF0; overflow: hidden;"><div style="width: 100%; height: 100%; background: #1FB57A; border-radius: 999px;"></div></div>
+        </div>
+        <div style="height: 32px; padding: 0 12px; border-radius: 999px; background: #1FB57A; color: #FFFFFF; font-size: 12px; font-weight: 800; display: flex; align-items: center; box-shadow: 0 3px 0 #138A5A;">Авах</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; padding: 12px 0;">
+        <div style="width: 40px; height: 40px; border-radius: 12px; background: #FFEFC7; color: #D98E00; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20"><path d="M12.5 4.5 15.5 7.5M3.5 16.5l.8-3.6 9.3-9.3a1.5 1.5 0 0 1 2.1 0l.7.7a1.5 1.5 0 0 1 0 2.1l-9.3 9.3-3.6.8Z"></path></svg></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between;"><p style="font-size: 14px; font-weight: 700;">1 бичвэр илгээ</p><span class="num" style="font-size: 12px; font-weight: 700; color: #5C5C66;">0/1</span></div>
+          <div style="height: 8px; border-radius: 999px; background: #EDEDF0;"></div>
+        </div>
+        <div style="width: 36px; height: 36px; color: #D98E00; display: flex; align-items: center; justify-content: center;"><svg class="i" viewBox="0 0 20 20" style="width: 26px; height: 26px;"><path d="M3.5 8h13v3h-13z M4.5 11h11v6h-11z M10 8v9 M10 8C8 4.5 5 5 6.5 7.5 M10 8c2-3.5 5-3 3.5-.5"></path></svg></div>
+      </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-radius: 24px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 52px; height: 52px; border-radius: 16px; background: linear-gradient(160deg, #C9D2DE, #8E9AAD); display: flex; align-items: center; justify-content: center; color: #FFFFFF; box-shadow: inset 0 -3px 0 rgba(0,0,0,0.12);"><svg class="i" viewBox="0 0 20 20" style="width: 28px; height: 28px; stroke-width: 2;"><path d="M10 2.5 16 5v5c0 3.8-2.6 6.4-6 7.5C6.6 16.4 4 13.8 4 10V5l6-2.5Z M7.5 9.5l1.8 1.8 3.2-3.3"></path></svg></div>
+        <div style="flex: 1;">
+          <p style="font-size: 16px; font-weight: 800;">Мөнгөн лиг</p>
+          <p style="font-size: 12px; color: #5C5C66;">4-р байр · 3 хоног үлдлээ</p>
+        </div>
+        <div style="display: flex;">
+          <span style="width: 30px; height: 30px; border-radius: 50%; background: #7B5CFA; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFFFF;">А</span>
+          <span style="width: 30px; height: 30px; border-radius: 50%; background: #2F7FF0; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFFFF; margin-left: -8px;">Б</span>
+          <span style="width: 30px; height: 30px; border-radius: 50%; background: #1FB57A; color: #FFFFFF; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid #FFFFFF; margin-left: -8px;">Н</span>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 14px; background: #D5F4E6; color: #0B7A50; font-size: 12px; font-weight: 700;">
+        <svg class="i" viewBox="0 0 20 20" style="width: 16px; height: 16px; stroke-width: 2.2;"><path d="M10 15V5M5.5 9.5 10 5l4.5 4.5"></path></svg>
+        Дээш гарах бүс хүртэл 120 оноо
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 84px;">
+    <dc-import name="TabBar" active="home" hint-size="390px,84px"></dc-import>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
