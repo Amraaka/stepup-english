@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CLIPS, getClip } from "@/lib/listening/clips";
+import { getClip } from "@/lib/listening/clips";
+import { getCurrentUser } from "@/lib/auth";
+import { savedLemmas } from "@/lib/vocab/words";
 import { ClipPlayer } from "@/components/listening/clip-player";
-
-export function generateStaticParams() {
-  return CLIPS.map((c) => ({ slug: c.slug }));
-}
 
 export async function generateMetadata({ params }: PageProps<"/listening/[slug]">): Promise<Metadata> {
   const clip = getClip((await params).slug);
@@ -15,5 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/listening/[slug]"
 export default async function Page({ params }: PageProps<"/listening/[slug]">) {
   const clip = getClip((await params).slug);
   if (!clip) notFound();
-  return <ClipPlayer clip={clip} />;
+  const user = await getCurrentUser();
+  const lemmas = user ? await savedLemmas(user.id) : [];
+  return <ClipPlayer clip={clip} savedLemmas={lemmas} />;
 }

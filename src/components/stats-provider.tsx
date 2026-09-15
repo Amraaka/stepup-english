@@ -15,9 +15,10 @@ import {
   localDay,
   pointsForStudyLog,
   type DayAgg,
+  type TimedTarget,
   type TrackerStats,
 } from "@/lib/tracker";
-import { logListeningAction, logStudyAction } from "@/app/(site)/actions";
+import { logStudyAction, logTimedAction } from "@/app/(site)/actions";
 import { GUEST_EVENTS_KEY } from "@/lib/guest";
 import { LogSheet } from "@/components/game/log-sheet";
 import { Celebration, type CelebrationData } from "@/components/game/celebration";
@@ -83,8 +84,8 @@ type StatsContext = {
   stats: TrackerStats;
   isGuest: boolean;
   openLog: (module?: string) => void;
-  /** Logs measured listening time; `celebrate` shows the celebration screen. */
-  logListening: (slug: string, seconds: number, celebrate: boolean) => void;
+  /** Logs time a module measured; `celebrate` shows the celebration screen. */
+  logTimed: (target: TimedTarget, seconds: number, celebrate: boolean) => void;
 };
 
 const Ctx = createContext<StatsContext | null>(null);
@@ -158,12 +159,15 @@ export function StatsProvider({
     });
   }
 
-  const logListening = useCallback(
-    async (slug: string, seconds: number, celebrate: boolean) => {
+  const logTimed = useCallback(
+    async (target: TimedTarget, seconds: number, celebrate: boolean) => {
       if (seconds < MIN_TIMED_SEC) return;
       const before = stats;
       let after: TrackerStats;
       if (isGuest) {
+        // Guests can only listen (saving and review need an account, ADR 0010).
+        if (target.module !== "listening") return;
+        const slug = target.ref;
         // Same rule as the server: points follow cumulative time for this clip today.
         const day = localDay(new Date(), TZ);
         const prev = guestStore.getSnapshot().filter((e) => e.ref === slug && e.day === day);
@@ -179,16 +183,18 @@ export function StatsProvider({
         });
         after = guestStats(guestStore.getSnapshot());
       } else {
-        const res = await logListeningAction(slug, seconds).catch(() => null);
+        const res = await logTimedAction(target, seconds).catch(() => null);
         if (!res) return;
         setMemberStats(res);
         after = res;
       }
-      if (celebrate) {
+      const earned = after.todayPoints - before.todayPoints;
+      // Repeat sessions within the cumulative window can earn 0 — no "+0" celebration.
+      if (celebrate && earned > 0) {
         setCelebration({
           firstToday: before.todayPoints === 0,
           streak: after.streak,
-          earned: after.todayPoints - before.todayPoints,
+          earned,
           todayMinutes: after.todayMinutes,
           week: after.week,
           isGuest,
@@ -199,8 +205,8 @@ export function StatsProvider({
   );
 
   const value = useMemo(
-    () => ({ stats, isGuest, openLog, logListening }),
-    [stats, isGuest, openLog, logListening],
+    () => ({ stats, isGuest, openLog, logTimed }),
+    [stats, isGuest, openLog, logTimed],
   );
 
   return (

@@ -6,6 +6,7 @@ import type { Clip } from "@/lib/listening/types";
 import { fmtClock } from "@/lib/listening/clips";
 import { lookupWord, phraseAt, wordKey } from "@/lib/listening/glossary";
 import { MIN_TIMED_SEC } from "@/lib/tracker";
+import { saveWordAction } from "@/app/(site)/vocabulary/actions";
 import { useStats } from "@/components/stats-provider";
 import { WordSheet, type WordPick } from "@/components/listening/word-sheet";
 import { EyeIcon, EyeOffIcon, PauseIcon, PlayIcon, ReplayIcon } from "@/components/icons";
@@ -29,7 +30,7 @@ function activeIndex(clip: Clip, t: number): number {
   return idx;
 }
 
-export function ClipPlayer({ clip }: { clip: Clip }) {
+export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: string[] }) {
   const audio = useRef<HTMLAudioElement>(null);
   const segEls = useRef<(HTMLParagraphElement | null)[]>([]);
   const [playing, setPlaying] = useState(false);
@@ -105,6 +106,25 @@ export function ClipPlayer({ clip }: { clip: Clip }) {
     audio.current?.pause();
   }
 
+  // ── Saving words (ADR 0010) ─────────────────────────────────────────────
+  const [saved, setSaved] = useState(() => new Set(savedLemmas));
+  const [saving, setSaving] = useState(false);
+
+  async function saveCurrent() {
+    const lemma = pick?.entry?.lemma;
+    if (!pick || !lemma || !marked) return;
+    setSaving(true);
+    const ok = await saveWordAction({
+      lemma,
+      surface: pick.surface,
+      sentence: pick.sentence,
+      clip: clip.slug,
+      seg: marked.seg,
+    }).catch(() => false);
+    setSaving(false);
+    if (ok) setSaved((s) => new Set(s).add(lemma));
+  }
+
   const closePick = useCallback(() => {
     setPick(null);
     setMarked(null);
@@ -113,11 +133,11 @@ export function ClipPlayer({ clip }: { clip: Clip }) {
 
   // ── Automatic time logging (ADR 0009) ───────────────────────────────────
   // Counts seconds only while audio plays in a visible tab, capped at twice the clip.
-  const { logListening } = useStats();
-  const logRef = useRef(logListening);
+  const { logTimed, isGuest } = useStats();
+  const logRef = useRef(logTimed);
   useEffect(() => {
-    logRef.current = logListening;
-  }, [logListening]);
+    logRef.current = logTimed;
+  }, [logTimed]);
   const pending = useRef(0);
   const counted = useRef(0);
 
@@ -126,7 +146,7 @@ export function ClipPlayer({ clip }: { clip: Clip }) {
       const seconds = pending.current;
       if (seconds < MIN_TIMED_SEC) return;
       pending.current = 0;
-      logRef.current(clip.slug, seconds, celebrate);
+      logRef.current({ module: "listening", ref: clip.slug }, seconds, celebrate);
     },
     [clip.slug],
   );
@@ -327,7 +347,24 @@ export function ClipPlayer({ clip }: { clip: Clip }) {
         </div>
       </div>
 
-      {pick && <WordSheet pick={pick} onClose={closePick} />}
+      {pick && (
+        <WordSheet
+          pick={pick}
+          onClose={closePick}
+          save={
+            !pick.entry
+              ? null
+              : isGuest
+                ? "guest"
+                : saved.has(pick.entry.lemma)
+                  ? "saved"
+                  : saving
+                    ? "saving"
+                    : "idle"
+          }
+          onSave={saveCurrent}
+        />
+      )}
     </div>
   );
 }

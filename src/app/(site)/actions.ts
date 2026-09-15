@@ -5,26 +5,32 @@ import { createClient } from "@/lib/supabase/server";
 import { getDashboardStats, getProfile, logStudySession, logTimedSession } from "@/lib/activity";
 import { ACTIVITY_MODULES, type ActivityModule } from "@/db/schema";
 import { getClip } from "@/lib/listening/clips";
-import { MIN_TIMED_SEC, type TrackerStats } from "@/lib/tracker";
+import { MIN_TIMED_SEC, type TimedTarget, type TrackerStats } from "@/lib/tracker";
 
-/** Logs time measured while listening to a clip; returns fresh stats, or null if rejected. */
-export async function logListeningAction(slug: string, seconds: number): Promise<TrackerStats | null> {
+/** Longest word-review session one flush may claim, in seconds. */
+const MAX_REVIEW_SEC = 3600;
+
+/** Logs time a module measured (listening, word review); returns fresh stats, or null if rejected. */
+export async function logTimedAction(target: TimedTarget, seconds: number): Promise<TrackerStats | null> {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) return null;
+  if (!user || !Number.isFinite(seconds) || seconds < MIN_TIMED_SEC) return null;
 
-  const clip = getClip(slug);
-  if (!clip || !Number.isFinite(seconds) || seconds < MIN_TIMED_SEC) return null;
+  let cap: number;
+  if (target.module === "listening") {
+    const clip = getClip(target.ref);
+    if (!clip) return null;
+    // Replaying is fine, but one flush can't claim more than twice the clip.
+    cap = clip.durationSec * 2;
+  } else if (target.module === "vocabulary" && target.ref === "review") {
+    cap = MAX_REVIEW_SEC;
+  } else {
+    return null;
+  }
 
-  // Replaying is fine, but one flush can't claim more than twice the clip.
-  await logTimedSession({
-    userId: user.id,
-    module: "listening",
-    seconds: Math.min(seconds, clip.durationSec * 2),
-    ref: slug,
-  });
+  await logTimedSession({ userId: user.id, module: target.module, seconds: Math.min(seconds, cap), ref: target.ref });
   const profile = await getProfile(user.id);
   revalidatePath("/", "layout");
   return getDashboardStats(user.id, profile?.timezone ?? "Asia/Ulaanbaatar");

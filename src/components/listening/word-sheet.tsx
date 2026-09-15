@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { POS_LABEL } from "@/lib/listening/glossary";
 import type { GlossEntry } from "@/lib/listening/types";
-import { XIcon } from "@/components/icons";
+import { CheckIcon, XIcon } from "@/components/icons";
 
 export type WordPick = {
   /** Text as it appears in the transcript ("served", "give up"). */
@@ -35,8 +36,21 @@ function Meaning({ surface, entry, size }: { surface: string; entry: GlossEntry 
   );
 }
 
+export type SaveState = "idle" | "saving" | "saved" | "guest";
+
 /** Bottom sheet with a tapped word's meaning. The player pauses while it is open. */
-export function WordSheet({ pick, onClose }: { pick: WordPick; onClose: () => void }) {
+export function WordSheet({
+  pick,
+  onClose,
+  save,
+  onSave,
+}: {
+  pick: WordPick;
+  onClose: () => void;
+  /** null when the word has no glossary entry (nothing to review later). */
+  save: SaveState | null;
+  onSave: () => void;
+}) {
   const panel = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -83,13 +97,43 @@ export function WordSheet({ pick, onClose }: { pick: WordPick; onClose: () => vo
 
         <p className="mt-4 border-l-4 border-sky pl-3 text-[15px] leading-relaxed text-muted">{pick.sentence}</p>
 
-        <button
-          type="button"
-          onClick={onClose}
-          className="press mt-5 h-14 w-full rounded-2xl bg-sky text-base font-extrabold text-ink-950 [--press:var(--sky-deep)]"
-        >
-          Үргэлжлүүлэх
-        </button>
+        <div className="mt-5 flex gap-2.5">
+          {save === "guest" && (
+            <Link
+              href="/login"
+              className="flex h-14 flex-1 items-center justify-center rounded-2xl border-2 border-line px-3 text-center text-sm font-extrabold leading-tight"
+            >
+              Нэвтэрч үгээ хадгалах
+            </Link>
+          )}
+          {(save === "idle" || save === "saving" || save === "saved") && (
+            <button
+              type="button"
+              onClick={onSave}
+              disabled={save !== "idle"}
+              className="flex h-14 flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-teal text-base font-extrabold text-teal-text transition-colors disabled:cursor-default aria-disabled:opacity-60"
+              aria-disabled={save === "saving"}
+            >
+              {save === "saved" ? (
+                <>
+                  <CheckIcon className="size-5 [stroke-width:2.4]" />
+                  Хадгалсан
+                </>
+              ) : save === "saving" ? (
+                "Хадгалж байна…"
+              ) : (
+                "Хадгалах"
+              )}
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={onClose}
+            className="press h-14 flex-1 rounded-2xl bg-sky text-base font-extrabold text-ink-950 [--press:var(--sky-deep)]"
+          >
+            Үргэлжлүүлэх
+          </button>
+        </div>
       </div>
     </div>
   );

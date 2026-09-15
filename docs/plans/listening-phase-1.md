@@ -8,7 +8,7 @@ Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.m
 | Phase | Outcome | Status |
 |---|---|---|
 | **1. Hosted clip player** | A learner opens `/listening`, picks a clip, listens with a synced transcript, taps a word to see its Mongolian meaning, replays sentences, slows to 0.75x, hides the transcript. Listening time logs to the tracker automatically. | In progress |
-| 2. Saved words + flashcards | Save a word from the tap sheet (members). Daily SRS review with "Санасан / Мартсан", sentence + TTS, daily cap 20. | Planned |
+| 2. Saved words + flashcards | Save a word from the tap sheet (members). Daily SRS review with "Санасан / Мартсан", sentence + TTS, daily cap 20. | Done (ADR 0010) |
 | 3. Active listening | Dictation and gap-fill generated from transcripts. 3 optional questions after a clip. | Planned |
 | 4. Shadowing | Record yourself per sentence and compare with the original. Clip audio on flashcards (hosted content only). | Planned |
 | 5. Paid AI | Pronunciation scoring with Mongolian explanations. | Planned |
@@ -52,6 +52,24 @@ Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.m
   - The manual log sheet now says that listening time on StepUp is logged automatically.
   - "U.S." followed by a sentence starter ("It", "The" …) now ends a sentence, so Yellowstone has 30 sentences.
   - `align.py` lists every word whose timing was interpolated, so those sentences can be checked by ear. All flagged words are mid-sentence (numbers, "U.S.", "six-member"), apart from "slave holder." at the end of Washington sentence 18.
+
+## Phase 2 — saved words and review (2026-09-15)
+
+- Built:
+  - The `saved_words` table and migration, with RLS on every operation.
+  - "Хадгалах" on the word sheet. Guests get a sign-in link instead.
+  - `/vocabulary`, which lists saved words with their box and source clip, lets a learner delete a word and opens the review.
+  - `/vocabulary/review`: TTS for the word and its sentence, meaning on reveal, "Санасан / Мартсан", with forgotten cards returning at the end of the session.
+  - Review time logs as `vocabulary` / `review`.
+  - Timed logging now goes through one path: `logTimedAction` and `logTimed` in the stats provider.
+- Verified on local Supabase with a test member at 390×844:
+  - Saving *presided*, *give up* (the phrase) and *sword* wrote rows with their lemma and source.
+  - 63 s of listening logged `listening` (63 s, 10 points).
+  - The review moved the cards to box 1, due in 1 day.
+  - The review session logged `vocabulary` (100 s, 10 points) and showed the celebration.
+- Fixed during testing:
+  - Logging review time revalidated the review page. With the queue empty, the page redirected away from the finish screen. It now always renders the session, and the session keeps its card count from mount.
+  - A repeat session inside the 3-hour cumulative window correctly earns 0 points, but it showed a "+0" celebration. Timed logs now celebrate only when points were earned.
 
 ## Out of scope for phase 1
 

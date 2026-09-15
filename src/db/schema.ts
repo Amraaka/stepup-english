@@ -5,8 +5,10 @@ import {
   integer,
   jsonb,
   pgTable,
+  smallint,
   text,
   timestamp,
+  unique,
   uuid,
 } from "drizzle-orm/pg-core";
 
@@ -57,4 +59,24 @@ export const activityEvents = pgTable(
     meta: jsonb("meta").notNull().default({}),
   },
   (t) => [index("activity_events_user_occurred_idx").on(t.userId, t.occurredAt.desc())],
+);
+
+export type SavedWordSource = { clip?: string; seg?: number };
+
+/** A learner's saved word and its review state (ADR 0010). Meanings come from the glossary. */
+export const savedWords = pgTable(
+  "saved_words",
+  {
+    id: bigint("id", { mode: "number" }).primaryKey().generatedAlwaysAsIdentity(),
+    userId: uuid("user_id").notNull(),
+    lemma: text("lemma").notNull(),
+    surface: text("surface").notNull(),
+    sentence: text("sentence").notNull().default(""),
+    source: jsonb("source").$type<SavedWordSource>().notNull().default({}),
+    box: smallint("box").notNull().default(0),
+    dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
+    lastReviewedAt: timestamp("last_reviewed_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [unique().on(t.userId, t.lemma), index("saved_words_user_due_idx").on(t.userId, t.dueAt)],
 );

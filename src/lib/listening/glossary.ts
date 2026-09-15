@@ -43,6 +43,12 @@ export function lookupWord(key: string): GlossEntry | null {
   return lemma ? { lemma, ...G.lemmas[lemma] } : null;
 }
 
+/** Entry for a saved lemma — a word ("serve") or a phrase ("give up"). */
+export function entryForLemma(lemma: string): GlossEntry | null {
+  const e = G.lemmas[lemma] ?? G.phrases[lemma];
+  return e ? { lemma, ...e } : null;
+}
+
 // Longest phrases first, so "is home to" wins over a shorter overlap.
 const PHRASES = Object.keys(G.phrases)
   .map((p) => p.split(" "))
