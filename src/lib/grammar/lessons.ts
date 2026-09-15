@@ -3,28 +3,39 @@ import { presentSimple } from "@/content/grammar/present-simple";
 import { presentContinuous } from "@/content/grammar/present-continuous";
 import { pastSimple } from "@/content/grammar/past-simple";
 import { pastContinuous } from "@/content/grammar/past-continuous";
-import { presentPerfect } from "@/content/grammar/present-perfect";
 import { willGoingTo } from "@/content/grammar/will-going-to";
+import { presentPerfect } from "@/content/grammar/present-perfect";
+import { pastSimpleVsPresentPerfect } from "@/content/grammar/past-simple-vs-present-perfect";
+import { presentPerfectContinuous } from "@/content/grammar/present-perfect-continuous";
+import { pastPerfect } from "@/content/grammar/past-perfect";
+import { usedTo } from "@/content/grammar/used-to";
+import { futureContinuous } from "@/content/grammar/future-continuous";
+import { futurePerfect } from "@/content/grammar/future-perfect";
+import { pastPerfectContinuous } from "@/content/grammar/past-perfect-continuous";
+import { futurePerfectContinuous } from "@/content/grammar/future-perfect-continuous";
+import { futureInThePast } from "@/content/grammar/future-in-the-past";
 
-export const LESSONS: Lesson[] = [presentSimple, presentContinuous, pastSimple, pastContinuous, willGoingTo, presentPerfect];
-
-/** The full tense path in teaching order. Entries without a lesson show as "Тун удахгүй". */
-export const TENSE_PATH: PathEntry[] = [
-  { slug: "present-simple", title: "Present Simple", mn: "Одоо энгийн цаг", level: "A1" },
-  { slug: "present-continuous", title: "Present Continuous", mn: "Одоо үргэлжлэх цаг", level: "A1" },
-  { slug: "past-simple", title: "Past Simple", mn: "Өнгөрсөн энгийн цаг", level: "A1" },
-  { slug: "past-continuous", title: "Past Continuous", mn: "Өнгөрсөн үргэлжлэх цаг", level: "A2" },
-  { slug: "will-going-to", title: "will / be going to", mn: "Ирээдүй цаг", level: "A2" },
-  { slug: "present-perfect", title: "Present Perfect", mn: "Одоо төгссөн цаг", level: "A2" },
-  { slug: "present-perfect-continuous", title: "Present Perfect Continuous", mn: "Одоо төгссөн үргэлжлэх цаг", level: "B1" },
-  { slug: "past-perfect", title: "Past Perfect", mn: "Өнгөрсөн төгссөн цаг", level: "B1" },
-  { slug: "used-to", title: "used to / would", mn: "Өнгөрсөн дадал", level: "B1" },
-  { slug: "future-continuous", title: "Future Continuous", mn: "Ирээдүй үргэлжлэх цаг", level: "B2" },
-  { slug: "future-perfect", title: "Future Perfect", mn: "Ирээдүй төгссөн цаг", level: "B2" },
-  { slug: "past-perfect-continuous", title: "Past Perfect Continuous", mn: "Өнгөрсөн төгссөн үргэлжлэх цаг", level: "B2" },
-  { slug: "future-perfect-continuous", title: "Future Perfect Continuous", mn: "Ирээдүй төгссөн үргэлжлэх цаг", level: "C1" },
-  { slug: "future-in-the-past", title: "was going to / would", mn: "Өнгөрсөн дэх ирээдүй", level: "C1" },
+/** Every lesson in teaching order; the path is derived from this list. */
+export const LESSONS: Lesson[] = [
+  presentSimple,
+  presentContinuous,
+  pastSimple,
+  pastContinuous,
+  willGoingTo,
+  presentPerfect,
+  pastSimpleVsPresentPerfect,
+  presentPerfectContinuous,
+  pastPerfect,
+  usedTo,
+  futureContinuous,
+  futurePerfect,
+  pastPerfectContinuous,
+  futurePerfectContinuous,
+  futureInThePast,
 ];
+
+/** The full tense path in teaching order. */
+export const TENSE_PATH: PathEntry[] = LESSONS.map(({ slug, title, mn, level }) => ({ slug, title, mn, level }));
 
 export const LEVEL_NAME: Record<GrammarLevel, string> = {
   A1: "Beginner",

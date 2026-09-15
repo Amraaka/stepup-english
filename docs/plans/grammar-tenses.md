@@ -12,7 +12,7 @@ A learner opens `/grammar` and follows one ordered path through every English te
 | Phase | Outcome | Status |
 |---|---|---|
 | **1. Tense path + first 6 lessons** | `/grammar` path, lesson page, practice, auto time logging. Lessons: Present Simple, Present Continuous, Past Simple, Past Continuous, Present Perfect, will / going to. | Done |
-| 2. Remaining tenses | Present Perfect Continuous, Past Perfect, Past Perfect Continuous, Future Continuous, Future Perfect, used to / would, present tenses for the future. Contrast lessons (Past Simple vs Present Perfect, will vs going to). | Planned |
+| 2. Remaining tenses | Present Perfect Continuous, Past Perfect, used to / would, Future Continuous, Future Perfect, Past Perfect Continuous, Future Perfect Continuous, was going to / would, and a Past Simple vs Present Perfect contrast lesson. Present tenses for the future are covered inside the Present Simple / Continuous lessons; will vs going to is its own lesson. | Done |
 | 3. Progress + mistake review | `grammar_progress` table (best score, completed at). Wrong answers become review cards in the daily review. Path shows done / next. | Planned |
 | 4. Mixed tense checks | Level checkpoints that mix tenses; auto-generated items from licensed example sentences (depends on research). | Planned |
 
@@ -47,6 +47,16 @@ Typecheck and lint; a scratch script that checks every lesson (answers are among
   - 1440×900: grammar path page.
 - Not verified: desktop lesson and practice screenshots, dark mode, guest logging.
 - Content review by an English teacher is still needed.
+
+## Phase 2 progress (2026-09-15)
+
+- Built: 9 more lessons, so the path now has 15 steps, all written. `TENSE_PATH` is derived from `LESSONS`.
+- Verified:
+  - Scratch check passes for all 15 lessons (8 items each, answers in options, unique options, typed answers self-check).
+  - Typecheck and lint clean.
+  - At 390×844, every lesson page renders its timeline with no overlapping or clipped labels (checked by measuring text boxes); the was going to / would timeline was checked by eye. No console errors.
+- Not verified: practice runs for the 9 new lessons in a browser (they use the same component as phase 1), desktop screenshots.
+- The Mongolian explanations and B2–C1 example sentences still need review by an English teacher.
 
 ## Out of scope for phase 1
 
