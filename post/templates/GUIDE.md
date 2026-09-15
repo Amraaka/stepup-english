@@ -42,7 +42,7 @@ The `.hd` header (logo + handle) and `.ft` footer are mandatory on every post. E
 
 ## Writing bar (Mongolian)
 
-Follow the `stepup-caption-voice` skill (`.claude/skills/stepup-caption-voice/SKILL.md`) for every caption and every line of Mongolian on the image. Its self-check is the acceptance test.
+Follow the `stepup-mongolian-copy` skill (`.claude/skills/stepup-mongolian-copy/SKILL.md`) for every caption and every line of Mongolian on the image. Its self-check is the acceptance test.
 
 ## Deliverable per post
 
