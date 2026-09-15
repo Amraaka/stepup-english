@@ -20,6 +20,26 @@ export const CLIPS: Clip[] = [
       credit: "Kelly Jean Kelly, Steve Ember, Jill Robbins · VOA Learning English",
     },
     segments: georgeWashington as Segment[],
+    questions: [
+      {
+        prompt: "When was George Washington president?",
+        options: ["From 1789 to 1797", "From 1776 to 1789", "From 1797 to 1799"],
+        answer: 0,
+        explain: "Бичлэгт \"He served from 1789 to 1797\" гэж хэлсэн.",
+      },
+      {
+        prompt: "What did Washington create?",
+        options: ["The cabinet and the State Department", "The British army", "The city of New York"],
+        answer: 0,
+        explain: "Тэр засгийн газрын гишүүдийг (cabinet) томилж, Гадаад хэргийн яамыг байгуулсан.",
+      },
+      {
+        prompt: "What did he do at the end of his second term?",
+        options: ["He simply returned home", "He became a general again", "He moved to New York"],
+        answer: 0,
+        explain: "\"President Washington simply returned home\" гэж хэлсэн. Эрх мэдлээ орхиод гэртээ харьсан.",
+      },
+    ],
   },
   {
     slug: "yellowstone",
@@ -35,6 +55,26 @@ export const CLIPS: Clip[] = [
       credit: "Andrew Smith · VOA Learning English",
     },
     segments: yellowstone as Segment[],
+    questions: [
+      {
+        prompt: "Where is most of the park?",
+        options: ["In Wyoming", "In California", "In New York"],
+        answer: 0,
+        explain: "\"Most of the park lies within the western state of Wyoming\" гэж хэлсэн.",
+      },
+      {
+        prompt: "Why is the park unusual?",
+        options: ["It sits on top of an ancient super volcano", "It has no wild animals", "It is the smallest park in the U.S."],
+        answer: 0,
+        explain: "Йеллоустоун эртний супер галт уул дээр оршдог учраас онцгой.",
+      },
+      {
+        prompt: "How often does Old Faithful erupt?",
+        options: ["About every 90 minutes", "About every nine hours", "Once a year"],
+        answer: 0,
+        explain: "\"It erupts about every 90 minutes\" гэж хэлсэн. Ойролцоогоор 90 минут тутам оргилдог.",
+      },
+    ],
   },
 ];
 

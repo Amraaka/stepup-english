@@ -9,7 +9,7 @@ Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.m
 |---|---|---|
 | **1. Hosted clip player** | A learner opens `/listening`, picks a clip, listens with a synced transcript, taps a word to see its Mongolian meaning, replays sentences, slows to 0.75x, hides the transcript. Listening time logs to the tracker automatically. | In progress |
 | 2. Saved words + flashcards | Save a word from the tap sheet (members). Daily SRS review with "Санасан / Мартсан", sentence + TTS, daily cap 20. | Done (ADR 0010) |
-| 3. Active listening | Dictation and gap-fill generated from transcripts. 3 optional questions after a clip. | Planned |
+| 3. Active listening | Dictation and gap-fill generated from transcripts. 3 optional questions after a clip. | Done |
 | 4. Shadowing | Record yourself per sentence and compare with the original. Clip audio on flashcards (hosted content only). | Planned |
 | 5. Paid AI | Pronunciation scoring with Mongolian explanations. | Planned |
 | — YouTube embed backend | CC BY / permission-granted embeds with the embed-safe feature set. | After phase 2 |
@@ -70,6 +70,31 @@ Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.m
 - Fixed during testing:
   - Logging review time revalidated the review page. With the queue empty, the page redirected away from the finish screen. It now always renders the session, and the session keeps its card count from mount.
   - A repeat session inside the 3-hour cumulative window correctly earns 0 points, but it showed a "+0" celebration. Timed logs now celebrate only when points were earned.
+
+## Phase 3 — practice (2026-09-15)
+
+- Built:
+  - `/listening/[slug]/practice`, reached from a "Дасгал хийх" card on the player.
+  - 10 items per clip: 3 comprehension questions written by hand (`Clip.questions`, with Mongolian explanations), 4 gap-fills and 3 dictations.
+  - The gap-fills and dictations are generated in `src/lib/listening/exercises.ts`, seeded by clip and day, so the set is stable all day and changes daily.
+- Gap-fill:
+  - The blank is a lowercase content word. Names, possessives and helper verbs are never blanked.
+  - The 3 distractors share the answer's part of speech and form ("wild" never gets "officials") and prefer the same ending.
+  - A wrong answer offers to save the word (members).
+- Dictation:
+  - Uses short sentences (4–10 tokens, no numbers). They are picked before the gaps because they are scarce.
+  - Checking is word-level: exact matches first (LCS), then typos within 1–2 edits count as "close".
+  - The result marks each word as ok, close (yellow) or missed (red) and lists extra words.
+  - Enter submits, and "Алгасах" shows the sentence.
+- Sentence audio uses `useSentenceAudio`, which stops at the sentence end every frame. A listening item autoplays when it appears.
+- Timed logging now lives in one hook, `useMeasuredTime`, used by the player, the review and practice. Practice time counts as listening for the clip, so it shares the 3-hour points window.
+- Verified:
+  - A scratch script checks determinism, a full 10-item set for 60 seeds on both clips, that every gap rebuilds its sentence, that options are unique and share a form, and 7 dictation-checking cases.
+  - In the browser at 390×844 as a member:
+    - The questions gave correct and wrong feedback with explanations, and the gap audio autoplayed.
+    - The wrong gap saved "wild", and dictation marked *unusual* as close and *because* as missed.
+    - An exact dictation passed via Enter, and "Алгасах" revealed the sentence.
+    - The finish screen showed 3/10, and practice logged `listening` / `yellowstone` (129 s, 10 points) with the celebration.
 
 ## Out of scope for phase 1
 

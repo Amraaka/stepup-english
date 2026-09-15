@@ -19,6 +19,15 @@ export type Segment = {
   tokens: string[];
 };
 
+/** A comprehension question shown in practice; `answer` indexes `options`. */
+export type ClipQuestion = {
+  prompt: string;
+  options: string[];
+  answer: number;
+  /** Short Mongolian explanation shown after answering. */
+  explain: string;
+};
+
 export type Clip = {
   slug: string;
   title: string;
@@ -29,6 +38,7 @@ export type Clip = {
   audio: string;
   source: ClipSource;
   segments: Segment[];
+  questions: ClipQuestion[];
 };
 
 export type PartOfSpeech = "n" | "v" | "adj" | "adv" | "prep" | "conj" | "pron" | "det" | "num" | "name" | "phrase";

@@ -5,14 +5,19 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "rea
 import type { Clip } from "@/lib/listening/types";
 import { fmtClock } from "@/lib/listening/clips";
 import { lookupWord, phraseAt, wordKey } from "@/lib/listening/glossary";
-import { MIN_TIMED_SEC } from "@/lib/tracker";
 import { saveWordAction } from "@/app/(site)/vocabulary/actions";
 import { useStats } from "@/components/stats-provider";
+import { useMeasuredTime } from "@/components/use-measured-time";
 import { WordSheet, type WordPick } from "@/components/listening/word-sheet";
-import { EyeIcon, EyeOffIcon, PauseIcon, PlayIcon, ReplayIcon } from "@/components/icons";
-
-/** Flush measured time at least this often while listening, in seconds. */
-const FLUSH_EVERY_SEC = 300;
+import {
+  ChevronRightIcon,
+  EyeIcon,
+  EyeOffIcon,
+  PauseIcon,
+  PlayIcon,
+  ReplayIcon,
+  TargetIcon,
+} from "@/components/icons";
 
 const EDGE_PUNCT = /^[“"(‘]+|[.,!?;:”")’…—]+$/g;
 
@@ -133,41 +138,11 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
 
   // ── Automatic time logging (ADR 0009) ───────────────────────────────────
   // Counts seconds only while audio plays in a visible tab, capped at twice the clip.
-  const { logTimed, isGuest } = useStats();
-  const logRef = useRef(logTimed);
-  useEffect(() => {
-    logRef.current = logTimed;
-  }, [logTimed]);
-  const pending = useRef(0);
-  const counted = useRef(0);
-
-  const flush = useCallback(
-    (celebrate: boolean) => {
-      const seconds = pending.current;
-      if (seconds < MIN_TIMED_SEC) return;
-      pending.current = 0;
-      logRef.current({ module: "listening", ref: clip.slug }, seconds, celebrate);
-    },
-    [clip.slug],
+  const { isGuest } = useStats();
+  const flush = useMeasuredTime(
+    { module: "listening", ref: clip.slug },
+    { counting: () => !!audio.current && !audio.current.paused, maxSec: clip.durationSec * 2 },
   );
-
-  useEffect(() => {
-    const tick = window.setInterval(() => {
-      const a = audio.current;
-      if (!a || a.paused || document.visibilityState !== "visible") return;
-      if (counted.current >= clip.durationSec * 2) return;
-      pending.current += 1;
-      counted.current += 1;
-      if (pending.current >= FLUSH_EVERY_SEC) flush(false);
-    }, 1000);
-    const onVisibility = () => document.visibilityState === "hidden" && flush(false);
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      window.clearInterval(tick);
-      document.removeEventListener("visibilitychange", onVisibility);
-      flush(false);
-    };
-  }, [clip.durationSec, flush]);
 
   function onEnded() {
     setPlaying(false);
@@ -272,6 +247,22 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
           </button>
         </section>
       )}
+
+      <Link
+        href={`/listening/${clip.slug}/practice`}
+        className="flex items-center gap-4 rounded-3xl bg-surface p-4 transition-transform hover:-translate-y-0.5 sm:p-5"
+      >
+        <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-sky-soft text-sky-text">
+          <TargetIcon className="size-6" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-[15px] font-extrabold">Дасгал хийх</span>
+          <span className="mt-0.5 block text-sm text-muted">
+            Асуултад хариулж, дутуу үгийг нөхөж, сонссон өгүүлбэрээ бичээрэй.
+          </span>
+        </span>
+        <ChevronRightIcon className="size-5 shrink-0 text-muted" />
+      </Link>
 
       <p className="px-1 text-xs text-muted">
         Эх сурвалж:{" "}

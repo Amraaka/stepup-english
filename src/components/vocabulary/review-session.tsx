@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { entryForLemma, POS_LABEL } from "@/lib/listening/glossary";
-import { MIN_TIMED_SEC } from "@/lib/tracker";
 import type { Card } from "@/lib/vocab/review";
 import { reviewWordAction } from "@/app/(site)/vocabulary/actions";
-import { useStats } from "@/components/stats-provider";
+import { useMeasuredTime } from "@/components/use-measured-time";
 import { Mascot } from "@/components/mascot";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { XIcon } from "@/components/icons";
@@ -45,41 +44,15 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
   const card = queue[0];
 
   // Review time logs like listening time: visible tab only (ADR 0010).
-  const { logTimed } = useStats();
-  const logRef = useRef(logTimed);
-  useEffect(() => {
-    logRef.current = logTimed;
-  }, [logTimed]);
-  const pending = useRef(0);
-
-  const flush = useCallback((celebrate: boolean) => {
-    const seconds = pending.current;
-    if (seconds < MIN_TIMED_SEC) return;
-    pending.current = 0;
-    logRef.current({ module: "vocabulary", ref: "review" }, seconds, celebrate);
-  }, []);
-
   const finished = !card;
+  const finishedRef = useRef(finished);
   useEffect(() => {
-    if (finished) return;
-    const tick = window.setInterval(() => {
-      if (document.visibilityState === "visible") pending.current += 1;
-    }, 1000);
-    return () => window.clearInterval(tick);
+    finishedRef.current = finished;
   }, [finished]);
-
+  const flush = useMeasuredTime({ module: "vocabulary", ref: "review" }, { counting: () => !finishedRef.current });
   useEffect(() => {
     if (finished) flush(true);
   }, [finished, flush]);
-
-  useEffect(() => {
-    const onVisibility = () => document.visibilityState === "hidden" && flush(false);
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      document.removeEventListener("visibilitychange", onVisibility);
-      flush(false);
-    };
-  }, [flush]);
 
   function answer(ok: boolean) {
     if (!card) return;
