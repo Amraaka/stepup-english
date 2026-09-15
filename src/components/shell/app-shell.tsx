@@ -77,7 +77,7 @@ export function AppShell({
           </div>
         </header>
 
-        <div className="mx-auto flex w-full max-w-[1200px] items-start gap-8 px-4 pb-28 pt-3 sm:px-6 lg:px-8 lg:pb-12 lg:pt-8">
+        <div className="mx-auto flex w-full max-w-[1200px] items-start group-data-[sidebar=collapsed]/shell:max-w-[1440px] gap-8 px-4 pb-28 pt-3 sm:px-6 lg:px-8 lg:pb-12 lg:pt-8">
           <main className="min-w-0 flex-1">{children}</main>
           <RightRail isGuest={!account} />
         </div>

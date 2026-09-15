@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { getDashboardStats, getProfile, logStudySession, logTimedSession } from "@/lib/activity";
 import { ACTIVITY_MODULES, type ActivityModule } from "@/db/schema";
 import { getClip } from "@/lib/listening/clips";
+import { getLesson } from "@/lib/grammar/lessons";
 import { MIN_TIMED_SEC, type TimedTarget, type TrackerStats } from "@/lib/tracker";
 
 /** Longest review or shadowing session one flush may claim, in seconds. */
@@ -27,6 +28,9 @@ export async function logTimedAction(target: TimedTarget, seconds: number): Prom
   } else if (target.module === "speaking") {
     // Shadowing repeats every sentence, so it can run longer than the clip.
     if (!getClip(target.ref)) return null;
+    cap = MAX_SESSION_SEC;
+  } else if (target.module === "grammar") {
+    if (!getLesson(target.ref)) return null;
     cap = MAX_SESSION_SEC;
   } else if (target.module === "vocabulary" && target.ref === "review") {
     cap = MAX_SESSION_SEC;

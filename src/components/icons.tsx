@@ -179,6 +179,14 @@ export function CheckIcon(p: P) {
   );
 }
 
+export function ChevronLeftIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="m12 5-5 5 5 5" />
+    </svg>
+  );
+}
+
 export function ChevronRightIcon(p: P) {
   return (
     <svg {...base(p)}>

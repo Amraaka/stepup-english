@@ -10,6 +10,7 @@ import { useStats } from "@/components/stats-provider";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { WordSheet, type WordPick } from "@/components/listening/word-sheet";
 import {
+  ChevronLeftIcon,
   ChevronRightIcon,
   EyeIcon,
   EyeOffIcon,
@@ -168,8 +169,12 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
       />
 
       <header>
-        <Link href="/listening" className="text-sm font-bold text-sky-text hover:underline">
-          ← Сонсгол
+        <Link
+          href="/listening"
+          className="-ml-1 inline-flex items-center gap-0.5 text-sm font-bold text-sky-text hover:underline"
+        >
+          <ChevronLeftIcon className="size-4 [stroke-width:2.2]" />
+          Сонсгол
         </Link>
         <h1 className="mt-2 text-[26px] font-extrabold leading-tight tracking-[-0.02em] text-balance lg:text-[32px]">
           {clip.title}

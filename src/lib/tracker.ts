@@ -8,6 +8,7 @@ export const MIN_TIMED_SEC = 60;
 export type TimedTarget =
   | { module: "listening"; ref: string }
   | { module: "speaking"; ref: string }
+  | { module: "grammar"; ref: string }
   | { module: "vocabulary"; ref: "review" };
 
 export function pointsForStudyLog(durationMin: number): number {
