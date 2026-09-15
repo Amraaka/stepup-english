@@ -7,10 +7,11 @@ import { Mascot } from "@/components/mascot";
 import { CheckIcon } from "@/components/icons";
 
 const LEVELS = [
-  { id: "beginner", title: "Эхлэгч", hint: "Бараг мэдэхгүй, эхнээс нь эхэлнэ" },
-  { id: "elementary", title: "Бага", hint: "Энгийн өгүүлбэр ойлгоно" },
-  { id: "intermediate", title: "Дунд", hint: "Өдөр тутмын ярианд оролцож чадна" },
-  { id: "advanced", title: "Ахисан", hint: "Чөлөөтэй уншиж, ярьж чадна" },
+  // Level names stay in English (learners know them from courses/tests); hints in Mongolian.
+  { id: "beginner", title: "Beginner", hint: "Бараг мэдэхгүй, эхнээс нь эхэлнэ" },
+  { id: "elementary", title: "Elementary", hint: "Энгийн өгүүлбэр ойлгоно" },
+  { id: "intermediate", title: "Intermediate", hint: "Өдөр тутмын ярианд оролцож чадна" },
+  { id: "advanced", title: "Advanced", hint: "Чөлөөтэй уншиж, ярьж чадна" },
   { id: "unsure", title: "Мэдэхгүй байна", hint: "Түвшин тогтоох шалгалт удахгүй" },
 ];
 
