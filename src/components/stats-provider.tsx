@@ -165,12 +165,14 @@ export function StatsProvider({
       const before = stats;
       let after: TrackerStats;
       if (isGuest) {
-        // Guests can only listen (saving and review need an account, ADR 0010).
-        if (target.module !== "listening") return;
+        // Guests can listen and shadow; review needs an account (ADR 0010).
+        if (target.module === "vocabulary") return;
         const slug = target.ref;
-        // Same rule as the server: points follow cumulative time for this clip today.
+        // Same rule as the server: points follow cumulative time for this clip and module today.
         const day = localDay(new Date(), TZ);
-        const prev = guestStore.getSnapshot().filter((e) => e.ref === slug && e.day === day);
+        const prev = guestStore
+          .getSnapshot()
+          .filter((e) => e.ref === slug && e.module === target.module && e.day === day);
         const prevMin = prev.reduce((sum, e) => sum + e.durationMin, 0);
         const prevPts = prev.reduce((sum, e) => sum + e.points, 0);
         const minutes = Math.floor(seconds / 60);
@@ -178,7 +180,7 @@ export function StatsProvider({
           day,
           durationMin: minutes,
           points: Math.max(0, pointsForStudyLog(prevMin + minutes) - prevPts),
-          module: "listening",
+          module: target.module,
           ref: slug,
         });
         after = guestStats(guestStore.getSnapshot());

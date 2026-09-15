@@ -10,8 +10,8 @@ Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.m
 | **1. Hosted clip player** | A learner opens `/listening`, picks a clip, listens with a synced transcript, taps a word to see its Mongolian meaning, replays sentences, slows to 0.75x, hides the transcript. Listening time logs to the tracker automatically. | In progress |
 | 2. Saved words + flashcards | Save a word from the tap sheet (members). Daily SRS review with "Санасан / Мартсан", sentence + TTS, daily cap 20. | Done (ADR 0010) |
 | 3. Active listening | Dictation and gap-fill generated from transcripts. 3 optional questions after a clip. | Done |
-| 4. Shadowing | Record yourself per sentence and compare with the original. Clip audio on flashcards (hosted content only). | Planned |
-| 5. Paid AI | Pronunciation scoring with Mongolian explanations. | Planned |
+| 4. Shadowing | Record yourself per sentence and compare with the original. Clip audio on flashcards (hosted content only). | Done (ADR 0011) |
+| 5. Paid AI | Pronunciation scoring with Mongolian explanations. | Built, switched off: no provider key or paid access yet (ADR 0011) |
 | — YouTube embed backend | CC BY / permission-granted embeds with the embed-safe feature set. | After phase 2 |
 
 ## Phase 1 — steps
@@ -95,6 +95,41 @@ Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.m
     - The wrong gap saved "wild", and dictation marked *unusual* as close and *because* as missed.
     - An exact dictation passed via Enter, and "Алгасах" revealed the sentence.
     - The finish screen showed 3/10, and practice logged `listening` / `yellowstone` (129 s, 10 points) with the celebration.
+
+## Phase 4 — shadowing (2026-09-15)
+
+- Built:
+  - `/listening/[slug]/shadowing`, reached from a "Дуудлагаа дадлагажуулах" card on the player. It covers every sentence except the sign-off.
+  - Each sentence autoplays. The learner records a take (capped at 2× the sentence + 2 s, 20 s at most), then plays "Эх бичлэг", "Миний бичлэг" and "Ээлжлэн сонсох".
+  - Both takes get a silence-trimmed loudness shape (48 bins), their length and a pace hint.
+  - Recordings stay in browser memory. Time logs as `speaking` for the clip.
+- Flashcards: a card whose source clip still exists plays that sentence from the real recording ("бичлэгээс сонсох") instead of TTS.
+- Verified at 390×844 as a member. Headless Chrome has no microphone, so `getUserMedia` was replaced with an oscillator stream:
+  - Record showed the stop state and disabled navigation.
+  - Stopping decoded the take: "Таны бичлэг · 2.7 сек", 48 bars, "Хурд тань эх бичлэгтэй ойролцоо байна".
+  - "Миний бичлэг" played the take.
+  - Going through all 23 sentences reached the finish screen and logged `speaking` / `george-washington` (78 s, 10 points).
+  - The review card for *presided* played the clip from 12.32 s, the start of its sentence.
+- Not verified: a real microphone on iOS Safari or Android Chrome. The mic-permission denial messages were not triggered in a browser either.
+
+## Phase 5 — AI pronunciation scoring (built, off)
+
+- Built:
+  - Provider-neutral result types and Mongolian feedback rules. The feedback gives a level, words to retry and up to 3 tips: omissions, θ/ð, w, v, r, l, iː/ɪ, æ, final consonants and fluency.
+  - A pure Azure REST adapter (header builder and a parser for both documented response shapes, with SAPI→IPA mapping).
+  - `provider.ts`, switched by `AZURE_SPEECH_KEY` + `AZURE_SPEECH_ENDPOINT`. `PRONUNCIATION_PROVIDER=mock` gives labelled sample data, and only outside production.
+  - `assessPronunciationAction`, which requires sign-in, takes a 0.3–20 s WAV and uses the catalog text as reference.
+  - A result panel that converts the take to 16 kHz WAV in the browser.
+- Without a key, the panel shows "AI дуудлагын үнэлгээ · Тун удахгүй". This is what the app shows today.
+- Verified by a scratch script (19 checks):
+  - The header decodes.
+  - Azure's REST and SDK sample responses parse, including SAPI `th` → θ, error types, NoMatch and garbage input.
+  - The feedback ordering and limits hold.
+  - The mock scores stay in range.
+  - The WAV header and the resampling are correct.
+  - Trim and envelope work.
+- Not verified: a live Azure call, the result panel in a browser (the dev server wasn't restarted with the mock flag) and WAV conversion of a real recording.
+- Before launch: the checklist in ADR 0011 (live key test, paid gating with a daily limit, teacher review of the tips, privacy policy).
 
 ## Out of scope for phase 1
 

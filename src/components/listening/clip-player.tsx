@@ -13,6 +13,7 @@ import {
   ChevronRightIcon,
   EyeIcon,
   EyeOffIcon,
+  MicIcon,
   PauseIcon,
   PlayIcon,
   ReplayIcon,
@@ -259,6 +260,22 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
           <span className="block text-[15px] font-extrabold">Дасгал хийх</span>
           <span className="mt-0.5 block text-sm text-muted">
             Асуултад хариулж, дутуу үгийг нөхөж, сонссон өгүүлбэрээ бичээрэй.
+          </span>
+        </span>
+        <ChevronRightIcon className="size-5 shrink-0 text-muted" />
+      </Link>
+
+      <Link
+        href={`/listening/${clip.slug}/shadowing`}
+        className="flex items-center gap-4 rounded-3xl bg-surface p-4 transition-transform hover:-translate-y-0.5 sm:p-5"
+      >
+        <span className="grid size-12 shrink-0 place-items-center rounded-2xl bg-violet-soft text-violet-text">
+          <MicIcon className="size-6" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-[15px] font-extrabold">Дуудлагаа дадлагажуулах</span>
+          <span className="mt-0.5 block text-sm text-muted">
+            Өгүүлбэр бүрийг давтаж бичээд, эх бичлэгтэй харьцуулж сонсоорой.
           </span>
         </span>
         <ChevronRightIcon className="size-5 shrink-0 text-muted" />

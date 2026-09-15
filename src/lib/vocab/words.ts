@@ -1,13 +1,23 @@
 import "server-only";
 import { and, asc, count, desc, eq, gte, lte, sql } from "drizzle-orm";
 import { db } from "@/db";
+import { getClip } from "@/lib/listening/clips";
 import { savedWords, type SavedWordSource } from "@/db/schema";
 import { DAILY_REVIEW_CAP, nextReview, type Card } from "@/lib/vocab/review";
 
 // Every query filters by the caller's user id (ADR 0005 access model).
 
 function toCard(row: typeof savedWords.$inferSelect): Card {
-  return { id: row.id, lemma: row.lemma, surface: row.surface, sentence: row.sentence, clip: row.source.clip ?? null };
+  const clip = row.source.clip ? getClip(row.source.clip) : null;
+  const seg = clip && row.source.seg !== undefined ? clip.segments[row.source.seg] : undefined;
+  return {
+    id: row.id,
+    lemma: row.lemma,
+    surface: row.surface,
+    sentence: row.sentence,
+    clip: row.source.clip ?? null,
+    audio: clip && seg ? { src: clip.audio, start: seg.start, end: seg.end } : null,
+  };
 }
 
 /** Saves a word; saving the same lemma again keeps the first save. */

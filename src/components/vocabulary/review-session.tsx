@@ -6,6 +6,7 @@ import { entryForLemma, POS_LABEL } from "@/lib/listening/glossary";
 import type { Card } from "@/lib/vocab/review";
 import { reviewWordAction } from "@/app/(site)/vocabulary/actions";
 import { useMeasuredTime } from "@/components/use-measured-time";
+import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
 import { Mascot } from "@/components/mascot";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { XIcon } from "@/components/icons";
@@ -42,6 +43,8 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
   // Fixed at mount: a mid-session revalidation re-renders with an empty queue.
   const [total] = useState(cards.length);
   const card = queue[0];
+  // The real speaker from the clip when available (phase 4); TTS otherwise.
+  const clipAudio = useSentenceAudio(card?.audio?.src ?? "");
 
   // Review time logs like listening time: visible tab only (ADR 0010).
   const finished = !card;
@@ -129,10 +132,14 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
             <Sentence card={card} />
             <button
               type="button"
-              onClick={() => speak(card.sentence)}
+              onClick={() => {
+                const a = card.audio;
+                if (a) clipAudio.playRange(a.start, a.end);
+                else speak(card.sentence);
+              }}
               className="ml-2 text-sm font-bold text-teal-text underline"
             >
-              өгүүлбэрийг сонсох
+              {card.audio ? "бичлэгээс сонсох" : "өгүүлбэрийг сонсох"}
             </button>
           </p>
         )}

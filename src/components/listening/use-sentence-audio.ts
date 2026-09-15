@@ -9,6 +9,7 @@ export function useSentenceAudio(src: string) {
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
+    if (!src) return;
     const a = new Audio(src);
     a.preload = "auto";
     audio.current = a;

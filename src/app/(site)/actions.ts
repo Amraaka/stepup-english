@@ -7,8 +7,8 @@ import { ACTIVITY_MODULES, type ActivityModule } from "@/db/schema";
 import { getClip } from "@/lib/listening/clips";
 import { MIN_TIMED_SEC, type TimedTarget, type TrackerStats } from "@/lib/tracker";
 
-/** Longest word-review session one flush may claim, in seconds. */
-const MAX_REVIEW_SEC = 3600;
+/** Longest review or shadowing session one flush may claim, in seconds. */
+const MAX_SESSION_SEC = 3600;
 
 /** Logs time a module measured (listening, word review); returns fresh stats, or null if rejected. */
 export async function logTimedAction(target: TimedTarget, seconds: number): Promise<TrackerStats | null> {
@@ -24,8 +24,12 @@ export async function logTimedAction(target: TimedTarget, seconds: number): Prom
     if (!clip) return null;
     // Replaying is fine, but one flush can't claim more than twice the clip.
     cap = clip.durationSec * 2;
+  } else if (target.module === "speaking") {
+    // Shadowing repeats every sentence, so it can run longer than the clip.
+    if (!getClip(target.ref)) return null;
+    cap = MAX_SESSION_SEC;
   } else if (target.module === "vocabulary" && target.ref === "review") {
-    cap = MAX_REVIEW_SEC;
+    cap = MAX_SESSION_SEC;
   } else {
     return null;
   }

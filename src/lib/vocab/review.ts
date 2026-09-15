@@ -25,4 +25,6 @@ export type Card = {
   surface: string;
   sentence: string;
   clip: string | null;
+  /** The sentence in the hosted clip, when the source is still in the catalog. */
+  audio: { src: string; start: number; end: number } | null;
 };

@@ -4,8 +4,11 @@
 /** Shortest time a module may log on its own (e.g. listening), in seconds. */
 export const MIN_TIMED_SEC = 60;
 
-/** What a measured session belongs to: a listening clip, or the daily word review. */
-export type TimedTarget = { module: "listening"; ref: string } | { module: "vocabulary"; ref: "review" };
+/** What a measured session belongs to: a clip (listening or shadowing it), or the daily word review. */
+export type TimedTarget =
+  | { module: "listening"; ref: string }
+  | { module: "speaking"; ref: string }
+  | { module: "vocabulary"; ref: "review" };
 
 export function pointsForStudyLog(durationMin: number): number {
   return Math.min(10 + 5 * Math.floor(durationMin / 5), 60);
