@@ -21,6 +21,51 @@ export function FlameIcon(p: P) {
   );
 }
 
+export function PlayIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M6 3.8v12.4a.8.8 0 0 0 1.2.7l10-6.2a.8.8 0 0 0 0-1.4l-10-6.2A.8.8 0 0 0 6 3.8Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function PauseIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="5" y="3.5" width="3.4" height="13" rx="1" fill="currentColor" />
+      <rect x="11.6" y="3.5" width="3.4" height="13" rx="1" fill="currentColor" />
+    </svg>
+  );
+}
+
+/** Circular arrow back — "hear that again". */
+export function ReplayIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M4.2 8.2A6.2 6.2 0 1 1 3.8 11" />
+      <path d="M3.5 4.2v4.3h4.3" />
+    </svg>
+  );
+}
+
+export function EyeIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M1.8 10S4.8 4.5 10 4.5 18.2 10 18.2 10 15.2 15.5 10 15.5 1.8 10 1.8 10Z" />
+      <circle cx="10" cy="10" r="2.5" />
+    </svg>
+  );
+}
+
+export function EyeOffIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M8.2 4.7A8 8 0 0 1 10 4.5c5.2 0 8.2 5.5 8.2 5.5a14 14 0 0 1-2.1 2.8M5.5 6.1C3.1 7.6 1.8 10 1.8 10s3 5.5 8.2 5.5a8 8 0 0 0 4-1.1" />
+      <path d="M8.2 8.3a2.5 2.5 0 0 0 3.5 3.5M3 3l14 14" />
+    </svg>
+  );
+}
+
 export function ClockIcon(p: P) {
   return (
     <svg {...base(p)}>

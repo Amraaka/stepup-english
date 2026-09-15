@@ -1,0 +1,552 @@
+[
+ {
+  "start": 0.0,
+  "end": 10.1,
+  "tokens": [
+   "Yellowstone",
+   "National",
+   "Park",
+   "in",
+   "the",
+   "western",
+   "United",
+   "States",
+   "was",
+   "the",
+   "world’s",
+   "first",
+   "national",
+   "park."
+  ]
+ },
+ {
+  "start": 11.58,
+  "end": 20.84,
+  "tokens": [
+   "Established",
+   "in",
+   "1872,",
+   "it",
+   "is",
+   "famous",
+   "for",
+   "its",
+   "geothermal",
+   "activity",
+   "and",
+   "wild",
+   "animals."
+  ]
+ },
+ {
+  "start": 22.06,
+  "end": 28.1,
+  "tokens": [
+   "It",
+   "includes",
+   "beautiful",
+   "mountains,",
+   "deep",
+   "canyons,",
+   "lakes",
+   "and",
+   "rivers."
+  ]
+ },
+ {
+  "start": 29.1,
+  "end": 37.12,
+  "tokens": [
+   "Yellowstone",
+   "is",
+   "still",
+   "one",
+   "of",
+   "the",
+   "largest",
+   "national",
+   "parks",
+   "in",
+   "the",
+   "U.S."
+  ]
+ },
+ {
+  "start": 37.12,
+  "end": 41.3,
+  "tokens": [
+   "It",
+   "takes",
+   "up",
+   "almost",
+   "9,000",
+   "square",
+   "kilometers."
+  ]
+ },
+ {
+  "start": 42.72,
+  "end": 47.52,
+  "tokens": [
+   "Most",
+   "of",
+   "the",
+   "park",
+   "lies",
+   "within",
+   "the",
+   "western",
+   "state",
+   "of",
+   "Wyoming."
+  ]
+ },
+ {
+  "start": 49.3,
+  "end": 54.78,
+  "tokens": [
+   "The",
+   "park",
+   "is",
+   "unusual",
+   "because",
+   "of",
+   "what",
+   "lies",
+   "underneath",
+   "it."
+  ]
+ },
+ {
+  "start": 54.78,
+  "end": 63.2,
+  "tokens": [
+   "It",
+   "sits",
+   "on",
+   "top",
+   "of",
+   "an",
+   "ancient",
+   "super",
+   "volcano,",
+   "known",
+   "as",
+   "the",
+   "Yellowstone",
+   "Caldera."
+  ]
+ },
+ {
+  "start": 64.26,
+  "end": 67.5,
+  "tokens": [
+   "The",
+   "caldera",
+   "remains",
+   "an",
+   "active",
+   "volcano."
+  ]
+ },
+ {
+  "start": 69.06,
+  "end": 74.5,
+  "tokens": [
+   "A",
+   "lake",
+   "of",
+   "hot",
+   "liquid",
+   "rock",
+   "is",
+   "about",
+   "six",
+   "kilometers",
+   "under",
+   "the",
+   "park."
+  ]
+ },
+ {
+  "start": 76.26,
+  "end": 80.4,
+  "tokens": [
+   "Experts",
+   "say",
+   "this",
+   "lake",
+   "is",
+   "under",
+   "huge",
+   "amounts",
+   "of",
+   "pressure."
+  ]
+ },
+ {
+  "start": 81.31,
+  "end": 91.4,
+  "tokens": [
+   "The",
+   "pressure",
+   "and",
+   "heat",
+   "cause",
+   "geysers",
+   "to",
+   "shoot",
+   "hot",
+   "water",
+   "out",
+   "of",
+   "the",
+   "ground",
+   "and",
+   "mud",
+   "to",
+   "boil",
+   "at",
+   "Yellowstone."
+  ]
+ },
+ {
+  "start": 93.04,
+  "end": 96.86,
+  "tokens": [
+   "The",
+   "park",
+   "is",
+   "home",
+   "to",
+   "more",
+   "than",
+   "300",
+   "geysers."
+  ]
+ },
+ {
+  "start": 97.92,
+  "end": 104.9,
+  "tokens": [
+   "There",
+   "are",
+   "more",
+   "geysers",
+   "and",
+   "hot",
+   "springs",
+   "in",
+   "Yellowstone",
+   "than",
+   "any",
+   "other",
+   "place",
+   "on",
+   "Earth."
+  ]
+ },
+ {
+  "start": 105.9,
+  "end": 115.78,
+  "tokens": [
+   "“Old",
+   "Faithful”",
+   "is",
+   "the",
+   "name",
+   "of",
+   "the",
+   "park’s",
+   "most",
+   "famous",
+   "geyser",
+   "because",
+   "it",
+   "erupts",
+   "about",
+   "every",
+   "90",
+   "minutes."
+  ]
+ },
+ {
+  "start": 117.74,
+  "end": 125.98,
+  "tokens": [
+   "Yellowstone",
+   "is",
+   "on",
+   "a",
+   "high",
+   "plateau",
+   "with",
+   "an",
+   "average",
+   "height",
+   "of",
+   "2,400",
+   "meters",
+   "above",
+   "sea",
+   "level."
+  ]
+ },
+ {
+  "start": 126.96,
+  "end": 140.4,
+  "tokens": [
+   "This",
+   "makes",
+   "the",
+   "weather",
+   "very",
+   "cold",
+   "in",
+   "winter,",
+   "with",
+   "January",
+   "temperatures",
+   "averaging",
+   "between",
+   "-18",
+   "degrees",
+   "and",
+   "-7",
+   "degrees",
+   "Celsius."
+  ]
+ },
+ {
+  "start": 142.02,
+  "end": 148.7,
+  "tokens": [
+   "However,",
+   "some",
+   "areas",
+   "of",
+   "the",
+   "park",
+   "remain",
+   "open",
+   "to",
+   "visitors",
+   "throughout",
+   "the",
+   "year."
+  ]
+ },
+ {
+  "start": 149.7,
+  "end": 154.66,
+  "tokens": [
+   "Yellowstone",
+   "Canyon",
+   "is",
+   "about",
+   "365",
+   "meters",
+   "deep."
+  ]
+ },
+ {
+  "start": 154.66,
+  "end": 162.02,
+  "tokens": [
+   "The",
+   "Yellowstone",
+   "River",
+   "runs",
+   "through",
+   "it",
+   "and",
+   "drops",
+   "93",
+   "meters",
+   "in",
+   "the",
+   "Lower",
+   "Falls."
+  ]
+ },
+ {
+  "start": 163.38,
+  "end": 169.34,
+  "tokens": [
+   "Visitors",
+   "can",
+   "walk",
+   "on",
+   "a",
+   "path",
+   "that",
+   "brings",
+   "them",
+   "very",
+   "close",
+   "to",
+   "the",
+   "top",
+   "of",
+   "the",
+   "falls."
+  ]
+ },
+ {
+  "start": 170.26,
+  "end": 174.26,
+  "tokens": [
+   "There,",
+   "they",
+   "can",
+   "see",
+   "and",
+   "hear",
+   "the",
+   "powerful",
+   "falls."
+  ]
+ },
+ {
+  "start": 175.2,
+  "end": 182.24,
+  "tokens": [
+   "In",
+   "summer",
+   "of",
+   "1988,",
+   "forest",
+   "fires",
+   "burned",
+   "large",
+   "areas",
+   "of",
+   "the",
+   "park."
+  ]
+ },
+ {
+  "start": 183.24,
+  "end": 188.48,
+  "tokens": [
+   "Most",
+   "of",
+   "those",
+   "areas",
+   "are",
+   "now",
+   "covered",
+   "with",
+   "plants",
+   "and",
+   "young",
+   "trees."
+  ]
+ },
+ {
+  "start": 189.8,
+  "end": 197.14,
+  "tokens": [
+   "Yellowstone",
+   "is",
+   "home",
+   "to",
+   "the",
+   "largest",
+   "group",
+   "of",
+   "wild",
+   "animals",
+   "in",
+   "the",
+   "lower",
+   "48",
+   "United",
+   "States."
+  ]
+ },
+ {
+  "start": 198.24,
+  "end": 210.62,
+  "tokens": [
+   "These",
+   "include",
+   "bison,",
+   "grizzly",
+   "bear,",
+   "elk,",
+   "deer,",
+   "moose,",
+   "fox,",
+   "beaver,",
+   "coyote",
+   "and",
+   "wolves."
+  ]
+ },
+ {
+  "start": 211.62,
+  "end": 221.54,
+  "tokens": [
+   "In",
+   "2024,",
+   "park",
+   "officials",
+   "estimated",
+   "the",
+   "bison",
+   "population",
+   "to",
+   "be",
+   "about",
+   "4,500",
+   "animals."
+  ]
+ },
+ {
+  "start": 222.64,
+  "end": 227.76,
+  "tokens": [
+   "That",
+   "makes",
+   "it",
+   "the",
+   "largest",
+   "group",
+   "of",
+   "wild",
+   "bison",
+   "in",
+   "the",
+   "world."
+  ]
+ },
+ {
+  "start": 229.02,
+  "end": 235.42,
+  "tokens": [
+   "There",
+   "is",
+   "still",
+   "a",
+   "wild",
+   "west",
+   "in",
+   "America…",
+   "and",
+   "its",
+   "name",
+   "is",
+   "Yellowstone."
+  ]
+ },
+ {
+  "start": 237.28,
+  "end": 238.66,
+  "tokens": [
+   "I'm",
+   "Andrew",
+   "Smith."
+  ]
+ }
+]

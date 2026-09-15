@@ -92,6 +92,12 @@ export function LogSheet({
           </div>
         </fieldset>
 
+        {module === "listening" && (
+          <p className="mt-4 rounded-2xl bg-sky-soft px-4 py-3 text-[13px] font-semibold text-sky-text">
+            StepUp дээрх бичлэг сонссон хугацаа автоматаар бүртгэгддэг. Энд зөвхөн гадуур сонссон хугацаагаа нэмээрэй.
+          </p>
+        )}
+
         <fieldset className="mt-5">
           <legend className="mb-2.5 text-sm font-extrabold">Хэдэн минут?</legend>
           <div className="grid grid-cols-4 gap-2">

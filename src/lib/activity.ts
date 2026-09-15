@@ -25,6 +25,47 @@ export async function logStudySession(opts: {
   });
 }
 
+/** Minutes of a timed session already logged for the same item recently. */
+const TIMED_WINDOW_MS = 3 * 60 * 60 * 1000;
+
+/**
+ * Logs time measured by a module (e.g. a listening clip), not typed by the learner.
+ * Points follow the study-log rule on the *cumulative* time for the same item in
+ * the last 3 hours, so flushing in small pieces never earns more than one long session.
+ */
+export async function logTimedSession(opts: {
+  userId: string;
+  module: ActivityModule;
+  seconds: number;
+  ref: string;
+}) {
+  const seconds = Math.max(0, Math.min(14400, Math.floor(opts.seconds)));
+  const [prev] = await db
+    .select({
+      sec: sql<number>`coalesce(sum(${activityEvents.durationSec}), 0)::int`,
+      pts: sql<number>`coalesce(sum(${activityEvents.points}), 0)::int`,
+    })
+    .from(activityEvents)
+    .where(
+      and(
+        eq(activityEvents.userId, opts.userId),
+        eq(activityEvents.module, opts.module),
+        eq(activityEvents.kind, "timed"),
+        gte(activityEvents.occurredAt, new Date(Date.now() - TIMED_WINDOW_MS)),
+        sql`${activityEvents.meta}->>'ref' = ${opts.ref}`,
+      ),
+    );
+  const points = Math.max(0, pointsForStudyLog(Math.floor((prev.sec + seconds) / 60)) - prev.pts);
+  await db.insert(activityEvents).values({
+    userId: opts.userId,
+    module: opts.module,
+    kind: "timed",
+    durationSec: seconds,
+    points,
+    meta: { ref: opts.ref },
+  });
+}
+
 export const getDashboardStats = cache(async (userId: string, timeZone: string): Promise<TrackerStats> => {
   const since = new Date();
   since.setUTCDate(since.getUTCDate() - 400);

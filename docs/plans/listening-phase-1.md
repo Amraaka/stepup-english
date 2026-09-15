@@ -1,0 +1,58 @@
+# Listening module — development plan
+
+Date: 2026-09-15
+Decision record: ADR 0009. Research: `docs/research/listening-content-sourcing.md`.
+
+## Phases
+
+| Phase | Outcome | Status |
+|---|---|---|
+| **1. Hosted clip player** | A learner opens `/listening`, picks a clip, listens with a synced transcript, taps a word to see its Mongolian meaning, replays sentences, slows to 0.75x, hides the transcript. Listening time logs to the tracker automatically. | In progress |
+| 2. Saved words + flashcards | Save a word from the tap sheet (members). Daily SRS review with "Санасан / Мартсан", sentence + TTS, daily cap 20. | Planned |
+| 3. Active listening | Dictation and gap-fill generated from transcripts. 3 optional questions after a clip. | Planned |
+| 4. Shadowing | Record yourself per sentence and compare with the original. Clip audio on flashcards (hosted content only). | Planned |
+| 5. Paid AI | Pronunciation scoring with Mongolian explanations. | Planned |
+| — YouTube embed backend | CC BY / permission-granted embeds with the embed-safe feature set. | After phase 2 |
+
+## Phase 1 — steps
+
+1. **Content format** — `src/content/listening/<slug>.json`, typed by `src/lib/listening/types.ts`:
+   - `source` with name, URL, license and credit (VOA: public domain, credit "VOA").
+   - `segments[]` of sentences with `start`/`end` seconds and `tokens[]` (surface text + `lemma`, optional `phraseId`).
+   - `glossary` keyed by lemma, holding the Mongolian meaning, part of speech and, optionally, the English definition.
+   - `phrases` for multi-word units that should be selected with one tap.
+   - Audio at `public/listening/<slug>.mp3`, moving to Supabase Storage once there are more than a handful of clips.
+2. **Alignment pipeline** — `scripts/listening/align.py` runs faster-whisper word timestamps against the audio, matches them to the published VOA text (which is the ground truth) and writes the segment timings. A person then reviews the result.
+3. **First content** — two VOA-produced clips, both A2–B1: *George Washington – First President* (2:42) and *Yellowstone: The World's First National Park* (4:00).
+4. **Pages**
+   - `/listening`: the clip list (level, length, source), replacing the "coming soon" placeholder.
+   - `/listening/[slug]`: the player.
+5. **Player (mobile first)**
+   - Sticky control bar with play/pause, **replay sentence** (large, thumb reach), 0.75x/1x and a transcript show/hide toggle for blind listening.
+   - The transcript auto-scrolls to the active sentence, and tapping a sentence seeks to it.
+   - Tapping a word pauses the audio and opens a bottom sheet with the word, its lemma, the Mongolian meaning and the English definition. Closing the sheet resumes playback if it was playing.
+   - Credit line and source link below the transcript.
+6. **Auto time logging**
+   - Seconds count only while the audio plays and the tab is visible.
+   - The count flushes when the clip ends, when the learner leaves (`pagehide`) or every 5 minutes. A flush is skipped under 60 s, and a clip is capped at 2× its duration.
+   - Members: a server action inserts an `activity_events` row with `module: "listening"`, `kind: "listening"` and `meta: { clipId }`.
+   - Guests: the event goes to the guest store (imported on onboarding, like manual logs).
+   - After a flush, the celebration flow shows as it does for manual logs.
+7. **Verify** — typecheck and lint, then screenshots at 390×844 and 1440×900, then a real listen-through to check sync and logging.
+
+## Progress (2026-09-15)
+
+- Done: steps 1–6. The two VOA clips are aligned (295/302 and 363/370 words matched). The glossary covers every word, and phrases like *give up* and *United States* are selected with one tap.
+- Verified in the browser at 390×844 as a guest:
+  - A word tap opens the sheet and pauses playback.
+  - A phrase tap works, and so do playback, 0.75x, jumping to a sentence and replaying it.
+  - Leaving after 64 s of listening wrote a guest event (`listening`, 1 min, 10 points).
+- Not yet verified: member logging end to end (only the cumulative-points SQL was run, as a read-only query against the database), and a manual listen-through of every sentence's timing.
+- Fixed:
+  - The manual log sheet now says that listening time on StepUp is logged automatically.
+  - "U.S." followed by a sentence starter ("It", "The" …) now ends a sentence, so Yellowstone has 30 sentences.
+  - `align.py` lists every word whose timing was interpolated, so those sentences can be checked by ear. All flagged words are mid-sentence (numbers, "U.S.", "six-member"), apart from "slave holder." at the end of Washington sentence 18.
+
+## Out of scope for phase 1
+
+Saving words, flashcards, dictation, recording, YouTube embeds, a DB table for clips (the JSON files are the catalog until an editor is needed).

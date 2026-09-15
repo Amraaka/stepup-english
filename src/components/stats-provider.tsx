@@ -10,19 +10,20 @@ import {
   useTransition,
 } from "react";
 import {
+  MIN_TIMED_SEC,
   buildStats,
   localDay,
   pointsForStudyLog,
   type DayAgg,
   type TrackerStats,
 } from "@/lib/tracker";
-import { logStudyAction } from "@/app/(site)/actions";
+import { logListeningAction, logStudyAction } from "@/app/(site)/actions";
 import { GUEST_EVENTS_KEY } from "@/lib/guest";
 import { LogSheet } from "@/components/game/log-sheet";
 import { Celebration, type CelebrationData } from "@/components/game/celebration";
 
 // Guest mode: events live in this browser only.
-type GuestEvent = { day: string; durationMin: number; points: number; module?: string };
+type GuestEvent = { day: string; durationMin: number; points: number; module?: string; ref?: string };
 const KEY = GUEST_EVENTS_KEY;
 const TZ = "Asia/Ulaanbaatar";
 
@@ -82,6 +83,8 @@ type StatsContext = {
   stats: TrackerStats;
   isGuest: boolean;
   openLog: (module?: string) => void;
+  /** Logs measured listening time; `celebrate` shows the celebration screen. */
+  logListening: (slug: string, seconds: number, celebrate: boolean) => void;
 };
 
 const Ctx = createContext<StatsContext | null>(null);
@@ -155,7 +158,50 @@ export function StatsProvider({
     });
   }
 
-  const value = useMemo(() => ({ stats, isGuest, openLog }), [stats, isGuest, openLog]);
+  const logListening = useCallback(
+    async (slug: string, seconds: number, celebrate: boolean) => {
+      if (seconds < MIN_TIMED_SEC) return;
+      const before = stats;
+      let after: TrackerStats;
+      if (isGuest) {
+        // Same rule as the server: points follow cumulative time for this clip today.
+        const day = localDay(new Date(), TZ);
+        const prev = guestStore.getSnapshot().filter((e) => e.ref === slug && e.day === day);
+        const prevMin = prev.reduce((sum, e) => sum + e.durationMin, 0);
+        const prevPts = prev.reduce((sum, e) => sum + e.points, 0);
+        const minutes = Math.floor(seconds / 60);
+        guestStore.add({
+          day,
+          durationMin: minutes,
+          points: Math.max(0, pointsForStudyLog(prevMin + minutes) - prevPts),
+          module: "listening",
+          ref: slug,
+        });
+        after = guestStats(guestStore.getSnapshot());
+      } else {
+        const res = await logListeningAction(slug, seconds).catch(() => null);
+        if (!res) return;
+        setMemberStats(res);
+        after = res;
+      }
+      if (celebrate) {
+        setCelebration({
+          firstToday: before.todayPoints === 0,
+          streak: after.streak,
+          earned: after.todayPoints - before.todayPoints,
+          todayMinutes: after.todayMinutes,
+          week: after.week,
+          isGuest,
+        });
+      }
+    },
+    [stats, isGuest],
+  );
+
+  const value = useMemo(
+    () => ({ stats, isGuest, openLog, logListening }),
+    [stats, isGuest, openLog, logListening],
+  );
 
   return (
     <Ctx.Provider value={value}>

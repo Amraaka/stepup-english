@@ -1,6 +1,9 @@
 // Pure tracker rules shared by server (DB) and guest (in-browser) modes.
 // Points/streak rules: docs/decisions/0005-activity-log-points-streaks.md
 
+/** Shortest time a module may log on its own (e.g. listening), in seconds. */
+export const MIN_TIMED_SEC = 60;
+
 export function pointsForStudyLog(durationMin: number): number {
   return Math.min(10 + 5 * Math.floor(durationMin / 5), 60);
 }
