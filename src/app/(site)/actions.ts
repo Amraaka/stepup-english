@@ -30,7 +30,8 @@ export async function logTimedAction(target: TimedTarget, seconds: number): Prom
     if (!getClip(target.ref)) return null;
     cap = MAX_SESSION_SEC;
   } else if (target.module === "grammar") {
-    if (!getLesson(target.ref)) return null;
+    // A lesson (reading or its practice) or the mistake review.
+    if (target.ref !== "review" && !getLesson(target.ref)) return null;
     cap = MAX_SESSION_SEC;
   } else if (target.module === "vocabulary" && target.ref === "review") {
     cap = MAX_SESSION_SEC;

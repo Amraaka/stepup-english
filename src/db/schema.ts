@@ -5,6 +5,7 @@ import {
   integer,
   jsonb,
   pgTable,
+  primaryKey,
   smallint,
   text,
   timestamp,
@@ -79,4 +80,34 @@ export const savedWords = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [unique().on(t.userId, t.lemma), index("saved_words_user_due_idx").on(t.userId, t.dueAt)],
+);
+
+export const grammarProgress = pgTable(
+  "grammar_progress",
+  {
+    userId: uuid("user_id").notNull(),
+    slug: text("slug").notNull(),
+    bestScore: smallint("best_score").notNull(),
+    lastScore: smallint("last_score").notNull(),
+    total: smallint("total").notNull(),
+    attempts: integer("attempts").notNull().default(1),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.slug] })],
+);
+
+export const grammarReview = pgTable(
+  "grammar_review",
+  {
+    id: bigint("id", { mode: "number" }).primaryKey().generatedAlwaysAsIdentity(),
+    userId: uuid("user_id").notNull(),
+    slug: text("slug").notNull(),
+    itemKey: text("item_key").notNull(),
+    box: smallint("box").notNull().default(0),
+    dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
+    lastReviewedAt: timestamp("last_reviewed_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [unique().on(t.userId, t.slug, t.itemKey), index("grammar_review_user_due_idx").on(t.userId, t.dueAt)],
 );

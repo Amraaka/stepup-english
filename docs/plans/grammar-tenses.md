@@ -13,7 +13,7 @@ A learner opens `/grammar` and follows one ordered path through every English te
 |---|---|---|
 | **1. Tense path + first 6 lessons** | `/grammar` path, lesson page, practice, auto time logging. Lessons: Present Simple, Present Continuous, Past Simple, Past Continuous, Present Perfect, will / going to. | Done |
 | 2. Remaining tenses | Present Perfect Continuous, Past Perfect, used to / would, Future Continuous, Future Perfect, Past Perfect Continuous, Future Perfect Continuous, was going to / would, and a Past Simple vs Present Perfect contrast lesson. Present tenses for the future are covered inside the Present Simple / Continuous lessons; will vs going to is its own lesson. | Done |
-| 3. Progress + mistake review | `grammar_progress` table (best score, completed at). Wrong answers become review cards in the daily review. Path shows done / next. | Planned |
+| 3. Progress + mistake review | `grammar_progress` and `grammar_review` tables (ADR 0013). Wrong answers become Leitner review items at `/grammar/review`. Path shows done / next / due mistakes. | Done (local DB only) |
 | 4. Mixed tense checks | Level checkpoints that mix tenses; auto-generated items from licensed example sentences (depends on research). | Planned |
 
 ## Lesson format (phase 1)
@@ -57,6 +57,15 @@ Typecheck and lint; a scratch script that checks every lesson (answers are among
   - At 390×844, every lesson page renders its timeline with no overlapping or clipped labels (checked by measuring text boxes); the was going to / would timeline was checked by eye. No console errors.
 - Not verified: practice runs for the 9 new lessons in a browser (they use the same component as phase 1), desktop screenshots.
 - The Mongolian explanations and B2–C1 example sentences still need review by an English teacher.
+
+## Phase 3 progress (2026-09-15)
+
+- Built: migration `20260915070000_grammar_progress.sql` (applied locally), `src/lib/grammar/progress.ts`, grammar actions, progress on the path page, `/grammar/review`, finish-screen messages for saved results and guests.
+- Verified at 390×844 as a member:
+  - Present Simple practice with 2 wrong answers finished at 6/8, showed "Алдсан 2 асуулт давталтад нэмэгдлээ", and wrote `grammar_progress` (best 6/8, completed) plus 2 `grammar_review` rows in box 0.
+  - `/grammar` showed 1/15 done, a check with "шилдэг 6/8", "Дараагийнх" on Present Continuous and "Алдаагаа давтах · 2 асуулт".
+  - The review session showed both items; the right answer moved to box 1 (due later), the wrong one stayed in box 0.
+- Not verified: guest finish screen in a browser, the daily review cap, desktop screenshots, hosted Supabase.
 
 ## Out of scope for phase 1
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getLesson, nextLesson } from "@/lib/grammar/lessons";
+import { getLesson, nextLesson, practiceItems } from "@/lib/grammar/lessons";
 import { GrammarPractice } from "@/components/grammar/grammar-practice";
 
 export async function generateMetadata({ params }: PageProps<"/grammar/[slug]/practice">): Promise<Metadata> {
@@ -14,9 +14,8 @@ export default async function Page({ params }: PageProps<"/grammar/[slug]/practi
   const next = nextLesson(lesson.slug);
   return (
     <GrammarPractice
-      lesson={{ slug: lesson.slug, title: lesson.title }}
-      exercises={lesson.exercises}
-      next={next ? { slug: next.slug, title: next.title } : null}
+      items={practiceItems(lesson)}
+      mode={{ kind: "lesson", slug: lesson.slug, next: next ? { slug: next.slug, title: next.title } : null }}
     />
   );
 }

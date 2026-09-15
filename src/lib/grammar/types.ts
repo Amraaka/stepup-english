@@ -63,5 +63,11 @@ export type Lesson = {
   exercises: Exercise[];
 };
 
+/** One exercise in a session, from a lesson's practice or from the mistake review. */
+export type PracticeItem = { slug: string; lessonTitle: string; key: string; exercise: Exercise };
+
+/** Saved result for one lesson (members only). */
+export type LessonProgress = { bestScore: number; total: number; completed: boolean };
+
 /** A spot on the path; lessons not written yet show as "Тун удахгүй". */
 export type PathEntry = { slug: string; title: string; mn: string; level: GrammarLevel };

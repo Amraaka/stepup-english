@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSkill } from "@/lib/skills";
+import { getCurrentUser } from "@/lib/auth";
 import { LEVEL_NAME, TENSE_PATH, getLesson } from "@/lib/grammar/lessons";
-import type { GrammarLevel } from "@/lib/grammar/types";
+import { dueReviewCount, progressBySlug } from "@/lib/grammar/progress";
+import type { GrammarLevel, LessonProgress } from "@/lib/grammar/types";
 import { TONE } from "@/lib/tones";
 import { SkillIcon } from "@/components/skill-icon";
-import { ChevronRightIcon } from "@/components/icons";
+import { CheckIcon, ChevronRightIcon, ReplayIcon } from "@/components/icons";
 
 const skill = getSkill("grammar");
 const t = TONE[skill.tone];
@@ -17,7 +19,14 @@ export const metadata: Metadata = {
 
 const LEVELS: GrammarLevel[] = ["A1", "A2", "B1", "B2", "C1"];
 
-export default function Page() {
+export default async function Page() {
+  const user = await getCurrentUser();
+  const [progress, due] = user
+    ? await Promise.all([progressBySlug(user.id), dueReviewCount(user.id)])
+    : [{} as Record<string, LessonProgress>, 0];
+  const nextSlug = user ? TENSE_PATH.find((p) => getLesson(p.slug) && !progress[p.slug]?.completed)?.slug : undefined;
+  const doneCount = TENSE_PATH.filter((p) => progress[p.slug]?.completed).length;
+
   return (
     <div className="flex flex-col gap-4">
       <section className={`rounded-[28px] ${t.soft} p-5 sm:p-7`}>
@@ -30,7 +39,35 @@ export default function Page() {
         <p className="mt-2 max-w-[48ch] text-[15px] leading-relaxed text-muted">
           Англи хэлний бүх цагийг дарааллаар нь үзээрэй. Хичээл бүр монгол тайлбар, жишээ, дасгалтай.
         </p>
+        {user ? (
+          <p className="mt-3 text-sm font-extrabold tabular-nums">
+            {doneCount}/{TENSE_PATH.length} хичээл дууссан
+          </p>
+        ) : (
+          <p className="mt-3 text-sm text-muted">
+            <Link href="/login" className="font-extrabold text-rose-text underline">
+              Нэвтэрвэл
+            </Link>{" "}
+            ахиц тань хадгалагдаж, алдсан асуултууд тань давтагдана.
+          </p>
+        )}
       </section>
+
+      {due > 0 && (
+        <Link
+          href="/grammar/review"
+          className="flex items-center gap-4 rounded-3xl bg-surface p-4 transition-transform hover:-translate-y-0.5 sm:p-5"
+        >
+          <span className={`grid size-12 shrink-0 place-items-center rounded-2xl ${t.solid} text-ink-950`}>
+            <ReplayIcon className="size-6" />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="block text-[15px] font-extrabold">Алдаагаа давтах</span>
+            <span className="mt-0.5 block text-sm text-muted">Өмнө нь алдсан {due} асуулт давтах</span>
+          </span>
+          <ChevronRightIcon className="size-5 shrink-0 text-muted" />
+        </Link>
+      )}
 
       {LEVELS.map((level) => {
         const entries = TENSE_PATH.filter((p) => p.level === level);
@@ -44,18 +81,34 @@ export default function Page() {
               {entries.map((p) => {
                 const n = TENSE_PATH.indexOf(p) + 1;
                 const ready = !!getLesson(p.slug);
+                const prog = progress[p.slug];
+                const done = !!prog?.completed;
+                const isNext = p.slug === nextSlug;
                 const body = (
                   <>
                     <span
                       className={`grid size-12 shrink-0 place-items-center rounded-2xl text-base font-extrabold tabular-nums ${
-                        ready ? `${t.soft} ${t.text}` : "bg-canvas text-muted"
+                        done ? "bg-mint text-ink-950" : ready ? `${t.soft} ${t.text}` : "bg-canvas text-muted"
                       }`}
                     >
-                      {n}
+                      {done ? <CheckIcon className="size-6 [stroke-width:2.6]" /> : n}
                     </span>
                     <span className="min-w-0 flex-1">
+                      {isNext && (
+                        <span className={`mb-1 inline-block rounded-full ${t.soft} px-2 py-0.5 text-[11px] font-extrabold ${t.text}`}>
+                          Дараагийнх
+                        </span>
+                      )}
                       <span className="block text-[15px] font-extrabold leading-snug">{p.title}</span>
-                      <span className="mt-0.5 block text-sm text-muted">{p.mn}</span>
+                      <span className="mt-0.5 block text-sm text-muted">
+                        {p.mn}
+                        {prog && (
+                          <span className="tabular-nums">
+                            {" "}
+                            · шилдэг {prog.bestScore}/{prog.total}
+                          </span>
+                        )}
+                      </span>
                     </span>
                   </>
                 );
@@ -64,7 +117,10 @@ export default function Page() {
                     {ready ? (
                       <Link
                         href={`/grammar/${p.slug}`}
-                        className="flex items-center gap-4 rounded-3xl bg-surface p-4 transition-transform hover:-translate-y-0.5 sm:p-5"
+                        aria-current={isNext ? "step" : undefined}
+                        className={`flex items-center gap-4 rounded-3xl bg-surface p-4 transition-transform hover:-translate-y-0.5 sm:p-5 ${
+                          isNext ? "ring-2 ring-rose" : ""
+                        }`}
                       >
                         {body}
                         <ChevronRightIcon className="size-5 shrink-0 text-muted" />
