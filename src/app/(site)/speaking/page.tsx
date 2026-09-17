@@ -5,11 +5,12 @@ import { getCurrentUser } from "@/lib/auth";
 import { timedSecondsByRef } from "@/lib/activity";
 import { CLIPS, shadowingSegments } from "@/lib/listening/clips";
 import { pronunciationAvailable } from "@/lib/pronunciation/provider";
+import { contentProgressByRef, type ItemProgress } from "@/lib/content-progress";
 import { TONE } from "@/lib/tones";
 import { SkillIcon } from "@/components/skill-icon";
 import { LogButton } from "@/components/game/widgets";
 import { SpeakingMinutes } from "@/components/speaking/speaking-minutes";
-import { ChevronRightIcon, ClockIcon, MicIcon } from "@/components/icons";
+import { CheckIcon, ChevronRightIcon, ClockIcon, MicIcon } from "@/components/icons";
 
 const skill = getSkill("speaking");
 const t = TONE[skill.tone];
@@ -22,7 +23,9 @@ export const metadata: Metadata = {
 export default async function Page() {
   const user = await getCurrentUser();
   // Shadowing logs speaking time with the clip slug as ref (ADR 0011).
-  const secByClip = user ? await timedSecondsByRef(user.id, "speaking") : {};
+  const [secByClip, progress] = user
+    ? await Promise.all([timedSecondsByRef(user.id, "speaking"), contentProgressByRef(user.id, "speaking")])
+    : [{} as Record<string, number>, {} as Record<string, ItemProgress>];
   const ai = pronunciationAvailable();
 
   const tips = [
@@ -61,14 +64,17 @@ export default async function Page() {
         <ul className="mt-3 flex flex-col gap-2.5">
           {CLIPS.map((c) => {
             const minutes = Math.floor((secByClip[c.slug] ?? 0) / 60);
+            const done = !!progress[c.slug]?.completed;
             return (
               <li key={c.slug}>
                 <Link
                   href={`/listening/${c.slug}/shadowing`}
                   className="flex items-center gap-4 rounded-3xl bg-surface p-4 transition-transform hover:-translate-y-0.5 sm:p-5"
                 >
-                  <span className={`grid size-12 shrink-0 place-items-center rounded-2xl ${t.soft} ${t.icon}`}>
-                    <MicIcon className="size-6" />
+                  <span
+                    className={`grid size-12 shrink-0 place-items-center rounded-2xl ${done ? "bg-mint text-ink-950" : `${t.soft} ${t.icon}`}`}
+                  >
+                    {done ? <CheckIcon className="size-6 [stroke-width:2.6]" aria-label="Дууссан" /> : <MicIcon className="size-6" />}
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="block text-[15px] font-extrabold leading-snug">{c.title}</span>

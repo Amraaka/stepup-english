@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { checkDictation, type DictationResult, type Mark, type PracticeItem } from "@/lib/listening/exercises";
 import { saveWordAction } from "@/app/(site)/vocabulary/actions";
 import { useStats } from "@/components/stats-provider";
@@ -10,6 +10,8 @@ import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
 import { useRecentInput } from "@/components/listening/use-recent-input";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { Mascot } from "@/components/mascot";
+import { CompletionNote } from "@/components/game/completion-note";
+import { finishPracticeAction, type PracticeAnswer } from "@/app/(site)/listening/actions";
 import { CheckIcon, PauseIcon, PlayIcon, XIcon } from "@/components/icons";
 
 type ClipInfo = { slug: string; title: string; audio: string; durationSec: number };
@@ -33,6 +35,8 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
   const [typed, setTyped] = useState("");
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState<PracticeAnswer[]>([]);
+  const [attempt, setAttempt] = useState(0);
   const [slow, setSlow] = useState(false);
   const [saved, setSaved] = useState<Set<string>>(() => new Set());
   const { isGuest } = useStats();
@@ -92,6 +96,8 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
       result = { correct: choice === item.answer };
     }
     if (result.correct) setScore((s) => s + 1);
+    const answer = item.kind === "dictation" ? (result.typed ?? "") : item.options[choice ?? -1] ?? "";
+    setAnswers((a) => [...a, { id: item.id, answer }]);
     setOutcome(result);
     stop();
   }
@@ -109,6 +115,8 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
     next();
     setIdx(0);
     setScore(0);
+    setAnswers([]);
+    setAttempt((n) => n + 1);
   }
 
   async function saveGapWord() {
@@ -122,6 +130,8 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
     }).catch(() => false);
     if (ok) setSaved((s) => new Set(s).add(lemma));
   }
+
+  const save = useCallback(() => finishPracticeAction(clip.slug, answers), [clip.slug, answers]);
 
   if (!item) {
     const ratio = items.length ? score / items.length : 0;
@@ -138,6 +148,7 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
               ? "Сайн байна! Алдсан хэсгээ бичлэг дээрээ дахин сонсоорой."
               : "Бичлэгээ дахин нэг сонсоод, дахин оролдоод үзээрэй."}
         </p>
+        <CompletionNote key={attempt} save={save} />
         <div className="mt-6 flex w-full max-w-xs flex-col gap-2.5">
           <Link
             href={`/listening/${clip.slug}`}

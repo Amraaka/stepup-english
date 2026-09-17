@@ -123,6 +123,26 @@ export const grammarProgress = pgTable(
   (t) => [primaryKey({ columns: [t.userId, t.slug] })],
 );
 
+/** Modules whose items (texts, clips) record a finished attempt (ADR 0020). */
+export const CONTENT_MODULES = ["reading", "listening", "speaking"] as const;
+export type ContentModule = (typeof CONTENT_MODULES)[number];
+
+export const contentProgress = pgTable(
+  "content_progress",
+  {
+    userId: uuid("user_id").notNull(),
+    module: text("module").$type<ContentModule>().notNull(),
+    ref: text("ref").notNull(),
+    bestScore: smallint("best_score").notNull(),
+    lastScore: smallint("last_score").notNull(),
+    total: smallint("total").notNull(),
+    attempts: integer("attempts").notNull().default(1),
+    completedAt: timestamp("completed_at", { withTimezone: true }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.module, t.ref] })],
+);
+
 export const grammarReview = pgTable(
   "grammar_review",
   {

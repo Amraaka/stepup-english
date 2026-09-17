@@ -21,14 +21,14 @@ Resources are scattered across many apps; nothing shows a learner's whole progre
 ## Operating Context
 
 - Mobile-first web / PWA; desktop must still look intentional.
-- Daily ritual: open app → see streak and today's goal → do a short session → log/earn points.
+- Daily ritual: open app → see today's next step and goal → do a short session → time and points are recorded automatically.
 - The owner wants the product to feel like an interactive, gamified app, not an ordinary website (references: Duolingo path/quests/leagues, bento study dashboards).
 
 ## Capabilities and Constraints
 
-- Built today: auth (Supabase), append-only activity log, points per session (`min(10 + 5·floor(min/5), 60)`), streaks in user timezone, 7-day chart, guest mode in localStorage, manual study-time logging. See ADR 0005.
-- Not built yet: skill module content, placement test, XP levels, quests, leagues, friends, achievements. Designs may show these as planned; they must not be presented as live.
-- Nav structure: Home + four skills (ADR 0006).
+- Built today: auth (Supabase) with onboarding (self-assessed level, goals), append-only activity log, points and streaks in the user's timezone (ADR 0005, 0019), guest mode in localStorage, time measured automatically inside modules (ADR 0015), plus manual logging for study outside StepUp. Live modules: listening (clips, shadowing), reading (texts with tap-to-translate), grammar (tense lessons, checkpoints, mistake review), vocabulary (saved words, spaced review). Derived game layer: levels, daily and weekly quests, achievements.
+- Not built yet: writing module, placement test, leagues, friends, monthly challenge. Designs may show these as planned; they must not be presented as live.
+- Nav structure: Нүүр, Суралцах, Даалгавар, Профайл, with skills in the sidebar (ADR 0007, 0019).
 - Stack: Next.js App Router, Tailwind v4, Supabase, Drizzle, Vercel (portable).
 
 ## Brand Commitments

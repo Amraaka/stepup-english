@@ -36,8 +36,9 @@ export async function logStudyAction(
     : "general";
   if (!Number.isFinite(durationMin) || durationMin <= 0) return null;
 
-  if (!(await logStudySession({ userId: user.id, module: mod, durationMin }))) return null;
   const profile = await getProfile(user.id);
+  const timeZone = profile?.timezone ?? "Asia/Ulaanbaatar";
+  if (!(await logStudySession({ userId: user.id, module: mod, durationMin, timeZone }))) return null;
   revalidatePath("/", "layout");
-  return getDashboardStats(user.id, profile?.timezone ?? "Asia/Ulaanbaatar");
+  return getDashboardStats(user.id, timeZone);
 }

@@ -3,7 +3,7 @@ import { cache } from "react";
 import { and, desc, eq, gte, sql } from "drizzle-orm";
 import { db } from "@/db";
 import { activityEvents, profiles, type ActivityModule } from "@/db/schema";
-import { buildStats, localDay, pointsForStudyLog, type DayAgg, type TrackerStats } from "@/lib/tracker";
+import { buildStats, localDay, manualLogPoints, pointsForStudyLog, type DayAgg, type TrackerStats } from "@/lib/tracker";
 
 export const getProfile = cache(async (userId: string) => {
   const rows = await db.select().from(profiles).where(eq(profiles.id, userId));
@@ -40,6 +40,7 @@ export async function logStudySession(opts: {
   userId: string;
   module: ActivityModule;
   durationMin: number;
+  timeZone: string;
 }): Promise<boolean> {
   return db.transaction(async (tx) => {
     await lockUser(tx, opts.userId);
@@ -47,12 +48,28 @@ export async function logStudySession(opts: {
     const roomMin = Math.max(0, DAILY_STUDY_MIN - Math.floor(day.studySec / 60));
     const durationMin = Math.max(0, Math.min(240, roomMin, Math.floor(opts.durationMin)));
     if (durationMin === 0) return false;
+    // Manual logs earn on the local day's running total (ADR 0019).
+    const startOfDay = sql`(date_trunc('day', now() at time zone ${opts.timeZone}) at time zone ${opts.timeZone})`;
+    const [today] = await tx
+      .select({
+        sec: sql<number>`coalesce(sum(${activityEvents.durationSec}), 0)::int`,
+        pts: sql<number>`coalesce(sum(${activityEvents.points}), 0)::int`,
+      })
+      .from(activityEvents)
+      .where(
+        and(
+          eq(activityEvents.userId, opts.userId),
+          eq(activityEvents.kind, "study"),
+          gte(activityEvents.occurredAt, startOfDay),
+        ),
+      );
+    const earned = manualLogPoints({ minutes: Math.floor(today.sec / 60), points: today.pts }, durationMin);
     await tx.insert(activityEvents).values({
       userId: opts.userId,
       module: opts.module,
       kind: "study",
       durationSec: durationMin * 60,
-      points: Math.max(0, Math.min(pointsForStudyLog(durationMin), DAILY_POINTS - day.points)),
+      points: Math.max(0, Math.min(earned, DAILY_POINTS - day.points)),
     });
     return true;
   });
@@ -136,6 +153,7 @@ export const getDashboardStats = cache(async (userId: string, timeZone: string):
       module: activityEvents.module,
       points: activityEvents.points,
       durationSec: activityEvents.durationSec,
+      kind: activityEvents.kind,
     })
     .from(activityEvents)
     .where(and(eq(activityEvents.userId, userId), gte(activityEvents.occurredAt, since)))
@@ -152,8 +170,14 @@ export const getDashboardStats = cache(async (userId: string, timeZone: string):
   const today = localDay(new Date(), timeZone);
   const byDay = new Map<string, DayAgg>();
   const moduleSec: Record<string, number> = {};
+  const manualToday = { minutes: 0, points: 0 };
+  let manualSec = 0;
   for (const e of events) {
     const day = localDay(e.occurredAt, timeZone);
+    if (day === today && e.kind === "study") {
+      manualSec += e.durationSec;
+      manualToday.points += e.points;
+    }
     const cur = byDay.get(day) ?? { points: 0, durationSec: 0 };
     cur.points += e.points;
     cur.durationSec += e.durationSec;
@@ -164,5 +188,7 @@ export const getDashboardStats = cache(async (userId: string, timeZone: string):
     Object.entries(moduleSec).map(([m, sec]) => [m, Math.floor(sec / 60)]),
   );
 
-  return buildStats(byDay, today, totals, moduleMinutes);
+  manualToday.minutes = Math.floor(manualSec / 60);
+
+  return buildStats(byDay, today, totals, moduleMinutes, manualToday);
 });

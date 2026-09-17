@@ -195,6 +195,16 @@ export function ChevronRightIcon(p: P) {
   );
 }
 
+/** Panel with a left column: sidebar collapse/expand toggle. */
+export function SidebarIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <rect x="3" y="4" width="14" height="12" rx="3" />
+      <path d="M8 4v12" />
+    </svg>
+  );
+}
+
 export function ArrowUpIcon(p: P) {
   return (
     <svg {...base(p)}>

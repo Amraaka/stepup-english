@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { decodeMono, decodeShapes, shapeOf, type Shape } from "@/components/listening/decode-audio";
 import { useRecorder } from "@/components/listening/use-recorder";
 import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
@@ -10,6 +10,8 @@ import { PronunciationPanel } from "@/components/listening/pronunciation-panel";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { Mascot } from "@/components/mascot";
+import { CompletionNote } from "@/components/game/completion-note";
+import { finishShadowingAction } from "@/app/(site)/listening/actions";
 import { MicIcon, PauseIcon, PlayIcon, XIcon } from "@/components/icons";
 
 type ClipInfo = { slug: string; title: string; audio: string; durationSec: number };
@@ -67,6 +69,7 @@ export function ShadowingSession({
   const [idx, setIdx] = useState(0);
   const [done, setDone] = useState(false);
   const [practiced, setPracticed] = useState<Set<number>>(() => new Set());
+  const [attempt, setAttempt] = useState(0);
   const [minePlaying, setMinePlaying] = useState(false);
   const [shapes, setShapes] = useState<Shape[] | null>(null);
   const [mineShape, setMineShape] = useState<(Shape & { url: string }) | null>(null);
@@ -200,7 +203,11 @@ export function ShadowingSession({
     setPracticed(new Set());
     setIdx(0);
     setDone(false);
+    setAttempt((n) => n + 1);
   }
+
+  const practicedCount = practiced.size;
+  const save = useCallback(() => finishShadowingAction(clip.slug, practicedCount), [clip.slug, practicedCount]);
 
   if (done || !sentence) {
     return (
@@ -212,6 +219,7 @@ export function ShadowingSession({
             ? `${practiced.size} өгүүлбэрийг давтаж бичлээ. Өдөр бүр жаахан давтвал дуудлага тань мэдэгдэхүйц сайжирна.`
             : "Дараагийн удаа өгүүлбэр бүрийг бичиж, эх бичлэгтэйгээ харьцуулаарай."}
         </p>
+        <CompletionNote key={attempt} save={save} />
         <div className="mt-6 flex w-full max-w-xs flex-col gap-2.5">
           <Link
             href={`/listening/${clip.slug}`}

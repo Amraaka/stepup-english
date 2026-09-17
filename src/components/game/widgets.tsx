@@ -4,16 +4,18 @@ import Link from "next/link";
 import { useStats } from "@/components/stats-provider";
 import {
   DAILY_GOAL_MIN,
+  WEEK_GOAL_MIN,
   activeDaysInWeek,
   dailyQuests,
   fmtDuration,
   fmtNum,
+  weekMinutes,
   weekPoints,
-  weeklyQuests,
   type Quest,
   type QuestIconName,
 } from "@/lib/game";
-import { CORE_SKILLS, SKILLS } from "@/lib/skills";
+import type { NextStep } from "@/lib/next-step";
+import { SKILLS } from "@/lib/skills";
 import { TONE } from "@/lib/tones";
 import { Mascot } from "@/components/mascot";
 import { SkillIcon } from "@/components/skill-icon";
@@ -26,10 +28,9 @@ import {
   ChevronRightIcon,
   ClockIcon,
   FlameIcon,
-  GiftIcon,
   PlusIcon,
+  ReplayIcon,
   ShieldCheckIcon,
-  TargetIcon,
 } from "@/components/icons";
 
 /** Streak + points. Compact pill for the top bar; `labeled` card for the rail. */
@@ -81,140 +82,167 @@ export function StatPills({ className = "", labeled = false }: { className?: str
   );
 }
 
-export function DailyGoalCard({ className = "" }: { className?: string }) {
+/** The one thing to do now: the next lesson, plus any reviews due today. */
+export function NextStepCard({ step, className = "" }: { step: NextStep; className?: string }) {
+  const { stats } = useStats();
+  const { main, reviews } = step;
+  const done = stats.todayMinutes >= DAILY_GOAL_MIN;
+  return (
+    <section
+      aria-labelledby="next-h"
+      className={`relative flex flex-col overflow-hidden rounded-[28px] bg-coral-a text-ink-950 shadow-[0_18px_36px_-18px_rgb(255_90_60/0.7)] ${className}`}
+    >
+      <div className="relative flex flex-1 items-center gap-3 p-5 sm:p-6">
+        <div className="flex min-w-0 flex-1 flex-col">
+          <h2 id="next-h" className="text-sm font-extrabold">
+            Өнөөдрийн алхам
+          </h2>
+          <p className="mt-3 text-[28px] font-extrabold leading-[1.05] tracking-[-0.03em] text-balance lg:text-[32px]">
+            {main.title}
+          </p>
+          <p className="mt-1.5 text-sm font-semibold text-ink-950/75">{main.subtitle}</p>
+          <p className="mt-1 text-xs font-bold text-ink-950/60 tabular-nums">
+            {main.meta} · {main.done}/{main.total} хичээл
+          </p>
+          <Link
+            href={main.href}
+            className="press mt-5 inline-flex h-12 w-fit items-center gap-2 whitespace-nowrap rounded-full bg-ink-950 px-6 text-[15px] font-extrabold text-white [--press:rgb(0_0_0/0.35)]"
+          >
+            {main.action}
+            <ArrowRightIcon className="size-4" />
+          </Link>
+        </div>
+        <Mascot mood={done ? "cheer" : "happy"} className="-my-4 -mr-2 hidden size-40 shrink-0 sm:block lg:hidden" />
+      </div>
+      {reviews.length > 0 && (
+        <ul className="flex flex-wrap gap-2 border-t border-ink-950/12 px-5 py-3.5 sm:px-6">
+          {reviews.map((r) => (
+            <li key={r.href}>
+              <Link
+                href={r.href}
+                className="inline-flex h-10 items-center gap-2 rounded-full bg-white/30 pl-2 pr-3.5 text-[13px] font-extrabold transition-colors hover:bg-white/45"
+              >
+                <span className="grid size-7 place-items-center rounded-full bg-ink-950 text-white">
+                  <ReplayIcon className="size-3.5" />
+                </span>
+                {r.label}
+                <span className="tabular-nums text-ink-950/65">{r.count}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
+
+/** Today's minutes against the daily goal; manual logging lives here as a secondary action. */
+export function TodayCard({ className = "" }: { className?: string }) {
   const { stats, openLog } = useStats();
   const pct = Math.min(1, stats.todayMinutes / DAILY_GOAL_MIN);
   const done = pct >= 1;
   const left = Math.max(0, DAILY_GOAL_MIN - stats.todayMinutes);
   const circumference = 2 * Math.PI * 42;
+  const note = done
+    ? "Өдрийн зорилго биелсэн. Гайхалтай!"
+    : stats.todayMinutes > 0
+      ? `Зорилгод ${left} минут үлдлээ.`
+      : stats.streak > 0
+        ? `${stats.streak} хоногийн дарааллаа үргэлжлүүлэхэд ганц хичээл хангалттай.`
+        : "Хичээл, дасгалын цаг автоматаар тоологдоно.";
 
   return (
     <section
-      aria-labelledby="goal-h"
-      className={`relative flex items-center gap-4 overflow-hidden rounded-[28px] bg-coral-a p-5 text-ink-950 shadow-[0_18px_36px_-18px_rgb(255_90_60/0.7)] sm:p-6 ${className}`}
+      aria-labelledby="today-h"
+      className={`flex flex-col gap-4 rounded-[28px] bg-night p-5 text-ink-100 sm:p-6 ${className}`}
     >
-      <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-        <h2 id="goal-h" className="text-sm font-extrabold">
-          Өдрийн зорилго
-        </h2>
-        <p className="text-[34px] font-extrabold leading-none tracking-[-0.03em] tabular-nums lg:text-5xl">
-          {stats.todayMinutes}
-          <span className="text-xl text-ink-950/55 lg:text-2xl"> / {DAILY_GOAL_MIN} мин</span>
-        </p>
-        <p className="text-[13px] font-semibold text-ink-950/75 text-pretty lg:text-sm">
-          {done ? "Зорилго биелсэн — гайхалтай!" : `Зорилгод ${left} минут дутуу байна`}
-        </p>
-        <div className="mt-2.5">
-          <button
-            type="button"
-            onClick={() => openLog()}
-            className="inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-ink-950 px-5 text-sm font-extrabold text-white transition-transform active:scale-[0.97]"
-          >
-            {stats.todayPoints > 0 ? "Дахин бүртгэх" : "Цагаа бүртгэх"}
-            <ArrowRightIcon className="size-4" />
-          </button>
+      <div className="flex items-center gap-4">
+        <div className="relative size-24 shrink-0">
+          <svg viewBox="0 0 104 104" className="size-full -rotate-90" aria-hidden>
+            <circle cx="52" cy="52" r="42" stroke="rgb(255 255 255 / 0.1)" strokeWidth="11" fill="none" />
+            {pct > 0 && (
+              <circle
+                cx="52"
+                cy="52"
+                r="42"
+                stroke={done ? "var(--mint)" : "var(--coral-a)"}
+                strokeWidth="11"
+                fill="none"
+                strokeLinecap="round"
+                strokeDasharray={`${circumference * pct} ${circumference}`}
+                className="transition-[stroke-dasharray] duration-700 ease-out"
+              />
+            )}
+          </svg>
+          <span className="absolute inset-0 grid place-items-center">
+            {done ? (
+              <CheckIcon className="size-8 text-[#6fe0b1] [stroke-width:2.6]" />
+            ) : (
+              <ClockIcon className="size-7 text-ink-400" />
+            )}
+          </span>
+        </div>
+        <div className="min-w-0">
+          <h2 id="today-h" className="text-sm font-extrabold text-ink-400">
+            Өнөөдөр
+          </h2>
+          <p className="mt-1 text-[34px] font-extrabold leading-none tracking-[-0.03em] tabular-nums">
+            {stats.todayMinutes}
+            <span className="text-lg text-ink-400"> / {DAILY_GOAL_MIN} мин</span>
+          </p>
+          <p className="mt-2 text-[13px] leading-snug text-ink-400 text-pretty">{note}</p>
         </div>
       </div>
-
-      <div className="relative size-26 shrink-0 xl:hidden">
-        <svg viewBox="0 0 104 104" className="size-full -rotate-90" aria-hidden>
-          <circle cx="52" cy="52" r="42" stroke="rgb(255 255 255 / 0.35)" strokeWidth="12" fill="none" />
-          {pct > 0 && (
-            <circle
-              cx="52"
-              cy="52"
-              r="42"
-              stroke="var(--ink-950)"
-              strokeWidth="12"
-              fill="none"
-              strokeLinecap="round"
-              strokeDasharray={`${circumference * pct} ${circumference}`}
-            />
-          )}
-        </svg>
-        <span className="absolute inset-0 grid place-items-center text-xl font-extrabold tabular-nums">
-          {Math.round(pct * 100)}%
-        </span>
-      </div>
-      <Mascot mood={done ? "cheer" : "happy"} className="-my-4 -mr-3 hidden size-44 shrink-0 xl:block" />
+      <button
+        type="button"
+        onClick={() => openLog()}
+        className="mt-auto flex h-11 items-center justify-center gap-1.5 rounded-2xl bg-white/8 text-[13px] font-bold text-ink-100 transition-colors hover:bg-white/14"
+      >
+        <PlusIcon className="size-4 [stroke-width:2.4]" />
+        Гадуур суралцсан цаг нэмэх
+      </button>
     </section>
   );
 }
 
-export function WeeklyChallengeCard({ className = "" }: { className?: string }) {
-  const { stats } = useStats();
-  const q = weeklyQuests(stats)[0];
-  const done = q.value >= q.target;
-  return (
-    <Link
-      href="/quests"
-      className={`group flex flex-col justify-between gap-5 rounded-[28px] bg-night p-5 text-ink-100 transition-transform duration-200 hover:-translate-y-0.5 sm:p-6 ${className}`}
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <h2 className="text-lg font-extrabold tracking-[-0.01em] lg:text-[22px]">7 хоногийн сорил</h2>
-          <p className="mt-1 text-[13px] text-ink-400 text-pretty">
-            {done
-              ? "Энэ долоо хоногийн сорил биеллээ!"
-              : `${q.target} минут суралцаад долоо хоногоо дүүргэ`}
-          </p>
-        </div>
-        <span
-          className={`grid size-11 shrink-0 place-items-center rounded-2xl ${
-            done ? "bg-mint/20 text-[#6fe0b1]" : "bg-sky/20 text-[#8bbcff]"
-          }`}
-        >
-          {done ? <CheckIcon className="size-6 [stroke-width:2.4]" /> : <TargetIcon className="size-6" />}
-        </span>
-      </div>
-      <div className="flex items-center gap-4">
-        <div className="flex-1">
-          <div className="mb-2 flex justify-between text-xs font-bold text-ink-400">
-            <span>{done ? "Биелсэн" : "Явц"}</span>
-            <span className="tabular-nums">
-              {Math.min(q.value, q.target)} / {q.target} мин
-            </span>
-          </div>
-          <ProgressBar
-            value={q.value}
-            max={q.target}
-            label="7 хоногийн сорилын явц"
-            fill={done ? "bg-mint" : "bg-coral-a"}
-            track="bg-white/12"
-          />
-        </div>
-        <span
-          aria-hidden
-          className="press grid size-14 shrink-0 place-items-center rounded-full bg-coral-a text-ink-950"
-        >
-          <ChevronRightIcon className="size-6 [stroke-width:2.4]" />
-        </span>
-      </div>
-    </Link>
-  );
-}
-
+/** The calendar week (Mon–Sun): active days and the weekly minutes goal. */
 export function WeekCard({ className = "" }: { className?: string }) {
   const { stats } = useStats();
-  const active = activeDaysInWeek(stats);
+  const minutes = weekMinutes(stats);
+  const reached = minutes >= WEEK_GOAL_MIN;
   const copy =
     stats.todayPoints > 0
       ? "Өнөөдрийн өдөр тэмдэглэгдлээ. Маргааш уулзъя!"
       : stats.streak > 0
-        ? "Өнөөдөр 5 минут ч болов бүртгээд дарааллаа үргэлжлүүл."
-        : "Өнөөдөр нэг удаа бүртгэхэд дараалал эхэлнэ.";
+        ? `${stats.streak} хоног дараалан. Өнөөдөр ч гэсэн нэг алхам хийгээрэй.`
+        : "Өнөөдөр суралцвал дараалал эхэлнэ.";
   return (
-    <section className={`flex flex-col gap-3.5 rounded-3xl bg-surface p-4 ${className}`}>
+    <section aria-labelledby="week-h" className={`flex flex-col gap-3.5 rounded-3xl bg-surface p-4 ${className}`}>
       <div className="flex items-center justify-between gap-2">
-        <h2 className="text-[15px] font-extrabold">
-          {stats.streak > 0 ? `${stats.streak} хоног дараалан` : "Энэ 7 хоног"}
+        <h2 id="week-h" className="text-[15px] font-extrabold">
+          Энэ 7 хоног
         </h2>
-        <span className="rounded-full bg-sky-soft px-2.5 py-1 text-xs font-bold text-sky-text tabular-nums">
-          {active}/7 өдөр
-        </span>
+        <span className="text-xs font-bold text-muted tabular-nums">{activeDaysInWeek(stats)}/7 өдөр</span>
       </div>
-      <WeekStrip week={stats.week} />
+      <WeekStrip days={stats.days} />
       <p className="text-xs leading-relaxed text-muted">{copy}</p>
+      <div className="border-t border-line pt-3.5">
+        <div className="mb-2 flex items-baseline justify-between gap-2">
+          <p className="text-[13px] font-extrabold">7 хоногийн зорилго</p>
+          <p className={`text-xs font-bold tabular-nums ${reached ? "text-mint-text" : "text-muted"}`}>
+            {Math.min(minutes, WEEK_GOAL_MIN)}/{WEEK_GOAL_MIN} мин
+          </p>
+        </div>
+        <ProgressBar
+          value={minutes}
+          max={WEEK_GOAL_MIN}
+          label="7 хоногийн зорилго"
+          fill={reached ? "bg-mint" : "bg-sky"}
+        />
+        <p className="mt-2 text-[11px] text-muted">
+          {reached ? "Энэ 7 хоногийн зорилго биеллээ!" : "Даваа гараг бүр шинээр эхэлнэ."}
+        </p>
+      </div>
     </section>
   );
 }
@@ -361,50 +389,6 @@ export function SkillGrid() {
         );
       })}
     </ul>
-  );
-}
-
-export function PathPreview() {
-  const { openLog } = useStats();
-  return (
-    <section className="flex flex-col gap-5 rounded-[28px] bg-surface p-5 lg:px-6">
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <h2 className="text-lg font-extrabold">Суралцах зам</h2>
-          <p className="text-[13px] text-muted">1-р бүлэг · Өдөр тутмын яриа</p>
-        </div>
-        <Link
-          href="/learn"
-          className="inline-flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-ink-900 px-4 text-[13px] font-extrabold text-white dark:bg-ink-100 dark:text-ink-950"
-        >
-          Зам руу <ArrowRightIcon className="size-4" />
-        </Link>
-      </div>
-      <div className="relative flex items-center justify-between px-1 pb-1 sm:px-4">
-        <div aria-hidden className="absolute inset-x-8 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-locked" />
-        <button
-          type="button"
-          onClick={() => openLog()}
-          aria-label="Өнөөдрийн бүртгэл хийх"
-          className="press relative grid size-14 place-items-center rounded-full bg-coral-a text-ink-950 ring-8 ring-coral-a/20 sm:size-[68px]"
-        >
-          <PlusIcon className="size-7 [stroke-width:2.4]" />
-        </button>
-        {CORE_SKILLS.map((s) => (
-          <span
-            key={s.id}
-            title={`${s.name} · тун удахгүй`}
-            className="press relative grid size-11 place-items-center rounded-full bg-locked text-ink-400 [--press:var(--locked-deep)] sm:size-14"
-          >
-            <SkillIcon id={s.id} className="size-5 sm:size-6" />
-          </span>
-        ))}
-        <span className="press relative grid size-12 place-items-center rounded-2xl bg-sun text-ink-950 [--press:var(--sun-deep)] sm:size-14">
-          <GiftIcon className="size-6" />
-        </span>
-      </div>
-      <p className="text-xs text-muted">Одоогоор өдрийн бүртгэл нээлттэй. Хичээлүүд удахгүй нэмэгдэнэ.</p>
-    </section>
   );
 }
 

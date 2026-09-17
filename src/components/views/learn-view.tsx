@@ -1,134 +1,118 @@
-"use client";
-
 import Link from "next/link";
-import { useStats } from "@/components/stats-provider";
-import { SKILLS } from "@/lib/skills";
+import type { LearnPlan, Track } from "@/lib/learn-tracks";
+import { getSkill } from "@/lib/skills";
 import { TONE } from "@/lib/tones";
-import { Mascot } from "@/components/mascot";
 import { SkillIcon } from "@/components/skill-icon";
-import { BookIcon, CheckIcon, GiftIcon, LockIcon, PlusIcon, TargetIcon } from "@/components/icons";
+import { ProgressBar } from "@/components/game/progress-bar";
+import { ChevronRightIcon, TargetIcon } from "@/components/icons";
 
-// Zigzag offsets (px) for the path nodes, top to bottom.
-const OFFSETS = [0, -70, -96, -40, 44, 72, 40, -30];
+function TrackCard({ track }: { track: Track }) {
+  const skill = getSkill(track.id);
+  const t = TONE[skill.tone];
+  const { progress, next, note } = track;
 
-export function LearnView() {
-  const { stats, openLog } = useStats();
-  const doneToday = stats.todayPoints > 0;
+  return (
+    <li className={`flex flex-col gap-4 rounded-[24px] ${t.soft} p-4 sm:p-5`}>
+      <Link href={skill.href} className="group flex items-center gap-3">
+        <span className={`grid size-12 shrink-0 place-items-center rounded-2xl bg-surface ${t.icon}`}>
+          <SkillIcon id={skill.id} className="size-6" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-[17px] font-extrabold leading-tight group-hover:underline">{skill.name}</span>
+          <span className={`block text-xs font-semibold ${t.text}`}>{skill.english}</span>
+        </span>
+        {progress ? (
+          <span className="shrink-0 text-right">
+            <span className="block text-lg font-extrabold leading-none tabular-nums">
+              {progress.done}
+              <span className="text-sm text-muted">/{progress.total}</span>
+            </span>
+            <span className="text-[11px] font-bold text-muted">{progress.unit}</span>
+          </span>
+        ) : (
+          !skill.live && (
+            <span className={`shrink-0 rounded-full bg-surface px-2.5 py-1 text-[11px] font-extrabold ${t.text}`}>
+              Тун удахгүй
+            </span>
+          )
+        )}
+      </Link>
+
+      {progress && (
+        <ProgressBar
+          value={progress.done}
+          max={progress.total}
+          label={`${skill.name}: ${progress.done}/${progress.total} ${progress.unit}`}
+          fill={t.solid}
+          track="bg-surface"
+          className="h-2"
+        />
+      )}
+
+      {next ? (
+        <Link
+          href={next.href}
+          className="flex items-center gap-3 rounded-2xl bg-surface px-4 py-3 transition-transform hover:-translate-y-0.5"
+        >
+          <span className="min-w-0 flex-1">
+            <span className={`block text-[11px] font-extrabold ${t.text}`}>{next.label}</span>
+            <span className="block truncate text-[15px] font-extrabold">{next.title}</span>
+          </span>
+          <span className={`grid size-9 shrink-0 place-items-center rounded-full ${t.solid} text-ink-950`}>
+            <ChevronRightIcon className="size-5 [stroke-width:2.4]" />
+          </span>
+        </Link>
+      ) : !skill.live ? (
+        <p className="text-[13px] leading-relaxed text-muted text-pretty">{skill.tagline}</p>
+      ) : null}
+
+      {note && <p className="-mt-1 text-xs font-bold text-muted">{note}</p>}
+    </li>
+  );
+}
+
+export function LearnView({ plan }: { plan: LearnPlan }) {
+  const levelLine = plan.isGuest
+    ? "Нэвтэрвэл өөрийн түвшнээс эхэлж, ахиц тань хадгалагдана."
+    : plan.level
+      ? "Хичээл, эх, бичлэг таны сонгосон түвшнээс эхэлнэ."
+      : "Түвшнээ сонгоогүй тул хамгийн эхнээс (A1) эхэлнэ.";
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-[26px] font-extrabold tracking-[-0.02em] lg:text-[32px]">Суралцах зам</h1>
+      <h1 className="text-[26px] font-extrabold tracking-[-0.02em] lg:text-[32px]">Суралцах</h1>
 
-      <section className="flex items-center gap-3.5 rounded-[22px] bg-night p-4 text-ink-100">
+      <section className="flex items-center gap-3.5 rounded-[22px] bg-night p-4 text-ink-100 sm:p-5">
         <span className="grid size-12 shrink-0 place-items-center rounded-[14px] bg-coral-a text-ink-950">
-          <TargetIcon className="size-6 [stroke-width:2]" />
+          {plan.level ? (
+            <span className="text-base font-extrabold">{plan.level}</span>
+          ) : (
+            <TargetIcon className="size-6 [stroke-width:2]" />
+          )}
         </span>
         <div className="min-w-0 flex-1">
-          <p className="font-extrabold">Түвшин тогтоох шалгалт</p>
-          <p className="text-xs text-ink-400 text-pretty">
-            Тун удахгүй — дараа нь түвшиндээ тохирсон замаар явна
+          <p className="font-extrabold">
+            {plan.level ? `Таны түвшин · ${plan.levelName}` : "Түвшин тодорхойгүй"}
+          </p>
+          <p className="text-xs leading-relaxed text-ink-400 text-pretty">
+            {levelLine} Түвшин тогтоох шалгалт удахгүй нэмэгдэнэ.
           </p>
         </div>
-      </section>
-
-      <nav
-        aria-label="Ур чадвар"
-        className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [mask-image:linear-gradient(to_right,black_82%,transparent)] [scrollbar-width:none] sm:mx-0 sm:px-0 sm:[mask-image:none]"
-      >
-        {SKILLS.map((s) => (
+        {plan.isGuest && (
           <Link
-            key={s.id}
-            href={s.href}
-            className="flex h-11 shrink-0 items-center gap-2 rounded-full bg-surface px-4 text-sm font-bold transition-colors hover:bg-surface/70"
+            href="/login"
+            className="shrink-0 rounded-full bg-coral-a px-4 py-2.5 text-[13px] font-extrabold text-ink-950"
           >
-            <span className={`size-2 rounded-full ${TONE[s.tone].solid}`} />
-            {s.name}
+            Нэвтрэх
           </Link>
-        ))}
-      </nav>
-
-      <section className="press flex items-center gap-3 rounded-[22px] bg-coral-a px-5 py-4 text-ink-950">
-        <div className="min-w-0 flex-1">
-          <h2 className="text-[17px] font-extrabold tracking-[-0.01em] text-balance sm:text-[19px]">
-            1-р бүлэг · Өдөр тутмын яриа
-          </h2>
-          <p className="text-[13px] font-semibold text-ink-950/70">Мэндлэх, захиалах, асуух</p>
-        </div>
-        <span className="grid size-12 shrink-0 place-items-center rounded-[14px] bg-ink-950/12">
-          <BookIcon className="size-6" />
-        </span>
+        )}
       </section>
 
-      <ol className="mx-auto flex w-full max-w-sm flex-col items-center gap-9 py-8">
-        <li className="relative flex flex-col items-center" style={{ transform: `translateX(${OFFSETS[0]}px)` }}>
-          <span className="mb-2 rounded-xl bg-surface px-3.5 py-2 text-sm font-extrabold text-coral-a-text shadow-[0_8px_20px_-10px_rgb(18_18_21/0.3)]">
-            {doneToday ? "Өнөөдөр биелсэн" : "Эхлэх"}
-          </span>
-          <span className="grid size-[104px] place-items-center rounded-full bg-coral-a/18">
-            <button
-              type="button"
-              onClick={() => openLog()}
-              aria-label="Өнөөдрийн бүртгэл хийх"
-              className={`press grid size-21 place-items-center rounded-full ${
-                doneToday ? "bg-mint text-white [--press:var(--mint-deep)]" : "bg-coral-a text-ink-950"
-              }`}
-            >
-              {doneToday ? (
-                <CheckIcon className="size-9 [stroke-width:2.6]" />
-              ) : (
-                <PlusIcon className="size-9 [stroke-width:2.4]" />
-              )}
-            </button>
-          </span>
-          <p className="mt-2.5 text-[13px] font-extrabold">Өдрийн бүртгэл</p>
-          <Mascot mood="think" className="absolute -right-30 top-14 size-24 sm:-right-36 sm:size-28" />
-        </li>
-
-        {SKILLS.map((s, i) => (
-          <li
-            key={s.id}
-            className="flex flex-col items-center"
-            style={{ transform: `translateX(${OFFSETS[i + 1]}px)` }}
-          >
-            {s.live ? (
-              <>
-                <Link
-                  href={s.href}
-                  aria-label={s.name}
-                  className={`press grid size-18 place-items-center rounded-full text-ink-950 ${TONE[s.tone].solid} ${TONE[s.tone].press}`}
-                >
-                  <SkillIcon id={s.id} className="size-7" />
-                </Link>
-                <p className="mt-2.5 text-xs font-extrabold">{s.name}</p>
-              </>
-            ) : (
-              <>
-                <span className="press grid size-18 place-items-center rounded-full bg-locked text-ink-400 [--press:var(--locked-deep)]">
-                  <SkillIcon id={s.id} className="size-7" />
-                </span>
-                <p className="mt-2.5 text-xs font-bold text-muted">{s.name} · тун удахгүй</p>
-              </>
-            )}
-          </li>
+      <ul className="grid gap-3 lg:grid-cols-2">
+        {plan.tracks.map((track) => (
+          <TrackCard key={track.id} track={track} />
         ))}
-
-        <li className="flex flex-col items-center" style={{ transform: `translateX(${OFFSETS[SKILLS.length + 1]}px)` }}>
-          <span className="press grid size-20 place-items-center rounded-[22px] bg-sun text-ink-950 [--press:var(--sun-deep)]">
-            <GiftIcon className="size-9" />
-          </span>
-          <p className="mt-2.5 text-xs font-bold text-sun-text">Бүлгийн шагнал</p>
-        </li>
-      </ol>
-
-      <div className="flex items-center gap-3">
-        <span className="h-0.5 flex-1 bg-locked" />
-        <span className="flex items-center gap-1.5 text-[13px] font-extrabold text-muted">
-          <LockIcon className="size-4" />
-          2-р бүлэг · Аялал
-        </span>
-        <span className="h-0.5 flex-1 bg-locked" />
-      </div>
-      <p className="text-center text-xs text-muted">Хичээлүүд бэлэн болмогц энд нээгдэнэ.</p>
+      </ul>
     </div>
   );
 }

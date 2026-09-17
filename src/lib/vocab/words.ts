@@ -92,6 +92,27 @@ export async function listSavedWords(userId: string) {
   return rows.map(toCard);
 }
 
+export async function savedWordCount(userId: string): Promise<number> {
+  const [{ n }] = await db.select({ n: count() }).from(savedWords).where(eq(savedWords.userId, userId));
+  return n;
+}
+
+/** How many cards today's session would show: due words within the daily cap. */
+export async function dueWordCount(userId: string, timeZone: string): Promise<number> {
+  const startOfDay = sql`(date_trunc('day', now() at time zone ${timeZone}) at time zone ${timeZone})`;
+  const [[{ reviewedToday }], [{ due }]] = await Promise.all([
+    db
+      .select({ reviewedToday: count() })
+      .from(savedWords)
+      .where(and(eq(savedWords.userId, userId), gte(savedWords.lastReviewedAt, startOfDay))),
+    db
+      .select({ due: count() })
+      .from(savedWords)
+      .where(and(eq(savedWords.userId, userId), lte(savedWords.dueAt, sql`now()`))),
+  ]);
+  return Math.min(due, Math.max(0, DAILY_REVIEW_CAP - reviewedToday));
+}
+
 /** Due cards for today's session, within the daily cap (counted in the learner's timezone). */
 export async function reviewQueue(userId: string, timeZone: string) {
   const startOfDay = sql`(date_trunc('day', now() at time zone ${timeZone}) at time zone ${timeZone})`;

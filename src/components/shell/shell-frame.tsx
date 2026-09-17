@@ -13,6 +13,7 @@ export function useSidebar(): SidebarContext {
 
 /**
  * Desktop grid whose sidebar column collapses to an icon rail.
+ * Columns include the floating sidebar's 12px left inset (panel is 248px / 76px).
  * Descendants style themselves with `group-data-[sidebar=collapsed]/shell:`.
  */
 export function ShellFrame({
@@ -36,7 +37,7 @@ export function ShellFrame({
       <div
         data-sidebar={collapsed ? "collapsed" : "expanded"}
         className={`group/shell min-h-dvh lg:grid lg:transition-[grid-template-columns] lg:duration-200 lg:ease-out ${
-          collapsed ? "lg:grid-cols-[76px_minmax(0,1fr)]" : "lg:grid-cols-[248px_minmax(0,1fr)]"
+          collapsed ? "lg:grid-cols-[88px_minmax(0,1fr)]" : "lg:grid-cols-[260px_minmax(0,1fr)]"
         }`}
       >
         {children}

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { LOG_MODULES } from "@/lib/game";
-import { pointsForStudyLog } from "@/lib/tracker";
+import { manualLogPoints, type ManualToday } from "@/lib/tracker";
 import { BoltIcon, XIcon } from "@/components/icons";
 
 const MINUTES = [5, 10, 15, 20, 30, 45, 60];
@@ -10,6 +10,7 @@ const MINUTES = [5, 10, 15, 20, 30, 45, 60];
 export function LogSheet({
   initialModule,
   isGuest,
+  manualToday,
   pending,
   error,
   onClose,
@@ -17,6 +18,7 @@ export function LogSheet({
 }: {
   initialModule: string;
   isGuest: boolean;
+  manualToday: ManualToday;
   pending: boolean;
   error: string | null;
   onClose: () => void;
@@ -25,6 +27,7 @@ export function LogSheet({
   const [module, setModule] = useState(initialModule);
   const [minutes, setMinutes] = useState(15);
   const panel = useRef<HTMLDivElement>(null);
+  const points = manualLogPoints(manualToday, minutes);
 
   useEffect(() => {
     panel.current?.focus();
@@ -61,9 +64,12 @@ export function LogSheet({
         <div className="flex items-start justify-between gap-3">
           <div>
             <h2 id="log-title" className="text-xl font-extrabold tracking-[-0.02em]">
-              Суралцсан цагаа бүртгэх
+              Гадуур суралцсан цаг нэмэх
             </h2>
-            <p className="mt-1 text-[13px] text-muted">Бага ч болов — өдөр бүр тоологдоно.</p>
+            <p className="mt-1 text-[13px] leading-relaxed text-muted text-pretty">
+              Анги, ном, кино гэх мэт StepUp-аас гадуур хийсэн дадлага. Апп доторх хичээл, дасгалын цаг
+              автоматаар тоологддог тул энд дахин бүү нэмээрэй.
+            </p>
           </div>
           <button
             type="button"
@@ -92,12 +98,6 @@ export function LogSheet({
           </div>
         </fieldset>
 
-        {module === "listening" && (
-          <p className="mt-4 rounded-2xl bg-sky-soft px-4 py-3 text-[13px] font-semibold text-sky-text">
-            StepUp дээрх бичлэг сонссон хугацаа автоматаар бүртгэгддэг. Энд зөвхөн гадуур сонссон хугацаагаа нэмээрэй.
-          </p>
-        )}
-
         <fieldset className="mt-5">
           <legend className="mb-2.5 text-sm font-extrabold">Хэдэн минут?</legend>
           <div className="grid grid-cols-4 gap-2">
@@ -115,9 +115,18 @@ export function LogSheet({
           </div>
         </fieldset>
 
-        <p className="mt-5 flex items-center gap-2 rounded-2xl bg-sun-soft px-4 py-3 text-sm font-bold text-sun-text">
-          <BoltIcon className="size-5 fill-current" />
-          +{pointsForStudyLog(minutes)} оноо авна
+        <p className="mt-5 flex items-start gap-2 rounded-2xl bg-sun-soft px-4 py-3 text-sm font-bold text-sun-text">
+          <BoltIcon className="size-5 shrink-0 fill-current" />
+          <span>
+            {points > 0 ? `+${points} оноо авна` : "Цаг тань тоологдоно"}
+            <span className="mt-0.5 block text-xs font-semibold opacity-80">
+              {points > 0
+                ? manualToday.minutes > 0
+                  ? `Өнөөдрийн гадуурх ${manualToday.minutes} минуттай нийлж тооцогдоно.`
+                  : "Гадуурх цагаас өдөрт 60 хүртэл оноо авна."
+                : "Өнөөдөр гадуурх цагийн оноо дүүрсэн. Апп доторх хичээлээр оноо цуглуулаарай."}
+            </span>
+          </span>
         </p>
 
         {error && (
@@ -132,7 +141,7 @@ export function LogSheet({
           onClick={() => onSubmit(module, minutes)}
           className="press mt-5 h-14 w-full rounded-2xl bg-coral-a text-base font-extrabold text-ink-950 disabled:opacity-60"
         >
-          {pending ? "Бүртгэж байна…" : "Бүртгэх"}
+          {pending ? "Нэмж байна…" : "Нэмэх"}
         </button>
         {isGuest && (
           <p className="mt-3 text-center text-xs text-muted">

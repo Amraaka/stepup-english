@@ -16,6 +16,18 @@ export function pointsForStudyLog(durationMin: number): number {
   return Math.min(10 + 5 * Math.floor(durationMin / 5), 60);
 }
 
+/**
+ * Points for a manual (typed) log: the study-log rule on the day's *total* manual minutes, minus what
+ * that day's earlier manual logs already earned. Splitting a session into pieces never earns more,
+ * and manual logs can't earn more than one session's cap (60) a day (ADR 0019).
+ */
+export function manualLogPoints(today: ManualToday, addMin: number): number {
+  return Math.max(0, pointsForStudyLog(today.minutes + addMin) - today.points);
+}
+
+/** Manual (typed) logs so far today. */
+export type ManualToday = { minutes: number; points: number };
+
 /** Local calendar day ("YYYY-MM-DD") of an instant in the given tz. */
 export function localDay(d: Date, timeZone: string): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone }).format(d);
@@ -72,6 +84,8 @@ export type TrackerStats = {
   days: WeekDay[];
   /** Logged minutes per activity module. */
   moduleMinutes: Record<string, number>;
+  /** Today's manual logs, for the next manual log's points. */
+  manualToday: ManualToday;
 };
 
 const HISTORY_DAYS = 35;
@@ -81,6 +95,7 @@ export function buildStats(
   today: string,
   totals: DayAgg,
   moduleMinutes: Record<string, number> = {},
+  manualToday: ManualToday = { minutes: 0, points: 0 },
 ): TrackerStats {
   const days: WeekDay[] = [];
   let d = today;
@@ -100,5 +115,6 @@ export function buildStats(
     week: days.slice(-7),
     days,
     moduleMinutes,
+    manualToday,
   };
 }

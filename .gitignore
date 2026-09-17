@@ -42,3 +42,6 @@ example.mjs
 video/public/img/clothes/*.png
 video/public/img/fruit/*.png
 video/public/img/kitchen/*.png
+
+# Graphify knowledge graph (local)
+graphify-out/

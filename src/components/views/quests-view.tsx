@@ -29,9 +29,12 @@ export function QuestsView() {
       </section>
 
       <section aria-labelledby="weekly-h" className="mt-2 flex flex-col gap-2.5">
-        <h2 id="weekly-h" className="text-lg font-extrabold">
-          Энэ 7 хоног
-        </h2>
+        <div className="flex items-baseline justify-between">
+          <h2 id="weekly-h" className="text-lg font-extrabold">
+            Энэ 7 хоног
+          </h2>
+          <span className="text-xs font-bold text-muted">Даваа гарагт шинэчлэгдэнэ</span>
+        </div>
         <div className="grid grid-cols-2 gap-3">
           {weekly.map((q) => (
             <div key={q.id} className="flex flex-col gap-2.5 rounded-[22px] bg-night p-4 text-ink-100">

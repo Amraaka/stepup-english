@@ -2,7 +2,7 @@
 // Rules: docs/decisions/0007-gamified-app-shell.md
 
 import type { ActivityModule } from "@/db/schema";
-import { isActiveDay, type TrackerStats } from "@/lib/tracker";
+import { isActiveDay, type TrackerStats, type WeekDay } from "@/lib/tracker";
 import type { Tone } from "@/lib/tones";
 
 export const DAILY_GOAL_MIN = 20;
@@ -37,17 +37,40 @@ export function levelFor(points: number) {
   return { level, floor, next, progress: (points - floor) / (next - floor) };
 }
 
+export type CalendarDay = WeekDay & { today: boolean; future: boolean };
+
+/**
+ * The current Monday–Sunday week from the day history (last entry is today). Weekly goals,
+ * the week strip and the league all count this week, so progress resets every Monday.
+ */
+export function calendarWeek(days: WeekDay[]): CalendarDay[] {
+  const today = days[days.length - 1].day;
+  const t = new Date(`${today}T12:00:00Z`);
+  const monday = new Date(t);
+  monday.setUTCDate(t.getUTCDate() - ((t.getUTCDay() + 6) % 7));
+  const byDay = new Map(days.map((d) => [d.day, d]));
+  return Array.from({ length: 7 }, (_, i) => {
+    const d = new Date(monday);
+    d.setUTCDate(monday.getUTCDate() + i);
+    const day = d.toISOString().slice(0, 10);
+    const v = byDay.get(day);
+    return { day, points: v?.points ?? 0, durationSec: v?.durationSec ?? 0, today: day === today, future: day > today };
+  });
+}
+
 export function weekMinutes(s: TrackerStats): number {
-  return Math.floor(s.week.reduce((sum, d) => sum + d.durationSec, 0) / 60);
+  return Math.floor(calendarWeek(s.days).reduce((sum, d) => sum + d.durationSec, 0) / 60);
 }
 
 export function weekPoints(s: TrackerStats): number {
-  return s.week.reduce((sum, d) => sum + d.points, 0);
+  return calendarWeek(s.days).reduce((sum, d) => sum + d.points, 0);
 }
 
 export function activeDaysInWeek(s: TrackerStats): number {
-  return s.week.filter(isActiveDay).length;
+  return calendarWeek(s.days).filter(isActiveDay).length;
 }
+
+export const WEEK_GOAL_MIN = 100;
 
 export type QuestIconName = "clock" | "check" | "bolt" | "flame";
 
@@ -64,14 +87,13 @@ export type Quest = {
 export function dailyQuests(s: TrackerStats): Quest[] {
   return [
     { id: "minutes", title: `${DAILY_GOAL_MIN} минут суралц`, value: s.todayMinutes, target: DAILY_GOAL_MIN, unit: "мин", tone: "coral", icon: "clock" },
-    { id: "checkin", title: "Өнөөдөр цагаа бүртгэ", value: isActiveDay(s.week.at(-1)) ? 1 : 0, target: 1, unit: "", tone: "mint", icon: "check" },
     { id: "points", title: "50 оноо цуглуул", value: s.todayPoints, target: 50, unit: "оноо", tone: "sun", icon: "bolt" },
   ];
 }
 
 export function weeklyQuests(s: TrackerStats): Quest[] {
   return [
-    { id: "week-minutes", title: "7 хоногт 100 минут", value: weekMinutes(s), target: 100, unit: "мин", tone: "sky", icon: "clock" },
+    { id: "week-minutes", title: `7 хоногт ${WEEK_GOAL_MIN} минут`, value: weekMinutes(s), target: WEEK_GOAL_MIN, unit: "мин", tone: "sky", icon: "clock" },
     { id: "week-days", title: "5 өдөр идэвхтэй бай", value: activeDaysInWeek(s), target: 5, unit: "өдөр", tone: "violet", icon: "flame" },
   ];
 }

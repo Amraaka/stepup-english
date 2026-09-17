@@ -1,4 +1,4 @@
-import type { BankItem, Exercise, GrammarLevel, Lesson, PathEntry, PracticeItem } from "@/lib/grammar/types";
+import type { BankItem, Exercise, GrammarLevel, Lesson, LessonProgress, PathEntry, PracticeItem } from "@/lib/grammar/types";
 import { pickCheckpoint } from "@/lib/grammar/checkpoint";
 import { seeded, shuffle } from "@/lib/random";
 import { CEFR_LEVELS } from "@/lib/levels";
@@ -61,6 +61,19 @@ export const CHECKPOINT_SIZE = 12;
 
 export function getLesson(slug: string): Lesson | undefined {
   return LESSONS.find((l) => l.slug === slug);
+}
+
+/**
+ * The lesson to study next: the first unfinished one at or above the learner's starting level,
+ * else the first unfinished one below it (lessons below the start stay open, ADR 0015).
+ */
+export function nextPathEntry(
+  progress: Record<string, LessonProgress>,
+  start: GrammarLevel | null,
+): PathEntry | undefined {
+  const from = LEVELS.indexOf(start ?? "A1");
+  const open = (p: PathEntry) => !!getLesson(p.slug) && !progress[p.slug]?.completed;
+  return TENSE_PATH.find((p) => open(p) && LEVELS.indexOf(p.level) >= from) ?? TENSE_PATH.find(open);
 }
 
 /** The path entry after `slug` that already has a lesson. */

@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { ClipQuestion } from "@/lib/listening/types";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { Mascot } from "@/components/mascot";
+import { CompletionNote } from "@/components/game/completion-note";
+import { finishTextAction } from "@/app/(site)/reading/actions";
 import { CheckIcon, XIcon } from "@/components/icons";
 
 const primary =
@@ -17,6 +19,9 @@ export function TextQuestions({ slug, questions }: { slug: string; questions: Cl
   const [choice, setChoice] = useState<number | null>(null);
   const [checked, setChecked] = useState(false);
   const [score, setScore] = useState(0);
+  const [answers, setAnswers] = useState<string[]>([]);
+  // A new attempt remounts the note, so each finished run is saved once.
+  const [attempt, setAttempt] = useState(0);
 
   const q = questions[idx] as ClipQuestion | undefined;
   const finished = !q;
@@ -32,6 +37,7 @@ export function TextQuestions({ slug, questions }: { slug: string; questions: Cl
   function check() {
     if (!q || choice === null || checked) return;
     setChecked(true);
+    setAnswers((a) => [...a, q.options[choice]]);
     if (choice === q.answer) setScore((s) => s + 1);
   }
 
@@ -44,9 +50,13 @@ export function TextQuestions({ slug, questions }: { slug: string; questions: Cl
   function restart() {
     setIdx(0);
     setScore(0);
+    setAnswers([]);
+    setAttempt((n) => n + 1);
     setChoice(null);
     setChecked(false);
   }
+
+  const save = useCallback(() => finishTextAction(slug, answers), [slug, answers]);
 
   if (!q) {
     const all = score === questions.length;
@@ -61,6 +71,7 @@ export function TextQuestions({ slug, questions }: { slug: string; questions: Cl
             ? "Бүгдийг нь зөв хариуллаа, гоё байна!"
             : "Алдсан асуултынхаа хариултыг эхээс дахин олж уншаарай."}
         </p>
+        <CompletionNote key={attempt} save={save} />
         <div className="mt-6 flex w-full max-w-xs flex-col gap-2.5">
           <Link href={all ? "/reading" : `/reading/${slug}`} className={primary}>
             {all ? "Өөр эх унших" : "Эх рүү буцах"}

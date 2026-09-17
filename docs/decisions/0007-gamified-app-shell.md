@@ -1,7 +1,7 @@
 # 0007 — Gamified app shell, derived game layer
 
 Date: 2026-09-14
-Status: Accepted — supersedes the navigation part of ADR 0006
+Status: Accepted — supersedes the navigation part of ADR 0006. Daily quests and the Лиг nav item changed in ADR 0019.
 
 ## Context
 

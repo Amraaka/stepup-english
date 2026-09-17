@@ -16,6 +16,7 @@ import {
   MIN_TIMED_SEC,
   buildStats,
   localDay,
+  manualLogPoints,
   pointsForStudyLog,
   type DayAgg,
   type TimedTarget,
@@ -83,8 +84,16 @@ function guestStats(events: GuestEvent[]): TrackerStats {
   const byDay = new Map<string, DayAgg>();
   const totals: DayAgg = { points: 0, durationSec: 0 };
   const moduleSec: Record<string, number> = {};
+  const today = localDay(new Date(), TZ);
+  let manualSec = 0;
+  let manualPts = 0;
   for (const e of events) {
     const sec = secOf(e);
+    // Manual logs are the ones a module didn't measure (no ref).
+    if (e.day === today && e.ref === undefined) {
+      manualSec += sec;
+      manualPts += e.points;
+    }
     const cur = byDay.get(e.day) ?? { points: 0, durationSec: 0 };
     cur.points += e.points;
     cur.durationSec += sec;
@@ -95,7 +104,10 @@ function guestStats(events: GuestEvent[]): TrackerStats {
     moduleSec[m] = (moduleSec[m] ?? 0) + sec;
   }
   const moduleMinutes = Object.fromEntries(Object.entries(moduleSec).map(([m, sec]) => [m, Math.floor(sec / 60)]));
-  return buildStats(byDay, localDay(new Date(), TZ), totals, moduleMinutes);
+  return buildStats(byDay, today, totals, moduleMinutes, {
+    minutes: Math.floor(manualSec / 60),
+    points: manualPts,
+  });
 }
 
 /**
@@ -211,7 +223,7 @@ export function StatsProvider({
         guestStore.add({
           day: localDay(new Date(), TZ),
           durationMin: minutes,
-          points: pointsForStudyLog(minutes),
+          points: manualLogPoints(before.manualToday, minutes),
           module,
         });
         after = guestStats(guestStore.getSnapshot());
@@ -225,12 +237,16 @@ export function StatsProvider({
         after = res;
       }
       setSheetModule(null);
+      const earned = after.todayPoints - before.todayPoints;
+      const firstToday = before.todayPoints === 0;
+      // Past the day's manual cap a log still counts as time, but there's nothing to celebrate.
+      if (!firstToday && earned <= 0) return;
       setCelebration({
-        firstToday: before.todayPoints === 0,
+        firstToday,
         streak: after.streak,
-        earned: after.todayPoints - before.todayPoints,
+        earned,
         todayMinutes: after.todayMinutes,
-        week: after.week,
+        days: after.days,
         isGuest,
       });
     });
@@ -258,7 +274,7 @@ export function StatsProvider({
           streak: after.streak,
           earned,
           todayMinutes: after.todayMinutes,
-          week: after.week,
+          days: after.days,
           isGuest,
         });
       }
@@ -304,6 +320,7 @@ export function StatsProvider({
         <LogSheet
           initialModule={sheetModule}
           isGuest={isGuest}
+          manualToday={stats.manualToday}
           pending={pending}
           error={error}
           onClose={closeLog}

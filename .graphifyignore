@@ -1,0 +1,9 @@
+# Keep the code graph to the app and its decisions (see docs/graphify.md)
+.claude/
+.agents/
+video/
+post/
+scripts/
+public/
+skills-lock.json
+package-lock.json

@@ -6,19 +6,18 @@ import { SKILLS, type SkillId } from "@/lib/skills";
 import { TONE } from "@/lib/tones";
 import { useSidebar } from "@/components/shell/shell-frame";
 import {
-  ChevronRightIcon,
   HomeIcon,
   MapIcon,
-  ShieldCheckIcon,
+  SidebarIcon,
   TargetIcon,
   UserIcon,
 } from "@/components/icons";
 
+// Лиг stays out of the nav until it's live; the right-rail teaser links to it (ADR 0019).
 const NAV = [
   { href: "/", label: "Нүүр", Icon: HomeIcon },
   { href: "/learn", label: "Суралцах", Icon: MapIcon },
   { href: "/quests", label: "Даалгавар", Icon: TargetIcon },
-  { href: "/league", label: "Лиг", Icon: ShieldCheckIcon },
   { href: "/profile", label: "Профайл", Icon: UserIcon },
 ];
 
@@ -53,35 +52,49 @@ function useIsActive() {
   return (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 }
 
-/** Desktop: left sidebar that collapses to a 76px icon rail. */
+/** Desktop: floating rounded sidebar that collapses to a 76px icon rail. */
 export function SideNav({ account }: { account: React.ReactNode }) {
   const isActive = useIsActive();
   const { collapsed, toggle } = useSidebar();
 
   return (
-    <aside className="sticky top-0 z-30 hidden h-dvh flex-col border-r border-line bg-surface px-3 py-5 lg:flex">
-      {/* Sits on the sidebar's right edge, top corner — takes no width from the wordmark. */}
+    <aside className="sticky top-3 z-30 my-3 ml-3 hidden h-[calc(100dvh-1.5rem)] flex-col rounded-3xl border border-line bg-surface px-3 py-5 shadow-[0_1px_2px_rgb(18_18_21/0.04),0_12px_32px_-12px_rgb(18_18_21/0.14)] lg:flex dark:shadow-[0_12px_32px_-12px_rgb(0_0_0/0.6)]">
+      {/* Expanded: wordmark + ghost toggle. Collapsed: the logo itself turns into the expand button on hover. */}
+      <div className={`mb-6 flex items-center gap-2 pl-1 ${EXPANDED_ONLY}`}>
+        <Link href="/" aria-label="StepUp English — нүүр" className="flex min-w-0 flex-1 items-center gap-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.svg" alt="" className="size-9 shrink-0 dark:rounded-xl dark:bg-ink-100 dark:p-1" />
+          <span className="truncate whitespace-nowrap text-base font-extrabold tracking-[-0.02em]">
+            StepUp <span className="font-semibold text-muted">English</span>
+          </span>
+        </Link>
+        <button
+          type="button"
+          onClick={toggle}
+          aria-expanded={!collapsed}
+          aria-label="Цэсийг хураах"
+          title="Цэсийг хураах"
+          className="grid size-8 shrink-0 cursor-pointer place-items-center rounded-lg text-muted transition-colors hover:bg-canvas hover:text-foreground"
+        >
+          <SidebarIcon className="size-5" />
+        </button>
+      </div>
       <button
         type="button"
         onClick={toggle}
         aria-expanded={!collapsed}
-        aria-label={collapsed ? "Цэсийг дэлгэх" : "Цэсийг хураах"}
-        title={collapsed ? "Цэсийг дэлгэх" : "Цэсийг хураах"}
-        className="absolute -right-3.5 top-6 z-10 grid size-7 place-items-center rounded-full border border-line bg-surface text-muted shadow-[0_2px_8px_-2px_rgb(18_18_21/0.2)] transition-colors hover:border-coral-a hover:text-coral-a-text"
-      >
-        <ChevronRightIcon className={`size-4 [stroke-width:2.2] ${collapsed ? "" : "rotate-180"}`} />
-      </button>
-      <Link
-        href="/"
-        aria-label="StepUp English — нүүр"
-        className="mb-6 flex items-center gap-2.5 px-1.5 group-data-[sidebar=collapsed]/shell:justify-center group-data-[sidebar=collapsed]/shell:px-0"
+        aria-label="Цэсийг дэлгэх"
+        className={`group relative mx-auto mb-6 size-11 cursor-pointer place-items-center rounded-xl text-muted transition-colors hover:bg-canvas hover:text-foreground focus-visible:bg-canvas hidden group-data-[sidebar=collapsed]/shell:grid`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo.svg" alt="" className="size-9 shrink-0 dark:rounded-xl dark:bg-ink-100 dark:p-1" />
-        <span className={`whitespace-nowrap text-lg font-extrabold tracking-[-0.02em] ${EXPANDED_ONLY}`}>
-          StepUp <span className="font-semibold text-muted">English</span>
-        </span>
-      </Link>
+        <img
+          src="/logo.svg"
+          alt=""
+          className="col-start-1 row-start-1 size-9 transition-opacity group-hover:opacity-0 group-focus-visible:opacity-0 dark:rounded-xl dark:bg-ink-100 dark:p-1"
+        />
+        <SidebarIcon className="col-start-1 row-start-1 size-5 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100" />
+        <Tip>Цэсийг дэлгэх</Tip>
+      </button>
 
       <nav aria-label="Үндсэн цэс" className="flex flex-col gap-0.5">
         {NAV.map(({ href, label, Icon }) => (

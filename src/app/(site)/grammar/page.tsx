@@ -4,9 +4,9 @@ import { getSkill } from "@/lib/skills";
 import { getCurrentUser } from "@/lib/auth";
 import { getProfile } from "@/lib/activity";
 import { cefrFor } from "@/lib/levels";
-import { CHECKPOINT_SIZE, LEVELS, LEVEL_NAME, TENSE_PATH, checkpointSlug, getLesson } from "@/lib/grammar/lessons";
+import { CHECKPOINT_SIZE, LEVELS, LEVEL_NAME, TENSE_PATH, checkpointSlug, getLesson, nextPathEntry } from "@/lib/grammar/lessons";
 import { dueReviewCount, progressBySlug } from "@/lib/grammar/progress";
-import type { GrammarLevel, LessonProgress, PathEntry } from "@/lib/grammar/types";
+import type { GrammarLevel, LessonProgress } from "@/lib/grammar/types";
 import { TONE } from "@/lib/tones";
 import { SkillIcon } from "@/components/skill-icon";
 import { CheckIcon, ChevronRightIcon, ReplayIcon, TargetIcon } from "@/components/icons";
@@ -55,11 +55,7 @@ export default async function Page() {
   // Same daily cap as the review page, so the card never promises items the session won't show.
   const due = user ? await dueReviewCount(user.id, profile?.timezone ?? "Asia/Ulaanbaatar") : 0;
   // "Next" starts at the learner's onboarding level; lessons below it stay open (ADR 0015).
-  const start = LEVELS.indexOf(cefrFor(profile?.englishLevel) ?? "A1");
-  const open = (p: PathEntry) => !!getLesson(p.slug) && !progress[p.slug]?.completed;
-  const nextSlug = user
-    ? (TENSE_PATH.find((p) => open(p) && LEVELS.indexOf(p.level) >= start) ?? TENSE_PATH.find(open))?.slug
-    : undefined;
+  const nextSlug = user ? nextPathEntry(progress, cefrFor(profile?.englishLevel))?.slug : undefined;
   const doneCount = TENSE_PATH.filter((p) => progress[p.slug]?.completed).length;
 
   return (

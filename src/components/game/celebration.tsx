@@ -13,7 +13,8 @@ export type CelebrationData = {
   streak: number;
   earned: number;
   todayMinutes: number;
-  week: WeekDay[];
+  /** day history; the strip shows its current calendar week */
+  days: WeekDay[];
   isGuest: boolean;
 };
 
@@ -71,10 +72,10 @@ export function Celebration({ data, onClose }: { data: CelebrationData; onClose:
         )}
 
         <div className="mt-7 w-full rounded-[22px] bg-white/6 p-3.5">
-          <WeekStrip week={data.week} dark />
+          <WeekStrip days={data.days} dark />
         </div>
 
-        {data.firstToday && (
+        {data.firstToday && data.earned > 0 && (
           <p className="mt-4 flex h-9 items-center gap-2 rounded-full bg-sun/15 px-3.5 text-[13px] font-extrabold text-sun">
             <BoltIcon className="size-4 fill-current" />+{data.earned} оноо
           </p>
