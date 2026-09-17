@@ -30,15 +30,10 @@ export default async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const path = request.nextUrl.pathname;
-  if (!user && path.startsWith("/app")) {
+  // Pages allow guests and every action checks the user; only a signed-in visit to login is sent home.
+  if (user && request.nextUrl.pathname === "/login") {
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
-    return NextResponse.redirect(url);
-  }
-  if (user && (path === "/login" || path === "/signup")) {
-    const url = request.nextUrl.clone();
-    url.pathname = "/app";
+    url.pathname = "/";
     return NextResponse.redirect(url);
   }
 

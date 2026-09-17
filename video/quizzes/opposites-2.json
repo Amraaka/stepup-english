@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-2",
+  "topic": "Эсрэг утга",
+  "format": "opposites",
+  "accent": "violet",
+  "look": "night",
+  "items": [
+    {
+      "prompt": "remember",
+      "en": "forget",
+      "ipa": "/fɚˈɡet/",
+      "mn": "мартах",
+      "audio": "audio/opposites-2/forget.mp3"
+    },
+    {
+      "prompt": "accept",
+      "en": "refuse",
+      "ipa": "/rɪˈfjuːz/",
+      "mn": "татгалзах",
+      "audio": "audio/opposites-2/refuse.mp3"
+    },
+    {
+      "prompt": "increase",
+      "en": "decrease",
+      "ipa": "/dɪˈkriːs/",
+      "mn": "буурах",
+      "audio": "audio/opposites-2/decrease.mp3"
+    },
+    {
+      "prompt": "arrive",
+      "en": "leave",
+      "ipa": "/liːv/",
+      "mn": "явах",
+      "audio": "audio/opposites-2/leave.mp3"
+    },
+    {
+      "prompt": "polite",
+      "en": "rude",
+      "ipa": "/ruːd/",
+      "mn": "бүдүүлэг",
+      "audio": "audio/opposites-2/rude.mp3"
+    }
+  ]
+}

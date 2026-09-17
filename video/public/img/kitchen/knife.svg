@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v2: real knife anatomy — straight spine along the top, curved cutting edge
+       below sweeping up to the tip. v1 was a plain triangle and read as a ramp. -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- blade -->
+    <path d="M26 86h100v24H60C44 110 32 100 26 86z" fill="#dfe3e8"/>
+    <!-- handle -->
+    <path d="M126 84h38a12 12 0 0 1 12 12 12 12 0 0 1-12 12h-38z" fill="#b5764a"/>
+  </g>
+</svg>

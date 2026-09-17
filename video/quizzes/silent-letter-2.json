@@ -1,0 +1,45 @@
+{
+  "slug": "silent-letter-2",
+  "topic": "Дуугүй үсэг",
+  "format": "silent-letter",
+  "question": "Аль үсэг нь дуудагдахгүй вэ?",
+  "accent": "sky",
+  "look": "night",
+  "items": [
+    {
+      "en": "climb",
+      "silentIndex": 4,
+      "ipa": "/klaɪm/",
+      "mn": "авирах",
+      "audio": "audio/silent-letter-2/climb.mp3"
+    },
+    {
+      "en": "half",
+      "silentIndex": 2,
+      "ipa": "/hæf/",
+      "mn": "хагас",
+      "audio": "audio/silent-letter-2/half.mp3"
+    },
+    {
+      "en": "honest",
+      "silentIndex": 0,
+      "ipa": "/ˈɑː.nɪst/",
+      "mn": "шударга",
+      "audio": "audio/silent-letter-2/honest.mp3"
+    },
+    {
+      "en": "muscle",
+      "silentIndex": 2,
+      "ipa": "/ˈmʌs.əl/",
+      "mn": "булчин",
+      "audio": "audio/silent-letter-2/muscle.mp3"
+    },
+    {
+      "en": "receipt",
+      "silentIndex": 5,
+      "ipa": "/rɪˈsiːt/",
+      "mn": "баримт",
+      "audio": "audio/silent-letter-2/receipt.mp3"
+    }
+  ]
+}

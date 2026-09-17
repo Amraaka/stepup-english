@@ -14,19 +14,21 @@ export function useRecorder() {
   const [recording, setRecording] = useState<Recording | null>(null);
   const recorder = useRef<MediaRecorder | null>(null);
   const timer = useRef(0);
+  const mounted = useRef(true);
 
   // Revoke the previous take's object URL when it is replaced or the page closes.
   useEffect(() => () => {
     if (recording) URL.revokeObjectURL(recording.url);
   }, [recording]);
 
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
       window.clearTimeout(timer.current);
       if (recorder.current?.state === "recording") recorder.current.stop();
-    },
-    [],
-  );
+    };
+  }, []);
 
   const start = useCallback(async (maxMs: number) => {
     if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
@@ -41,7 +43,12 @@ export function useRecorder() {
       });
     } catch (e) {
       const denied = e instanceof DOMException && (e.name === "NotAllowedError" || e.name === "SecurityError");
-      setStatus(denied ? "denied" : "error");
+      if (mounted.current) setStatus(denied ? "denied" : "error");
+      return;
+    }
+    // Permission granted after the learner left the page: release the mic instead of recording.
+    if (!mounted.current) {
+      stream.getTracks().forEach((t) => t.stop());
       return;
     }
     const r = new MediaRecorder(stream);

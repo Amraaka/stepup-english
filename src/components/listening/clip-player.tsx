@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Clip } from "@/lib/listening/types";
+import type { Glossary } from "@/lib/dictionary/lookup";
 import { fmtClock } from "@/lib/listening/clips";
-import { lookupWord, phraseAt, wordKey } from "@/lib/listening/glossary";
-import { saveWordAction } from "@/app/(site)/vocabulary/actions";
-import { useStats } from "@/components/stats-provider";
 import { useMeasuredTime } from "@/components/use-measured-time";
-import { WordSheet, type WordPick } from "@/components/listening/word-sheet";
+import { useWordPick } from "@/components/words/use-word-pick";
+import { TappableTokens } from "@/components/words/tappable-tokens";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -21,12 +20,6 @@ import {
   TargetIcon,
 } from "@/components/icons";
 
-const EDGE_PUNCT = /^[“"(‘]+|[.,!?;:”")’…—]+$/g;
-
-function isTappable(key: string): boolean {
-  return key !== "" && !/^\d/.test(key);
-}
-
 /** Index of the sentence playing at `t` (the last one that has started). */
 function activeIndex(clip: Clip, t: number): number {
   let idx = 0;
@@ -37,7 +30,7 @@ function activeIndex(clip: Clip, t: number): number {
   return idx;
 }
 
-export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: string[] }) {
+export function ClipPlayer({ clip, glossary, savedLemmas }: { clip: Clip; glossary: Glossary; savedLemmas: string[] }) {
   const audio = useRef<HTMLAudioElement>(null);
   const segEls = useRef<(HTMLParagraphElement | null)[]>([]);
   const [playing, setPlaying] = useState(false);
@@ -45,11 +38,7 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
   const [slow, setSlow] = useState(false);
   const [showText, setShowText] = useState(true);
   const [loadError, setLoadError] = useState(false);
-  const [pick, setPick] = useState<WordPick | null>(null);
-  const [marked, setMarked] = useState<{ seg: number; start: number; end: number } | null>(null);
   const resumeAfterPick = useRef(false);
-
-  const keys = useMemo(() => clip.segments.map((s) => s.tokens.map(wordKey)), [clip]);
   const active = activeIndex(clip, time);
 
   // ── Playback ────────────────────────────────────────────────────────────
@@ -97,50 +86,25 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
     }
   }, [active, playing, showText]);
 
-  // ── Word taps ───────────────────────────────────────────────────────────
-  function tap(i: number, j: number) {
-    const seg = clip.segments[i];
-    const surface = (a: number, b: number) => seg.tokens.slice(a, b).join(" ").replace(EDGE_PUNCT, "");
-    const word = { surface: surface(j, j + 1), entry: lookupWord(keys[i][j]) };
-    const phrase = phraseAt(keys[i], j);
-    setPick(
-      phrase
-        ? { surface: surface(phrase.start, phrase.end), entry: phrase.entry, word, sentence: seg.tokens.join(" ") }
-        : { ...word, sentence: seg.tokens.join(" ") },
-    );
-    setMarked({ seg: i, start: phrase?.start ?? j, end: phrase?.end ?? j + 1 });
-    resumeAfterPick.current = !!audio.current && !audio.current.paused;
-    audio.current?.pause();
-  }
-
-  // ── Saving words (ADR 0010) ─────────────────────────────────────────────
-  const [saved, setSaved] = useState(() => new Set(savedLemmas));
-  const [saving, setSaving] = useState(false);
-
-  async function saveCurrent() {
-    const lemma = pick?.entry?.lemma;
-    if (!pick || !lemma || !marked) return;
-    setSaving(true);
-    const ok = await saveWordAction({
-      lemma,
-      surface: pick.surface,
-      sentence: pick.sentence,
-      clip: clip.slug,
-      seg: marked.seg,
-    }).catch(() => false);
-    setSaving(false);
-    if (ok) setSaved((s) => new Set(s).add(lemma));
-  }
-
-  const closePick = useCallback(() => {
-    setPick(null);
-    setMarked(null);
-    if (resumeAfterPick.current) play();
-  }, [play]);
+  // ── Word taps and saving (ADR 0010, 0016) ───────────────────────────────
+  // The player pauses while a word sheet is open and resumes when it closes.
+  const sentences = useMemo(() => clip.segments.map((s) => s.tokens), [clip]);
+  const words = useWordPick({
+    sentences,
+    glossary,
+    savedLemmas,
+    source: (seg) => ({ kind: "clip", clip: clip.slug, seg }),
+    onOpen: () => {
+      resumeAfterPick.current = !!audio.current && !audio.current.paused;
+      audio.current?.pause();
+    },
+    onClose: () => {
+      if (resumeAfterPick.current) play();
+    },
+  });
 
   // ── Automatic time logging (ADR 0009) ───────────────────────────────────
   // Counts seconds only while audio plays in a visible tab, capped at twice the clip.
-  const { isGuest } = useStats();
   const flush = useMeasuredTime(
     { module: "listening", ref: clip.slug },
     { counting: () => !!audio.current && !audio.current.paused, maxSec: clip.durationSec * 2 },
@@ -212,26 +176,14 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
               >
                 <PlayIcon className="size-3" />
               </button>
-              {seg.tokens.map((tok, j) => {
-                const on = marked?.seg === i && j >= marked.start && j < marked.end;
-                return (
-                  <Fragment key={j}>
-                    {isTappable(keys[i][j]) ? (
-                      <button
-                        type="button"
-                        onClick={() => tap(i, j)}
-                        className={`-mx-0.5 rounded-md px-0.5 text-left transition-colors hover:bg-sky/25 ${
-                          on ? "bg-sky text-ink-950" : ""
-                        }`}
-                      >
-                        {tok}
-                      </button>
-                    ) : (
-                      <span>{tok}</span>
-                    )}{" "}
-                  </Fragment>
-                );
-              })}
+              <TappableTokens
+                tokens={seg.tokens}
+                keys={words.keys[i]}
+                marked={words.markedIn(i)}
+                onTap={(j) => words.tap(i, j)}
+                hoverClass="hover:bg-sky/25"
+                onClass="bg-sky text-ink-950"
+              />
             </p>
           ))}
         </section>
@@ -360,24 +312,7 @@ export function ClipPlayer({ clip, savedLemmas }: { clip: Clip; savedLemmas: str
         </div>
       </div>
 
-      {pick && (
-        <WordSheet
-          pick={pick}
-          onClose={closePick}
-          save={
-            !pick.entry
-              ? null
-              : isGuest
-                ? "guest"
-                : saved.has(pick.entry.lemma)
-                  ? "saved"
-                  : saving
-                    ? "saving"
-                    : "idle"
-          }
-          onSave={saveCurrent}
-        />
-      )}
+      {words.sheet}
     </div>
   );
 }

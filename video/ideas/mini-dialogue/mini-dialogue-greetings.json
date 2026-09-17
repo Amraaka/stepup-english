@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-greetings",
+  "topic": "Мэндчилгээ",
+  "format": "mini-dialogue",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "Good morning!",
+      "en": "Good morning! How are you?",
+      "mn": "Өглөөний мэнд! Сайн байна уу?",
+      "audio": null
+    },
+    {
+      "prompt": "Long time no see!",
+      "en": "Yes! How have you been?",
+      "mn": "Тийм ээ! Сайн байсан уу?",
+      "audio": null
+    },
+    {
+      "prompt": "What's up?",
+      "en": "Not much. And you?",
+      "mn": "Онцгой юм алга. Чамд?",
+      "audio": null
+    },
+    {
+      "prompt": "How was your weekend?",
+      "en": "It was great, thanks.",
+      "mn": "Сайхан байлаа, баярлалаа.",
+      "audio": null
+    },
+    {
+      "prompt": "Have a nice day!",
+      "en": "Thanks, you too!",
+      "mn": "Баярлалаа, чамд ч бас!",
+      "audio": null
+    }
+  ]
+}

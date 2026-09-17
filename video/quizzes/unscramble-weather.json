@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-weather",
+  "topic": "Цаг агаар",
+  "format": "unscramble",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "en": "rain",
+      "image": "img/weather/rain.svg",
+      "ipa": "/reɪn/",
+      "mn": "бороо",
+      "audio": "audio/unscramble-weather/rain.mp3"
+    },
+    {
+      "en": "snow",
+      "image": "img/weather/snow.svg",
+      "ipa": "/snoʊ/",
+      "mn": "цас",
+      "audio": "audio/unscramble-weather/snow.mp3"
+    },
+    {
+      "en": "sun",
+      "image": "img/weather/sun.svg",
+      "ipa": "/sʌn/",
+      "mn": "нар",
+      "audio": "audio/unscramble-weather/sun.mp3"
+    },
+    {
+      "en": "lightning",
+      "image": "img/weather/lightning.svg",
+      "ipa": "/ˈlaɪt.nɪŋ/",
+      "mn": "аянга",
+      "audio": "audio/unscramble-weather/lightning.mp3"
+    },
+    {
+      "en": "umbrella",
+      "image": "img/objects/umbrella.svg",
+      "ipa": "/ʌmˈbrel.ə/",
+      "mn": "шүхэр",
+      "audio": "audio/unscramble-weather/umbrella.mp3"
+    }
+  ]
+}

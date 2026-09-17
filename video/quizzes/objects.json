@@ -1,0 +1,48 @@
+{
+  "slug": "objects",
+  "topic": "Хэрэглээний зүйл",
+  "accent": "mint",
+  "style": "hand-authored SVG: single continuous silhouette, ink #1a1a1f outline, flat fill, transparent background",
+  "items": [
+    {
+      "en": "key",
+      "mn": "түлхүүр",
+      "ipa": "/kiː/",
+      "imagePrompt": "a door key",
+      "image": "img/objects/key.svg",
+      "audio": "audio/objects/key.mp3"
+    },
+    {
+      "en": "clock",
+      "mn": "цаг",
+      "ipa": "/klɑːk/",
+      "imagePrompt": "a round wall clock",
+      "image": "img/objects/clock.svg",
+      "audio": "audio/objects/clock.mp3"
+    },
+    {
+      "en": "book",
+      "mn": "ном",
+      "ipa": "/bʊk/",
+      "imagePrompt": "a closed book",
+      "image": "img/objects/book.svg",
+      "audio": "audio/objects/book.mp3"
+    },
+    {
+      "en": "bag",
+      "mn": "цүнх",
+      "ipa": "/bæg/",
+      "imagePrompt": "a handbag",
+      "image": "img/objects/bag.svg",
+      "audio": "audio/objects/bag.mp3"
+    },
+    {
+      "en": "umbrella",
+      "mn": "шүхэр",
+      "ipa": "/ʌmˈbrel.ə/",
+      "imagePrompt": "an open umbrella",
+      "image": "img/objects/umbrella.svg",
+      "audio": "audio/objects/umbrella.mp3"
+    }
+  ]
+}

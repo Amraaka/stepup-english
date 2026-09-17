@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-feelings",
+  "topic": "Сэтгэл хөдлөл",
+  "format": "opposites",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "happy",
+      "en": "sad",
+      "ipa": "/sæd/",
+      "mn": "гунигтай",
+      "audio": "audio/opposites-feelings/sad.mp3"
+    },
+    {
+      "prompt": "love",
+      "en": "hate",
+      "ipa": "/heɪt/",
+      "mn": "үзэн ядах",
+      "audio": "audio/opposites-feelings/hate.mp3"
+    },
+    {
+      "prompt": "calm",
+      "en": "nervous",
+      "ipa": "/ˈnɝː.vəs/",
+      "mn": "сандарсан",
+      "audio": "audio/opposites-feelings/nervous.mp3"
+    },
+    {
+      "prompt": "brave",
+      "en": "afraid",
+      "ipa": "/əˈfreɪd/",
+      "mn": "айсан",
+      "audio": "audio/opposites-feelings/afraid.mp3"
+    },
+    {
+      "prompt": "interested",
+      "en": "bored",
+      "ipa": "/bɔːrd/",
+      "mn": "уйдсан",
+      "audio": "audio/opposites-feelings/bored.mp3"
+    }
+  ]
+}

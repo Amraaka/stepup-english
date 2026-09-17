@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-i-ee",
+  "topic": "hit / heat",
+  "format": "sound-pair",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "hit",
+        "heat"
+      ],
+      "hints": [
+        "/hɪt/",
+        "/hiːt/"
+      ],
+      "en": "heat",
+      "mn": "халуун",
+      "audio": null
+    },
+    {
+      "options": [
+        "fill",
+        "feel"
+      ],
+      "hints": [
+        "/fɪl/",
+        "/fiːl/"
+      ],
+      "en": "fill",
+      "mn": "дүүргэх",
+      "audio": null
+    },
+    {
+      "options": [
+        "still",
+        "steal"
+      ],
+      "hints": [
+        "/stɪl/",
+        "/stiːl/"
+      ],
+      "en": "steal",
+      "mn": "хулгайлах",
+      "audio": null
+    },
+    {
+      "options": [
+        "bin",
+        "bean"
+      ],
+      "hints": [
+        "/bɪn/",
+        "/biːn/"
+      ],
+      "en": "bean",
+      "mn": "шош",
+      "audio": null
+    },
+    {
+      "options": [
+        "lip",
+        "leap"
+      ],
+      "hints": [
+        "/lɪp/",
+        "/liːp/"
+      ],
+      "en": "lip",
+      "mn": "уруул",
+      "audio": null
+    }
+  ]
+}

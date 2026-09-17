@@ -1,0 +1,32 @@
+{
+  "slug": "my-quiz",
+  "topic": "Өргөлт",
+  "format": "word-stress",
+  "accent": "sun",
+  "items": [
+    {
+      "en": "banana",
+      "syllables": [
+        "ba",
+        "na",
+        "na"
+      ],
+      "stressIndex": 1,
+      "ipa": "/bəˈnæn.ə/",
+      "mn": "гадил",
+      "audio": null
+    },
+    {
+      "en": "photograph",
+      "syllables": [
+        "pho",
+        "to",
+        "graph"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈfoʊ.tə.ɡræf/",
+      "mn": "гэрэл зураг",
+      "audio": null
+    }
+  ]
+}

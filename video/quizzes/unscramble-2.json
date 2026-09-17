@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-2",
+  "topic": "Үг таах",
+  "format": "unscramble",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "peach",
+      "image": "img/fruit/peach.svg",
+      "ipa": "/piːtʃ/",
+      "mn": "тоор",
+      "audio": "audio/unscramble-2/peach.mp3"
+    },
+    {
+      "en": "clock",
+      "image": "img/objects/clock.svg",
+      "ipa": "/klɑːk/",
+      "mn": "цаг",
+      "audio": "audio/unscramble-2/clock.mp3"
+    },
+    {
+      "en": "bread",
+      "image": "img/food/bread.svg",
+      "ipa": "/bred/",
+      "mn": "талх",
+      "audio": "audio/unscramble-2/bread.mp3"
+    },
+    {
+      "en": "cloud",
+      "image": "img/weather/cloud.svg",
+      "ipa": "/klaʊd/",
+      "mn": "үүл",
+      "audio": "audio/unscramble-2/cloud.mp3"
+    },
+    {
+      "en": "phone",
+      "image": "img/devices/phone.svg",
+      "ipa": "/foʊn/",
+      "mn": "утас",
+      "audio": "audio/unscramble-2/phone.mp3"
+    }
+  ]
+}

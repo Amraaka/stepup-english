@@ -1,0 +1,20 @@
+{
+  "slug": "my-quiz",
+  "topic": "Ярианы хэллэг",
+  "format": "mini-dialogue",
+  "accent": "mint",
+  "items": [
+    {
+      "prompt": "Thank you so much!",
+      "en": "You are welcome.",
+      "mn": "Зүгээр ээ.",
+      "audio": null
+    },
+    {
+      "prompt": "How are you?",
+      "en": "I am fine, thanks. And you?",
+      "mn": "Сайн, баярлалаа. Та юу?",
+      "audio": null
+    }
+  ]
+}

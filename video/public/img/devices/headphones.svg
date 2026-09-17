@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- headband -->
+    <path d="M42 122V102a58 58 0 0 1 116 0v20" stroke-width="9"/>
+    <!-- ear cups -->
+    <path d="M30 116h18a8 8 0 0 1 8 8v30a8 8 0 0 1-8 8H30a8 8 0 0 1-8-8v-30a8 8 0 0 1 8-8z" fill="#7b5cfa"/>
+    <path d="M152 116h18a8 8 0 0 1 8 8v30a8 8 0 0 1-8 8h-18a8 8 0 0 1-8-8v-30a8 8 0 0 1 8-8z" fill="#7b5cfa"/>
+  </g>
+</svg>

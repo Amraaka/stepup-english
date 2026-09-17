@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-ar-er",
+  "topic": "heart / hurt",
+  "format": "sound-pair",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "heart",
+        "hurt"
+      ],
+      "hints": [
+        "/hɑːrt/",
+        "/hɝːt/"
+      ],
+      "en": "hurt",
+      "mn": "өвдөх",
+      "audio": "audio/sound-pair-ar-er/hurt.mp3"
+    },
+    {
+      "options": [
+        "farm",
+        "firm"
+      ],
+      "hints": [
+        "/fɑːrm/",
+        "/fɝːm/"
+      ],
+      "en": "farm",
+      "mn": "ферм",
+      "audio": "audio/sound-pair-ar-er/farm.mp3"
+    },
+    {
+      "options": [
+        "star",
+        "stir"
+      ],
+      "hints": [
+        "/stɑːr/",
+        "/stɝː/"
+      ],
+      "en": "star",
+      "mn": "од",
+      "audio": "audio/sound-pair-ar-er/star.mp3"
+    },
+    {
+      "options": [
+        "park",
+        "perk"
+      ],
+      "hints": [
+        "/pɑːrk/",
+        "/pɝːk/"
+      ],
+      "en": "park",
+      "mn": "цэцэрлэгт хүрээлэн",
+      "audio": "audio/sound-pair-ar-er/park.mp3"
+    },
+    {
+      "options": [
+        "barn",
+        "burn"
+      ],
+      "hints": [
+        "/bɑːrn/",
+        "/bɝːn/"
+      ],
+      "en": "burn",
+      "mn": "шатах",
+      "audio": "audio/sound-pair-ar-er/burn.mp3"
+    }
+  ]
+}

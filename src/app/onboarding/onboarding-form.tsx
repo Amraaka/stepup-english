@@ -1,6 +1,7 @@
 "use client";
 
-import { useActionState, useState, useSyncExternalStore } from "react";
+import { useActionState, useEffect, useState, useSyncExternalStore } from "react";
+import { useRouter } from "next/navigation";
 import { completeOnboarding, type OnboardingState } from "./actions";
 import { GUEST_EVENTS_KEY } from "@/lib/guest";
 import { Mascot } from "@/components/mascot";
@@ -54,25 +55,26 @@ export function OnboardingForm({ name }: { name: string }) {
     }
   })();
 
+  const router = useRouter();
+  useEffect(() => {
+    if (!state.done) return;
+    // Clear the local copy only once the server has saved it, so a failed submit keeps the history.
+    if (state.imported) {
+      try {
+        localStorage.removeItem(GUEST_EVENTS_KEY);
+      } catch {
+        /* private mode */
+      }
+    }
+    router.replace("/");
+  }, [state, router]);
+
   const needsName = name.trim() === "";
   const ready = level !== "" && goals.length > 0;
 
   return (
     <main className="flex min-h-dvh flex-col items-center px-4 py-10">
-      <form
-        action={action}
-        onSubmit={() => {
-          // The server imports the history in this same request; clear the local copy.
-          if (importGuest && guestCount > 0) {
-            try {
-              localStorage.removeItem(GUEST_EVENTS_KEY);
-            } catch {
-              /* private mode */
-            }
-          }
-        }}
-        className="w-full max-w-md"
-      >
+      <form action={action} className="w-full max-w-md">
         <div className="flex flex-col items-center text-center">
           <Mascot mood="cheer" className="size-24" />
           <h1 className="mt-3 text-2xl font-extrabold tracking-[-0.02em] text-balance">
@@ -187,10 +189,10 @@ export function OnboardingForm({ name }: { name: string }) {
 
           <button
             type="submit"
-            disabled={pending || !ready}
+            disabled={pending || !ready || state.done}
             className="press h-14 rounded-2xl bg-coral-a text-base font-extrabold text-ink-950 disabled:opacity-50"
           >
-            {pending ? "Хадгалж байна…" : "Эхлэх"}
+            {pending || state.done ? "Хадгалж байна…" : "Эхлэх"}
           </button>
         </div>
       </form>

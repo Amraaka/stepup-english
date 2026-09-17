@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-2",
+  "topic": "Илүүц үг",
+  "format": "odd-one-out",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "options": [
+        "cat",
+        "dog",
+        "horse",
+        "table"
+      ],
+      "en": "table",
+      "mn": "Бусад нь амьтан",
+      "audio": "audio/odd-one-out-2/table.mp3"
+    },
+    {
+      "options": [
+        "shirt",
+        "jacket",
+        "spoon",
+        "dress"
+      ],
+      "en": "spoon",
+      "mn": "Бусад нь хувцас",
+      "audio": "audio/odd-one-out-2/spoon.mp3"
+    },
+    {
+      "options": [
+        "bus",
+        "train",
+        "plane",
+        "kitchen"
+      ],
+      "en": "kitchen",
+      "mn": "Бусад нь тээврийн хэрэгсэл",
+      "audio": "audio/odd-one-out-2/kitchen.mp3"
+    },
+    {
+      "options": [
+        "big",
+        "small",
+        "tall",
+        "quickly"
+      ],
+      "en": "quickly",
+      "mn": "Бусад нь тэмдэг нэр",
+      "audio": "audio/odd-one-out-2/quickly.mp3"
+    },
+    {
+      "options": [
+        "January",
+        "July",
+        "Tuesday",
+        "October"
+      ],
+      "en": "Tuesday",
+      "mn": "Бусад нь сар",
+      "audio": "audio/odd-one-out-2/tuesday.mp3"
+    }
+  ]
+}

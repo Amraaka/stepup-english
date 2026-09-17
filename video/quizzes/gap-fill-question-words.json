@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-question-words",
+  "topic": "Асуух үг",
+  "format": "gap-fill",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "en": "What is your name?",
+      "sentence": "___ is your name?",
+      "options": [
+        "What",
+        "Who",
+        "Where"
+      ],
+      "mn": "Чиний нэрийг хэн гэдэг вэ?",
+      "audio": "audio/gap-fill-question-words/what-is-your-name.mp3"
+    },
+    {
+      "en": "Where do you live?",
+      "sentence": "___ do you live?",
+      "options": [
+        "Where",
+        "What",
+        "Who"
+      ],
+      "mn": "Чи хаана амьдардаг вэ?",
+      "audio": "audio/gap-fill-question-words/where-do-you-live.mp3"
+    },
+    {
+      "en": "How old are you?",
+      "sentence": "___ old are you?",
+      "options": [
+        "How",
+        "What",
+        "Which"
+      ],
+      "mn": "Чи хэдэн настай вэ?",
+      "audio": "audio/gap-fill-question-words/how-old-are-you.mp3"
+    },
+    {
+      "en": "Who is that man? He is my father.",
+      "sentence": "___ is that man? He is my father.",
+      "options": [
+        "Who",
+        "What",
+        "Where"
+      ],
+      "mn": "Тэр хүн хэн бэ? Тэр миний аав.",
+      "audio": "audio/gap-fill-question-words/who-is-that-man-he-is-my-father.mp3"
+    },
+    {
+      "en": "Why did you come late?",
+      "sentence": "___ did you come late?",
+      "options": [
+        "Why",
+        "What",
+        "Who"
+      ],
+      "mn": "Чи яагаад хоцорсон бэ?",
+      "audio": "audio/gap-fill-question-words/why-did-you-come-late.mp3"
+    }
+  ]
+}

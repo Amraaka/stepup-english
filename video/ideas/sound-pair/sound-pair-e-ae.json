@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-e-ae",
+  "topic": "men / man",
+  "format": "sound-pair",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "men",
+        "man"
+      ],
+      "hints": [
+        "/men/",
+        "/mæn/"
+      ],
+      "en": "man",
+      "mn": "эрэгтэй",
+      "audio": null
+    },
+    {
+      "options": [
+        "pen",
+        "pan"
+      ],
+      "hints": [
+        "/pen/",
+        "/pæn/"
+      ],
+      "en": "pan",
+      "mn": "хайруулын таваг",
+      "audio": null
+    },
+    {
+      "options": [
+        "said",
+        "sad"
+      ],
+      "hints": [
+        "/sed/",
+        "/sæd/"
+      ],
+      "en": "said",
+      "mn": "хэлсэн",
+      "audio": null
+    },
+    {
+      "options": [
+        "set",
+        "sat"
+      ],
+      "hints": [
+        "/set/",
+        "/sæt/"
+      ],
+      "en": "sat",
+      "mn": "суусан",
+      "audio": null
+    },
+    {
+      "options": [
+        "lend",
+        "land"
+      ],
+      "hints": [
+        "/lend/",
+        "/lænd/"
+      ],
+      "en": "land",
+      "mn": "газар",
+      "audio": null
+    }
+  ]
+}

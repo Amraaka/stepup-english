@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-phrasal-verbs",
+  "topic": "Хэлц үйл үг",
+  "format": "gap-fill",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "Please turn on the light.",
+      "sentence": "Please turn ___ the light.",
+      "options": [
+        "on",
+        "up",
+        "in"
+      ],
+      "mn": "Гэрлээ асаагаарай.",
+      "audio": "audio/gap-fill-phrasal-verbs/please-turn-on-the-light.mp3"
+    },
+    {
+      "en": "I need to look for my keys.",
+      "sentence": "I need to look ___ my keys.",
+      "options": [
+        "for",
+        "at",
+        "after"
+      ],
+      "mn": "Би түлхүүрээ хайх хэрэгтэй.",
+      "audio": "audio/gap-fill-phrasal-verbs/i-need-to-look-for-my-keys.mp3"
+    },
+    {
+      "en": "She gave up smoking.",
+      "sentence": "She gave ___ smoking.",
+      "options": [
+        "up",
+        "in",
+        "out"
+      ],
+      "mn": "Тэр тамхиа хаясан.",
+      "audio": "audio/gap-fill-phrasal-verbs/she-gave-up-smoking.mp3"
+    },
+    {
+      "en": "Please fill in this form.",
+      "sentence": "Please fill ___ this form.",
+      "options": [
+        "in",
+        "on",
+        "at"
+      ],
+      "mn": "Энэ маягтыг бөглөөрэй.",
+      "audio": "audio/gap-fill-phrasal-verbs/please-fill-in-this-form.mp3"
+    },
+    {
+      "en": "We ran out of milk.",
+      "sentence": "We ran ___ of milk.",
+      "options": [
+        "out",
+        "off",
+        "away"
+      ],
+      "mn": "Манайд сүү дууссан.",
+      "audio": "audio/gap-fill-phrasal-verbs/we-ran-out-of-milk.mp3"
+    }
+  ]
+}

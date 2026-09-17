@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-1",
+  "topic": "Өргөлт",
+  "format": "word-stress",
+  "question": "Өргөлт хаана байна вэ?",
+  "accent": "sun",
+  "items": [
+    {
+      "en": "banana",
+      "syllables": [
+        "ba",
+        "na",
+        "na"
+      ],
+      "stressIndex": 1,
+      "ipa": "/bəˈnæn.ə/",
+      "mn": "гадил",
+      "audio": "audio/word-stress-1/banana.mp3"
+    },
+    {
+      "en": "computer",
+      "syllables": [
+        "com",
+        "pu",
+        "ter"
+      ],
+      "stressIndex": 1,
+      "ipa": "/kəmˈpjuː.tɚ/",
+      "mn": "компьютер",
+      "audio": "audio/word-stress-1/computer.mp3"
+    },
+    {
+      "en": "photograph",
+      "syllables": [
+        "pho",
+        "to",
+        "graph"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈfoʊ.tə.ɡræf/",
+      "mn": "гэрэл зураг",
+      "audio": "audio/word-stress-1/photograph.mp3"
+    },
+    {
+      "en": "important",
+      "syllables": [
+        "im",
+        "por",
+        "tant"
+      ],
+      "stressIndex": 1,
+      "ipa": "/ɪmˈpɔːr.tənt/",
+      "mn": "чухал",
+      "audio": "audio/word-stress-1/important.mp3"
+    },
+    {
+      "en": "beautiful",
+      "syllables": [
+        "beau",
+        "ti",
+        "ful"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈbjuː.tə.fəl/",
+      "mn": "үзэсгэлэнтэй",
+      "audio": "audio/word-stress-1/beautiful.mp3"
+    }
+  ]
+}

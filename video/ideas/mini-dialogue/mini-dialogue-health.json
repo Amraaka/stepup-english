@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-health",
+  "topic": "Эрүүл мэнд",
+  "format": "mini-dialogue",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "You look pale. Are you okay?",
+      "en": "I have a headache.",
+      "mn": "Толгой өвдөж байна.",
+      "audio": null
+    },
+    {
+      "prompt": "What's wrong?",
+      "en": "I have a sore throat.",
+      "mn": "Хоолой өвдөж байна.",
+      "audio": null
+    },
+    {
+      "prompt": "Did you see a doctor?",
+      "en": "Yes, she gave me some medicine.",
+      "mn": "Тийм, эм өгсөн.",
+      "audio": null
+    },
+    {
+      "prompt": "How are you feeling today?",
+      "en": "Much better, thanks.",
+      "mn": "Хамаагүй дээрдсэн, баярлалаа.",
+      "audio": null
+    },
+    {
+      "prompt": "Take care of yourself.",
+      "en": "Thank you, I will.",
+      "mn": "Баярлалаа, тэгнэ ээ.",
+      "audio": null
+    }
+  ]
+}

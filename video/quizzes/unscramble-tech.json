@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-tech",
+  "topic": "Техник",
+  "format": "unscramble",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "laptop",
+      "image": "img/devices/laptop.svg",
+      "ipa": "/ˈlæp.tɑːp/",
+      "mn": "лаптоп",
+      "audio": "audio/unscramble-tech/laptop.mp3"
+    },
+    {
+      "en": "camera",
+      "image": "img/devices/camera.svg",
+      "ipa": "/ˈkæm.rə/",
+      "mn": "камер",
+      "audio": "audio/unscramble-tech/camera.mp3"
+    },
+    {
+      "en": "mouse",
+      "image": "img/devices/mouse.svg",
+      "ipa": "/maʊs/",
+      "mn": "хулгана",
+      "audio": "audio/unscramble-tech/mouse.mp3"
+    },
+    {
+      "en": "headphones",
+      "image": "img/devices/headphones.svg",
+      "ipa": "/ˈhed.foʊnz/",
+      "mn": "чихэвч",
+      "audio": "audio/unscramble-tech/headphones.mp3"
+    },
+    {
+      "en": "clock",
+      "image": "img/objects/clock.svg",
+      "ipa": "/klɑːk/",
+      "mn": "цаг",
+      "audio": "audio/unscramble-tech/clock.mp3"
+    }
+  ]
+}

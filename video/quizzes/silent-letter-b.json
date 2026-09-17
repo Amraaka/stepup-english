@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-b",
+  "topic": "Дуугүй B",
+  "format": "silent-letter",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "en": "lamb",
+      "silentIndex": 3,
+      "ipa": "/læm/",
+      "mn": "хурга",
+      "audio": "audio/silent-letter-b/lamb.mp3"
+    },
+    {
+      "en": "thumb",
+      "silentIndex": 4,
+      "ipa": "/θʌm/",
+      "mn": "эрхий хуруу",
+      "audio": "audio/silent-letter-b/thumb.mp3"
+    },
+    {
+      "en": "comb",
+      "silentIndex": 3,
+      "ipa": "/koʊm/",
+      "mn": "сам",
+      "audio": "audio/silent-letter-b/comb.mp3"
+    },
+    {
+      "en": "doubt",
+      "silentIndex": 3,
+      "ipa": "/daʊt/",
+      "mn": "эргэлзээ",
+      "audio": "audio/silent-letter-b/doubt.mp3"
+    },
+    {
+      "en": "debt",
+      "silentIndex": 2,
+      "ipa": "/det/",
+      "mn": "өр",
+      "audio": "audio/silent-letter-b/debt.mp3"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-in-on-at",
+  "topic": "In, on, at",
+  "format": "gap-fill",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "My birthday is in May.",
+      "sentence": "My birthday is ___ May.",
+      "options": [
+        "in",
+        "on",
+        "at"
+      ],
+      "mn": "Миний төрсөн өдөр тавдугаар сард.",
+      "audio": "audio/gap-fill-in-on-at/my-birthday-is-in-may.mp3"
+    },
+    {
+      "en": "The meeting is on Friday.",
+      "sentence": "The meeting is ___ Friday.",
+      "options": [
+        "on",
+        "in",
+        "at"
+      ],
+      "mn": "Хурал баасан гарагт.",
+      "audio": "audio/gap-fill-in-on-at/the-meeting-is-on-friday.mp3"
+    },
+    {
+      "en": "I will see you at noon.",
+      "sentence": "I will see you ___ noon.",
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "mn": "Үдээр уулзъя.",
+      "audio": "audio/gap-fill-in-on-at/i-will-see-you-at-noon.mp3"
+    },
+    {
+      "en": "We go skiing in winter.",
+      "sentence": "We go skiing ___ winter.",
+      "options": [
+        "in",
+        "at",
+        "on"
+      ],
+      "mn": "Бид өвөл цанаар гулгадаг.",
+      "audio": "audio/gap-fill-in-on-at/we-go-skiing-in-winter.mp3"
+    },
+    {
+      "en": "The shop opens at 9 a.m.",
+      "sentence": "The shop opens ___ 9 a.m.",
+      "options": [
+        "at",
+        "on",
+        "in"
+      ],
+      "mn": "Дэлгүүр 9 цагт нээгддэг.",
+      "audio": "audio/gap-fill-in-on-at/the-shop-opens-at-9-a-m.mp3"
+    }
+  ]
+}

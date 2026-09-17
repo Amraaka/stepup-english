@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-ae-uh",
+  "topic": "cat / cut",
+  "format": "sound-pair",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "options": [
+        "cat",
+        "cut"
+      ],
+      "hints": [
+        "/kæt/",
+        "/kʌt/"
+      ],
+      "en": "cut",
+      "mn": "зүсэх",
+      "audio": "audio/sound-pair-ae-uh/cut.mp3"
+    },
+    {
+      "options": [
+        "bag",
+        "bug"
+      ],
+      "hints": [
+        "/bæɡ/",
+        "/bʌɡ/"
+      ],
+      "en": "bug",
+      "mn": "хорхой",
+      "audio": "audio/sound-pair-ae-uh/bug.mp3"
+    },
+    {
+      "options": [
+        "hat",
+        "hut"
+      ],
+      "hints": [
+        "/hæt/",
+        "/hʌt/"
+      ],
+      "en": "hat",
+      "mn": "малгай",
+      "audio": "audio/sound-pair-ae-uh/hat.mp3"
+    },
+    {
+      "options": [
+        "ran",
+        "run"
+      ],
+      "hints": [
+        "/ræn/",
+        "/rʌn/"
+      ],
+      "en": "run",
+      "mn": "гүйх",
+      "audio": "audio/sound-pair-ae-uh/run.mp3"
+    },
+    {
+      "options": [
+        "match",
+        "much"
+      ],
+      "hints": [
+        "/mætʃ/",
+        "/mʌtʃ/"
+      ],
+      "en": "match",
+      "mn": "шүдэнз",
+      "audio": "audio/sound-pair-ae-uh/match.mp3"
+    }
+  ]
+}

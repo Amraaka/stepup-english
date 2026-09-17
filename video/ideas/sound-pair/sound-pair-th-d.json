@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-th-d",
+  "topic": "they / day",
+  "format": "sound-pair",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "they",
+        "day"
+      ],
+      "hints": [
+        "/ðeɪ/",
+        "/deɪ/"
+      ],
+      "en": "day",
+      "mn": "өдөр",
+      "audio": null
+    },
+    {
+      "options": [
+        "then",
+        "den"
+      ],
+      "hints": [
+        "/ðen/",
+        "/den/"
+      ],
+      "en": "then",
+      "mn": "дараа нь",
+      "audio": null
+    },
+    {
+      "options": [
+        "those",
+        "doze"
+      ],
+      "hints": [
+        "/ðoʊz/",
+        "/doʊz/"
+      ],
+      "en": "those",
+      "mn": "тэдгээр",
+      "audio": null
+    },
+    {
+      "options": [
+        "there",
+        "dare"
+      ],
+      "hints": [
+        "/ðer/",
+        "/der/"
+      ],
+      "en": "there",
+      "mn": "тэнд",
+      "audio": null
+    },
+    {
+      "options": [
+        "breathe",
+        "breed"
+      ],
+      "hints": [
+        "/briːð/",
+        "/briːd/"
+      ],
+      "en": "breed",
+      "mn": "үржүүлэх",
+      "audio": null
+    }
+  ]
+}

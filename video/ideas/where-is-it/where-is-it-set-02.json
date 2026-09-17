@@ -1,0 +1,64 @@
+{
+  "slug": "where-is-it-set-02",
+  "topic": "Угтвар үг",
+  "format": "where-is-it",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "The ball is behind the table.",
+      "answer": "behind",
+      "options": [
+        "behind",
+        "under",
+        "between"
+      ],
+      "mn": "Бөмбөг ширээний ард байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is in front of the table.",
+      "answer": "in front of",
+      "options": [
+        "in front of",
+        "above",
+        "under"
+      ],
+      "mn": "Бөмбөг ширээний өмнө байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is next to the table.",
+      "answer": "next to",
+      "options": [
+        "next to",
+        "between",
+        "on"
+      ],
+      "mn": "Бөмбөг ширээний хажууд байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is between the boxes.",
+      "answer": "between",
+      "options": [
+        "between",
+        "in",
+        "in front of"
+      ],
+      "mn": "Бөмбөг хайрцагнуудын дунд байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is on the table.",
+      "answer": "on",
+      "options": [
+        "on",
+        "in",
+        "above"
+      ],
+      "mn": "Бөмбөг ширээн дээр байна.",
+      "audio": null
+    }
+  ]
+}

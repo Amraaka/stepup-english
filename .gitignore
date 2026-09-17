@@ -34,4 +34,11 @@ next-env.d.ts
 # Social post renders (regenerate with post/templates/render.sh)
 post/**/*.png
 post/index.html
-.env*
+
+# Local scratch
+example.mjs
+
+# Old gpt-image PNGs replaced by SVGs (no quiz uses them)
+video/public/img/clothes/*.png
+video/public/img/fruit/*.png
+video/public/img/kitchen/*.png

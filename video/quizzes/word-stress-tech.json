@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-tech",
+  "topic": "Технологи",
+  "format": "word-stress",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "internet",
+      "syllables": [
+        "in",
+        "ter",
+        "net"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈɪn.tɚ.net/",
+      "mn": "интернэт",
+      "audio": "audio/word-stress-tech/internet.mp3"
+    },
+    {
+      "en": "technology",
+      "syllables": [
+        "tech",
+        "no",
+        "lo",
+        "gy"
+      ],
+      "stressIndex": 1,
+      "ipa": "/tekˈnɑː.lə.dʒi/",
+      "mn": "технологи",
+      "audio": "audio/word-stress-tech/technology.mp3"
+    },
+    {
+      "en": "password",
+      "syllables": [
+        "pass",
+        "word"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈpæs.wɝːd/",
+      "mn": "нууц үг",
+      "audio": "audio/word-stress-tech/password.mp3"
+    },
+    {
+      "en": "download",
+      "syllables": [
+        "down",
+        "load"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈdaʊn.loʊd/",
+      "mn": "татаж авах",
+      "audio": "audio/word-stress-tech/download.mp3"
+    },
+    {
+      "en": "application",
+      "syllables": [
+        "ap",
+        "pli",
+        "ca",
+        "tion"
+      ],
+      "stressIndex": 2,
+      "ipa": "/ˌæp.ləˈkeɪ.ʃən/",
+      "mn": "аппликейшн",
+      "audio": "audio/word-stress-tech/application.mp3"
+    }
+  ]
+}

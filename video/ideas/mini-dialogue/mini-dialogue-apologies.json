@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-apologies",
+  "topic": "Уучлал",
+  "format": "mini-dialogue",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "prompt": "I'm so sorry!",
+      "en": "It's okay. Don't worry.",
+      "mn": "Зүгээр. Санаа зоволтгүй.",
+      "audio": null
+    },
+    {
+      "prompt": "Sorry to keep you waiting.",
+      "en": "That's fine.",
+      "mn": "Зүгээр ээ.",
+      "audio": null
+    },
+    {
+      "prompt": "I broke your cup. I'm sorry.",
+      "en": "It's just a cup. Don't worry.",
+      "mn": "Зүгээр л аяга. Санаа зоволтгүй.",
+      "audio": null
+    },
+    {
+      "prompt": "Excuse me, can I get past?",
+      "en": "Oh, sorry! Go ahead.",
+      "mn": "Өө, уучлаарай! Өнгөрөөрэй.",
+      "audio": null
+    },
+    {
+      "prompt": "Sorry, I forgot your birthday.",
+      "en": "That's okay. You can buy me dinner!",
+      "mn": "Зүгээр. Оройн хоол авч өгөөрэй!",
+      "audio": null
+    }
+  ]
+}

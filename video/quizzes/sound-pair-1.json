@@ -1,0 +1,73 @@
+{
+  "slug": "sound-pair-1",
+  "topic": "Хоёр дуудлага",
+  "format": "sound-pair",
+  "accent": "sky",
+  "items": [
+    {
+      "options": [
+        "ship",
+        "sheep"
+      ],
+      "hints": [
+        "/ʃɪp/",
+        "/ʃiːp/"
+      ],
+      "en": "sheep",
+      "mn": "хонь",
+      "audio": "audio/sound-pair-1/sheep.mp3"
+    },
+    {
+      "options": [
+        "sit",
+        "seat"
+      ],
+      "hints": [
+        "/sɪt/",
+        "/siːt/"
+      ],
+      "en": "seat",
+      "mn": "суудал",
+      "audio": "audio/sound-pair-1/seat.mp3"
+    },
+    {
+      "options": [
+        "bad",
+        "bed"
+      ],
+      "hints": [
+        "/bæd/",
+        "/bed/"
+      ],
+      "en": "bed",
+      "mn": "ор",
+      "audio": "audio/sound-pair-1/bed.mp3"
+    },
+    {
+      "options": [
+        "full",
+        "fool"
+      ],
+      "hints": [
+        "/fʊl/",
+        "/fuːl/"
+      ],
+      "en": "full",
+      "mn": "дүүрэн",
+      "audio": "audio/sound-pair-1/full.mp3"
+    },
+    {
+      "options": [
+        "cap",
+        "cup"
+      ],
+      "hints": [
+        "/kæp/",
+        "/kʌp/"
+      ],
+      "en": "cup",
+      "mn": "аяга",
+      "audio": "audio/sound-pair-1/cup.mp3"
+    }
+  ]
+}

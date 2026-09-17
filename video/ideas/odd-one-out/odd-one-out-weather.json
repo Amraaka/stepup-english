@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-weather",
+  "topic": "Цаг агаар",
+  "format": "odd-one-out",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "options": [
+        "rain",
+        "snow",
+        "wind",
+        "table"
+      ],
+      "en": "table",
+      "mn": "Бусад нь цаг агаар",
+      "audio": null
+    },
+    {
+      "options": [
+        "spring",
+        "summer",
+        "autumn",
+        "Monday"
+      ],
+      "en": "Monday",
+      "mn": "Бусад нь улирал",
+      "audio": null
+    },
+    {
+      "options": [
+        "hot",
+        "cold",
+        "warm",
+        "loud"
+      ],
+      "en": "loud",
+      "mn": "Бусад нь дулаан хүйтнийг заана",
+      "audio": null
+    },
+    {
+      "options": [
+        "cloud",
+        "sun",
+        "star",
+        "chair"
+      ],
+      "en": "chair",
+      "mn": "Бусад нь тэнгэрт байдаг",
+      "audio": null
+    },
+    {
+      "options": [
+        "storm",
+        "fog",
+        "thunder",
+        "garden"
+      ],
+      "en": "garden",
+      "mn": "Бусад нь цаг агаарын үзэгдэл",
+      "audio": null
+    }
+  ]
+}

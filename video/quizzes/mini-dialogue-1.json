@@ -1,0 +1,38 @@
+{
+  "slug": "mini-dialogue-1",
+  "topic": "Ярианы хэллэг",
+  "format": "mini-dialogue",
+  "accent": "mint",
+  "items": [
+    {
+      "prompt": "Thank you so much!",
+      "en": "You are welcome.",
+      "mn": "Зүгээр ээ.",
+      "audio": "audio/mini-dialogue-1/you-are-welcome.mp3"
+    },
+    {
+      "prompt": "How are you?",
+      "en": "I am fine, thanks. And you?",
+      "mn": "Сайн, баярлалаа. Та юу?",
+      "audio": "audio/mini-dialogue-1/i-am-fine-thanks-and-you.mp3"
+    },
+    {
+      "prompt": "Sorry, I am late.",
+      "en": "No worries.",
+      "mn": "Зүгээр дээ.",
+      "audio": "audio/mini-dialogue-1/no-worries.mp3"
+    },
+    {
+      "prompt": "Can I help you?",
+      "en": "Yes, I am looking for a jacket.",
+      "mn": "Тийм, би хүрэм хайж байна.",
+      "audio": "audio/mini-dialogue-1/yes-i-am-looking-for-a-jacket.mp3"
+    },
+    {
+      "prompt": "Nice to meet you.",
+      "en": "Nice to meet you too.",
+      "mn": "Танилцсандаа баяртай байна.",
+      "audio": "audio/mini-dialogue-1/nice-to-meet-you-too.mp3"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-plurals",
+  "topic": "Олон тоо",
+  "format": "fix-mistake",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "I have two children.",
+      "wrong": "I have two childs.",
+      "mn": "Би хоёр хүүхэдтэй.",
+      "audio": "audio/fix-mistake-plurals/i-have-two-children.mp3"
+    },
+    {
+      "en": "There are many people here.",
+      "wrong": "There are many peoples here.",
+      "mn": "Энд олон хүн байна.",
+      "audio": "audio/fix-mistake-plurals/there-are-many-people-here.mp3"
+    },
+    {
+      "en": "I need some information.",
+      "wrong": "I need some informations.",
+      "mn": "Надад мэдээлэл хэрэгтэй.",
+      "audio": "audio/fix-mistake-plurals/i-need-some-information.mp3"
+    },
+    {
+      "en": "My feet hurt.",
+      "wrong": "My foots hurt.",
+      "mn": "Миний хөл өвдөж байна.",
+      "audio": "audio/fix-mistake-plurals/my-feet-hurt.mp3"
+    },
+    {
+      "en": "She gave me good advice.",
+      "wrong": "She gave me good advices.",
+      "mn": "Тэр надад сайн зөвлөгөө өгсөн.",
+      "audio": "audio/fix-mistake-plurals/she-gave-me-good-advice.mp3"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "word-stress-family",
+  "topic": "Гэр бүл",
+  "format": "word-stress",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "en": "mother",
+      "syllables": [
+        "mo",
+        "ther"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈmʌð.ɚ/",
+      "mn": "ээж",
+      "audio": null
+    },
+    {
+      "en": "grandmother",
+      "syllables": [
+        "grand",
+        "mo",
+        "ther"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈɡrænd.mʌð.ɚ/",
+      "mn": "эмээ",
+      "audio": null
+    },
+    {
+      "en": "daughter",
+      "syllables": [
+        "daugh",
+        "ter"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈdɑː.tɚ/",
+      "mn": "охин",
+      "audio": null
+    },
+    {
+      "en": "parents",
+      "syllables": [
+        "pa",
+        "rents"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈper.ənts/",
+      "mn": "эцэг эх",
+      "audio": null
+    },
+    {
+      "en": "together",
+      "syllables": [
+        "to",
+        "ge",
+        "ther"
+      ],
+      "stressIndex": 1,
+      "ipa": "/təˈɡeð.ɚ/",
+      "mn": "хамт",
+      "audio": null
+    }
+  ]
+}

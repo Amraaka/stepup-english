@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getClip } from "@/lib/listening/clips";
 import { getCurrentUser } from "@/lib/auth";
 import { savedLemmas } from "@/lib/vocab/words";
+import { glossaryFor } from "@/lib/dictionary/glossary";
 import { ClipPlayer } from "@/components/listening/clip-player";
 
 export async function generateMetadata({ params }: PageProps<"/listening/[slug]">): Promise<Metadata> {
@@ -15,5 +16,7 @@ export default async function Page({ params }: PageProps<"/listening/[slug]">) {
   if (!clip) notFound();
   const user = await getCurrentUser();
   const lemmas = user ? await savedLemmas(user.id) : [];
-  return <ClipPlayer clip={clip} savedLemmas={lemmas} />;
+  // Only this clip's dictionary entries go to the browser (ADR 0016).
+  const glossary = glossaryFor(clip.segments.map((s) => s.tokens));
+  return <ClipPlayer clip={clip} glossary={glossary} savedLemmas={lemmas} />;
 }

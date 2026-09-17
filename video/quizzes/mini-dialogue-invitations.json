@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-invitations",
+  "topic": "Урилга",
+  "format": "mini-dialogue",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "prompt": "Do you want to see a movie tonight?",
+      "en": "Sure, what time?",
+      "mn": "Тэгье, хэдэн цагт?",
+      "audio": "audio/mini-dialogue-invitations/sure-what-time.mp3"
+    },
+    {
+      "prompt": "Let's have lunch together.",
+      "en": "Good idea!",
+      "mn": "Сайн санаа!",
+      "audio": "audio/mini-dialogue-invitations/good-idea.mp3"
+    },
+    {
+      "prompt": "Would you like to come to my party?",
+      "en": "I'd love to!",
+      "mn": "Дуртайяа!",
+      "audio": "audio/mini-dialogue-invitations/i-d-love-to.mp3"
+    },
+    {
+      "prompt": "Can you come on Saturday?",
+      "en": "Sorry, I can't. I have plans.",
+      "mn": "Уучлаарай, чадахгүй. Төлөвлөгөө байгаа.",
+      "audio": "audio/mini-dialogue-invitations/sorry-i-can-t-i-have-plans.mp3"
+    },
+    {
+      "prompt": "Let's meet at the café.",
+      "en": "Okay, see you there.",
+      "mn": "За, тэнд уулзъя.",
+      "audio": "audio/mini-dialogue-invitations/okay-see-you-there.mp3"
+    }
+  ]
+}

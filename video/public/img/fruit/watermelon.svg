@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- wedge: rind and flesh are concentric from the same flat cut face, so the rind
+       band appears only on the curved edge (v1 wrongly banded the cut face too) -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 66h152a76 76 0 0 1-152 0z" fill="#3f9e5a"/>
+    <path d="M38 66h124a62 62 0 0 1-124 0z" fill="#ef4f5a"/>
+    <g fill="#1a1a1f" stroke="none">
+      <ellipse cx="78" cy="92" rx="4" ry="6"/>
+      <ellipse cx="122" cy="92" rx="4" ry="6"/>
+      <ellipse cx="100" cy="114" rx="4" ry="6"/>
+    </g>
+  </g>
+</svg>

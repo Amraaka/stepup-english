@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-school",
+  "topic": "Сургууль",
+  "format": "word-stress",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "subject",
+      "syllables": [
+        "sub",
+        "ject"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈsʌb.dʒekt/",
+      "mn": "хичээл",
+      "audio": "audio/word-stress-school/subject.mp3"
+    },
+    {
+      "en": "exam",
+      "syllables": [
+        "ex",
+        "am"
+      ],
+      "stressIndex": 1,
+      "ipa": "/ɪɡˈzæm/",
+      "mn": "шалгалт",
+      "audio": "audio/word-stress-school/exam.mp3"
+    },
+    {
+      "en": "mathematics",
+      "syllables": [
+        "math",
+        "e",
+        "mat",
+        "ics"
+      ],
+      "stressIndex": 2,
+      "ipa": "/ˌmæθ.əˈmæt.ɪks/",
+      "mn": "математик",
+      "audio": "audio/word-stress-school/mathematics.mp3"
+    },
+    {
+      "en": "history",
+      "syllables": [
+        "his",
+        "to",
+        "ry"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈhɪs.tɚ.i/",
+      "mn": "түүх",
+      "audio": "audio/word-stress-school/history.mp3"
+    },
+    {
+      "en": "dictionary",
+      "syllables": [
+        "dic",
+        "tion",
+        "ar",
+        "y"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈdɪk.ʃə.ner.i/",
+      "mn": "толь бичиг",
+      "audio": "audio/word-stress-school/dictionary.mp3"
+    }
+  ]
+}

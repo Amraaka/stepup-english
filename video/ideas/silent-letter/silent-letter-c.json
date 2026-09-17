@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-c",
+  "topic": "Дуугүй C",
+  "format": "silent-letter",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "en": "scissors",
+      "silentIndex": 1,
+      "ipa": "/ˈsɪz.ɚz/",
+      "mn": "хайч",
+      "audio": null
+    },
+    {
+      "en": "scene",
+      "silentIndex": 1,
+      "ipa": "/siːn/",
+      "mn": "үзэгдэл",
+      "audio": null
+    },
+    {
+      "en": "science",
+      "silentIndex": 1,
+      "ipa": "/ˈsaɪ.əns/",
+      "mn": "шинжлэх ухаан",
+      "audio": null
+    },
+    {
+      "en": "scent",
+      "silentIndex": 1,
+      "ipa": "/sent/",
+      "mn": "үнэр",
+      "audio": null
+    },
+    {
+      "en": "fascinate",
+      "silentIndex": 3,
+      "ipa": "/ˈfæs.ən.eɪt/",
+      "mn": "сонирхлыг татах",
+      "audio": null
+    }
+  ]
+}

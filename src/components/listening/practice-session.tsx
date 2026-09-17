@@ -7,11 +7,12 @@ import { saveWordAction } from "@/app/(site)/vocabulary/actions";
 import { useStats } from "@/components/stats-provider";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
+import { useRecentInput } from "@/components/listening/use-recent-input";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { Mascot } from "@/components/mascot";
 import { CheckIcon, PauseIcon, PlayIcon, XIcon } from "@/components/icons";
 
-type ClipInfo = { slug: string; title: string; audio: string };
+type ClipInfo = { slug: string; title: string; audio: string; durationSec: number };
 type Outcome = { correct: boolean; dictation?: DictationResult; typed?: string };
 
 const LABEL: Record<PracticeItem["kind"], string> = {
@@ -35,17 +36,27 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
   const [slow, setSlow] = useState(false);
   const [saved, setSaved] = useState<Set<string>>(() => new Set());
   const { isGuest } = useStats();
-  const { playing, playRange, stop } = useSentenceAudio(clip.audio);
+  const { playing, playRange, stop, prime } = useSentenceAudio(clip.audio);
+  const recentInput = useRecentInput();
 
   const item = items[idx] as PracticeItem | undefined;
   const finished = !item;
 
-  // Practice counts as listening time for this clip (same cumulative points window).
+  // Practice counts as listening time for this clip (same cumulative points window),
+  // only while the learner is using the page: an open, idle tab stops counting.
   const finishedRef = useRef(finished);
+  const playingRef = useRef(playing);
   useEffect(() => {
     finishedRef.current = finished;
-  }, [finished]);
-  const flush = useMeasuredTime({ module: "listening", ref: clip.slug }, { counting: () => !finishedRef.current });
+    playingRef.current = playing;
+  }, [finished, playing]);
+  const flush = useMeasuredTime(
+    { module: "listening", ref: clip.slug },
+    {
+      counting: () => !finishedRef.current && (playingRef.current || recentInput()),
+      maxSec: Math.max(900, clip.durationSec * 4),
+    },
+  );
   useEffect(() => {
     if (finished) flush(true);
   }, [finished, flush]);
@@ -86,6 +97,8 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
   }
 
   function next() {
+    // The next sentence auto-plays from an effect; unlock the audio inside this tap for iOS.
+    prime();
     setIdx((i) => i + 1);
     setChoice(null);
     setTyped("");
@@ -105,8 +118,7 @@ export function PracticeSession({ clip, items }: { clip: ClipInfo; items: Practi
       lemma,
       surface: item.answer,
       sentence: item.sentence,
-      clip: clip.slug,
-      seg: item.seg,
+      source: { kind: "clip", clip: clip.slug, seg: item.seg },
     }).catch(() => false);
     if (ok) setSaved((s) => new Set(s).add(lemma));
   }

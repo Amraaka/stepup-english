@@ -342,11 +342,13 @@ export function SkillGrid() {
                 <span className={`grid size-11 shrink-0 place-items-center rounded-[14px] bg-surface ${t.icon}`}>
                   <SkillIcon id={s.id} className="size-6" />
                 </span>
-                <span
-                  className={`whitespace-nowrap rounded-full bg-surface px-2 py-1 text-[11px] font-extrabold ${t.text}`}
-                >
-                  Тун удахгүй
-                </span>
+                {!s.live && (
+                  <span
+                    className={`whitespace-nowrap rounded-full bg-surface px-2 py-1 text-[11px] font-extrabold ${t.text}`}
+                  >
+                    Тун удахгүй
+                  </span>
+                )}
               </div>
               <div>
                 <p className="text-base font-extrabold lg:text-[17px]">{s.name}</p>

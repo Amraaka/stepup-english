@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-make-do",
+  "topic": "Make, do",
+  "format": "gap-fill",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "I need to do my homework.",
+      "sentence": "I need to ___ my homework.",
+      "options": [
+        "do",
+        "make",
+        "take"
+      ],
+      "mn": "Би гэрийн даалгавраа хийх хэрэгтэй.",
+      "audio": "audio/gap-fill-make-do/i-need-to-do-my-homework.mp3"
+    },
+    {
+      "en": "Don't make a mistake.",
+      "sentence": "Don't ___ a mistake.",
+      "options": [
+        "make",
+        "do",
+        "take"
+      ],
+      "mn": "Алдаа бүү гарга.",
+      "audio": "audio/gap-fill-make-do/don-t-make-a-mistake.mp3"
+    },
+    {
+      "en": "She made a cake for us.",
+      "sentence": "She ___ a cake for us.",
+      "options": [
+        "made",
+        "did",
+        "took"
+      ],
+      "mn": "Тэр бидэнд бялуу хийсэн.",
+      "audio": "audio/gap-fill-make-do/she-made-a-cake-for-us.mp3"
+    },
+    {
+      "en": "Can you do the dishes?",
+      "sentence": "Can you ___ the dishes?",
+      "options": [
+        "do",
+        "make",
+        "have"
+      ],
+      "mn": "Аяга таваг угааж өгөх үү?",
+      "audio": "audio/gap-fill-make-do/can-you-do-the-dishes.mp3"
+    },
+    {
+      "en": "We made a lot of noise.",
+      "sentence": "We ___ a lot of noise.",
+      "options": [
+        "made",
+        "did",
+        "had"
+      ],
+      "mn": "Бид их чимээ гаргасан.",
+      "audio": "audio/gap-fill-make-do/we-made-a-lot-of-noise.mp3"
+    }
+  ]
+}

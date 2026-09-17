@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-1",
+  "topic": "Дуугүй үсэг",
+  "format": "silent-letter",
+  "question": "Аль үсэг нь дуудагдахгүй вэ?",
+  "accent": "violet",
+  "items": [
+    {
+      "en": "knife",
+      "silentIndex": 0,
+      "ipa": "/naɪf/",
+      "mn": "хутга",
+      "audio": "audio/silent-letter-1/knife.mp3"
+    },
+    {
+      "en": "hour",
+      "silentIndex": 0,
+      "ipa": "/aʊr/",
+      "mn": "цаг",
+      "audio": "audio/silent-letter-1/hour.mp3"
+    },
+    {
+      "en": "listen",
+      "silentIndex": 3,
+      "ipa": "/ˈlɪs.ən/",
+      "mn": "сонсох",
+      "audio": "audio/silent-letter-1/listen.mp3"
+    },
+    {
+      "en": "island",
+      "silentIndex": 1,
+      "ipa": "/ˈaɪ.lənd/",
+      "mn": "арал",
+      "audio": "audio/silent-letter-1/island.mp3"
+    },
+    {
+      "en": "wrong",
+      "silentIndex": 0,
+      "ipa": "/rɔːŋ/",
+      "mn": "буруу",
+      "audio": "audio/silent-letter-1/wrong.mp3"
+    }
+  ]
+}

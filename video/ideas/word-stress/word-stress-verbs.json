@@ -1,0 +1,64 @@
+{
+  "slug": "word-stress-verbs",
+  "topic": "Үйл үг",
+  "format": "word-stress",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "begin",
+      "syllables": [
+        "be",
+        "gin"
+      ],
+      "stressIndex": 1,
+      "ipa": "/bɪˈɡɪn/",
+      "mn": "эхлэх",
+      "audio": null
+    },
+    {
+      "en": "happen",
+      "syllables": [
+        "hap",
+        "pen"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈhæp.ən/",
+      "mn": "болох",
+      "audio": null
+    },
+    {
+      "en": "decide",
+      "syllables": [
+        "de",
+        "cide"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dɪˈsaɪd/",
+      "mn": "шийдэх",
+      "audio": null
+    },
+    {
+      "en": "visit",
+      "syllables": [
+        "vis",
+        "it"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈvɪz.ɪt/",
+      "mn": "зочлох",
+      "audio": null
+    },
+    {
+      "en": "explain",
+      "syllables": [
+        "ex",
+        "plain"
+      ],
+      "stressIndex": 1,
+      "ipa": "/ɪkˈspleɪn/",
+      "mn": "тайлбарлах",
+      "audio": null
+    }
+  ]
+}

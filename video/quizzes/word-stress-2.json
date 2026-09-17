@@ -1,0 +1,70 @@
+{
+  "slug": "word-stress-2",
+  "topic": "Өргөлт",
+  "format": "word-stress",
+  "question": "Өргөлт хаана байна вэ?",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "hotel",
+      "syllables": [
+        "ho",
+        "tel"
+      ],
+      "stressIndex": 1,
+      "ipa": "/hoʊˈtel/",
+      "mn": "зочид буудал",
+      "audio": "audio/word-stress-2/hotel.mp3"
+    },
+    {
+      "en": "October",
+      "syllables": [
+        "Oc",
+        "to",
+        "ber"
+      ],
+      "stressIndex": 1,
+      "ipa": "/ɑːkˈtoʊ.bɚ/",
+      "mn": "аравдугаар сар",
+      "audio": "audio/word-stress-2/october.mp3"
+    },
+    {
+      "en": "interesting",
+      "syllables": [
+        "in",
+        "te",
+        "res",
+        "ting"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈɪn.trəs.tɪŋ/",
+      "mn": "сонирхолтой",
+      "audio": "audio/word-stress-2/interesting.mp3"
+    },
+    {
+      "en": "develop",
+      "syllables": [
+        "de",
+        "ve",
+        "lop"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dɪˈvel.əp/",
+      "mn": "хөгжүүлэх",
+      "audio": "audio/word-stress-2/develop.mp3"
+    },
+    {
+      "en": "engineer",
+      "syllables": [
+        "en",
+        "gi",
+        "neer"
+      ],
+      "stressIndex": 2,
+      "ipa": "/ˌen.dʒɪˈnɪr/",
+      "mn": "инженер",
+      "audio": "audio/word-stress-2/engineer.mp3"
+    }
+  ]
+}

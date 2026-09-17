@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-travel",
+  "topic": "Аялал",
+  "format": "mini-dialogue",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "Can I see your passport, please?",
+      "en": "Here you are.",
+      "mn": "Энүүгээр.",
+      "audio": null
+    },
+    {
+      "prompt": "How long will you stay?",
+      "en": "For two weeks.",
+      "mn": "Хоёр долоо хоног.",
+      "audio": null
+    },
+    {
+      "prompt": "Window or aisle seat?",
+      "en": "Window, please.",
+      "mn": "Цонхны дэргэд өгөөч.",
+      "audio": null
+    },
+    {
+      "prompt": "Do you have a reservation?",
+      "en": "Yes, under the name Bat.",
+      "mn": "Тийм, Бат гэдэг нэрээр.",
+      "audio": null
+    },
+    {
+      "prompt": "What's the purpose of your visit?",
+      "en": "I'm here on holiday.",
+      "mn": "Амралтаар ирсэн.",
+      "audio": null
+    }
+  ]
+}

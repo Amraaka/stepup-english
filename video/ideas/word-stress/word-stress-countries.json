@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-countries",
+  "topic": "Улс",
+  "format": "word-stress",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "en": "Mongolia",
+      "syllables": [
+        "Mon",
+        "go",
+        "li",
+        "a"
+      ],
+      "stressIndex": 1,
+      "ipa": "/mɑːŋˈɡoʊ.li.ə/",
+      "mn": "Монгол",
+      "audio": null
+    },
+    {
+      "en": "Japan",
+      "syllables": [
+        "Ja",
+        "pan"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dʒəˈpæn/",
+      "mn": "Япон",
+      "audio": null
+    },
+    {
+      "en": "Canada",
+      "syllables": [
+        "Ca",
+        "na",
+        "da"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈkæn.ə.də/",
+      "mn": "Канад",
+      "audio": null
+    },
+    {
+      "en": "Korea",
+      "syllables": [
+        "Ko",
+        "re",
+        "a"
+      ],
+      "stressIndex": 1,
+      "ipa": "/kəˈriː.ə/",
+      "mn": "Солонгос",
+      "audio": null
+    },
+    {
+      "en": "Germany",
+      "syllables": [
+        "Ger",
+        "ma",
+        "ny"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈdʒɝː.mə.ni/",
+      "mn": "Герман",
+      "audio": null
+    }
+  ]
+}

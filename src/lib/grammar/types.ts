@@ -1,4 +1,6 @@
-export type GrammarLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+import type { CefrLevel } from "@/lib/levels";
+
+export type GrammarLevel = CefrLevel;
 
 /** An English example with its Mongolian meaning. */
 export type Example = { en: string; mn: string };
@@ -63,8 +65,27 @@ export type Lesson = {
   exercises: Exercise[];
 };
 
-/** One exercise in a session, from a lesson's practice or from the mistake review. */
-export type PracticeItem = { slug: string; lessonTitle: string; key: string; exercise: Exercise };
+/** Attribution for an example sentence taken from Tatoeba. */
+export type Credit = { tatoebaId: number; author: string; license: string };
+
+/** A reviewed gap-fill built from a Tatoeba sentence (`scripts/grammar/build_bank.py`). */
+export type BankItem = {
+  id: string;
+  /** the lesson whose tense is the answer */
+  slug: string;
+  signal: string;
+  sentence: string;
+  answer: string;
+  options: string[];
+  explain: string;
+  source: Credit;
+};
+
+/** One exercise in a session: lesson practice, a level checkpoint or the mistake review. */
+export type PracticeItem = { slug: string; lessonTitle: string; key: string; exercise: Exercise; credit?: Credit };
+
+/** What the learner gave for one item: typed text for `type`, the chosen option otherwise. Graded on the server. */
+export type PracticeAnswer = { slug: string; key: string; answer: string };
 
 /** Saved result for one lesson (members only). */
 export type LessonProgress = { bestScore: number; total: number; completed: boolean };

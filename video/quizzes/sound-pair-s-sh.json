@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-s-sh",
+  "topic": "sea / she",
+  "format": "sound-pair",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "sea",
+        "she"
+      ],
+      "hints": [
+        "/siː/",
+        "/ʃiː/"
+      ],
+      "en": "she",
+      "mn": "тэр (эмэгтэй)",
+      "audio": "audio/sound-pair-s-sh/she.mp3"
+    },
+    {
+      "options": [
+        "sip",
+        "ship"
+      ],
+      "hints": [
+        "/sɪp/",
+        "/ʃɪp/"
+      ],
+      "en": "sip",
+      "mn": "балгах",
+      "audio": "audio/sound-pair-s-sh/sip.mp3"
+    },
+    {
+      "options": [
+        "seat",
+        "sheet"
+      ],
+      "hints": [
+        "/siːt/",
+        "/ʃiːt/"
+      ],
+      "en": "sheet",
+      "mn": "хуудас",
+      "audio": "audio/sound-pair-s-sh/sheet.mp3"
+    },
+    {
+      "options": [
+        "sort",
+        "short"
+      ],
+      "hints": [
+        "/sɔːrt/",
+        "/ʃɔːrt/"
+      ],
+      "en": "short",
+      "mn": "богино",
+      "audio": "audio/sound-pair-s-sh/short.mp3"
+    },
+    {
+      "options": [
+        "same",
+        "shame"
+      ],
+      "hints": [
+        "/seɪm/",
+        "/ʃeɪm/"
+      ],
+      "en": "same",
+      "mn": "адилхан",
+      "audio": "audio/sound-pair-s-sh/same.mp3"
+    }
+  ]
+}

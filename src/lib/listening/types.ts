@@ -1,7 +1,9 @@
 // Listening content model. Decisions: docs/decisions/0009-listening-module-content-and-player.md
 
+import type { CefrLevel } from "@/lib/levels";
+
 /** CEFR band shown on a clip card. */
-export type ClipLevel = "A1" | "A2" | "B1" | "B2" | "C1";
+export type ClipLevel = CefrLevel;
 
 export type ClipSource = {
   name: string;
@@ -39,16 +41,4 @@ export type Clip = {
   source: ClipSource;
   segments: Segment[];
   questions: ClipQuestion[];
-};
-
-export type PartOfSpeech = "n" | "v" | "adj" | "adv" | "prep" | "conj" | "pron" | "det" | "num" | "name" | "phrase";
-
-export type GlossEntry = {
-  /** Dictionary form ("serve" for "served"). */
-  lemma: string;
-  pos: PartOfSpeech;
-  /** Plain Mongolian meaning. */
-  mn: string;
-  /** Short learner-English definition, when useful. */
-  en?: string;
 };

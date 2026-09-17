@@ -23,6 +23,23 @@ export function resample(input: Float32Array, fromRate: number, toRate: number):
   return out;
 }
 
+/** True when the first 44 bytes are the header `encodeWav` writes: RIFF/WAVE, PCM, mono, 16-bit, at `sampleRate`. */
+export function isPcmWavHeader(header: ArrayBuffer, sampleRate: number): boolean {
+  if (header.byteLength < 44) return false;
+  const view = new DataView(header);
+  const text = (offset: number, s: string) => [...s].every((c, i) => view.getUint8(offset + i) === c.charCodeAt(0));
+  return (
+    text(0, "RIFF") &&
+    text(8, "WAVE") &&
+    text(12, "fmt ") &&
+    view.getUint16(20, true) === 1 &&
+    view.getUint16(22, true) === 1 &&
+    view.getUint32(24, true) === sampleRate &&
+    view.getUint16(34, true) === 16 &&
+    text(36, "data")
+  );
+}
+
 /** 16-bit PCM WAV bytes. */
 export function encodeWav(samples: Float32Array, sampleRate: number): ArrayBuffer {
   const buffer = new ArrayBuffer(44 + samples.length * 2);

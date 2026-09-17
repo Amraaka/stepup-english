@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-u",
+  "topic": "Дуугүй U",
+  "format": "silent-letter",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "guitar",
+      "silentIndex": 1,
+      "ipa": "/ɡɪˈtɑːr/",
+      "mn": "гитар",
+      "audio": null
+    },
+    {
+      "en": "guess",
+      "silentIndex": 1,
+      "ipa": "/ɡes/",
+      "mn": "таах",
+      "audio": null
+    },
+    {
+      "en": "build",
+      "silentIndex": 1,
+      "ipa": "/bɪld/",
+      "mn": "барих",
+      "audio": null
+    },
+    {
+      "en": "biscuit",
+      "silentIndex": 4,
+      "ipa": "/ˈbɪs.kɪt/",
+      "mn": "жигнэмэг",
+      "audio": null
+    },
+    {
+      "en": "guest",
+      "silentIndex": 1,
+      "ipa": "/ɡest/",
+      "mn": "зочин",
+      "audio": null
+    }
+  ]
+}

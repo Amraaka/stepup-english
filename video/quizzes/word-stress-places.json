@@ -1,0 +1,68 @@
+{
+  "slug": "word-stress-places",
+  "topic": "Газар",
+  "format": "word-stress",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "museum",
+      "syllables": [
+        "mu",
+        "se",
+        "um"
+      ],
+      "stressIndex": 1,
+      "ipa": "/mjuːˈziː.əm/",
+      "mn": "музей",
+      "audio": "audio/word-stress-places/museum.mp3"
+    },
+    {
+      "en": "hospital",
+      "syllables": [
+        "hos",
+        "pi",
+        "tal"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈhɑː.spɪ.təl/",
+      "mn": "эмнэлэг",
+      "audio": "audio/word-stress-places/hospital.mp3"
+    },
+    {
+      "en": "library",
+      "syllables": [
+        "li",
+        "bra",
+        "ry"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈlaɪ.brer.i/",
+      "mn": "номын сан",
+      "audio": "audio/word-stress-places/library.mp3"
+    },
+    {
+      "en": "airport",
+      "syllables": [
+        "air",
+        "port"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈer.pɔːrt/",
+      "mn": "нисэх буудал",
+      "audio": "audio/word-stress-places/airport.mp3"
+    },
+    {
+      "en": "cinema",
+      "syllables": [
+        "ci",
+        "ne",
+        "ma"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈsɪn.ə.mə/",
+      "mn": "кино театр",
+      "audio": "audio/word-stress-places/cinema.mp3"
+    }
+  ]
+}

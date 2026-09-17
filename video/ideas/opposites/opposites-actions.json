@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-actions",
+  "topic": "Үйлдэл",
+  "format": "opposites",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "laugh",
+      "en": "cry",
+      "ipa": "/kraɪ/",
+      "mn": "уйлах",
+      "audio": null
+    },
+    {
+      "prompt": "sit",
+      "en": "stand",
+      "ipa": "/stænd/",
+      "mn": "зогсох",
+      "audio": null
+    },
+    {
+      "prompt": "give",
+      "en": "take",
+      "ipa": "/teɪk/",
+      "mn": "авах",
+      "audio": null
+    },
+    {
+      "prompt": "come",
+      "en": "go",
+      "ipa": "/ɡoʊ/",
+      "mn": "явах",
+      "audio": null
+    },
+    {
+      "prompt": "ask",
+      "en": "answer",
+      "ipa": "/ˈæn.sɚ/",
+      "mn": "хариулах",
+      "audio": null
+    }
+  ]
+}

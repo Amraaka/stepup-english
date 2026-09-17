@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v3: centred in the frame and the spout lengthened with a proper upward flare,
+       so it reads as a spout rather than a stub. Spout still drawn before the body
+       so the body covers its root. -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M62 96c0-36 56-36 56 0"/>
+    <path d="M110 120c22 4 34-4 44-22" stroke-width="10"/>
+    <path d="M52 104h76l7 40a14 14 0 0 1-14 15H59a14 14 0 0 1-14-15z" fill="#dfe3e8"/>
+    <path d="M48 104a42 11 0 0 1 84 0" fill="#dfe3e8"/>
+    <circle cx="90" cy="88" r="7" fill="#ff5a3c"/>
+  </g>
+</svg>

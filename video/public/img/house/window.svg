@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- frame -->
+    <path d="M32 36h136v122H32z" fill="#ffefc7"/>
+    <!-- glass -->
+    <path d="M46 50h108v94H46z" fill="#dcebff"/>
+    <!-- mullions: four panes -->
+    <path d="M100 50v94M46 97h108" stroke-width="7"/>
+    <!-- sill -->
+    <path d="M24 158h152" stroke-width="7"/>
+  </g>
+</svg>

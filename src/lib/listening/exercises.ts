@@ -1,7 +1,9 @@
 // Practice items generated from a clip's transcript (listening phase 3).
 // Pure and deterministic for a seed, so the server and a retry build the same set.
 
-import type { Clip, GlossEntry } from "./types";
+import type { Clip } from "./types";
+import type { GlossEntry } from "@/lib/dictionary/types";
+import { seeded, shuffle } from "@/lib/random";
 
 export type QuestionItem = {
   kind: "question";
@@ -43,30 +45,6 @@ const GAP_POS = new Set(["n", "v", "adj", "adv"]);
 const HELPER_VERBS = new Set(["be", "have", "do", "can", "could", "will", "would", "should", "must", "may", "might"]);
 const MAX_SENTENCE_SEC = 12;
 const EDGE_PUNCT = /^[“"(‘]+|[.,!?;:”")’…—]+$/g;
-
-function seeded(seed: string): () => number {
-  let h = 1779033703 ^ seed.length;
-  for (let i = 0; i < seed.length; i++) {
-    h = Math.imul(h ^ seed.charCodeAt(i), 3432918353);
-    h = (h << 13) | (h >>> 19);
-  }
-  // mulberry32
-  return () => {
-    h = (h + 0x6d2b79f5) | 0;
-    let t = Math.imul(h ^ (h >>> 15), 1 | h);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-function shuffle<T>(items: T[], rand: () => number): T[] {
-  const a = [...items];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 /** 3 questions, then up to 4 gap-fills, then up to 3 dictations. */
 export function buildPractice(
@@ -132,7 +110,8 @@ export function buildPractice(
     if (items.filter((i) => i.kind === "gap").length === 4) break;
     const inSentence = words.filter((w) => w.si === si);
     const w = inSentence[Math.floor(rand() * inSentence.length)];
-    const seen = new Set([w.surface]);
+    // Words already visible in the sentence would be confusing distractors.
+    const seen = new Set([w.surface, ...clip.segments[si].tokens.map((t) => t.toLowerCase().replace(EDGE_PUNCT, ""))]);
     // Same part of speech and same form: a plain "wild" never gets an inflected "officials".
     const inflected = (o: { surface: string; entry: GlossEntry }) => o.surface !== o.entry.lemma;
     const pool = words.filter((o) => {
@@ -218,7 +197,11 @@ function isTypo(expected: string, typed: string): boolean {
 
 export function checkDictation(tokens: string[], input: string): DictationResult {
   const expected = tokens.flatMap((tok, ti) => words(tok).map((w) => ({ w, ti })));
-  const typed = words(input);
+  // A token that splits into several words ("U.S.", "twenty-one") also accepts them typed joined ("US").
+  const joined = new Map(
+    tokens.map((tok) => words(tok)).filter((ws) => ws.length > 1).map((ws) => [ws.join(""), ws] as const),
+  );
+  const typed = words(input).flatMap((w) => joined.get(w) ?? [w]);
 
   // Longest common subsequence of exact word matches.
   const n = expected.length;

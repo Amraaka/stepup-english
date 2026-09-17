@@ -1,0 +1,48 @@
+{
+  "slug": "kitchen",
+  "topic": "Гал тогооны хэрэгсэл",
+  "accent": "mint",
+  "style": "watercolor and ink sketch of a single object, soft grey tones with one warm accent, the object drawn cleanly and centered, the background is flat empty uniform pure white #ffffff with nothing painted on it, no background wash, no shadow, no scenery, no frame, no text, no logos",
+  "items": [
+    {
+      "en": "spoon",
+      "mn": "халбага",
+      "ipa": "/spuːn/",
+      "imagePrompt": "a single metal tablespoon",
+      "image": "img/kitchen/spoon.svg",
+      "audio": "audio/kitchen/spoon.mp3"
+    },
+    {
+      "en": "fork",
+      "mn": "сэрээ",
+      "ipa": "/fɔːrk/",
+      "imagePrompt": "a single metal dinner fork",
+      "image": "img/kitchen/fork.svg",
+      "audio": "audio/kitchen/fork.mp3"
+    },
+    {
+      "en": "knife",
+      "mn": "хутга",
+      "ipa": "/naɪf/",
+      "imagePrompt": "a single kitchen knife",
+      "image": "img/kitchen/knife.svg",
+      "audio": "audio/kitchen/knife.mp3"
+    },
+    {
+      "en": "plate",
+      "mn": "таваг",
+      "ipa": "/pleɪt/",
+      "imagePrompt": "a single round dinner plate seen at a slight angle",
+      "image": "img/kitchen/plate.svg",
+      "audio": "audio/kitchen/plate.mp3"
+    },
+    {
+      "en": "kettle",
+      "mn": "данх",
+      "ipa": "/ˈket.əl/",
+      "imagePrompt": "a stovetop kettle with a handle and spout",
+      "image": "img/kitchen/kettle.svg",
+      "audio": "audio/kitchen/kettle.mp3"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-make-do",
+  "topic": "Make, do",
+  "format": "gap-fill",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "I need to do my homework.",
+      "sentence": "I need to ___ my homework.",
+      "options": [
+        "do",
+        "make",
+        "take"
+      ],
+      "mn": "Би гэрийн даалгавраа хийх хэрэгтэй.",
+      "audio": null
+    },
+    {
+      "en": "Don't make a mistake.",
+      "sentence": "Don't ___ a mistake.",
+      "options": [
+        "make",
+        "do",
+        "take"
+      ],
+      "mn": "Алдаа бүү гарга.",
+      "audio": null
+    },
+    {
+      "en": "She made a cake for us.",
+      "sentence": "She ___ a cake for us.",
+      "options": [
+        "made",
+        "did",
+        "took"
+      ],
+      "mn": "Тэр бидэнд бялуу хийсэн.",
+      "audio": null
+    },
+    {
+      "en": "Can you do the dishes?",
+      "sentence": "Can you ___ the dishes?",
+      "options": [
+        "do",
+        "make",
+        "have"
+      ],
+      "mn": "Аяга таваг угааж өгөх үү?",
+      "audio": null
+    },
+    {
+      "en": "We made a lot of noise.",
+      "sentence": "We ___ a lot of noise.",
+      "options": [
+        "made",
+        "did",
+        "had"
+      ],
+      "mn": "Бид их чимээ гаргасан.",
+      "audio": null
+    }
+  ]
+}

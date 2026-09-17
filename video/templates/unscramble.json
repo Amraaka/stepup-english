@@ -1,0 +1,21 @@
+{
+  "slug": "my-quiz",
+  "topic": "Үг таах",
+  "format": "unscramble",
+  "accent": "violet",
+  "items": [
+    {
+      "en": "water",
+      "ipa": "/ˈwɑː.tɚ/",
+      "mn": "ус",
+      "audio": null
+    },
+    {
+      "en": "peach",
+      "image": "img/fruit/peach.svg",
+      "ipa": "/piːtʃ/",
+      "mn": "тоор",
+      "audio": null
+    }
+  ]
+}

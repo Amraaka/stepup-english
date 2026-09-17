@@ -1,0 +1,48 @@
+{
+  "slug": "house",
+  "topic": "Байшин",
+  "accent": "sun",
+  "style": "hand-authored SVG: single continuous silhouette, ink #1a1a1f outline, flat fill, transparent background",
+  "items": [
+    {
+      "en": "door",
+      "mn": "хаалга",
+      "ipa": "/dɔːr/",
+      "imagePrompt": "a door with a handle",
+      "image": "img/house/door.svg",
+      "audio": "audio/house/door.mp3"
+    },
+    {
+      "en": "window",
+      "mn": "цонх",
+      "ipa": "/ˈwɪn.doʊ/",
+      "imagePrompt": "a window with four panes",
+      "image": "img/house/window.svg",
+      "audio": "audio/house/window.mp3"
+    },
+    {
+      "en": "roof",
+      "mn": "дээвэр",
+      "ipa": "/ruːf/",
+      "imagePrompt": "a roof on a house outline",
+      "image": "img/house/roof.svg",
+      "audio": "audio/house/roof.mp3"
+    },
+    {
+      "en": "stairs",
+      "mn": "шат",
+      "ipa": "/sterz/",
+      "imagePrompt": "a flight of stairs from the side",
+      "image": "img/house/stairs.svg",
+      "audio": "audio/house/stairs.mp3"
+    },
+    {
+      "en": "wall",
+      "mn": "хана",
+      "ipa": "/wɑːl/",
+      "imagePrompt": "a brick wall",
+      "image": "img/house/wall.svg",
+      "audio": "audio/house/wall.mp3"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "word-stress-long-words",
+  "topic": "Урт үг",
+  "format": "word-stress",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "education",
+      "syllables": [
+        "ed",
+        "u",
+        "ca",
+        "tion"
+      ],
+      "stressIndex": 2,
+      "ipa": "/ˌedʒ.əˈkeɪ.ʃən/",
+      "mn": "боловсрол",
+      "audio": null
+    },
+    {
+      "en": "umbrella",
+      "syllables": [
+        "um",
+        "brel",
+        "la"
+      ],
+      "stressIndex": 1,
+      "ipa": "/ʌmˈbrel.ə/",
+      "mn": "шүхэр",
+      "audio": null
+    },
+    {
+      "en": "animal",
+      "syllables": [
+        "an",
+        "i",
+        "mal"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈæn.ɪ.məl/",
+      "mn": "амьтан",
+      "audio": null
+    },
+    {
+      "en": "tomorrow",
+      "syllables": [
+        "to",
+        "mor",
+        "row"
+      ],
+      "stressIndex": 1,
+      "ipa": "/təˈmɑːr.oʊ/",
+      "mn": "маргааш",
+      "audio": null
+    },
+    {
+      "en": "understand",
+      "syllables": [
+        "un",
+        "der",
+        "stand"
+      ],
+      "stressIndex": 2,
+      "ipa": "/ˌʌn.dɚˈstænd/",
+      "mn": "ойлгох",
+      "audio": null
+    }
+  ]
+}

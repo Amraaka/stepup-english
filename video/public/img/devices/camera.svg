@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- viewfinder hump -->
+    <path d="M78 58h36l6 14H72z" fill="#c9bffa"/>
+    <!-- body -->
+    <path d="M36 72h128a10 10 0 0 1 10 10v58a10 10 0 0 1-10 10H36a10 10 0 0 1-10-10V82a10 10 0 0 1 10-10z" fill="#e7e1ff"/>
+    <!-- lens -->
+    <circle cx="100" cy="111" r="27" fill="#7b5cfa"/>
+    <circle cx="100" cy="111" r="13" fill="#e7e1ff"/>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-travel",
+  "topic": "Тээвэр",
+  "format": "unscramble",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "bus",
+      "image": "img/transport/bus.svg",
+      "ipa": "/bʌs/",
+      "mn": "автобус",
+      "audio": null
+    },
+    {
+      "en": "train",
+      "image": "img/transport/train.svg",
+      "ipa": "/treɪn/",
+      "mn": "галт тэрэг",
+      "audio": null
+    },
+    {
+      "en": "ship",
+      "image": "img/transport/ship.svg",
+      "ipa": "/ʃɪp/",
+      "mn": "усан онгоц",
+      "audio": null
+    },
+    {
+      "en": "bicycle",
+      "image": "img/transport/bicycle.svg",
+      "ipa": "/ˈbaɪ.sɪ.kəl/",
+      "mn": "дугуй",
+      "audio": null
+    },
+    {
+      "en": "airplane",
+      "image": "img/transport/airplane.svg",
+      "ipa": "/ˈer.pleɪn/",
+      "mn": "онгоц",
+      "audio": null
+    }
+  ]
+}

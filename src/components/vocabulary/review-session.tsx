@@ -2,49 +2,32 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { entryForLemma, POS_LABEL } from "@/lib/listening/glossary";
 import type { Card } from "@/lib/vocab/review";
 import { reviewWordAction } from "@/app/(site)/vocabulary/actions";
 import { useMeasuredTime } from "@/components/use-measured-time";
-import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
+import { FlipCard, ListenCard, TypeCard, speak } from "@/components/vocabulary/cards";
 import { Mascot } from "@/components/mascot";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { XIcon } from "@/components/icons";
 
-function speak(text: string) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  u.lang = "en-US";
-  u.rate = 0.9;
-  window.speechSynthesis.speak(u);
-}
-
-/** The sentence with the saved word marked. */
-function Sentence({ card }: { card: Card }) {
-  const i = card.sentence.toLowerCase().indexOf(card.surface.toLowerCase());
-  if (i < 0) return <>{card.sentence}</>;
+function UnsavedNotice({ count, className = "" }: { count: number; className?: string }) {
+  if (count === 0) return null;
   return (
-    <>
-      {card.sentence.slice(0, i)}
-      <mark className="rounded bg-teal-soft px-0.5 font-bold text-teal-text">
-        {card.sentence.slice(i, i + card.surface.length)}
-      </mark>
-      {card.sentence.slice(i + card.surface.length)}
-    </>
+    <p role="alert" className={`rounded-2xl bg-sun-soft px-4 py-3 text-sm font-bold ${className}`}>
+      {count} хариулт хадгалагдсангүй. Интернэтээ шалгаарай. Эдгээр үг дараагийн давталтад дахин гарна.
+    </p>
   );
 }
 
 export function ReviewSession({ cards }: { cards: Card[] }) {
   const [queue, setQueue] = useState(cards);
-  const [revealed, setRevealed] = useState(false);
   const [remembered, setRemembered] = useState(0);
   const [done, setDone] = useState(0);
+  // Changes on every answer, so a card that comes back later mounts fresh.
+  const [turn, setTurn] = useState(0);
   // Fixed at mount: a mid-session revalidation re-renders with an empty queue.
   const [total] = useState(cards.length);
   const card = queue[0];
-  // The real speaker from the clip when available (phase 4); TTS otherwise.
-  const clipAudio = useSentenceAudio(card?.audio?.src ?? "");
 
   // Review time logs like listening time: visible tab only (ADR 0010).
   const finished = !card;
@@ -57,17 +40,27 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
     if (finished) flush(true);
   }, [finished, flush]);
 
+  // Answers the server didn't save (offline, expired session): the words keep their old box and come back.
+  const [unsaved, setUnsaved] = useState(0);
+
   function answer(ok: boolean) {
     if (!card) return;
-    void reviewWordAction(card.id, ok);
-    setRevealed(false);
+    reviewWordAction(card.id, ok)
+      .catch(() => false)
+      .then((saved) => {
+        if (!saved) setUnsaved((n) => n + 1);
+      });
+    // iOS Safari only speaks inside a tap: say the next listen card's word now, not when it mounts (ADR 0018).
+    const next = queue[1];
+    if (next?.mode === "listen" && next.choices) speak(next.surface);
+    setTurn((t) => t + 1);
     if (ok) {
       setRemembered((n) => n + 1);
       setDone((n) => n + 1);
       setQueue((q) => q.slice(1));
     } else {
-      // Forgotten cards come back at the end of this session.
-      setQueue((q) => [...q.slice(1), q[0]]);
+      // Forgotten cards come back at the end of this session, as a flip card (box 0, ADR 0018).
+      setQueue((q) => [...q.slice(1), { ...q[0], mode: "flip" }]);
     }
   }
 
@@ -81,8 +74,9 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
         <p className="mt-1 text-[15px] text-muted">
           {total > 0
             ? `${total} үгийг давтлаа. Дараагийн давталтын өдөр нь ирэхэд эдгээр үг дахин гарч ирнэ.`
-            : "Бичлэг сонсохдоо шинэ үг хадгалаад үзээрэй."}
+            : "Бичлэг сонсох эсвэл эх уншихдаа шинэ үг хадгалаад үзээрэй."}
         </p>
+        <UnsavedNotice count={unsaved} className="mt-4" />
         <Link
           href="/vocabulary"
           className="press mt-6 flex h-14 w-full max-w-xs items-center justify-center rounded-2xl bg-teal text-base font-extrabold text-ink-950 [--press:var(--teal-deep)]"
@@ -93,7 +87,7 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
     );
   }
 
-  const entry = entryForLemma(card.lemma);
+  const Mode = card.mode === "listen" && card.choices ? ListenCard : card.mode === "type" ? TypeCard : FlipCard;
 
   return (
     <div className="flex flex-col gap-4">
@@ -111,86 +105,12 @@ export function ReviewSession({ cards }: { cards: Card[] }) {
         </span>
       </div>
 
-      <section className="flex min-h-[340px] flex-col rounded-[28px] bg-surface p-6">
-        <div className="flex items-start justify-between gap-3">
-          <p className="text-[34px] font-extrabold leading-tight tracking-[-0.02em]">{card.surface}</p>
-          <button
-            type="button"
-            onClick={() => speak(card.surface)}
-            aria-label="Дуудлагыг сонсох"
-            className="grid size-12 shrink-0 place-items-center rounded-full bg-teal-soft text-teal-text"
-          >
-            <svg viewBox="0 0 20 20" className="size-6" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M3.5 7.5v5h3l4 3.5v-12l-4 3.5h-3Z" />
-              <path d="M13.5 7a4 4 0 0 1 0 6M15.8 4.8a7 7 0 0 1 0 10.4" />
-            </svg>
-          </button>
-        </div>
+      <UnsavedNotice count={unsaved} />
+      <Mode key={turn} card={card} onAnswer={answer} />
 
-        {card.sentence && (
-          <p className="mt-4 text-[17px] leading-relaxed text-muted">
-            <Sentence card={card} />
-            <button
-              type="button"
-              onClick={() => {
-                const a = card.audio;
-                if (a) clipAudio.playRange(a.start, a.end);
-                else speak(card.sentence);
-              }}
-              className="ml-2 text-sm font-bold text-teal-text underline"
-            >
-              {card.audio ? "бичлэгээс сонсох" : "өгүүлбэрийг сонсох"}
-            </button>
-          </p>
-        )}
-
-        <div className="mt-auto pt-6">
-          {revealed ? (
-            <div className="rounded-2xl bg-canvas px-4 py-3">
-              {entry ? (
-                <>
-                  <p className="text-xs font-bold uppercase tracking-wide text-teal-text">
-                    {POS_LABEL[entry.pos]}
-                    {entry.lemma !== card.surface.toLowerCase() && entry.pos !== "name" && ` · ${entry.lemma}`}
-                  </p>
-                  <p className="mt-1 text-xl font-extrabold">{entry.mn}</p>
-                  {entry.en && <p className="mt-1 text-sm text-muted">{entry.en}</p>}
-                </>
-              ) : (
-                <p className="text-[15px] text-muted">Энэ үгийн тайлбар одоохондоо алга.</p>
-              )}
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => setRevealed(true)}
-              className="h-14 w-full rounded-2xl border-2 border-line text-base font-extrabold transition-colors hover:bg-canvas"
-            >
-              Утгыг харах
-            </button>
-          )}
-        </div>
-      </section>
-
-      <div className="grid grid-cols-2 gap-3">
-        <button
-          type="button"
-          onClick={() => answer(false)}
-          disabled={!revealed}
-          className="press h-14 rounded-2xl bg-coral-soft text-base font-extrabold text-coral-a-text disabled:opacity-40"
-        >
-          Мартсан
-        </button>
-        <button
-          type="button"
-          onClick={() => answer(true)}
-          disabled={!revealed}
-          className="press h-14 rounded-2xl bg-teal text-base font-extrabold text-ink-950 [--press:var(--teal-deep)] disabled:opacity-40"
-        >
-          Санасан
-        </button>
-      </div>
       <p className="text-center text-xs text-muted">{remembered} үг санасан</p>
+      {/* Room for the card's button bar above the phone tab bar. */}
+      <div aria-hidden className="h-24 lg:hidden" />
     </div>
   );
 }

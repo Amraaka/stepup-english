@@ -1,0 +1,22 @@
+{
+  "slug": "my-quiz",
+  "topic": "Дуугүй үсэг",
+  "format": "silent-letter",
+  "accent": "violet",
+  "items": [
+    {
+      "en": "knife",
+      "silentIndex": 0,
+      "ipa": "/naɪf/",
+      "mn": "хутга",
+      "audio": null
+    },
+    {
+      "en": "listen",
+      "silentIndex": 3,
+      "ipa": "/ˈlɪs.ən/",
+      "mn": "сонсох",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-home",
+  "topic": "Гэр",
+  "format": "unscramble",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "door",
+      "image": "img/house/door.svg",
+      "ipa": "/dɔːr/",
+      "mn": "хаалга",
+      "audio": "audio/unscramble-home/door.mp3"
+    },
+    {
+      "en": "window",
+      "image": "img/house/window.svg",
+      "ipa": "/ˈwɪn.doʊ/",
+      "mn": "цонх",
+      "audio": "audio/unscramble-home/window.mp3"
+    },
+    {
+      "en": "roof",
+      "image": "img/house/roof.svg",
+      "ipa": "/ruːf/",
+      "mn": "дээвэр",
+      "audio": "audio/unscramble-home/roof.mp3"
+    },
+    {
+      "en": "stairs",
+      "image": "img/house/stairs.svg",
+      "ipa": "/sterz/",
+      "mn": "шат",
+      "audio": "audio/unscramble-home/stairs.mp3"
+    },
+    {
+      "en": "wall",
+      "image": "img/house/wall.svg",
+      "ipa": "/wɑːl/",
+      "mn": "хана",
+      "audio": "audio/unscramble-home/wall.mp3"
+    }
+  ]
+}

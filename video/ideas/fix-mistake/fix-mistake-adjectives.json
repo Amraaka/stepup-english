@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-adjectives",
+  "topic": "Тэмдэг нэр",
+  "format": "fix-mistake",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "en": "This is the best day.",
+      "wrong": "This is the most good day.",
+      "mn": "Энэ хамгийн сайхан өдөр.",
+      "audio": null
+    },
+    {
+      "en": "She is taller than me.",
+      "wrong": "She is more tall than me.",
+      "mn": "Тэр надаас өндөр.",
+      "audio": null
+    },
+    {
+      "en": "I am bored.",
+      "wrong": "I am boring.",
+      "mn": "Надад уйтгартай байна.",
+      "audio": null
+    },
+    {
+      "en": "It is a big red car.",
+      "wrong": "It is a red big car.",
+      "mn": "Энэ бол том улаан машин.",
+      "audio": null
+    },
+    {
+      "en": "The test was easy.",
+      "wrong": "The test was easily.",
+      "mn": "Шалгалт амархан байсан.",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-articles",
+  "topic": "A, an, the",
+  "format": "gap-fill",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "en": "I saw an elephant.",
+      "sentence": "I saw ___ elephant.",
+      "options": [
+        "an",
+        "a",
+        "the"
+      ],
+      "mn": "Би заан харсан.",
+      "audio": null
+    },
+    {
+      "en": "The moon is bright tonight.",
+      "sentence": "___ moon is bright tonight.",
+      "options": [
+        "The",
+        "A",
+        "An"
+      ],
+      "mn": "Өнөө орой сар гэрэлтэй байна.",
+      "audio": null
+    },
+    {
+      "en": "She bought a new phone.",
+      "sentence": "She bought ___ new phone.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "mn": "Тэр шинэ утас авсан.",
+      "audio": null
+    },
+    {
+      "en": "It takes an hour.",
+      "sentence": "It takes ___ hour.",
+      "options": [
+        "an",
+        "a",
+        "the"
+      ],
+      "mn": "Нэг цаг зарцуулна.",
+      "audio": null
+    },
+    {
+      "en": "Please close the door.",
+      "sentence": "Please close ___ door.",
+      "options": [
+        "the",
+        "a",
+        "an"
+      ],
+      "mn": "Хаалгаа хаагаарай.",
+      "audio": null
+    }
+  ]
+}

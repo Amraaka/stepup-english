@@ -1,0 +1,40 @@
+{
+  "slug": "fix-mistake-2",
+  "topic": "Түгээмэл алдаа",
+  "format": "fix-mistake",
+  "question": "Зөв нь аль нь вэ?",
+  "accent": "violet",
+  "look": "bold",
+  "items": [
+    {
+      "en": "I have a question.",
+      "wrong": "I have question.",
+      "mn": "Надад нэг асуулт байна.",
+      "audio": "audio/fix-mistake-2/i-have-a-question-.mp3"
+    },
+    {
+      "en": "How long have you studied English?",
+      "wrong": "How long you study English?",
+      "mn": "Та англи хэл хэдэн жил сурсан бэ?",
+      "audio": "audio/fix-mistake-2/how-long-have-you-studied-english-.mp3"
+    },
+    {
+      "en": "It depends on the weather.",
+      "wrong": "It depends from the weather.",
+      "mn": "Энэ цаг агаараас шалтгаална.",
+      "audio": "audio/fix-mistake-2/it-depends-on-the-weather-.mp3"
+    },
+    {
+      "en": "I look forward to meeting you.",
+      "wrong": "I look forward to meet you.",
+      "mn": "Тантай уулзахыг тэсэн ядан хүлээж байна.",
+      "audio": "audio/fix-mistake-2/i-look-forward-to-meeting-you-.mp3"
+    },
+    {
+      "en": "Everyone was happy.",
+      "wrong": "Everyone were happy.",
+      "mn": "Бүгд баяртай байсан.",
+      "audio": "audio/fix-mistake-2/everyone-was-happy-.mp3"
+    }
+  ]
+}

@@ -4,11 +4,14 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
+  useRef,
   useState,
   useSyncExternalStore,
   useTransition,
 } from "react";
+import { useRouter } from "next/navigation";
 import {
   MIN_TIMED_SEC,
   buildStats,
@@ -23,10 +26,23 @@ import { GUEST_EVENTS_KEY } from "@/lib/guest";
 import { LogSheet } from "@/components/game/log-sheet";
 import { Celebration, type CelebrationData } from "@/components/game/celebration";
 
-// Guest mode: events live in this browser only.
-type GuestEvent = { day: string; durationMin: number; points: number; module?: string; ref?: string };
+// Guest mode: events live in this browser only. Timed events keep exact seconds and when they
+// were logged (`at`); older events have whole minutes only.
+type GuestEvent = {
+  day: string;
+  durationMin: number;
+  durationSec?: number;
+  at?: number;
+  points: number;
+  module?: string;
+  ref?: string;
+};
 const KEY = GUEST_EVENTS_KEY;
 const TZ = "Asia/Ulaanbaatar";
+/** Same cumulative-points window as the server's timed log. */
+const TIMED_WINDOW_MS = 3 * 60 * 60 * 1000;
+
+const secOf = (e: GuestEvent) => e.durationSec ?? e.durationMin * 60;
 
 const EMPTY: GuestEvent[] = [];
 const listeners = new Set<() => void>();
@@ -66,18 +82,52 @@ const guestStore = {
 function guestStats(events: GuestEvent[]): TrackerStats {
   const byDay = new Map<string, DayAgg>();
   const totals: DayAgg = { points: 0, durationSec: 0 };
-  const moduleMinutes: Record<string, number> = {};
+  const moduleSec: Record<string, number> = {};
   for (const e of events) {
+    const sec = secOf(e);
     const cur = byDay.get(e.day) ?? { points: 0, durationSec: 0 };
     cur.points += e.points;
-    cur.durationSec += e.durationMin * 60;
+    cur.durationSec += sec;
     byDay.set(e.day, cur);
     totals.points += e.points;
-    totals.durationSec += e.durationMin * 60;
+    totals.durationSec += sec;
     const m = e.module ?? "general";
-    moduleMinutes[m] = (moduleMinutes[m] ?? 0) + e.durationMin;
+    moduleSec[m] = (moduleSec[m] ?? 0) + sec;
   }
+  const moduleMinutes = Object.fromEntries(Object.entries(moduleSec).map(([m, sec]) => [m, Math.floor(sec / 60)]));
   return buildStats(byDay, localDay(new Date(), TZ), totals, moduleMinutes);
+}
+
+/**
+ * Adds a guest's timed log with the server's cumulative-points rule. Returns false for modules
+ * guests can't log (the word review needs an account, ADR 0010).
+ */
+function addGuestTimed(target: TimedTarget, seconds: number): boolean {
+  if (target.module === "vocabulary") return false;
+  const slug = target.ref;
+  const now = Date.now();
+  const day = localDay(new Date(now), TZ);
+  const prev = guestStore
+    .getSnapshot()
+    .filter(
+      (e) =>
+        e.ref === slug &&
+        e.module === target.module &&
+        (e.at !== undefined ? now - e.at < TIMED_WINDOW_MS : e.day === day),
+    );
+  const prevSec = prev.reduce((sum, e) => sum + secOf(e), 0);
+  const prevPts = prev.reduce((sum, e) => sum + e.points, 0);
+  const sec = Math.floor(seconds);
+  guestStore.add({
+    day,
+    durationMin: Math.floor(sec / 60),
+    durationSec: sec,
+    at: now,
+    points: Math.max(0, pointsForStudyLog(Math.floor((prevSec + sec) / 60)) - prevPts),
+    module: target.module,
+    ref: slug,
+  });
+  return true;
 }
 
 type StatsContext = {
@@ -86,6 +136,8 @@ type StatsContext = {
   openLog: (module?: string) => void;
   /** Logs time a module measured; `celebrate` shows the celebration screen. */
   logTimed: (target: TimedTarget, seconds: number, celebrate: boolean) => void;
+  /** Logs time from a page being hidden or closed, in a way the browser finishes after unload (ADR 0015). */
+  beaconTimed: (target: TimedTarget, seconds: number) => void;
 };
 
 const Ctx = createContext<StatsContext | null>(null);
@@ -112,7 +164,32 @@ export function StatsProvider({
   );
   const localStats = useMemo(() => guestStats(guestEvents), [guestEvents]);
   const [memberStats, setMemberStats] = useState(initial);
+  // The layout stays mounted across navigations; take fresh server stats whenever they arrive
+  // (a revalidation or `router.refresh()`), not only on the first render.
+  const [syncedInitial, setSyncedInitial] = useState(initial);
+  if (initial !== syncedInitial) {
+    setSyncedInitial(initial);
+    setMemberStats(initial);
+  }
   const stats = isGuest ? localStats : (memberStats ?? localStats);
+
+  const router = useRouter();
+  const beaconSent = useRef(false);
+  useEffect(() => {
+    if (isGuest) return;
+    let timer: number | undefined;
+    const onVisible = () => {
+      if (document.visibilityState !== "visible" || !beaconSent.current) return;
+      beaconSent.current = false;
+      // Time sent by beacon while hidden: give it a moment to land, then pull fresh stats.
+      timer = window.setTimeout(() => router.refresh(), 1500);
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisible);
+      window.clearTimeout(timer);
+    };
+  }, [isGuest, router]);
 
   const [sheetModule, setSheetModule] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -165,24 +242,7 @@ export function StatsProvider({
       const before = stats;
       let after: TrackerStats;
       if (isGuest) {
-        // Guests can listen and shadow; review needs an account (ADR 0010).
-        if (target.module === "vocabulary") return;
-        const slug = target.ref;
-        // Same rule as the server: points follow cumulative time for this clip and module today.
-        const day = localDay(new Date(), TZ);
-        const prev = guestStore
-          .getSnapshot()
-          .filter((e) => e.ref === slug && e.module === target.module && e.day === day);
-        const prevMin = prev.reduce((sum, e) => sum + e.durationMin, 0);
-        const prevPts = prev.reduce((sum, e) => sum + e.points, 0);
-        const minutes = Math.floor(seconds / 60);
-        guestStore.add({
-          day,
-          durationMin: minutes,
-          points: Math.max(0, pointsForStudyLog(prevMin + minutes) - prevPts),
-          module: target.module,
-          ref: slug,
-        });
+        if (!addGuestTimed(target, seconds)) return;
         after = guestStats(guestStore.getSnapshot());
       } else {
         const res = await logTimedAction(target, seconds).catch(() => null);
@@ -206,9 +266,35 @@ export function StatsProvider({
     [stats, isGuest],
   );
 
+  // A server action started while the page unloads can be cancelled, which lost members' pending time
+  // on refresh or tab close. A beacon is finished by the browser; stats refresh when the tab is visible again (ADR 0015).
+  const beaconTimed = useCallback(
+    (target: TimedTarget, seconds: number) => {
+      if (seconds < MIN_TIMED_SEC) return;
+      if (isGuest) {
+        addGuestTimed(target, seconds);
+        return;
+      }
+      beaconSent.current = true;
+      const body = JSON.stringify({ target, seconds });
+      const sent =
+        typeof navigator.sendBeacon === "function" &&
+        navigator.sendBeacon("/api/track/timed", new Blob([body], { type: "application/json" }));
+      if (!sent) {
+        void fetch("/api/track/timed", {
+          method: "POST",
+          body,
+          keepalive: true,
+          headers: { "content-type": "application/json" },
+        }).catch(() => {});
+      }
+    },
+    [isGuest],
+  );
+
   const value = useMemo(
-    () => ({ stats, isGuest, openLog, logTimed }),
-    [stats, isGuest, openLog, logTimed],
+    () => ({ stats, isGuest, openLog, logTimed, beaconTimed }),
+    [stats, isGuest, openLog, logTimed, beaconTimed],
   );
 
   return (

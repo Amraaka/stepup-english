@@ -1,0 +1,64 @@
+{
+  "slug": "where-is-it-set-01",
+  "topic": "Угтвар үг",
+  "format": "where-is-it",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "The ball is on the table.",
+      "answer": "on",
+      "options": [
+        "on",
+        "under",
+        "above"
+      ],
+      "mn": "Бөмбөг ширээн дээр байна.",
+      "audio": "audio/where-is-it-set-01/the-ball-is-on-the-table.mp3"
+    },
+    {
+      "en": "The ball is under the table.",
+      "answer": "under",
+      "options": [
+        "under",
+        "on",
+        "behind"
+      ],
+      "mn": "Бөмбөг ширээн доор байна.",
+      "audio": "audio/where-is-it-set-01/the-ball-is-under-the-table.mp3"
+    },
+    {
+      "en": "The ball is above the table.",
+      "answer": "above",
+      "options": [
+        "above",
+        "on",
+        "behind"
+      ],
+      "mn": "Бөмбөг ширээн дээгүүр байна.",
+      "audio": "audio/where-is-it-set-01/the-ball-is-above-the-table.mp3"
+    },
+    {
+      "en": "The ball is next to the table.",
+      "answer": "next to",
+      "options": [
+        "next to",
+        "behind",
+        "in front of"
+      ],
+      "mn": "Бөмбөг ширээний хажууд байна.",
+      "audio": "audio/where-is-it-set-01/the-ball-is-next-to-the-table.mp3"
+    },
+    {
+      "en": "The ball is in the box.",
+      "answer": "in",
+      "options": [
+        "in",
+        "on",
+        "under"
+      ],
+      "mn": "Бөмбөг хайрцган дотор байна.",
+      "audio": "audio/where-is-it-set-01/the-ball-is-in-the-box.mp3"
+    }
+  ]
+}

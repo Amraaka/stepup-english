@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 92V170" stroke-width="9"/>
+    <!-- tines -->
+    <path d="M82 34v34M100 34v34M118 34v34" stroke-width="6"/>
+    <!-- head -->
+    <path d="M78 62h44v12c0 12-8 20-22 20s-22-8-22-20z" fill="#dfe3e8"/>
+  </g>
+</svg>

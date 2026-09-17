@@ -1,0 +1,68 @@
+{
+  "slug": "word-stress-places",
+  "topic": "Газар",
+  "format": "word-stress",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "museum",
+      "syllables": [
+        "mu",
+        "se",
+        "um"
+      ],
+      "stressIndex": 1,
+      "ipa": "/mjuːˈziː.əm/",
+      "mn": "музей",
+      "audio": null
+    },
+    {
+      "en": "hospital",
+      "syllables": [
+        "hos",
+        "pi",
+        "tal"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈhɑː.spɪ.təl/",
+      "mn": "эмнэлэг",
+      "audio": null
+    },
+    {
+      "en": "library",
+      "syllables": [
+        "li",
+        "bra",
+        "ry"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈlaɪ.brer.i/",
+      "mn": "номын сан",
+      "audio": null
+    },
+    {
+      "en": "airport",
+      "syllables": [
+        "air",
+        "port"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈer.pɔːrt/",
+      "mn": "нисэх буудал",
+      "audio": null
+    },
+    {
+      "en": "cinema",
+      "syllables": [
+        "ci",
+        "ne",
+        "ma"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈsɪn.ə.mə/",
+      "mn": "кино театр",
+      "audio": null
+    }
+  ]
+}

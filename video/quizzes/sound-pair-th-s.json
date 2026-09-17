@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-th-s",
+  "topic": "think / sink",
+  "format": "sound-pair",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "thing",
+        "sing"
+      ],
+      "hints": [
+        "/θɪŋ/",
+        "/sɪŋ/"
+      ],
+      "en": "sing",
+      "mn": "дуулах",
+      "audio": "audio/sound-pair-th-s/sing.mp3"
+    },
+    {
+      "options": [
+        "thank",
+        "sank"
+      ],
+      "hints": [
+        "/θæŋk/",
+        "/sæŋk/"
+      ],
+      "en": "thank",
+      "mn": "талархах",
+      "audio": "audio/sound-pair-th-s/thank.mp3"
+    },
+    {
+      "options": [
+        "mouth",
+        "mouse"
+      ],
+      "hints": [
+        "/maʊθ/",
+        "/maʊs/"
+      ],
+      "en": "mouth",
+      "mn": "ам",
+      "audio": "audio/sound-pair-th-s/mouth.mp3"
+    },
+    {
+      "options": [
+        "path",
+        "pass"
+      ],
+      "hints": [
+        "/pæθ/",
+        "/pæs/"
+      ],
+      "en": "path",
+      "mn": "зам",
+      "audio": "audio/sound-pair-th-s/path.mp3"
+    },
+    {
+      "options": [
+        "thick",
+        "sick"
+      ],
+      "hints": [
+        "/θɪk/",
+        "/sɪk/"
+      ],
+      "en": "sick",
+      "mn": "өвчтэй",
+      "audio": "audio/sound-pair-th-s/sick.mp3"
+    }
+  ]
+}

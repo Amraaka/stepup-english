@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-conjunctions",
+  "topic": "Холбоос үг",
+  "format": "gap-fill",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "I was tired, so I went to bed.",
+      "sentence": "I was tired, ___ I went to bed.",
+      "options": [
+        "so",
+        "but",
+        "because"
+      ],
+      "mn": "Би ядарсан тул унтахаар орсон.",
+      "audio": null
+    },
+    {
+      "en": "She is rich but unhappy.",
+      "sentence": "She is rich ___ unhappy.",
+      "options": [
+        "but",
+        "so",
+        "because"
+      ],
+      "mn": "Тэр баян ч аз жаргалгүй.",
+      "audio": null
+    },
+    {
+      "en": "I stayed home because I was sick.",
+      "sentence": "I stayed home ___ I was sick.",
+      "options": [
+        "because",
+        "so",
+        "but"
+      ],
+      "mn": "Би өвдсөн учраас гэртээ байсан.",
+      "audio": null
+    },
+    {
+      "en": "Do you want tea or coffee?",
+      "sentence": "Do you want tea ___ coffee?",
+      "options": [
+        "or",
+        "and",
+        "but"
+      ],
+      "mn": "Цай уух уу, кофе уух уу?",
+      "audio": null
+    },
+    {
+      "en": "I like apples and bananas.",
+      "sentence": "I like apples ___ bananas.",
+      "options": [
+        "and",
+        "or",
+        "so"
+      ],
+      "mn": "Би алим, гадилд дуртай.",
+      "audio": null
+    }
+  ]
+}

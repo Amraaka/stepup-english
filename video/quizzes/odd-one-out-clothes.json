@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-clothes",
+  "topic": "Хувцас",
+  "format": "odd-one-out",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "options": [
+        "shirt",
+        "jeans",
+        "jacket",
+        "bread"
+      ],
+      "en": "bread",
+      "mn": "Бусад нь хувцас",
+      "audio": "audio/odd-one-out-clothes/bread.mp3"
+    },
+    {
+      "options": [
+        "boots",
+        "sneakers",
+        "sandals",
+        "gloves"
+      ],
+      "en": "gloves",
+      "mn": "Бусад нь гутал",
+      "audio": "audio/odd-one-out-clothes/gloves.mp3"
+    },
+    {
+      "options": [
+        "ring",
+        "necklace",
+        "earring",
+        "belt"
+      ],
+      "en": "belt",
+      "mn": "Бусад нь гоёл чимэглэл",
+      "audio": "audio/odd-one-out-clothes/belt.mp3"
+    },
+    {
+      "options": [
+        "dress",
+        "skirt",
+        "blouse",
+        "summer"
+      ],
+      "en": "summer",
+      "mn": "Бусад нь хувцас",
+      "audio": "audio/odd-one-out-clothes/summer.mp3"
+    },
+    {
+      "options": [
+        "cotton",
+        "wool",
+        "silk",
+        "plastic"
+      ],
+      "en": "plastic",
+      "mn": "Бусад нь даавуу",
+      "audio": "audio/odd-one-out-clothes/plastic.mp3"
+    }
+  ]
+}

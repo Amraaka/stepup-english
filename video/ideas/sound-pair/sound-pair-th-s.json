@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-th-s",
+  "topic": "think / sink",
+  "format": "sound-pair",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "thing",
+        "sing"
+      ],
+      "hints": [
+        "/θɪŋ/",
+        "/sɪŋ/"
+      ],
+      "en": "sing",
+      "mn": "дуулах",
+      "audio": null
+    },
+    {
+      "options": [
+        "thank",
+        "sank"
+      ],
+      "hints": [
+        "/θæŋk/",
+        "/sæŋk/"
+      ],
+      "en": "thank",
+      "mn": "талархах",
+      "audio": null
+    },
+    {
+      "options": [
+        "mouth",
+        "mouse"
+      ],
+      "hints": [
+        "/maʊθ/",
+        "/maʊs/"
+      ],
+      "en": "mouth",
+      "mn": "ам",
+      "audio": null
+    },
+    {
+      "options": [
+        "path",
+        "pass"
+      ],
+      "hints": [
+        "/pæθ/",
+        "/pæs/"
+      ],
+      "en": "path",
+      "mn": "зам",
+      "audio": null
+    },
+    {
+      "options": [
+        "thick",
+        "sick"
+      ],
+      "hints": [
+        "/θɪk/",
+        "/sɪk/"
+      ],
+      "en": "sick",
+      "mn": "өвчтэй",
+      "audio": null
+    }
+  ]
+}

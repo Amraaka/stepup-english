@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-travel",
+  "topic": "Аялал",
+  "format": "odd-one-out",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "options": [
+        "car",
+        "bus",
+        "taxi",
+        "ship"
+      ],
+      "en": "ship",
+      "mn": "Бусад нь замаар явдаг",
+      "audio": null
+    },
+    {
+      "options": [
+        "pilot",
+        "driver",
+        "captain",
+        "doctor"
+      ],
+      "en": "doctor",
+      "mn": "Бусад нь тээвэр жолооддог",
+      "audio": null
+    },
+    {
+      "options": [
+        "airport",
+        "station",
+        "port",
+        "school"
+      ],
+      "en": "school",
+      "mn": "Бусад нь тээврийн газар",
+      "audio": null
+    },
+    {
+      "options": [
+        "ticket",
+        "passport",
+        "visa",
+        "pencil"
+      ],
+      "en": "pencil",
+      "mn": "Бусад нь аялалд хэрэгтэй",
+      "audio": null
+    },
+    {
+      "options": [
+        "fast",
+        "slow",
+        "quick",
+        "green"
+      ],
+      "en": "green",
+      "mn": "Бусад нь хурдыг заана",
+      "audio": null
+    }
+  ]
+}

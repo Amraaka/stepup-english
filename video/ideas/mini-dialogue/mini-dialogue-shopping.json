@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-shopping",
+  "topic": "Дэлгүүр",
+  "format": "mini-dialogue",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "How much is this?",
+      "en": "It's twenty dollars.",
+      "mn": "Энэ хорин доллар.",
+      "audio": null
+    },
+    {
+      "prompt": "Do you have this in a bigger size?",
+      "en": "Yes, here you are.",
+      "mn": "Байгаа, энүүгээр.",
+      "audio": null
+    },
+    {
+      "prompt": "Can I pay by card?",
+      "en": "Of course.",
+      "mn": "Мэдээж.",
+      "audio": null
+    },
+    {
+      "prompt": "Would you like a bag?",
+      "en": "No, thank you.",
+      "mn": "Үгүй ээ, баярлалаа.",
+      "audio": null
+    },
+    {
+      "prompt": "Can I try it on?",
+      "en": "Sure, the fitting room is over there.",
+      "mn": "Болно, өмсөж үзэх өрөө тэнд байна.",
+      "audio": null
+    }
+  ]
+}

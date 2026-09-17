@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-u-uh",
+  "topic": "book / buck",
+  "format": "sound-pair",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "options": [
+        "book",
+        "buck"
+      ],
+      "hints": [
+        "/bʊk/",
+        "/bʌk/"
+      ],
+      "en": "book",
+      "mn": "ном",
+      "audio": null
+    },
+    {
+      "options": [
+        "look",
+        "luck"
+      ],
+      "hints": [
+        "/lʊk/",
+        "/lʌk/"
+      ],
+      "en": "luck",
+      "mn": "аз",
+      "audio": null
+    },
+    {
+      "options": [
+        "took",
+        "tuck"
+      ],
+      "hints": [
+        "/tʊk/",
+        "/tʌk/"
+      ],
+      "en": "took",
+      "mn": "авсан",
+      "audio": null
+    },
+    {
+      "options": [
+        "could",
+        "cud"
+      ],
+      "hints": [
+        "/kʊd/",
+        "/kʌd/"
+      ],
+      "en": "could",
+      "mn": "чадсан",
+      "audio": null
+    },
+    {
+      "options": [
+        "put",
+        "putt"
+      ],
+      "hints": [
+        "/pʊt/",
+        "/pʌt/"
+      ],
+      "en": "put",
+      "mn": "тавих",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-daily",
+  "topic": "Өдөр тутам",
+  "format": "fix-mistake",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "en": "I usually get up at 7.",
+      "wrong": "I usually get up in 7.",
+      "mn": "Би ихэвчлэн 7 цагт босдог.",
+      "audio": "audio/fix-mistake-daily/i-usually-get-up-at-7.mp3"
+    },
+    {
+      "en": "I don't have any money.",
+      "wrong": "I don't have no money.",
+      "mn": "Надад мөнгө байхгүй.",
+      "audio": "audio/fix-mistake-daily/i-don-t-have-any-money.mp3"
+    },
+    {
+      "en": "Turn off the light, please.",
+      "wrong": "Close the light, please.",
+      "mn": "Гэрлээ унтраагаарай.",
+      "audio": "audio/fix-mistake-daily/turn-off-the-light-please.mp3"
+    },
+    {
+      "en": "I feel tired today.",
+      "wrong": "I feel tiring today.",
+      "mn": "Би өнөөдөр ядарч байна.",
+      "audio": "audio/fix-mistake-daily/i-feel-tired-today.mp3"
+    },
+    {
+      "en": "It is raining now.",
+      "wrong": "It rains now.",
+      "mn": "Одоо бороо орж байна.",
+      "audio": "audio/fix-mistake-daily/it-is-raining-now.mp3"
+    }
+  ]
+}

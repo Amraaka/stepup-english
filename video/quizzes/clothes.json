@@ -1,0 +1,48 @@
+{
+  "slug": "clothes",
+  "topic": "Хувцас",
+  "accent": "coral",
+  "style": "watercolor and ink sketch of a single object, soft grey tones with one warm accent, the object drawn cleanly and centered, the background is flat empty uniform pure white #ffffff with nothing painted on it, no background wash, no shadow, no scenery, no frame, no text, no logos",
+  "items": [
+    {
+      "en": "jacket",
+      "mn": "хүрэм",
+      "ipa": "/ˈdʒæk.ɪt/",
+      "imagePrompt": "a zipped casual jacket laid flat, no person wearing it",
+      "image": "img/clothes/jacket.svg",
+      "audio": "audio/clothes/jacket.mp3"
+    },
+    {
+      "en": "scarf",
+      "mn": "ороолт",
+      "ipa": "/skɑːrf/",
+      "imagePrompt": "a knitted scarf loosely folded, no person wearing it",
+      "image": "img/clothes/scarf.svg",
+      "audio": "audio/clothes/scarf.mp3"
+    },
+    {
+      "en": "glove",
+      "mn": "бээлий",
+      "ipa": "/glʌv/",
+      "imagePrompt": "a pair of winter gloves, no person wearing them",
+      "image": "img/clothes/glove.svg",
+      "audio": "audio/clothes/glove.mp3"
+    },
+    {
+      "en": "boot",
+      "mn": "гутал",
+      "ipa": "/buːt/",
+      "imagePrompt": "a single ankle boot seen from the side",
+      "image": "img/clothes/boot.svg",
+      "audio": "audio/clothes/boot.mp3"
+    },
+    {
+      "en": "belt",
+      "mn": "бүс",
+      "ipa": "/belt/",
+      "imagePrompt": "a leather belt with a metal buckle, coiled",
+      "image": "img/clothes/belt.svg",
+      "audio": "audio/clothes/belt.mp3"
+    }
+  ]
+}

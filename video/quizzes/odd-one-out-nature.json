@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-nature",
+  "topic": "Байгаль",
+  "format": "odd-one-out",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "river",
+        "lake",
+        "sea",
+        "mountain"
+      ],
+      "en": "mountain",
+      "mn": "Бусад нь ус",
+      "audio": "audio/odd-one-out-nature/mountain.mp3"
+    },
+    {
+      "options": [
+        "tree",
+        "flower",
+        "grass",
+        "rock"
+      ],
+      "en": "rock",
+      "mn": "Бусад нь ургамал",
+      "audio": "audio/odd-one-out-nature/rock.mp3"
+    },
+    {
+      "options": [
+        "wolf",
+        "bear",
+        "fox",
+        "eagle"
+      ],
+      "en": "eagle",
+      "mn": "Бусад нь хөхтөн амьтан",
+      "audio": "audio/odd-one-out-nature/eagle.mp3"
+    },
+    {
+      "options": [
+        "gold",
+        "silver",
+        "iron",
+        "wood"
+      ],
+      "en": "wood",
+      "mn": "Бусад нь металл",
+      "audio": "audio/odd-one-out-nature/wood.mp3"
+    },
+    {
+      "options": [
+        "desert",
+        "forest",
+        "steppe",
+        "city"
+      ],
+      "en": "city",
+      "mn": "Бусад нь байгалийн бүс",
+      "audio": "audio/odd-one-out-nature/city.mp3"
+    }
+  ]
+}

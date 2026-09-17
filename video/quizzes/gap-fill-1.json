@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-1",
+  "topic": "Нөхөж бичих",
+  "format": "gap-fill",
+  "question": "Аль нь зөв бэ?",
+  "accent": "mint",
+  "items": [
+    {
+      "en": "I am good at cooking.",
+      "sentence": "I am good ___ cooking.",
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "mn": "Би хоол хийхдээ сайн.",
+      "audio": "audio/gap-fill-1/i-am-good-at-cooking-.mp3"
+    },
+    {
+      "en": "She arrived on Monday.",
+      "sentence": "She arrived ___ Monday.",
+      "options": [
+        "on",
+        "at",
+        "in"
+      ],
+      "mn": "Тэр даваа гарагт ирсэн.",
+      "audio": "audio/gap-fill-1/she-arrived-on-monday-.mp3"
+    },
+    {
+      "en": "We have been friends for years.",
+      "sentence": "We have been friends ___ years.",
+      "options": [
+        "for",
+        "since",
+        "from"
+      ],
+      "mn": "Бид олон жилийн найзууд.",
+      "audio": "audio/gap-fill-1/we-have-been-friends-for-years-.mp3"
+    },
+    {
+      "en": "He is listening to music.",
+      "sentence": "He is listening ___ music.",
+      "options": [
+        "to",
+        "at",
+        "on"
+      ],
+      "mn": "Тэр хөгжим сонсож байна.",
+      "audio": "audio/gap-fill-1/he-is-listening-to-music-.mp3"
+    },
+    {
+      "en": "I will call you in the morning.",
+      "sentence": "I will call you ___ the morning.",
+      "options": [
+        "in",
+        "on",
+        "at"
+      ],
+      "mn": "Би чам руу өглөө залгана.",
+      "audio": "audio/gap-fill-1/i-will-call-you-in-the-morning-.mp3"
+    }
+  ]
+}

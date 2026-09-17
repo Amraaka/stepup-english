@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-fruit",
+  "topic": "Жимс",
+  "format": "unscramble",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "grape",
+      "image": "img/fruit/grape.svg",
+      "ipa": "/greɪp/",
+      "mn": "усан үзэм",
+      "audio": "audio/unscramble-fruit/grape.mp3"
+    },
+    {
+      "en": "cherry",
+      "image": "img/fruit/cherry.svg",
+      "ipa": "/ˈtʃer.i/",
+      "mn": "интоор",
+      "audio": "audio/unscramble-fruit/cherry.mp3"
+    },
+    {
+      "en": "pear",
+      "image": "img/fruit/pear.svg",
+      "ipa": "/per/",
+      "mn": "лийр",
+      "audio": "audio/unscramble-fruit/pear.mp3"
+    },
+    {
+      "en": "apple",
+      "image": "img/food/apple.svg",
+      "ipa": "/ˈæp.əl/",
+      "mn": "алим",
+      "audio": "audio/unscramble-fruit/apple.mp3"
+    },
+    {
+      "en": "watermelon",
+      "image": "img/fruit/watermelon.svg",
+      "ipa": "/ˈwɑː.tɚˌmel.ən/",
+      "mn": "тарвас",
+      "audio": "audio/unscramble-fruit/watermelon.mp3"
+    }
+  ]
+}

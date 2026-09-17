@@ -1,47 +1,51 @@
 import "server-only";
 import { and, asc, count, eq, gte, lte, sql } from "drizzle-orm";
 import { db } from "@/db";
-import { grammarProgress, grammarReview } from "@/db/schema";
+import { grammarProgress, grammarReview, reviewLog } from "@/db/schema";
 import { PASS_RATIO, findItem } from "@/lib/grammar/lessons";
 import type { LessonProgress, PracticeItem } from "@/lib/grammar/types";
 import { DAILY_REVIEW_CAP, nextReview } from "@/lib/vocab/review";
 
 // Every query filters by the caller's user id (ADR 0005 access model). Decision: ADR 0013.
 
-export type PracticeResult = { key: string; correct: boolean };
+/** One answer; `slug` is the lesson the exercise belongs to (a checkpoint mixes lessons). */
+export type PracticeResult = { slug: string; key: string; correct: boolean };
 
-/** Saves a finished lesson practice and queues its wrong answers for review. */
+/** Saves a finished lesson practice or checkpoint (`slug`) and queues its wrong answers for review. */
 export async function recordPractice(userId: string, slug: string, results: PracticeResult[]) {
   const score = results.filter((r) => r.correct).length;
   const total = results.length;
   const passed = score / total >= PASS_RATIO;
 
-  await db
-    .insert(grammarProgress)
-    .values({ userId, slug, bestScore: score, lastScore: score, total, completedAt: passed ? new Date() : null })
-    .onConflictDoUpdate({
-      target: [grammarProgress.userId, grammarProgress.slug],
-      set: {
-        bestScore: sql`greatest(${grammarProgress.bestScore}, excluded.best_score)`,
-        lastScore: sql`excluded.last_score`,
-        total: sql`excluded.total`,
-        attempts: sql`${grammarProgress.attempts} + 1`,
-        completedAt: sql`coalesce(${grammarProgress.completedAt}, excluded.completed_at)`,
-        updatedAt: sql`now()`,
-      },
-    });
-
   const wrong = results.filter((r) => !r.correct);
-  if (wrong.length) {
-    // A mistake made again sends the item back to box 0, due now.
-    await db
-      .insert(grammarReview)
-      .values(wrong.map((w) => ({ userId, slug, itemKey: w.key })))
+  await db.transaction(async (tx) => {
+    await tx
+      .insert(grammarProgress)
+      .values({ userId, slug, bestScore: score, lastScore: score, total, completedAt: passed ? new Date() : null })
       .onConflictDoUpdate({
-        target: [grammarReview.userId, grammarReview.slug, grammarReview.itemKey],
-        set: { box: 0, dueAt: sql`now()` },
+        target: [grammarProgress.userId, grammarProgress.slug],
+        set: {
+          // A best score out of a different total (the lesson changed) no longer compares, so it restarts.
+          bestScore: sql`case when ${grammarProgress.total} = excluded.total then greatest(${grammarProgress.bestScore}, excluded.best_score) else excluded.best_score end`,
+          lastScore: sql`excluded.last_score`,
+          total: sql`excluded.total`,
+          attempts: sql`${grammarProgress.attempts} + 1`,
+          completedAt: sql`coalesce(${grammarProgress.completedAt}, excluded.completed_at)`,
+          updatedAt: sql`now()`,
+        },
       });
-  }
+
+    if (wrong.length) {
+      // A mistake made again sends the item back to box 0, due now.
+      await tx
+        .insert(grammarReview)
+        .values(wrong.map((w) => ({ userId, slug: w.slug, itemKey: w.key })))
+        .onConflictDoUpdate({
+          target: [grammarReview.userId, grammarReview.slug, grammarReview.itemKey],
+          set: { box: 0, dueAt: sql`now()` },
+        });
+    }
+  });
   return { score, total, passed, added: wrong.length };
 }
 
@@ -60,22 +64,30 @@ export async function progressBySlug(userId: string): Promise<Record<string, Les
   );
 }
 
-export async function dueReviewCount(userId: string): Promise<number> {
-  const [{ due }] = await db
-    .select({ due: count() })
-    .from(grammarReview)
-    .where(and(eq(grammarReview.userId, userId), lte(grammarReview.dueAt, sql`now()`)));
-  return due;
-}
-
-/** Due mistakes for today's session, within the daily cap (counted in the learner's timezone). */
-export async function grammarReviewQueue(userId: string, timeZone: string): Promise<PracticeItem[]> {
+/** How many more reviews fit in today's cap (counted in the learner's timezone). */
+async function reviewRoom(userId: string, timeZone: string): Promise<number> {
   const startOfDay = sql`(date_trunc('day', now() at time zone ${timeZone}) at time zone ${timeZone})`;
   const [{ reviewedToday }] = await db
     .select({ reviewedToday: count() })
     .from(grammarReview)
     .where(and(eq(grammarReview.userId, userId), gte(grammarReview.lastReviewedAt, startOfDay)));
-  const room = Math.max(0, DAILY_REVIEW_CAP - reviewedToday);
+  return Math.max(0, DAILY_REVIEW_CAP - reviewedToday);
+}
+
+/** Items today's review session will show: due mistakes within the daily cap. */
+export async function dueReviewCount(userId: string, timeZone: string): Promise<number> {
+  const room = await reviewRoom(userId, timeZone);
+  if (!room) return 0;
+  const [{ due }] = await db
+    .select({ due: count() })
+    .from(grammarReview)
+    .where(and(eq(grammarReview.userId, userId), lte(grammarReview.dueAt, sql`now()`)));
+  return Math.min(due, room);
+}
+
+/** Due mistakes for today's session, within the daily cap (counted in the learner's timezone). */
+export async function grammarReviewQueue(userId: string, timeZone: string): Promise<PracticeItem[]> {
+  const room = await reviewRoom(userId, timeZone);
   if (!room) return [];
 
   const rows = await db
@@ -95,11 +107,31 @@ export async function grammarReviewQueue(userId: string, timeZone: string): Prom
   return items;
 }
 
-export async function reviewGrammarItem(userId: string, slug: string, key: string, correct: boolean) {
-  const where = and(eq(grammarReview.userId, userId), eq(grammarReview.slug, slug), eq(grammarReview.itemKey, key));
-  const [row] = await db.select({ box: grammarReview.box }).from(grammarReview).where(where);
-  if (!row) return false;
-  const next = nextReview(row.box, correct);
-  await db.update(grammarReview).set({ box: next.box, dueAt: next.dueAt, lastReviewedAt: new Date() }).where(where);
-  return true;
+/** Moves a due item to its next box. False when it isn't due, so repeated or concurrent calls can't climb boxes. */
+export async function reviewGrammarItem(userId: string, slug: string, key: string, correct: boolean): Promise<boolean> {
+  const where = and(
+    eq(grammarReview.userId, userId),
+    eq(grammarReview.slug, slug),
+    eq(grammarReview.itemKey, key),
+    lte(grammarReview.dueAt, sql`now()`),
+  );
+  return db.transaction(async (tx) => {
+    // Locked so a second call waits, then sees the new due date.
+    const [row] = await tx.select({ box: grammarReview.box }).from(grammarReview).where(where).for("update");
+    if (!row) return false;
+    const next = nextReview(row.box, correct);
+    await tx
+      .update(grammarReview)
+      .set({ box: next.box, dueAt: next.dueAt, lastReviewedAt: new Date() })
+      .where(and(where, eq(grammarReview.box, row.box)));
+    await tx.insert(reviewLog).values({
+      userId,
+      item: "grammar",
+      itemRef: `${slug}|${key}`,
+      correct,
+      boxBefore: row.box,
+      boxAfter: next.box,
+    });
+    return true;
+  });
 }

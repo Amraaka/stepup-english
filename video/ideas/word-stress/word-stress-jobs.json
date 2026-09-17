@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-jobs",
+  "topic": "Мэргэжил",
+  "format": "word-stress",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "en": "teacher",
+      "syllables": [
+        "tea",
+        "cher"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈtiː.tʃɚ/",
+      "mn": "багш",
+      "audio": null
+    },
+    {
+      "en": "musician",
+      "syllables": [
+        "mu",
+        "si",
+        "cian"
+      ],
+      "stressIndex": 1,
+      "ipa": "/mjuːˈzɪʃ.ən/",
+      "mn": "хөгжимчин",
+      "audio": null
+    },
+    {
+      "en": "photographer",
+      "syllables": [
+        "pho",
+        "to",
+        "gra",
+        "pher"
+      ],
+      "stressIndex": 1,
+      "ipa": "/fəˈtɑː.ɡrə.fɚ/",
+      "mn": "гэрэл зурагчин",
+      "audio": null
+    },
+    {
+      "en": "manager",
+      "syllables": [
+        "ma",
+        "na",
+        "ger"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈmæn.ɪ.dʒɚ/",
+      "mn": "менежер",
+      "audio": null
+    },
+    {
+      "en": "designer",
+      "syllables": [
+        "de",
+        "sig",
+        "ner"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dɪˈzaɪ.nɚ/",
+      "mn": "дизайнер",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "where-is-it-2",
+  "topic": "Угтвар үг",
+  "format": "where-is-it",
+  "accent": "coral",
+  "look": "bold",
+  "items": [
+    {
+      "en": "The ball is behind the table.",
+      "answer": "behind",
+      "options": [
+        "in front of",
+        "behind",
+        "under"
+      ],
+      "mn": "Бөмбөг ширээний ард байна.",
+      "audio": "audio/where-is-it-2/the-ball-is-behind-the-table.mp3"
+    },
+    {
+      "en": "The ball is in front of the table.",
+      "answer": "in front of",
+      "options": [
+        "behind",
+        "in front of",
+        "next to"
+      ],
+      "mn": "Бөмбөг ширээний өмнө байна.",
+      "audio": "audio/where-is-it-2/the-ball-is-in-front-of-the-table.mp3"
+    },
+    {
+      "en": "The ball is above the table.",
+      "answer": "above",
+      "options": [
+        "above",
+        "on",
+        "behind"
+      ],
+      "mn": "Бөмбөг ширээн дээгүүр байна.",
+      "audio": "audio/where-is-it-2/the-ball-is-above-the-table.mp3"
+    },
+    {
+      "en": "The ball is under the table.",
+      "answer": "under",
+      "options": [
+        "under",
+        "in",
+        "next to"
+      ],
+      "mn": "Бөмбөг ширээн доор байна.",
+      "audio": "audio/where-is-it-2/the-ball-is-under-the-table.mp3"
+    },
+    {
+      "en": "The ball is next to the table.",
+      "answer": "next to",
+      "options": [
+        "on",
+        "behind",
+        "next to"
+      ],
+      "mn": "Бөмбөг ширээний хажууд байна.",
+      "audio": "audio/where-is-it-2/the-ball-is-next-to-the-table.mp3"
+    }
+  ]
+}

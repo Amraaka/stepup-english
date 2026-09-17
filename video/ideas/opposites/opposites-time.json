@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-time",
+  "topic": "Цаг хугацаа",
+  "format": "opposites",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "prompt": "before",
+      "en": "after",
+      "ipa": "/ˈæf.tɚ/",
+      "mn": "дараа",
+      "audio": null
+    },
+    {
+      "prompt": "always",
+      "en": "never",
+      "ipa": "/ˈnev.ɚ/",
+      "mn": "хэзээ ч",
+      "audio": null
+    },
+    {
+      "prompt": "past",
+      "en": "future",
+      "ipa": "/ˈfjuː.tʃɚ/",
+      "mn": "ирээдүй",
+      "audio": null
+    },
+    {
+      "prompt": "first",
+      "en": "last",
+      "ipa": "/læst/",
+      "mn": "сүүлийн",
+      "audio": null
+    },
+    {
+      "prompt": "morning",
+      "en": "evening",
+      "ipa": "/ˈiːv.nɪŋ/",
+      "mn": "орой",
+      "audio": null
+    }
+  ]
+}

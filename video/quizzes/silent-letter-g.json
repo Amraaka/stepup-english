@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-g",
+  "topic": "Дуугүй G",
+  "format": "silent-letter",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "en": "sign",
+      "silentIndex": 2,
+      "ipa": "/saɪn/",
+      "mn": "тэмдэг",
+      "audio": "audio/silent-letter-g/sign.mp3"
+    },
+    {
+      "en": "foreign",
+      "silentIndex": 5,
+      "ipa": "/ˈfɔːr.ən/",
+      "mn": "гадаад",
+      "audio": "audio/silent-letter-g/foreign.mp3"
+    },
+    {
+      "en": "design",
+      "silentIndex": 4,
+      "ipa": "/dɪˈzaɪn/",
+      "mn": "загвар",
+      "audio": "audio/silent-letter-g/design.mp3"
+    },
+    {
+      "en": "campaign",
+      "silentIndex": 6,
+      "ipa": "/kæmˈpeɪn/",
+      "mn": "аян",
+      "audio": "audio/silent-letter-g/campaign.mp3"
+    },
+    {
+      "en": "align",
+      "silentIndex": 3,
+      "ipa": "/əˈlaɪn/",
+      "mn": "эгнүүлэх",
+      "audio": "audio/silent-letter-g/align.mp3"
+    }
+  ]
+}

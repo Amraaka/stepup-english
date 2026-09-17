@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- shaft and foot as one continuous outline -->
+    <path d="M70 34h44v74c0 10 6 14 18 18l24 10c8 3 12 8 12 16v6a6 6 0 0 1-6 6H70a6 6 0 0 1-6-6V40a6 6 0 0 1 6-6z" fill="#8a5a3b"/>
+    <!-- sole -->
+    <path d="M64 142h104"/>
+  </g>
+</svg>

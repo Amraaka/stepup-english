@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-to-or-ing",
+  "topic": "To эсвэл -ing",
+  "format": "gap-fill",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "I enjoy listening to music.",
+      "sentence": "I enjoy ___ to music.",
+      "options": [
+        "listening",
+        "to listen",
+        "listen"
+      ],
+      "mn": "Би хөгжим сонсох дуртай.",
+      "audio": null
+    },
+    {
+      "en": "She decided to find a new job.",
+      "sentence": "She decided ___ a new job.",
+      "options": [
+        "to find",
+        "finding",
+        "find"
+      ],
+      "mn": "Тэр шинэ ажил хайхаар шийдсэн.",
+      "audio": null
+    },
+    {
+      "en": "Stop talking, please.",
+      "sentence": "Stop ___, please.",
+      "options": [
+        "talking",
+        "to talk",
+        "talk"
+      ],
+      "mn": "Ярихаа больж өгөөч.",
+      "audio": null
+    },
+    {
+      "en": "I want to speak English well.",
+      "sentence": "I want ___ English well.",
+      "options": [
+        "to speak",
+        "speaking",
+        "speak"
+      ],
+      "mn": "Би англиар сайн ярьмаар байна.",
+      "audio": null
+    },
+    {
+      "en": "He is good at swimming.",
+      "sentence": "He is good at ___.",
+      "options": [
+        "swimming",
+        "to swim",
+        "swim"
+      ],
+      "mn": "Тэр сайн сэлдэг.",
+      "audio": null
+    }
+  ]
+}

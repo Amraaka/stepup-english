@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-ar-er",
+  "topic": "heart / hurt",
+  "format": "sound-pair",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "heart",
+        "hurt"
+      ],
+      "hints": [
+        "/hɑːrt/",
+        "/hɝːt/"
+      ],
+      "en": "hurt",
+      "mn": "өвдөх",
+      "audio": null
+    },
+    {
+      "options": [
+        "farm",
+        "firm"
+      ],
+      "hints": [
+        "/fɑːrm/",
+        "/fɝːm/"
+      ],
+      "en": "farm",
+      "mn": "ферм",
+      "audio": null
+    },
+    {
+      "options": [
+        "star",
+        "stir"
+      ],
+      "hints": [
+        "/stɑːr/",
+        "/stɝː/"
+      ],
+      "en": "star",
+      "mn": "од",
+      "audio": null
+    },
+    {
+      "options": [
+        "park",
+        "perk"
+      ],
+      "hints": [
+        "/pɑːrk/",
+        "/pɝːk/"
+      ],
+      "en": "park",
+      "mn": "цэцэрлэгт хүрээлэн",
+      "audio": null
+    },
+    {
+      "options": [
+        "barn",
+        "burn"
+      ],
+      "hints": [
+        "/bɑːrn/",
+        "/bɝːn/"
+      ],
+      "en": "burn",
+      "mn": "шатах",
+      "audio": null
+    }
+  ]
+}

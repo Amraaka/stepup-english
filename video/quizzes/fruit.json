@@ -1,0 +1,48 @@
+{
+  "slug": "fruit",
+  "topic": "Жимс",
+  "accent": "sky",
+  "style": "watercolor and ink sketch of a single object, soft grey tones with one warm accent, the object drawn cleanly and centered, the background is flat empty uniform pure white #ffffff with nothing painted on it, no background wash, no shadow, no scenery, no frame, no text, no logos",
+  "items": [
+    {
+      "en": "peach",
+      "mn": "тоор",
+      "ipa": "/piːtʃ/",
+      "imagePrompt": "a single ripe peach with a leaf",
+      "image": "img/fruit/peach.svg",
+      "audio": "audio/fruit/peach.mp3"
+    },
+    {
+      "en": "grape",
+      "mn": "усан үзэм",
+      "ipa": "/greɪp/",
+      "imagePrompt": "a bunch of grapes",
+      "image": "img/fruit/grape.svg",
+      "audio": "audio/fruit/grape.mp3"
+    },
+    {
+      "en": "cherry",
+      "mn": "интоор",
+      "ipa": "/ˈtʃer.i/",
+      "imagePrompt": "two cherries joined at the stem",
+      "image": "img/fruit/cherry.svg",
+      "audio": "audio/fruit/cherry.mp3"
+    },
+    {
+      "en": "watermelon",
+      "mn": "тарвас",
+      "ipa": "/ˈwɑː.tɚˌmel.ən/",
+      "imagePrompt": "a watermelon with one wedge cut out",
+      "image": "img/fruit/watermelon.svg",
+      "audio": "audio/fruit/watermelon.mp3"
+    },
+    {
+      "en": "pear",
+      "mn": "лийр",
+      "ipa": "/per/",
+      "imagePrompt": "a single ripe pear",
+      "image": "img/fruit/pear.svg",
+      "audio": "audio/fruit/pear.mp3"
+    }
+  ]
+}

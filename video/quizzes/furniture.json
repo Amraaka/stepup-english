@@ -1,0 +1,48 @@
+{
+  "slug": "furniture",
+  "topic": "Гэрийн тавилга",
+  "accent": "sun",
+  "style": "watercolor and ink sketch of a single object, soft grey tones with one warm accent, the object drawn cleanly and centered, the background is flat empty uniform pure white #ffffff with nothing painted on it, no background wash, no shadow, no scenery, no frame, no text, no logos",
+  "items": [
+    {
+      "en": "couch",
+      "mn": "буйдан",
+      "ipa": "/kaʊtʃ/",
+      "imagePrompt": "a two seater sofa seen from the front",
+      "image": "img/furniture/couch.png",
+      "audio": "audio/furniture/couch.mp3"
+    },
+    {
+      "en": "drawer",
+      "mn": "шургуулга",
+      "ipa": "/drɔːr/",
+      "imagePrompt": "a small chest of drawers with one drawer pulled open",
+      "image": "img/furniture/drawer.png",
+      "audio": "audio/furniture/drawer.mp3"
+    },
+    {
+      "en": "shelf",
+      "mn": "тавиур",
+      "ipa": "/ʃelf/",
+      "imagePrompt": "a wall shelf holding a few books",
+      "image": "img/furniture/shelf.png",
+      "audio": "audio/furniture/shelf.mp3"
+    },
+    {
+      "en": "mirror",
+      "mn": "толь",
+      "ipa": "/ˈmɪr.ɚ/",
+      "imagePrompt": "a framed oval wall mirror",
+      "image": "img/furniture/mirror.png",
+      "audio": "audio/furniture/mirror.mp3"
+    },
+    {
+      "en": "lamp",
+      "mn": "лампа",
+      "ipa": "/læmp/",
+      "imagePrompt": "a table lamp with a fabric shade",
+      "image": "img/furniture/lamp.png",
+      "audio": "audio/furniture/lamp.mp3"
+    }
+  ]
+}

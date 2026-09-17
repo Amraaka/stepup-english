@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-prepositions",
+  "topic": "Угтвар үг",
+  "format": "fix-mistake",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "en": "I was born in 1995.",
+      "wrong": "I was born on 1995.",
+      "mn": "Би 1995 онд төрсөн.",
+      "audio": null
+    },
+    {
+      "en": "See you at 7 o'clock.",
+      "wrong": "See you in 7 o'clock.",
+      "mn": "Долоон цагт уулзъя.",
+      "audio": null
+    },
+    {
+      "en": "She is married to Bat.",
+      "wrong": "She is married with Bat.",
+      "mn": "Тэр Баттай гэрлэсэн.",
+      "audio": null
+    },
+    {
+      "en": "I am afraid of dogs.",
+      "wrong": "I am afraid from dogs.",
+      "mn": "Би нохойноос айдаг.",
+      "audio": null
+    },
+    {
+      "en": "We arrived in Ulaanbaatar.",
+      "wrong": "We arrived to Ulaanbaatar.",
+      "mn": "Бид Улаанбаатарт ирсэн.",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v3: branches sit partway along each spoke and open OUTWARD from a point on the
+       spoke, which is how real snowflake branching reads. v1 stacked chevrons at
+       mismatched angles; v2 closed the tips into arrowheads and read as a 6-way arrow. -->
+  <g stroke="#4a8fd4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <!-- three spokes -->
+    <path d="M100 26v148M36 63l128 74M164 63 36 137"/>
+    <!-- branch pairs, opening away from centre -->
+    <g stroke-width="7">
+      <path d="M100 72 82 58M100 72l18-14M100 128l-18 14M100 128l18 14"/>
+      <path d="M60 86 38 88M60 86l-2-22M140 114l22-2M140 114l2 22"/>
+      <path d="M60 114l-22 2M60 114l-2 22M140 86l22-2M140 86l2-22"/>
+    </g>
+  </g>
+</svg>

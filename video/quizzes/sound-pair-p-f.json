@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-p-f",
+  "topic": "p ба f",
+  "format": "sound-pair",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "options": [
+        "pin",
+        "fin"
+      ],
+      "hints": [
+        "/pɪn/",
+        "/fɪn/"
+      ],
+      "en": "pin",
+      "mn": "зүү",
+      "audio": "audio/sound-pair-p-f/pin.mp3"
+    },
+    {
+      "options": [
+        "pear",
+        "fair"
+      ],
+      "hints": [
+        "/per/",
+        "/fer/"
+      ],
+      "en": "fair",
+      "mn": "шударга",
+      "audio": "audio/sound-pair-p-f/fair.mp3"
+    },
+    {
+      "options": [
+        "cup",
+        "cuff"
+      ],
+      "hints": [
+        "/kʌp/",
+        "/kʌf/"
+      ],
+      "en": "cuff",
+      "mn": "ханцуйвч",
+      "audio": "audio/sound-pair-p-f/cuff.mp3"
+    },
+    {
+      "options": [
+        "pull",
+        "full"
+      ],
+      "hints": [
+        "/pʊl/",
+        "/fʊl/"
+      ],
+      "en": "pull",
+      "mn": "татах",
+      "audio": "audio/sound-pair-p-f/pull.mp3"
+    },
+    {
+      "options": [
+        "pork",
+        "fork"
+      ],
+      "hints": [
+        "/pɔːrk/",
+        "/fɔːrk/"
+      ],
+      "en": "fork",
+      "mn": "сэрээ",
+      "audio": "audio/sound-pair-p-f/fork.mp3"
+    }
+  ]
+}

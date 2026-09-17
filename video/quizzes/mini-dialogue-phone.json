@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-phone",
+  "topic": "Утсаар",
+  "format": "mini-dialogue",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "Hello, can I speak to Bat?",
+      "en": "Speaking. Who's calling?",
+      "mn": "Би байна. Хэн ярьж байна вэ?",
+      "audio": "audio/mini-dialogue-phone/speaking-who-s-calling.mp3"
+    },
+    {
+      "prompt": "Sorry, I can't hear you.",
+      "en": "Let me call you back.",
+      "mn": "Би эргээд залгая.",
+      "audio": "audio/mini-dialogue-phone/let-me-call-you-back.mp3"
+    },
+    {
+      "prompt": "Is Sara there?",
+      "en": "Sorry, she's out. Can I take a message?",
+      "mn": "Уучлаарай, гарсан байна. Юу дамжуулах вэ?",
+      "audio": "audio/mini-dialogue-phone/sorry-she-s-out-can-i-take-a-message.mp3"
+    },
+    {
+      "prompt": "Can you call me later?",
+      "en": "Sure, I'll call you at six.",
+      "mn": "Болно, зургаан цагт залгая.",
+      "audio": "audio/mini-dialogue-phone/sure-i-ll-call-you-at-six.mp3"
+    },
+    {
+      "prompt": "Sorry, wrong number.",
+      "en": "No problem.",
+      "mn": "Зүгээр ээ.",
+      "audio": "audio/mini-dialogue-phone/no-problem.mp3"
+    }
+  ]
+}

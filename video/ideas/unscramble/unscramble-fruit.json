@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-fruit",
+  "topic": "Жимс",
+  "format": "unscramble",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "grape",
+      "image": "img/fruit/grape.svg",
+      "ipa": "/greɪp/",
+      "mn": "усан үзэм",
+      "audio": null
+    },
+    {
+      "en": "cherry",
+      "image": "img/fruit/cherry.svg",
+      "ipa": "/ˈtʃer.i/",
+      "mn": "интоор",
+      "audio": null
+    },
+    {
+      "en": "pear",
+      "image": "img/fruit/pear.svg",
+      "ipa": "/per/",
+      "mn": "лийр",
+      "audio": null
+    },
+    {
+      "en": "apple",
+      "image": "img/food/apple.svg",
+      "ipa": "/ˈæp.əl/",
+      "mn": "алим",
+      "audio": null
+    },
+    {
+      "en": "watermelon",
+      "image": "img/fruit/watermelon.svg",
+      "ipa": "/ˈwɑː.tɚˌmel.ən/",
+      "mn": "тарвас",
+      "audio": null
+    }
+  ]
+}

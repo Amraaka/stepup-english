@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-t",
+  "topic": "Дуугүй T",
+  "format": "silent-letter",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "castle",
+      "silentIndex": 3,
+      "ipa": "/ˈkæs.əl/",
+      "mn": "шилтгээн",
+      "audio": "audio/silent-letter-t/castle.mp3"
+    },
+    {
+      "en": "often",
+      "silentIndex": 2,
+      "ipa": "/ˈɑː.fən/",
+      "mn": "байнга",
+      "audio": "audio/silent-letter-t/often.mp3"
+    },
+    {
+      "en": "fasten",
+      "silentIndex": 3,
+      "ipa": "/ˈfæs.ən/",
+      "mn": "бэхлэх",
+      "audio": "audio/silent-letter-t/fasten.mp3"
+    },
+    {
+      "en": "ballet",
+      "silentIndex": 5,
+      "ipa": "/bæˈleɪ/",
+      "mn": "балет",
+      "audio": "audio/silent-letter-t/ballet.mp3"
+    },
+    {
+      "en": "soften",
+      "silentIndex": 3,
+      "ipa": "/ˈsɑː.fən/",
+      "mn": "зөөлрүүлэх",
+      "audio": "audio/silent-letter-t/soften.mp3"
+    }
+  ]
+}

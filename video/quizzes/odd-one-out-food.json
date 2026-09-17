@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-food",
+  "topic": "Хоол",
+  "format": "odd-one-out",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "bread",
+        "rice",
+        "pasta",
+        "spoon"
+      ],
+      "en": "spoon",
+      "mn": "Бусад нь хоол",
+      "audio": "audio/odd-one-out-food/spoon.mp3"
+    },
+    {
+      "options": [
+        "milk",
+        "juice",
+        "tea",
+        "sugar"
+      ],
+      "en": "sugar",
+      "mn": "Бусад нь ундаа",
+      "audio": "audio/odd-one-out-food/sugar.mp3"
+    },
+    {
+      "options": [
+        "beef",
+        "chicken",
+        "pork",
+        "potato"
+      ],
+      "en": "potato",
+      "mn": "Бусад нь мах",
+      "audio": "audio/odd-one-out-food/potato.mp3"
+    },
+    {
+      "options": [
+        "onion",
+        "carrot",
+        "cabbage",
+        "cake"
+      ],
+      "en": "cake",
+      "mn": "Бусад нь ногоо",
+      "audio": "audio/odd-one-out-food/cake.mp3"
+    },
+    {
+      "options": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "kitchen"
+      ],
+      "en": "kitchen",
+      "mn": "Бусад нь хоолны цаг",
+      "audio": "audio/odd-one-out-food/kitchen.mp3"
+    }
+  ]
+}

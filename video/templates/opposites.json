@@ -1,0 +1,22 @@
+{
+  "slug": "my-quiz",
+  "topic": "Эсрэг утга",
+  "format": "opposites",
+  "accent": "sun",
+  "items": [
+    {
+      "prompt": "cheap",
+      "en": "expensive",
+      "ipa": "/ɪkˈspen.sɪv/",
+      "mn": "үнэтэй",
+      "audio": null
+    },
+    {
+      "prompt": "early",
+      "en": "late",
+      "ipa": "/leɪt/",
+      "mn": "хоцорсон",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-restaurant",
+  "topic": "Ресторан",
+  "format": "mini-dialogue",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "prompt": "Are you ready to order?",
+      "en": "Yes, I'd like the chicken soup.",
+      "mn": "Тийм, би тахианы шөл авъя.",
+      "audio": "audio/mini-dialogue-restaurant/yes-i-d-like-the-chicken-soup.mp3"
+    },
+    {
+      "prompt": "Anything to drink?",
+      "en": "Just water, please.",
+      "mn": "Зүгээр ус өгөөч.",
+      "audio": "audio/mini-dialogue-restaurant/just-water-please.mp3"
+    },
+    {
+      "prompt": "How is your meal?",
+      "en": "It's delicious, thank you.",
+      "mn": "Маш амттай байна, баярлалаа.",
+      "audio": "audio/mini-dialogue-restaurant/it-s-delicious-thank-you.mp3"
+    },
+    {
+      "prompt": "Would you like dessert?",
+      "en": "No, thanks. Can I have the bill?",
+      "mn": "Үгүй ээ. Тооцоогоо авч болох уу?",
+      "audio": "audio/mini-dialogue-restaurant/no-thanks-can-i-have-the-bill.mp3"
+    },
+    {
+      "prompt": "Is this table free?",
+      "en": "Yes, please sit down.",
+      "mn": "Тийм, сууна уу.",
+      "audio": "audio/mini-dialogue-restaurant/yes-please-sit-down.mp3"
+    }
+  ]
+}

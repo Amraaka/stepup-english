@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-l",
+  "topic": "Дуугүй L",
+  "format": "silent-letter",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "walk",
+      "silentIndex": 2,
+      "ipa": "/wɑːk/",
+      "mn": "алхах",
+      "audio": null
+    },
+    {
+      "en": "talk",
+      "silentIndex": 2,
+      "ipa": "/tɑːk/",
+      "mn": "ярих",
+      "audio": null
+    },
+    {
+      "en": "calm",
+      "silentIndex": 2,
+      "ipa": "/kɑːm/",
+      "mn": "тайван",
+      "audio": null
+    },
+    {
+      "en": "salmon",
+      "silentIndex": 2,
+      "ipa": "/ˈsæm.ən/",
+      "mn": "хулд загас",
+      "audio": null
+    },
+    {
+      "en": "could",
+      "silentIndex": 3,
+      "ipa": "/kʊd/",
+      "mn": "чадах",
+      "audio": null
+    }
+  ]
+}

@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getSkill } from "@/lib/skills";
 import { getCurrentUser } from "@/lib/auth";
-import { LEVEL_NAME, TENSE_PATH, getLesson } from "@/lib/grammar/lessons";
+import { getProfile } from "@/lib/activity";
+import { cefrFor } from "@/lib/levels";
+import { CHECKPOINT_SIZE, LEVELS, LEVEL_NAME, TENSE_PATH, checkpointSlug, getLesson } from "@/lib/grammar/lessons";
 import { dueReviewCount, progressBySlug } from "@/lib/grammar/progress";
-import type { GrammarLevel, LessonProgress } from "@/lib/grammar/types";
+import type { GrammarLevel, LessonProgress, PathEntry } from "@/lib/grammar/types";
 import { TONE } from "@/lib/tones";
 import { SkillIcon } from "@/components/skill-icon";
-import { CheckIcon, ChevronRightIcon, ReplayIcon } from "@/components/icons";
+import { CheckIcon, ChevronRightIcon, ReplayIcon, TargetIcon } from "@/components/icons";
 
 const skill = getSkill("grammar");
 const t = TONE[skill.tone];
@@ -17,14 +19,47 @@ export const metadata: Metadata = {
   description: skill.tagline,
 };
 
-const LEVELS: GrammarLevel[] = ["A1", "A2", "B1", "B2", "C1"];
+/** Mixed test at the end of a level. */
+function CheckpointCard({ level, progress }: { level: GrammarLevel; progress?: LessonProgress }) {
+  const done = !!progress?.completed;
+  return (
+    <Link
+      href={`/grammar/checkpoint/${level.toLowerCase()}`}
+      className="mt-2.5 flex items-center gap-4 rounded-3xl border-2 border-dashed border-rose/40 p-4 transition-transform hover:-translate-y-0.5 sm:p-5"
+    >
+      <span className={`grid size-12 shrink-0 place-items-center rounded-2xl text-ink-950 ${done ? "bg-mint" : "bg-rose"}`}>
+        {done ? <CheckIcon className="size-6 [stroke-width:2.6]" /> : <TargetIcon className="size-6" />}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-[15px] font-extrabold">{level} шалгалт</span>
+        <span className="mt-0.5 block text-sm text-muted">
+          {level} түвшний бүх цагаас {CHECKPOINT_SIZE} асуулт
+          {progress && (
+            <span className="tabular-nums">
+              {" "}
+              · шилдэг {progress.bestScore}/{progress.total}
+            </span>
+          )}
+        </span>
+      </span>
+      <ChevronRightIcon className="size-5 shrink-0 text-muted" />
+    </Link>
+  );
+}
 
 export default async function Page() {
   const user = await getCurrentUser();
-  const [progress, due] = user
-    ? await Promise.all([progressBySlug(user.id), dueReviewCount(user.id)])
-    : [{} as Record<string, LessonProgress>, 0];
-  const nextSlug = user ? TENSE_PATH.find((p) => getLesson(p.slug) && !progress[p.slug]?.completed)?.slug : undefined;
+  const [progress, profile] = user
+    ? await Promise.all([progressBySlug(user.id), getProfile(user.id)])
+    : [{} as Record<string, LessonProgress>, null];
+  // Same daily cap as the review page, so the card never promises items the session won't show.
+  const due = user ? await dueReviewCount(user.id, profile?.timezone ?? "Asia/Ulaanbaatar") : 0;
+  // "Next" starts at the learner's onboarding level; lessons below it stay open (ADR 0015).
+  const start = LEVELS.indexOf(cefrFor(profile?.englishLevel) ?? "A1");
+  const open = (p: PathEntry) => !!getLesson(p.slug) && !progress[p.slug]?.completed;
+  const nextSlug = user
+    ? (TENSE_PATH.find((p) => open(p) && LEVELS.indexOf(p.level) >= start) ?? TENSE_PATH.find(open))?.slug
+    : undefined;
   const doneCount = TENSE_PATH.filter((p) => progress[p.slug]?.completed).length;
 
   return (
@@ -137,6 +172,7 @@ export default async function Page() {
                 );
               })}
             </ol>
+            <CheckpointCard level={level} progress={progress[checkpointSlug(level)]} />
           </section>
         );
       })}

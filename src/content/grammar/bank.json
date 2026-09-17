@@ -1,0 +1,1465 @@
+[
+ {
+  "id": "tatoeba-508307",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "It ___ tomorrow.",
+  "answer": "will be snowing",
+  "options": [
+   "has snowed",
+   "had snowed",
+   "snowed",
+   "will be snowing"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 508307,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-261924",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "I ___ TV about this time tomorrow.",
+  "answer": "will be watching",
+  "options": [
+   "had watched",
+   "watched",
+   "will be watching",
+   "have watched"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 261924,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-323167",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "It ___ at this time tomorrow.",
+  "answer": "will be raining",
+  "options": [
+   "rained",
+   "has rained",
+   "will be raining",
+   "had rained"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 323167,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6527190",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ tennis tomorrow afternoon.",
+  "answer": "will be playing",
+  "options": [
+   "had played",
+   "has played",
+   "played",
+   "will be playing"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 6527190,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-325024",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "I ___ for Australia next month.",
+  "answer": "will be leaving",
+  "options": [
+   "had left",
+   "will be leaving",
+   "left",
+   "have left"
+  ],
+  "explain": "\"next month\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 325024,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6657027",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ Mary in Boston next week.",
+  "answer": "will be visiting",
+  "options": [
+   "had visited",
+   "has visited",
+   "will be visiting",
+   "visited"
+  ],
+  "explain": "\"next week\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 6657027,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-11866230",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ in Boston next year.",
+  "answer": "will be teaching",
+  "options": [
+   "taught",
+   "will be teaching",
+   "has taught",
+   "had taught"
+  ],
+  "explain": "\"next year\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 11866230,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-10685539",
+  "slug": "future-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ to Boston tomorrow.",
+  "answer": "will be flying",
+  "options": [
+   "had flown",
+   "flew",
+   "will be flying",
+   "has flown"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Ирээдүйн тодорхой үед үргэлжилж байх үйлийг will be + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 10685539,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-296940",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "He ___ at the office yesterday evening.",
+  "answer": "was working",
+  "options": [
+   "will work",
+   "has worked",
+   "was working",
+   "works"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 296940,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-5915730",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "I ___ jeans yesterday.",
+  "answer": "was wearing",
+  "options": [
+   "will wear",
+   "have worn",
+   "wear",
+   "was wearing"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 5915730,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-10084779",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "We ___ TV yesterday.",
+  "answer": "were watching",
+  "options": [
+   "were watching",
+   "watch",
+   "will watch",
+   "have watched"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 10084779,
+   "author": "ddnktr",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6527078",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "Tom ___ the fence yesterday afternoon.",
+  "answer": "was painting",
+  "options": [
+   "will paint",
+   "was painting",
+   "has painted",
+   "paints"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 6527078,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-12065339",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "I ___ to Tom yesterday.",
+  "answer": "was talking",
+  "options": [
+   "was talking",
+   "talk",
+   "have talked",
+   "will talk"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 12065339,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-11940347",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "Mary ___ a lot of jewelry last night.",
+  "answer": "was wearing",
+  "options": [
+   "will wear",
+   "was wearing",
+   "wears",
+   "has worn"
+  ],
+  "explain": "\"last night\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 11940347,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-9856883",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "I ___ my flat yesterday.",
+  "answer": "was cleaning",
+  "options": [
+   "will clean",
+   "clean",
+   "was cleaning",
+   "have cleaned"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 9856883,
+   "author": "Ergulis",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6790046",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "I ___ French last night.",
+  "answer": "was studying",
+  "options": [
+   "have studied",
+   "study",
+   "will study",
+   "was studying"
+  ],
+  "explain": "\"last night\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 6790046,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6344281",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "I ___ in Boston three years ago.",
+  "answer": "was living",
+  "options": [
+   "live",
+   "will live",
+   "have lived",
+   "was living"
+  ],
+  "explain": "\"three years ago\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 6344281,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-12519133",
+  "slug": "past-continuous",
+  "signal": "past",
+  "sentence": "Tom ___ there a minute ago.",
+  "answer": "was standing",
+  "options": [
+   "has stood",
+   "was standing",
+   "stands",
+   "will stand"
+  ],
+  "explain": "\"a minute ago\" нь өнгөрсөн цагийг заана. Тэр үед үргэлжилж байсан үйлийг was / were + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 12519133,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-12994441",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "Tom ___ out last night.",
+  "answer": "ate",
+  "options": [
+   "has eaten",
+   "eats",
+   "ate",
+   "will eat"
+  ],
+  "explain": "\"last night\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 12994441,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-5112910",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ a little too much yesterday.",
+  "answer": "ate",
+  "options": [
+   "have eaten",
+   "ate",
+   "will eat",
+   "eat"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 5112910,
+   "author": "Airvian",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-9032420",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "Tom ___ to ride a bicycle three years ago.",
+  "answer": "learned",
+  "options": [
+   "learns",
+   "will learn",
+   "has learned",
+   "learned"
+  ],
+  "explain": "\"three years ago\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 9032420,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6351492",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ to Boston last winter.",
+  "answer": "moved",
+  "options": [
+   "have moved",
+   "move",
+   "moved",
+   "will move"
+  ],
+  "explain": "\"last winter\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 6351492,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-2481775",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "It ___ yesterday afternoon.",
+  "answer": "rained",
+  "options": [
+   "rained",
+   "has rained",
+   "will rain",
+   "rains"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 2481775,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-244621",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ a new personal computer yesterday.",
+  "answer": "bought",
+  "options": [
+   "will buy",
+   "bought",
+   "have bought",
+   "buy"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 244621,
+   "author": "\\N",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-248740",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "We ___ basketball yesterday.",
+  "answer": "played",
+  "options": [
+   "have played",
+   "will play",
+   "played",
+   "play"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 248740,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-3910526",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ them yesterday morning.",
+  "answer": "saw",
+  "options": [
+   "will see",
+   "see",
+   "saw",
+   "have seen"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 3910526,
+   "author": "CH",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-2600846",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ to the cinema yesterday.",
+  "answer": "went",
+  "options": [
+   "have gone",
+   "will go",
+   "go",
+   "went"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 2600846,
+   "author": "anemone",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-257847",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ comfortably last night.",
+  "answer": "slept",
+  "options": [
+   "have slept",
+   "will sleep",
+   "slept",
+   "sleep"
+  ],
+  "explain": "\"last night\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 257847,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6529095",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "Tom ___ these pictures last summer.",
+  "answer": "took",
+  "options": [
+   "will take",
+   "took",
+   "has taken",
+   "takes"
+  ],
+  "explain": "\"last summer\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 6529095,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6248037",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ a couple of songs last night.",
+  "answer": "wrote",
+  "options": [
+   "wrote",
+   "write",
+   "will write",
+   "have written"
+  ],
+  "explain": "\"last night\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 6248037,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-2239577",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ to her yesterday.",
+  "answer": "spoke",
+  "options": [
+   "speak",
+   "will speak",
+   "have spoken",
+   "spoke"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 2239577,
+   "author": "Hybrid",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6577125",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ it yesterday.",
+  "answer": "found",
+  "options": [
+   "will find",
+   "find",
+   "have found",
+   "found"
+  ],
+  "explain": "\"yesterday\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 6577125,
+   "author": "Eccles17",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-310068",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "She ___ ten minutes ago.",
+  "answer": "started",
+  "options": [
+   "starts",
+   "will start",
+   "started",
+   "has started"
+  ],
+  "explain": "\"ten minutes ago\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 310068,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-13580181",
+  "slug": "past-simple",
+  "signal": "past",
+  "sentence": "I ___ him many years ago.",
+  "answer": "met",
+  "options": [
+   "will meet",
+   "met",
+   "meet",
+   "have met"
+  ],
+  "explain": "\"many years ago\" нь өнгөрсөнд болж дууссан үйлийг заана: V2 (өнгөрсөн энгийн цаг).",
+  "source": {
+   "tatoebaId": 13580181,
+   "author": "rul",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-288703",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "He ___ Chicago tomorrow.",
+  "answer": "is leaving",
+  "options": [
+   "left",
+   "is leaving",
+   "has left",
+   "had left"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 288703,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-323121",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "We ___ to a dance tomorrow.",
+  "answer": "are going",
+  "options": [
+   "went",
+   "have gone",
+   "had gone",
+   "are going"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 323121,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-3448998",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ Mary out to dinner tomorrow.",
+  "answer": "is taking",
+  "options": [
+   "had taken",
+   "is taking",
+   "took",
+   "has taken"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 3448998,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-12891114",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "They ___ the test tomorrow.",
+  "answer": "are taking",
+  "options": [
+   "took",
+   "had taken",
+   "have taken",
+   "are taking"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 12891114,
+   "author": "Ussis",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-284507",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "I ___ him next Friday.",
+  "answer": "am meeting",
+  "options": [
+   "met",
+   "had met",
+   "am meeting",
+   "have met"
+  ],
+  "explain": "\"next Friday\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 284507,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-13194973",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ an exam next week.",
+  "answer": "is taking",
+  "options": [
+   "took",
+   "has taken",
+   "is taking",
+   "had taken"
+  ],
+  "explain": "\"next week\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 13194973,
+   "author": "Ergulis",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-2641877",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "Tom ___ camping next weekend.",
+  "answer": "is going",
+  "options": [
+   "is going",
+   "has gone",
+   "had gone",
+   "went"
+  ],
+  "explain": "\"next weekend\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 2641877,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-11564867",
+  "slug": "present-continuous",
+  "signal": "future",
+  "sentence": "I ___ to meet with Mary next week.",
+  "answer": "am planning",
+  "options": [
+   "had planned",
+   "have planned",
+   "planned",
+   "am planning"
+  ],
+  "explain": "\"next week\" нь ирээдүйг заана. Товлосон, тохиролцсон төлөвлөгөөг am / is / are + V-ing-ээр хэлнэ.",
+  "source": {
+   "tatoebaId": 11564867,
+   "author": "Danika_Dakika",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-9464466",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ his doctoral thesis at the moment.",
+  "answer": "is writing",
+  "options": [
+   "is writing",
+   "wrote",
+   "had written",
+   "writes"
+  ],
+  "explain": "\"at the moment\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 9464466,
+   "author": "sundown",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-4502378",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ right now.",
+  "answer": "is studying",
+  "options": [
+   "had studied",
+   "studied",
+   "is studying",
+   "studies"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 4502378,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6489841",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ dinner right now.",
+  "answer": "is eating",
+  "options": [
+   "eats",
+   "had eaten",
+   "ate",
+   "is eating"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 6489841,
+   "author": "CT",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-10538175",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ something right now.",
+  "answer": "is cooking",
+  "options": [
+   "cooks",
+   "had cooked",
+   "is cooking",
+   "cooked"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 10538175,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-9524795",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ a letter right now.",
+  "answer": "is writing",
+  "options": [
+   "is writing",
+   "writes",
+   "had written",
+   "wrote"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 9524795,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6529941",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ a shower right now.",
+  "answer": "is taking",
+  "options": [
+   "takes",
+   "took",
+   "is taking",
+   "had taken"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 6529941,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-3762126",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "I ___ a movie right now.",
+  "answer": "am watching",
+  "options": [
+   "am watching",
+   "watched",
+   "watch",
+   "had watched"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 3762126,
+   "author": "nmilka",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-2712874",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ a class right now.",
+  "answer": "is teaching",
+  "options": [
+   "teaches",
+   "had taught",
+   "taught",
+   "is teaching"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 2712874,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6615727",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "I ___ to school right now.",
+  "answer": "am going",
+  "options": [
+   "went",
+   "go",
+   "am going",
+   "had gone"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 6615727,
+   "author": "Muhammed_abdoon",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-13654332",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "We ___ right now.",
+  "answer": "are working",
+  "options": [
+   "work",
+   "are working",
+   "had worked",
+   "worked"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 13654332,
+   "author": "ecorralest101",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-3182003",
+  "slug": "present-continuous",
+  "signal": "now",
+  "sentence": "Tom ___ to a customer right now.",
+  "answer": "is talking",
+  "options": [
+   "talked",
+   "had talked",
+   "talks",
+   "is talking"
+  ],
+  "explain": "\"right now\" нь яг одоо болж байгааг заана: am / is / are + V-ing.",
+  "source": {
+   "tatoebaId": 3182003,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-1093659",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "Tom ___ Mary since childhood.",
+  "answer": "has known",
+  "options": [
+   "knows",
+   "is knowing",
+   "has known",
+   "knew"
+  ],
+  "explain": "\"since childhood\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 1093659,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6249450",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "Tom ___ in Australia since 2013.",
+  "answer": "has lived",
+  "options": [
+   "lived",
+   "has lived",
+   "lives",
+   "is living"
+  ],
+  "explain": "\"since 2013\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 6249450,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-52734",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "I ___ John since 1976.",
+  "answer": "have known",
+  "options": [
+   "know",
+   "knew",
+   "am knowing",
+   "have known"
+  ],
+  "explain": "\"since 1976\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 52734,
+   "author": "CN",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-252440",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "I ___ in Tokyo since 1985.",
+  "answer": "have lived",
+  "options": [
+   "am living",
+   "lived",
+   "have lived",
+   "live"
+  ],
+  "explain": "\"since 1985\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 252440,
+   "author": "CN",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-66990",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "I ___ nothing from him since then.",
+  "answer": "have heard",
+  "options": [
+   "have heard",
+   "hear",
+   "am hearing",
+   "heard"
+  ],
+  "explain": "\"since then\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 66990,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-245843",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "We ___ each other since childhood.",
+  "answer": "have known",
+  "options": [
+   "know",
+   "knew",
+   "have known",
+   "are knowing"
+  ],
+  "explain": "\"since childhood\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 245843,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-12995707",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "Tom ___ at the same company since 2003.",
+  "answer": "has worked",
+  "options": [
+   "is working",
+   "works",
+   "has worked",
+   "worked"
+  ],
+  "explain": "\"since 2003\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 12995707,
+   "author": "rul",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-247799",
+  "slug": "present-perfect",
+  "signal": "since",
+  "sentence": "We ___ in this town since 1960.",
+  "answer": "have lived",
+  "options": [
+   "have lived",
+   "live",
+   "are living",
+   "lived"
+  ],
+  "explain": "\"since 1960\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + V3.",
+  "source": {
+   "tatoebaId": 247799,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-242161",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "It ___ since this morning.",
+  "answer": "has been snowing",
+  "options": [
+   "has been snowing",
+   "snowed",
+   "is snowing",
+   "snows"
+  ],
+  "explain": "\"since this morning\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 242161,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-23784",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "It ___ since Tuesday.",
+  "answer": "has been raining",
+  "options": [
+   "rained",
+   "has been raining",
+   "is raining",
+   "rains"
+  ],
+  "explain": "\"since Tuesday\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 23784,
+   "author": "CN",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-1466830",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "He ___ in Ankara since 2006.",
+  "answer": "has been living",
+  "options": [
+   "lived",
+   "lives",
+   "is living",
+   "has been living"
+  ],
+  "explain": "\"since 2006\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 1466830,
+   "author": "ahtapot",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6245823",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "Tom ___ French since 2013.",
+  "answer": "has been teaching",
+  "options": [
+   "teaches",
+   "is teaching",
+   "has been teaching",
+   "taught"
+  ],
+  "explain": "\"since 2013\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 6245823,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-7542242",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "Tom ___ for us since 2013.",
+  "answer": "has been working",
+  "options": [
+   "has been working",
+   "worked",
+   "is working",
+   "works"
+  ],
+  "explain": "\"since 2013\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 7542242,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-288131",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "He ___ tennis since this morning.",
+  "answer": "has been playing",
+  "options": [
+   "played",
+   "plays",
+   "has been playing",
+   "is playing"
+  ],
+  "explain": "\"since this morning\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 288131,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-296569",
+  "slug": "present-perfect-continuous",
+  "signal": "since",
+  "sentence": "He ___ poems since this morning.",
+  "answer": "has been writing",
+  "options": [
+   "wrote",
+   "has been writing",
+   "writes",
+   "is writing"
+  ],
+  "explain": "\"since this morning\" нь эхэлсэн цэгийг хэлж, одоо хүртэл үргэлжилж байгааг заана: have / has + been + V-ing.",
+  "source": {
+   "tatoebaId": 296569,
+   "author": "CM",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-304080",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "He ___ tennis tomorrow.",
+  "answer": "will play",
+  "options": [
+   "played",
+   "has played",
+   "will play",
+   "had played"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн will + V1.",
+  "source": {
+   "tatoebaId": 304080,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6433418",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "Tom ___ swimming tomorrow morning.",
+  "answer": "is going to go",
+  "options": [
+   "is going to go",
+   "has gone",
+   "went",
+   "had gone"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн am / is / are going to + V1.",
+  "source": {
+   "tatoebaId": 6433418,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-6438889",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "Tom ___ tomorrow.",
+  "answer": "is going to win",
+  "options": [
+   "had won",
+   "is going to win",
+   "won",
+   "has won"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн am / is / are going to + V1.",
+  "source": {
+   "tatoebaId": 6438889,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-5881641",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "Tom ___ it to us tomorrow.",
+  "answer": "will give",
+  "options": [
+   "will give",
+   "has given",
+   "had given",
+   "gave"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн will + V1.",
+  "source": {
+   "tatoebaId": 5881641,
+   "author": "Catriona",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-263028",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "We ___ our uncle next Sunday.",
+  "answer": "are going to visit",
+  "options": [
+   "have visited",
+   "are going to visit",
+   "had visited",
+   "visited"
+  ],
+  "explain": "\"next Sunday\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн am / is / are going to + V1.",
+  "source": {
+   "tatoebaId": 263028,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-7799974",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "I ___ to London tomorrow morning.",
+  "answer": "will go",
+  "options": [
+   "have gone",
+   "will go",
+   "had gone",
+   "went"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн will + V1.",
+  "source": {
+   "tatoebaId": 7799974,
+   "author": "sharris123",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-323405",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "I ___ you the money tomorrow.",
+  "answer": "will pay",
+  "options": [
+   "had paid",
+   "will pay",
+   "paid",
+   "have paid"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн will + V1.",
+  "source": {
+   "tatoebaId": 323405,
+   "author": "CC",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-44085",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "Tom ___ the fence tomorrow.",
+  "answer": "will paint",
+  "options": [
+   "has painted",
+   "had painted",
+   "painted",
+   "will paint"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн will + V1.",
+  "source": {
+   "tatoebaId": 44085,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ },
+ {
+  "id": "tatoeba-304102",
+  "slug": "will-going-to",
+  "signal": "future",
+  "sentence": "He ___ to school tomorrow.",
+  "answer": "is going to go",
+  "options": [
+   "had gone",
+   "is going to go",
+   "has gone",
+   "went"
+  ],
+  "explain": "\"tomorrow\" нь ирээдүйг заана. Сонголтуудаас ирээдүйн хэлбэр нь зөвхөн am / is / are going to + V1.",
+  "source": {
+   "tatoebaId": 304102,
+   "author": "CK",
+   "license": "CC BY 2.0 FR"
+  }
+ }
+]

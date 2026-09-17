@@ -1,0 +1,34 @@
+{
+  "slug": "my-quiz",
+  "topic": "Хоёр дуудлага",
+  "format": "sound-pair",
+  "accent": "sky",
+  "items": [
+    {
+      "options": [
+        "ship",
+        "sheep"
+      ],
+      "hints": [
+        "/ʃɪp/",
+        "/ʃiːp/"
+      ],
+      "en": "sheep",
+      "mn": "хонь",
+      "audio": null
+    },
+    {
+      "options": [
+        "think",
+        "sink"
+      ],
+      "hints": [
+        "/θɪŋk/",
+        "/sɪŋk/"
+      ],
+      "en": "think",
+      "mn": "бодох",
+      "audio": null
+    }
+  ]
+}

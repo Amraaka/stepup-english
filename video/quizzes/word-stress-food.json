@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-food",
+  "topic": "Хоол",
+  "format": "word-stress",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "tomato",
+      "syllables": [
+        "to",
+        "ma",
+        "to"
+      ],
+      "stressIndex": 1,
+      "ipa": "/təˈmeɪ.toʊ/",
+      "mn": "улаан лооль",
+      "audio": "audio/word-stress-food/tomato.mp3"
+    },
+    {
+      "en": "potato",
+      "syllables": [
+        "po",
+        "ta",
+        "to"
+      ],
+      "stressIndex": 1,
+      "ipa": "/pəˈteɪ.toʊ/",
+      "mn": "төмс",
+      "audio": "audio/word-stress-food/potato.mp3"
+    },
+    {
+      "en": "chocolate",
+      "syllables": [
+        "choc",
+        "o",
+        "late"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈtʃɑːk.lət/",
+      "mn": "шоколад",
+      "audio": "audio/word-stress-food/chocolate.mp3"
+    },
+    {
+      "en": "vegetable",
+      "syllables": [
+        "veg",
+        "e",
+        "ta",
+        "ble"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈvedʒ.tə.bəl/",
+      "mn": "ногоо",
+      "audio": "audio/word-stress-food/vegetable.mp3"
+    },
+    {
+      "en": "dessert",
+      "syllables": [
+        "des",
+        "sert"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dɪˈzɝːt/",
+      "mn": "амттан",
+      "audio": "audio/word-stress-food/dessert.mp3"
+    }
+  ]
+}

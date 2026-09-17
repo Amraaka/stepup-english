@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- canopy: scalloped dome -->
+    <path d="M22 106a78 78 0 0 1 156 0c-13-10-26-10-39 0-13-10-26-10-39 0-13-10-26-10-39 0-13-10-26-10-39 0z" fill="#1fb57a"/>
+    <!-- shaft with a hooked handle -->
+    <path d="M100 106v52a16 16 0 0 1-32 0" stroke-width="8"/>
+  </g>
+</svg>

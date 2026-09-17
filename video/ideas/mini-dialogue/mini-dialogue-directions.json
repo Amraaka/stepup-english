@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-directions",
+  "topic": "Зам асуух",
+  "format": "mini-dialogue",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "prompt": "Excuse me, where is the bank?",
+      "en": "Go straight and turn left.",
+      "mn": "Чигээрээ яваад зүүн тийш эргээрэй.",
+      "audio": null
+    },
+    {
+      "prompt": "Is it far from here?",
+      "en": "No, it's a five-minute walk.",
+      "mn": "Үгүй, таван минут алхана.",
+      "audio": null
+    },
+    {
+      "prompt": "How do I get to the airport?",
+      "en": "You can take a taxi.",
+      "mn": "Такси барьж болно.",
+      "audio": null
+    },
+    {
+      "prompt": "Where is the nearest bus stop?",
+      "en": "It's across the street.",
+      "mn": "Замын нөгөө талд байгаа.",
+      "audio": null
+    },
+    {
+      "prompt": "Can you show me on the map?",
+      "en": "Sure. We are here.",
+      "mn": "Тэгье. Бид энд байна.",
+      "audio": null
+    }
+  ]
+}

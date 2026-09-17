@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-verbs",
+  "topic": "Үйл үг",
+  "format": "odd-one-out",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "eat",
+        "drink",
+        "cook",
+        "happy"
+      ],
+      "en": "happy",
+      "mn": "Бусад нь үйл үг",
+      "audio": null
+    },
+    {
+      "options": [
+        "walk",
+        "run",
+        "jump",
+        "sleep"
+      ],
+      "en": "sleep",
+      "mn": "Бусад нь хөдөлгөөн",
+      "audio": null
+    },
+    {
+      "options": [
+        "read",
+        "write",
+        "study",
+        "dance"
+      ],
+      "en": "dance",
+      "mn": "Бусад нь сурахтай холбоотой",
+      "audio": null
+    },
+    {
+      "options": [
+        "see",
+        "hear",
+        "smell",
+        "go"
+      ],
+      "en": "go",
+      "mn": "Бусад нь мэдрэхүй",
+      "audio": null
+    },
+    {
+      "options": [
+        "said",
+        "went",
+        "came",
+        "look"
+      ],
+      "en": "look",
+      "mn": "Бусад нь өнгөрсөн цаг",
+      "audio": null
+    }
+  ]
+}

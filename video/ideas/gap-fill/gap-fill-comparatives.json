@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-comparatives",
+  "topic": "Харьцуулалт",
+  "format": "gap-fill",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "This bag is cheaper than that one.",
+      "sentence": "This bag is ___ than that one.",
+      "options": [
+        "cheaper",
+        "cheap",
+        "cheapest"
+      ],
+      "mn": "Энэ цүнх тэрнээс хямд.",
+      "audio": null
+    },
+    {
+      "en": "He is the best student in class.",
+      "sentence": "He is the ___ student in class.",
+      "options": [
+        "best",
+        "better",
+        "good"
+      ],
+      "mn": "Тэр ангидаа хамгийн сайн сурагч.",
+      "audio": null
+    },
+    {
+      "en": "Today is colder than yesterday.",
+      "sentence": "Today is ___ than yesterday.",
+      "options": [
+        "colder",
+        "cold",
+        "coldest"
+      ],
+      "mn": "Өнөөдөр өчигдрөөс хүйтэн байна.",
+      "audio": null
+    },
+    {
+      "en": "This is the most interesting book I have read.",
+      "sentence": "This is the ___ book I have read.",
+      "options": [
+        "most interesting",
+        "more interesting",
+        "interesting"
+      ],
+      "mn": "Энэ бол миний уншсан хамгийн сонирхолтой ном.",
+      "audio": null
+    },
+    {
+      "en": "Russia is bigger than Mongolia.",
+      "sentence": "Russia is ___ than Mongolia.",
+      "options": [
+        "bigger",
+        "big",
+        "biggest"
+      ],
+      "mn": "Орос Монголоос том.",
+      "audio": null
+    }
+  ]
+}

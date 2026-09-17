@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- hull -->
+    <path d="M26 118h148l-18 36a10 10 0 0 1-9 6H53a10 10 0 0 1-9-6z" fill="#ff5a3c"/>
+    <!-- superstructure -->
+    <path d="M70 80h50v38H70z" fill="#ffe4dd"/>
+    <path d="M82 92h26v14H82" fill="#ff5a3c"/>
+    <!-- funnel -->
+    <path d="M128 92h16v26h-16z" fill="#ffe4dd"/>
+    <!-- waterline -->
+    <path d="M18 172h164" stroke-width="6"/>
+  </g>
+</svg>

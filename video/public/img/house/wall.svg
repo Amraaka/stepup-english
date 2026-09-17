@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- brick courses, staggered -->
+    <path d="M26 58h148v84H26z" fill="#f5a300"/>
+    <path d="M26 86h148M26 114h148" stroke-width="5"/>
+    <path d="M74 58v28M122 58v28M50 86v28M98 86v28M146 86v28M74 114v28M122 114v28" stroke-width="5"/>
+  </g>
+</svg>

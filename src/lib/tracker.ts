@@ -9,6 +9,7 @@ export type TimedTarget =
   | { module: "listening"; ref: string }
   | { module: "speaking"; ref: string }
   | { module: "grammar"; ref: string }
+  | { module: "reading"; ref: string }
   | { module: "vocabulary"; ref: "review" };
 
 export function pointsForStudyLog(durationMin: number): number {
@@ -51,6 +52,11 @@ export function computeLongestStreak(activeDays: Set<string>): number {
 }
 
 export type DayAgg = { points: number; durationSec: number };
+
+/** One rule for streaks, check-in and active-day quests: any time or points logged that day. */
+export function isActiveDay(d: DayAgg | undefined): boolean {
+  return !!d && (d.durationSec > 0 || d.points > 0);
+}
 export type WeekDay = { day: string; points: number; durationSec: number };
 
 export type TrackerStats = {
@@ -83,7 +89,7 @@ export function buildStats(
     days.unshift({ day: d, ...v });
     d = prevDay(d);
   }
-  const active = new Set(byDay.keys());
+  const active = new Set([...byDay].filter(([, v]) => isActiveDay(v)).map(([day]) => day));
   return {
     streak: computeStreak(active, today),
     longestStreak: computeLongestStreak(active),

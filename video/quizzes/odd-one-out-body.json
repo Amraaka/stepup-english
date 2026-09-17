@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-body",
+  "topic": "Бие",
+  "format": "odd-one-out",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "eye",
+        "ear",
+        "nose",
+        "shoe"
+      ],
+      "en": "shoe",
+      "mn": "Бусад нь нүүрний хэсэг",
+      "audio": "audio/odd-one-out-body/shoe.mp3"
+    },
+    {
+      "options": [
+        "hand",
+        "arm",
+        "finger",
+        "hat"
+      ],
+      "en": "hat",
+      "mn": "Бусад нь гарын хэсэг",
+      "audio": "audio/odd-one-out-body/hat.mp3"
+    },
+    {
+      "options": [
+        "heart",
+        "lung",
+        "brain",
+        "shirt"
+      ],
+      "en": "shirt",
+      "mn": "Бусад нь эрхтэн",
+      "audio": "audio/odd-one-out-body/shirt.mp3"
+    },
+    {
+      "options": [
+        "knee",
+        "foot",
+        "leg",
+        "glove"
+      ],
+      "en": "glove",
+      "mn": "Бусад нь хөлний хэсэг",
+      "audio": "audio/odd-one-out-body/glove.mp3"
+    },
+    {
+      "options": [
+        "hair",
+        "tooth",
+        "lip",
+        "sock"
+      ],
+      "en": "sock",
+      "mn": "Бусад нь биеийн хэсэг",
+      "audio": "audio/odd-one-out-body/sock.mp3"
+    }
+  ]
+}

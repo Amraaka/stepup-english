@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-people",
+  "topic": "Хүн",
+  "format": "opposites",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "prompt": "young",
+      "en": "old",
+      "ipa": "/oʊld/",
+      "mn": "хөгшин",
+      "audio": "audio/opposites-people/old.mp3"
+    },
+    {
+      "prompt": "rich",
+      "en": "poor",
+      "ipa": "/pʊr/",
+      "mn": "ядуу",
+      "audio": "audio/opposites-people/poor.mp3"
+    },
+    {
+      "prompt": "friend",
+      "en": "enemy",
+      "ipa": "/ˈen.ə.mi/",
+      "mn": "дайсан",
+      "audio": "audio/opposites-people/enemy.mp3"
+    },
+    {
+      "prompt": "kind",
+      "en": "cruel",
+      "ipa": "/ˈkruː.əl/",
+      "mn": "хэрцгий",
+      "audio": "audio/opposites-people/cruel.mp3"
+    },
+    {
+      "prompt": "hard-working",
+      "en": "lazy",
+      "ipa": "/ˈleɪ.zi/",
+      "mn": "залхуу",
+      "audio": "audio/opposites-people/lazy.mp3"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v4: ONE continuous silhouette. v1-v3 stacked an ellipse on a stroked line, which
+       always left a seam at the neck and read as a hand mirror. A spoon reads as a spoon
+       because the bowl tapers without a break into the handle, so it must be one path. -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M100 28c14 0 23 15 23 33 0 15-6 26-16 30-3 1-4 3-4 6l3 68a6 6 0 0 1-12 0l3-68c0-3-1-5-4-6-10-4-16-15-16-30 0-18 9-33 23-33z"
+          fill="#dfe3e8"/>
+    <path d="M90 46c-3 6-3 16 0 22" stroke="#9aa3ad" stroke-width="4"/>
+  </g>
+</svg>

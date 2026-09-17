@@ -2,7 +2,7 @@
 // Rules: docs/decisions/0007-gamified-app-shell.md
 
 import type { ActivityModule } from "@/db/schema";
-import type { TrackerStats } from "@/lib/tracker";
+import { isActiveDay, type TrackerStats } from "@/lib/tracker";
 import type { Tone } from "@/lib/tones";
 
 export const DAILY_GOAL_MIN = 20;
@@ -46,7 +46,7 @@ export function weekPoints(s: TrackerStats): number {
 }
 
 export function activeDaysInWeek(s: TrackerStats): number {
-  return s.week.filter((d) => d.points > 0).length;
+  return s.week.filter(isActiveDay).length;
 }
 
 export type QuestIconName = "clock" | "check" | "bolt" | "flame";
@@ -64,7 +64,7 @@ export type Quest = {
 export function dailyQuests(s: TrackerStats): Quest[] {
   return [
     { id: "minutes", title: `${DAILY_GOAL_MIN} минут суралц`, value: s.todayMinutes, target: DAILY_GOAL_MIN, unit: "мин", tone: "coral", icon: "clock" },
-    { id: "checkin", title: "Өнөөдөр цагаа бүртгэ", value: s.todayPoints > 0 ? 1 : 0, target: 1, unit: "", tone: "mint", icon: "check" },
+    { id: "checkin", title: "Өнөөдөр цагаа бүртгэ", value: isActiveDay(s.week.at(-1)) ? 1 : 0, target: 1, unit: "", tone: "mint", icon: "check" },
     { id: "points", title: "50 оноо цуглуул", value: s.todayPoints, target: 50, unit: "оноо", tone: "sun", icon: "bolt" },
   ];
 }

@@ -1,0 +1,38 @@
+{
+  "slug": "unscramble-1",
+  "topic": "Үг таах",
+  "format": "unscramble",
+  "accent": "violet",
+  "items": [
+    {
+      "en": "happy",
+      "ipa": "/ˈhæp.i/",
+      "mn": "аз жаргалтай",
+      "audio": "audio/unscramble-1/happy.mp3"
+    },
+    {
+      "en": "water",
+      "ipa": "/ˈwɑː.tɚ/",
+      "mn": "ус",
+      "audio": "audio/unscramble-1/water.mp3"
+    },
+    {
+      "en": "friend",
+      "ipa": "/frend/",
+      "mn": "найз",
+      "audio": "audio/unscramble-1/friend.mp3"
+    },
+    {
+      "en": "money",
+      "ipa": "/ˈmʌn.i/",
+      "mn": "мөнгө",
+      "audio": "audio/unscramble-1/money.mp3"
+    },
+    {
+      "en": "family",
+      "ipa": "/ˈfæm.əl.i/",
+      "mn": "гэр бүл",
+      "audio": "audio/unscramble-1/family.mp3"
+    }
+  ]
+}

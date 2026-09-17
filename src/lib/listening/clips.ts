@@ -82,6 +82,11 @@ export function getClip(slug: string): Clip | null {
   return CLIPS.find((c) => c.slug === slug) ?? null;
 }
 
+/** Sentences worth shadowing: all but the last, which is the reporter's sign-off ("I'm Jill Robbins."). */
+export function shadowingSegments(clip: Clip): Segment[] {
+  return clip.segments.slice(0, -1);
+}
+
 /** 162 → "2:42" */
 export function fmtClock(sec: number): string {
   const s = Math.max(0, Math.floor(sec));

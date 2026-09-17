@@ -1,0 +1,22 @@
+{
+  "slug": "my-quiz",
+  "topic": "Гал тогооны хэрэгсэл",
+  "format": "picture",
+  "accent": "mint",
+  "items": [
+    {
+      "en": "spoon",
+      "mn": "халбага",
+      "ipa": "/spuːn/",
+      "image": null,
+      "audio": null
+    },
+    {
+      "en": "fork",
+      "mn": "сэрээ",
+      "ipa": "/fɔːrk/",
+      "image": null,
+      "audio": null
+    }
+  ]
+}

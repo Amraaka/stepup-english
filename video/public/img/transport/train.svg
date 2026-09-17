@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v3: round boiler + tall flared funnel + separated wheels. v1 read as a delivery
+       truck, v2 as a caravan on a rail — both were a plain box with features bolted on.
+       The locomotive profile itself has to carry it. -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- funnel, flared at the top -->
+    <path d="M46 40h30l-5 14H51z" fill="#ffe4dd"/>
+    <path d="M55 54h18v22H55z" fill="#ffe4dd"/>
+    <!-- cab, taller than the boiler -->
+    <path d="M118 56h38a8 8 0 0 1 8 8v72h-46z" fill="#ffe4dd"/>
+    <path d="M128 70h26v24h-26z" fill="#ff5a3c"/>
+    <!-- boiler: rounded barrel running to the cab -->
+    <path d="M40 76h78v60H30V86a10 10 0 0 1 10-10z" fill="#ffe4dd"/>
+    <!-- boiler bands -->
+    <path d="M62 76v60M92 76v60" stroke-width="4"/>
+    <!-- wheels, clearly separated -->
+    <circle cx="140" cy="152" r="17" fill="#1a1a1f"/>
+    <circle cx="56" cy="154" r="12" fill="#1a1a1f"/>
+    <circle cx="96" cy="154" r="12" fill="#1a1a1f"/>
+    <!-- rail -->
+    <path d="M14 178h172" stroke-width="6"/>
+  </g>
+</svg>

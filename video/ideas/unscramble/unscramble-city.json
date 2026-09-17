@@ -1,0 +1,39 @@
+{
+  "slug": "unscramble-city",
+  "topic": "Хот",
+  "format": "unscramble",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "street",
+      "ipa": "/striːt/",
+      "mn": "гудамж",
+      "audio": null
+    },
+    {
+      "en": "bank",
+      "ipa": "/bæŋk/",
+      "mn": "банк",
+      "audio": null
+    },
+    {
+      "en": "market",
+      "ipa": "/ˈmɑːr.kɪt/",
+      "mn": "зах",
+      "audio": null
+    },
+    {
+      "en": "bridge",
+      "ipa": "/brɪdʒ/",
+      "mn": "гүүр",
+      "audio": null
+    },
+    {
+      "en": "office",
+      "ipa": "/ˈɑː.fɪs/",
+      "mn": "оффис",
+      "audio": null
+    }
+  ]
+}

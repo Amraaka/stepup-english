@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-work",
+  "topic": "Ажил",
+  "format": "fix-mistake",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "en": "I work as a driver.",
+      "wrong": "I work like a driver.",
+      "mn": "Би жолоочоор ажилладаг.",
+      "audio": null
+    },
+    {
+      "en": "I am responsible for sales.",
+      "wrong": "I am responsible of sales.",
+      "mn": "Би борлуулалт хариуцдаг.",
+      "audio": null
+    },
+    {
+      "en": "Please send me the file.",
+      "wrong": "Please send to me the file.",
+      "mn": "Файлаа надад явуулаарай.",
+      "audio": null
+    },
+    {
+      "en": "I have a meeting at 3.",
+      "wrong": "I have meeting at 3.",
+      "mn": "Надад 3 цагт хурал байна.",
+      "audio": null
+    },
+    {
+      "en": "She is good at her job.",
+      "wrong": "She is good in her job.",
+      "mn": "Тэр ажилдаа сайн.",
+      "audio": null
+    }
+  ]
+}

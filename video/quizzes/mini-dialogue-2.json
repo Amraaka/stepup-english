@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-2",
+  "topic": "Ярианы хэллэг",
+  "format": "mini-dialogue",
+  "accent": "coral",
+  "look": "night",
+  "items": [
+    {
+      "prompt": "Where are you from?",
+      "en": "I am from Mongolia.",
+      "mn": "Би Монголоос ирсэн.",
+      "audio": "audio/mini-dialogue-2/i-am-from-mongolia.mp3"
+    },
+    {
+      "prompt": "What do you do?",
+      "en": "I am a teacher.",
+      "mn": "Би багш.",
+      "audio": "audio/mini-dialogue-2/i-am-a-teacher.mp3"
+    },
+    {
+      "prompt": "Would you like some coffee?",
+      "en": "Yes, please.",
+      "mn": "Тийм ээ, баярлалаа.",
+      "audio": "audio/mini-dialogue-2/yes-please.mp3"
+    },
+    {
+      "prompt": "See you tomorrow!",
+      "en": "See you!",
+      "mn": "Маргааш уулзъя!",
+      "audio": "audio/mini-dialogue-2/see-you.mp3"
+    },
+    {
+      "prompt": "Could you say that again?",
+      "en": "Sure. I said nine o’clock.",
+      "mn": "Тэгье. Есөн цаг гэж хэлсэн.",
+      "audio": "audio/mini-dialogue-2/sure-i-said-nine-o-clock.mp3"
+    }
+  ]
+}

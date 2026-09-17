@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-food",
+  "topic": "Хоол",
+  "format": "odd-one-out",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "bread",
+        "rice",
+        "pasta",
+        "spoon"
+      ],
+      "en": "spoon",
+      "mn": "Бусад нь хоол",
+      "audio": null
+    },
+    {
+      "options": [
+        "milk",
+        "juice",
+        "tea",
+        "sugar"
+      ],
+      "en": "sugar",
+      "mn": "Бусад нь ундаа",
+      "audio": null
+    },
+    {
+      "options": [
+        "beef",
+        "chicken",
+        "pork",
+        "potato"
+      ],
+      "en": "potato",
+      "mn": "Бусад нь мах",
+      "audio": null
+    },
+    {
+      "options": [
+        "onion",
+        "carrot",
+        "cabbage",
+        "cake"
+      ],
+      "en": "cake",
+      "mn": "Бусад нь ногоо",
+      "audio": null
+    },
+    {
+      "options": [
+        "breakfast",
+        "lunch",
+        "dinner",
+        "kitchen"
+      ],
+      "en": "kitchen",
+      "mn": "Бусад нь хоолны цаг",
+      "audio": null
+    }
+  ]
+}

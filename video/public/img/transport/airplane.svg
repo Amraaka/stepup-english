@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- plan view: fuselage + swept wings + tailplane, one silhouette -->
+    <path d="M100 18c9 0 16 14 17 34l1 22 62 34v18l-62-18-1 24-9 10-8-10-1-24-62 18v-18l62-34 1-22c1-20 8-34 17-34z" fill="#ffe4dd"/>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+{
+  "slug": "unscramble-feelings",
+  "topic": "Сэтгэл хөдлөл",
+  "format": "unscramble",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "en": "angry",
+      "ipa": "/ˈæŋ.ɡri/",
+      "mn": "ууртай",
+      "audio": null
+    },
+    {
+      "en": "tired",
+      "ipa": "/taɪrd/",
+      "mn": "ядарсан",
+      "audio": null
+    },
+    {
+      "en": "proud",
+      "ipa": "/praʊd/",
+      "mn": "бахархсан",
+      "audio": null
+    },
+    {
+      "en": "scared",
+      "ipa": "/skerd/",
+      "mn": "айсан",
+      "audio": null
+    },
+    {
+      "en": "lonely",
+      "ipa": "/ˈloʊn.li/",
+      "mn": "ганцаардсан",
+      "audio": null
+    }
+  ]
+}

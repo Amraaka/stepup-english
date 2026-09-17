@@ -1,0 +1,30 @@
+{
+  "slug": "my-quiz",
+  "topic": "Нөхөж бичих",
+  "format": "gap-fill",
+  "accent": "mint",
+  "items": [
+    {
+      "en": "I am good at cooking.",
+      "sentence": "I am good ___ cooking.",
+      "options": [
+        "at",
+        "in",
+        "on"
+      ],
+      "mn": "Би хоол хийхдээ сайн.",
+      "audio": null
+    },
+    {
+      "en": "She arrived on Monday.",
+      "sentence": "She arrived ___ Monday.",
+      "options": [
+        "on",
+        "at",
+        "in"
+      ],
+      "mn": "Тэр даваа гарагт ирсэн.",
+      "audio": null
+    }
+  ]
+}

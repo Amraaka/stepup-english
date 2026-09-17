@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-h",
+  "topic": "Дуугүй H",
+  "format": "silent-letter",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "ghost",
+      "silentIndex": 1,
+      "ipa": "/ɡoʊst/",
+      "mn": "сүнс",
+      "audio": null
+    },
+    {
+      "en": "school",
+      "silentIndex": 2,
+      "ipa": "/skuːl/",
+      "mn": "сургууль",
+      "audio": null
+    },
+    {
+      "en": "what",
+      "silentIndex": 1,
+      "ipa": "/wʌt/",
+      "mn": "юу",
+      "audio": null
+    },
+    {
+      "en": "white",
+      "silentIndex": 1,
+      "ipa": "/waɪt/",
+      "mn": "цагаан",
+      "audio": null
+    },
+    {
+      "en": "rhythm",
+      "silentIndex": 1,
+      "ipa": "/ˈrɪð.əm/",
+      "mn": "хэмнэл",
+      "audio": null
+    }
+  ]
+}

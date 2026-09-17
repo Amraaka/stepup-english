@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-money",
+  "topic": "Мөнгө",
+  "format": "opposites",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "save",
+      "en": "spend",
+      "ipa": "/spend/",
+      "mn": "зарцуулах",
+      "audio": null
+    },
+    {
+      "prompt": "profit",
+      "en": "loss",
+      "ipa": "/lɑːs/",
+      "mn": "алдагдал",
+      "audio": null
+    },
+    {
+      "prompt": "expensive",
+      "en": "cheap",
+      "ipa": "/tʃiːp/",
+      "mn": "хямд",
+      "audio": null
+    },
+    {
+      "prompt": "income",
+      "en": "expense",
+      "ipa": "/ɪkˈspens/",
+      "mn": "зарлага",
+      "audio": null
+    },
+    {
+      "prompt": "lend",
+      "en": "borrow",
+      "ipa": "/ˈbɑːr.oʊ/",
+      "mn": "зээлэх",
+      "audio": null
+    }
+  ]
+}

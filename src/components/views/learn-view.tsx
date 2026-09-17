@@ -90,10 +90,25 @@ export function LearnView() {
             className="flex flex-col items-center"
             style={{ transform: `translateX(${OFFSETS[i + 1]}px)` }}
           >
-            <span className="press grid size-18 place-items-center rounded-full bg-locked text-ink-400 [--press:var(--locked-deep)]">
-              <SkillIcon id={s.id} className="size-7" />
-            </span>
-            <p className="mt-2.5 text-xs font-bold text-muted">{s.name} · тун удахгүй</p>
+            {s.live ? (
+              <>
+                <Link
+                  href={s.href}
+                  aria-label={s.name}
+                  className={`press grid size-18 place-items-center rounded-full text-ink-950 ${TONE[s.tone].solid} ${TONE[s.tone].press}`}
+                >
+                  <SkillIcon id={s.id} className="size-7" />
+                </Link>
+                <p className="mt-2.5 text-xs font-extrabold">{s.name}</p>
+              </>
+            ) : (
+              <>
+                <span className="press grid size-18 place-items-center rounded-full bg-locked text-ink-400 [--press:var(--locked-deep)]">
+                  <SkillIcon id={s.id} className="size-7" />
+                </span>
+                <p className="mt-2.5 text-xs font-bold text-muted">{s.name} · тун удахгүй</p>
+              </>
+            )}
           </li>
         ))}
 

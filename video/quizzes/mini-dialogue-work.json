@@ -1,0 +1,39 @@
+{
+  "slug": "mini-dialogue-work",
+  "topic": "Ажил",
+  "format": "mini-dialogue",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "How was the meeting?",
+      "en": "It went well.",
+      "mn": "Сайн болсон.",
+      "audio": "audio/mini-dialogue-work/it-went-well.mp3"
+    },
+    {
+      "prompt": "Can you finish this by Friday?",
+      "en": "Yes, no problem.",
+      "mn": "Тийм, асуудалгүй.",
+      "audio": "audio/mini-dialogue-work/yes-no-problem.mp3"
+    },
+    {
+      "prompt": "Do you have a minute?",
+      "en": "Sure, what's up?",
+      "mn": "Тэгье, юу болов?",
+      "audio": "audio/mini-dialogue-work/sure-what-s-up.mp3"
+    },
+    {
+      "prompt": "Great job on the report!",
+      "en": "Thanks, I worked hard on it.",
+      "mn": "Баярлалаа, их хичээсэн.",
+      "audio": "audio/mini-dialogue-work/thanks-i-worked-hard-on-it.mp3"
+    },
+    {
+      "prompt": "Are you free tomorrow?",
+      "en": "Sorry, I'm busy all day.",
+      "mn": "Уучлаарай, өдөржин завгүй.",
+      "audio": "audio/mini-dialogue-work/sorry-i-m-busy-all-day.mp3"
+    }
+  ]
+}

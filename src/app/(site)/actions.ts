@@ -2,14 +2,10 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { getDashboardStats, getProfile, logStudySession, logTimedSession } from "@/lib/activity";
+import { getDashboardStats, getProfile, logStudySession } from "@/lib/activity";
 import { ACTIVITY_MODULES, type ActivityModule } from "@/db/schema";
-import { getClip } from "@/lib/listening/clips";
-import { getLesson } from "@/lib/grammar/lessons";
-import { MIN_TIMED_SEC, type TimedTarget, type TrackerStats } from "@/lib/tracker";
-
-/** Longest review or shadowing session one flush may claim, in seconds. */
-const MAX_SESSION_SEC = 3600;
+import { recordTimed } from "@/lib/timed";
+import type { TimedTarget, TrackerStats } from "@/lib/tracker";
 
 /** Logs time a module measured (listening, word review); returns fresh stats, or null if rejected. */
 export async function logTimedAction(target: TimedTarget, seconds: number): Promise<TrackerStats | null> {
@@ -17,29 +13,8 @@ export async function logTimedAction(target: TimedTarget, seconds: number): Prom
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user || !Number.isFinite(seconds) || seconds < MIN_TIMED_SEC) return null;
-
-  let cap: number;
-  if (target.module === "listening") {
-    const clip = getClip(target.ref);
-    if (!clip) return null;
-    // Replaying is fine, but one flush can't claim more than twice the clip.
-    cap = clip.durationSec * 2;
-  } else if (target.module === "speaking") {
-    // Shadowing repeats every sentence, so it can run longer than the clip.
-    if (!getClip(target.ref)) return null;
-    cap = MAX_SESSION_SEC;
-  } else if (target.module === "grammar") {
-    // A lesson (reading or its practice) or the mistake review.
-    if (target.ref !== "review" && !getLesson(target.ref)) return null;
-    cap = MAX_SESSION_SEC;
-  } else if (target.module === "vocabulary" && target.ref === "review") {
-    cap = MAX_SESSION_SEC;
-  } else {
-    return null;
-  }
-
-  await logTimedSession({ userId: user.id, module: target.module, seconds: Math.min(seconds, cap), ref: target.ref });
+  // The target comes from the client; `recordTimed` checks its shape and caps (ADR 0015).
+  if (!user || !(await recordTimed(user.id, target, seconds))) return null;
   const profile = await getProfile(user.id);
   revalidatePath("/", "layout");
   return getDashboardStats(user.id, profile?.timezone ?? "Asia/Ulaanbaatar");
@@ -61,7 +36,7 @@ export async function logStudyAction(
     : "general";
   if (!Number.isFinite(durationMin) || durationMin <= 0) return null;
 
-  await logStudySession({ userId: user.id, module: mod, durationMin });
+  if (!(await logStudySession({ userId: user.id, module: mod, durationMin }))) return null;
   const profile = await getProfile(user.id);
   revalidatePath("/", "layout");
   return getDashboardStats(user.id, profile?.timezone ?? "Asia/Ulaanbaatar");

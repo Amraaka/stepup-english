@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-countries",
+  "topic": "Улс",
+  "format": "word-stress",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "en": "Mongolia",
+      "syllables": [
+        "Mon",
+        "go",
+        "li",
+        "a"
+      ],
+      "stressIndex": 1,
+      "ipa": "/mɑːŋˈɡoʊ.li.ə/",
+      "mn": "Монгол",
+      "audio": "audio/word-stress-countries/mongolia.mp3"
+    },
+    {
+      "en": "Japan",
+      "syllables": [
+        "Ja",
+        "pan"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dʒəˈpæn/",
+      "mn": "Япон",
+      "audio": "audio/word-stress-countries/japan.mp3"
+    },
+    {
+      "en": "Canada",
+      "syllables": [
+        "Ca",
+        "na",
+        "da"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈkæn.ə.də/",
+      "mn": "Канад",
+      "audio": "audio/word-stress-countries/canada.mp3"
+    },
+    {
+      "en": "Korea",
+      "syllables": [
+        "Ko",
+        "re",
+        "a"
+      ],
+      "stressIndex": 1,
+      "ipa": "/kəˈriː.ə/",
+      "mn": "Солонгос",
+      "audio": "audio/word-stress-countries/korea.mp3"
+    },
+    {
+      "en": "Germany",
+      "syllables": [
+        "Ger",
+        "ma",
+        "ny"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈdʒɝː.mə.ni/",
+      "mn": "Герман",
+      "audio": "audio/word-stress-countries/germany.mp3"
+    }
+  ]
+}

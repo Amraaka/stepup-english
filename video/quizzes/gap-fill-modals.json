@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-modals",
+  "topic": "Модаль үг",
+  "format": "gap-fill",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "en": "You can't smoke here. It's not allowed.",
+      "sentence": "You ___ smoke here. It's not allowed.",
+      "options": [
+        "can't",
+        "must",
+        "should"
+      ],
+      "mn": "Энд тамхи татаж болохгүй.",
+      "audio": "audio/gap-fill-modals/you-can-t-smoke-here-it-s-not-allowed.mp3"
+    },
+    {
+      "en": "Can I open the window?",
+      "sentence": "___ I open the window?",
+      "options": [
+        "Can",
+        "Must",
+        "Am"
+      ],
+      "mn": "Цонх онгойлгож болох уу?",
+      "audio": "audio/gap-fill-modals/can-i-open-the-window.mp3"
+    },
+    {
+      "en": "You look tired. You should rest.",
+      "sentence": "You look tired. You ___ rest.",
+      "options": [
+        "should",
+        "can't",
+        "mustn't"
+      ],
+      "mn": "Чи ядарсан харагдаж байна. Амрах хэрэгтэй.",
+      "audio": "audio/gap-fill-modals/you-look-tired-you-should-rest.mp3"
+    },
+    {
+      "en": "I could swim when I was five.",
+      "sentence": "I ___ swim when I was five.",
+      "options": [
+        "could",
+        "can",
+        "must"
+      ],
+      "mn": "Би таван настайдаа сэлж чаддаг байсан.",
+      "audio": "audio/gap-fill-modals/i-could-swim-when-i-was-five.mp3"
+    },
+    {
+      "en": "It might rain later, so take an umbrella.",
+      "sentence": "It ___ rain later, so take an umbrella.",
+      "options": [
+        "might",
+        "must",
+        "can't"
+      ],
+      "mn": "Дараа нь бороо орж магадгүй, шүхрээ ав.",
+      "audio": "audio/gap-fill-modals/it-might-rain-later-so-take-an-umbrella.mp3"
+    }
+  ]
+}

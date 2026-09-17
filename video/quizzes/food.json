@@ -1,0 +1,48 @@
+{
+  "slug": "food",
+  "topic": "Хоол хүнс",
+  "accent": "sun",
+  "style": "hand-authored SVG: single continuous silhouette, ink #1a1a1f outline, flat fill, transparent background",
+  "items": [
+    {
+      "en": "bread",
+      "mn": "талх",
+      "ipa": "/bred/",
+      "imagePrompt": "a loaf of bread",
+      "image": "img/food/bread.svg",
+      "audio": "audio/food/bread.mp3"
+    },
+    {
+      "en": "egg",
+      "mn": "өндөг",
+      "ipa": "/eg/",
+      "imagePrompt": "a single egg",
+      "image": "img/food/egg.svg",
+      "audio": "audio/food/egg.mp3"
+    },
+    {
+      "en": "milk",
+      "mn": "сүү",
+      "ipa": "/mɪlk/",
+      "imagePrompt": "a gable-top milk carton",
+      "image": "img/food/milk.svg",
+      "audio": "audio/food/milk.mp3"
+    },
+    {
+      "en": "cheese",
+      "mn": "бяслаг",
+      "ipa": "/tʃiːz/",
+      "imagePrompt": "a wedge of cheese with holes",
+      "image": "img/food/cheese.svg",
+      "audio": "audio/food/cheese.mp3"
+    },
+    {
+      "en": "apple",
+      "mn": "алим",
+      "ipa": "/ˈæp.əl/",
+      "imagePrompt": "a single apple with a leaf",
+      "image": "img/food/apple.svg",
+      "audio": "audio/food/apple.mp3"
+    }
+  ]
+}

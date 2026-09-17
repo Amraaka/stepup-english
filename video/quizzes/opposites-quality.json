@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-quality",
+  "topic": "Чанар",
+  "format": "opposites",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "easy",
+      "en": "difficult",
+      "ipa": "/ˈdɪf.ə.kəlt/",
+      "mn": "хэцүү",
+      "audio": "audio/opposites-quality/difficult.mp3"
+    },
+    {
+      "prompt": "clean",
+      "en": "dirty",
+      "ipa": "/ˈdɝː.ti/",
+      "mn": "бохир",
+      "audio": "audio/opposites-quality/dirty.mp3"
+    },
+    {
+      "prompt": "safe",
+      "en": "dangerous",
+      "ipa": "/ˈdeɪn.dʒɚ.əs/",
+      "mn": "аюултай",
+      "audio": "audio/opposites-quality/dangerous.mp3"
+    },
+    {
+      "prompt": "right",
+      "en": "wrong",
+      "ipa": "/rɔːŋ/",
+      "mn": "буруу",
+      "audio": "audio/opposites-quality/wrong.mp3"
+    },
+    {
+      "prompt": "strong",
+      "en": "weak",
+      "ipa": "/wiːk/",
+      "mn": "сул",
+      "audio": "audio/opposites-quality/weak.mp3"
+    }
+  ]
+}

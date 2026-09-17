@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-articles",
+  "topic": "A, an, the",
+  "format": "gap-fill",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "en": "I saw an elephant.",
+      "sentence": "I saw ___ elephant.",
+      "options": [
+        "an",
+        "a",
+        "the"
+      ],
+      "mn": "Би заан харсан.",
+      "audio": "audio/gap-fill-articles/i-saw-an-elephant.mp3"
+    },
+    {
+      "en": "The moon is bright tonight.",
+      "sentence": "___ moon is bright tonight.",
+      "options": [
+        "The",
+        "A",
+        "An"
+      ],
+      "mn": "Өнөө орой сар гэрэлтэй байна.",
+      "audio": "audio/gap-fill-articles/the-moon-is-bright-tonight.mp3"
+    },
+    {
+      "en": "She bought a new phone.",
+      "sentence": "She bought ___ new phone.",
+      "options": [
+        "a",
+        "an",
+        "the"
+      ],
+      "mn": "Тэр шинэ утас авсан.",
+      "audio": "audio/gap-fill-articles/she-bought-a-new-phone.mp3"
+    },
+    {
+      "en": "It takes an hour.",
+      "sentence": "It takes ___ hour.",
+      "options": [
+        "an",
+        "a",
+        "the"
+      ],
+      "mn": "Нэг цаг зарцуулна.",
+      "audio": "audio/gap-fill-articles/it-takes-an-hour.mp3"
+    },
+    {
+      "en": "Please close the door.",
+      "sentence": "Please close ___ door.",
+      "options": [
+        "the",
+        "a",
+        "an"
+      ],
+      "mn": "Хаалгаа хаагаарай.",
+      "audio": "audio/gap-fill-articles/please-close-the-door.mp3"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-verbs",
+  "topic": "Үйл үг",
+  "format": "opposites",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "prompt": "open",
+      "en": "close",
+      "ipa": "/kloʊz/",
+      "mn": "хаах",
+      "audio": "audio/opposites-verbs/close.mp3"
+    },
+    {
+      "prompt": "buy",
+      "en": "sell",
+      "ipa": "/sel/",
+      "mn": "зарах",
+      "audio": "audio/opposites-verbs/sell.mp3"
+    },
+    {
+      "prompt": "win",
+      "en": "lose",
+      "ipa": "/luːz/",
+      "mn": "хожигдох",
+      "audio": "audio/opposites-verbs/lose.mp3"
+    },
+    {
+      "prompt": "push",
+      "en": "pull",
+      "ipa": "/pʊl/",
+      "mn": "татах",
+      "audio": "audio/opposites-verbs/pull.mp3"
+    },
+    {
+      "prompt": "start",
+      "en": "finish",
+      "ipa": "/ˈfɪn.ɪʃ/",
+      "mn": "дуусгах",
+      "audio": "audio/opposites-verbs/finish.mp3"
+    }
+  ]
+}

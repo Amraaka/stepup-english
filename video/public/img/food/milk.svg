@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v2: a gable-top carton is signalled by the folded peak + the ridge seam across
+       the top, not by a bare triangle on a box. v1 read as a pencil/house. -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- body -->
+    <path d="M62 92h76v62a8 8 0 0 1-8 8H70a8 8 0 0 1-8-8z" fill="#e8eef5"/>
+    <!-- folded gable: two slanted faces meeting at the ridge -->
+    <path d="M62 92 88 56h24l26 36z" fill="#e8eef5"/>
+    <!-- ridge seam along the top -->
+    <path d="M88 56h24" stroke-width="7"/>
+    <!-- fold crease down the front of the gable -->
+    <path d="M100 92V56" stroke-width="4"/>
+    <!-- label -->
+    <path d="M62 112h76v24H62z" fill="#4a8fd4"/>
+  </g>
+</svg>

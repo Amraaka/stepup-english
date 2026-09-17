@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- house body, drawn faint so the roof is the subject -->
+    <path d="M52 110h96v56H52z" fill="#ffefc7"/>
+    <!-- roof: the emphasised element, overhanging both sides -->
+    <path d="M100 34 176 110H24z" fill="#f5a300"/>
+    <!-- chimney -->
+    <path d="M136 56h18v26h-18z" fill="#f5a300"/>
+  </g>
+</svg>

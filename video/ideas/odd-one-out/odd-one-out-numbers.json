@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-numbers",
+  "topic": "Тоо, хэмжээ",
+  "format": "odd-one-out",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "options": [
+        "one",
+        "two",
+        "three",
+        "blue"
+      ],
+      "en": "blue",
+      "mn": "Бусад нь тоо",
+      "audio": null
+    },
+    {
+      "options": [
+        "first",
+        "second",
+        "third",
+        "four"
+      ],
+      "en": "four",
+      "mn": "Бусад нь дэс тоо",
+      "audio": null
+    },
+    {
+      "options": [
+        "hundred",
+        "thousand",
+        "million",
+        "many"
+      ],
+      "en": "many",
+      "mn": "Бусад нь тоо",
+      "audio": null
+    },
+    {
+      "options": [
+        "minute",
+        "hour",
+        "second",
+        "meter"
+      ],
+      "en": "meter",
+      "mn": "Бусад нь цаг хугацааны нэгж",
+      "audio": null
+    },
+    {
+      "options": [
+        "kilogram",
+        "gram",
+        "ton",
+        "liter"
+      ],
+      "en": "liter",
+      "mn": "Бусад нь жингийн нэгж",
+      "audio": null
+    }
+  ]
+}

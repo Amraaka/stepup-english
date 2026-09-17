@@ -1,0 +1,44 @@
+{
+  "slug": "unscramble-kitchen",
+  "topic": "Гал тогоо",
+  "format": "unscramble",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "spoon",
+      "image": "img/kitchen/spoon.svg",
+      "ipa": "/spuːn/",
+      "mn": "халбага",
+      "audio": "audio/unscramble-kitchen/spoon.mp3"
+    },
+    {
+      "en": "fork",
+      "image": "img/kitchen/fork.svg",
+      "ipa": "/fɔːrk/",
+      "mn": "сэрээ",
+      "audio": "audio/unscramble-kitchen/fork.mp3"
+    },
+    {
+      "en": "knife",
+      "image": "img/kitchen/knife.svg",
+      "ipa": "/naɪf/",
+      "mn": "хутга",
+      "audio": "audio/unscramble-kitchen/knife.mp3"
+    },
+    {
+      "en": "plate",
+      "image": "img/kitchen/plate.svg",
+      "ipa": "/pleɪt/",
+      "mn": "таваг",
+      "audio": "audio/unscramble-kitchen/plate.mp3"
+    },
+    {
+      "en": "kettle",
+      "image": "img/kitchen/kettle.svg",
+      "ipa": "/ˈket.əl/",
+      "mn": "данх",
+      "audio": "audio/unscramble-kitchen/kettle.mp3"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-tenses",
+  "topic": "Цаг",
+  "format": "gap-fill",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "She is watching TV right now.",
+      "sentence": "She ___ TV right now.",
+      "options": [
+        "is watching",
+        "watches",
+        "watched"
+      ],
+      "mn": "Тэр одоо зурагт үзэж байна.",
+      "audio": null
+    },
+    {
+      "en": "I saw him yesterday.",
+      "sentence": "I ___ him yesterday.",
+      "options": [
+        "saw",
+        "see",
+        "have seen"
+      ],
+      "mn": "Би түүнийг өчигдөр харсан.",
+      "audio": null
+    },
+    {
+      "en": "We have lived here for ten years.",
+      "sentence": "We ___ here for ten years.",
+      "options": [
+        "have lived",
+        "live",
+        "are living"
+      ],
+      "mn": "Бид энд арван жил амьдарсан.",
+      "audio": null
+    },
+    {
+      "en": "He goes to work every day.",
+      "sentence": "He ___ to work every day.",
+      "options": [
+        "goes",
+        "go",
+        "is going"
+      ],
+      "mn": "Тэр өдөр бүр ажилдаа явдаг.",
+      "audio": null
+    },
+    {
+      "en": "I will call you tomorrow.",
+      "sentence": "I ___ you tomorrow.",
+      "options": [
+        "will call",
+        "called",
+        "call"
+      ],
+      "mn": "Би чам руу маргааш залгана.",
+      "audio": null
+    }
+  ]
+}

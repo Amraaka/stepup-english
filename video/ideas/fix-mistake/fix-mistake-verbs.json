@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-verbs",
+  "topic": "Үйл үг",
+  "format": "fix-mistake",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "Can you explain this to me?",
+      "wrong": "Can you explain me this?",
+      "mn": "Үүнийг надад тайлбарлаж өгөөч.",
+      "audio": null
+    },
+    {
+      "en": "I want to go home.",
+      "wrong": "I want go home.",
+      "mn": "Би гэртээ харимаар байна.",
+      "audio": null
+    },
+    {
+      "en": "She enjoys reading.",
+      "wrong": "She enjoys to read.",
+      "mn": "Тэр ном унших дуртай.",
+      "audio": null
+    },
+    {
+      "en": "Let me help you.",
+      "wrong": "Let me to help you.",
+      "mn": "Би чамд тусалъя.",
+      "audio": null
+    },
+    {
+      "en": "He made me laugh.",
+      "wrong": "He made me to laugh.",
+      "mn": "Тэр намайг инээлгэсэн.",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-size",
+  "topic": "Хэмжээ",
+  "format": "opposites",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "big",
+      "en": "small",
+      "ipa": "/smɔːl/",
+      "mn": "жижиг",
+      "audio": "audio/opposites-size/small.mp3"
+    },
+    {
+      "prompt": "tall",
+      "en": "short",
+      "ipa": "/ʃɔːrt/",
+      "mn": "намхан",
+      "audio": "audio/opposites-size/short.mp3"
+    },
+    {
+      "prompt": "wide",
+      "en": "narrow",
+      "ipa": "/ˈner.oʊ/",
+      "mn": "нарийн",
+      "audio": "audio/opposites-size/narrow.mp3"
+    },
+    {
+      "prompt": "heavy",
+      "en": "light",
+      "ipa": "/laɪt/",
+      "mn": "хөнгөн",
+      "audio": "audio/opposites-size/light.mp3"
+    },
+    {
+      "prompt": "thick",
+      "en": "thin",
+      "ipa": "/θɪn/",
+      "mn": "нимгэн",
+      "audio": "audio/opposites-size/thin.mp3"
+    }
+  ]
+}

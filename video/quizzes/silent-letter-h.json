@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-h",
+  "topic": "Дуугүй H",
+  "format": "silent-letter",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "ghost",
+      "silentIndex": 1,
+      "ipa": "/ɡoʊst/",
+      "mn": "сүнс",
+      "audio": "audio/silent-letter-h/ghost.mp3"
+    },
+    {
+      "en": "school",
+      "silentIndex": 2,
+      "ipa": "/skuːl/",
+      "mn": "сургууль",
+      "audio": "audio/silent-letter-h/school.mp3"
+    },
+    {
+      "en": "what",
+      "silentIndex": 1,
+      "ipa": "/wʌt/",
+      "mn": "юу",
+      "audio": "audio/silent-letter-h/what.mp3"
+    },
+    {
+      "en": "white",
+      "silentIndex": 1,
+      "ipa": "/waɪt/",
+      "mn": "цагаан",
+      "audio": "audio/silent-letter-h/white.mp3"
+    },
+    {
+      "en": "rhythm",
+      "silentIndex": 1,
+      "ipa": "/ˈrɪð.əm/",
+      "mn": "хэмнэл",
+      "audio": "audio/silent-letter-h/rhythm.mp3"
+    }
+  ]
+}

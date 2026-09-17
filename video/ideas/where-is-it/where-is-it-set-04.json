@@ -1,0 +1,64 @@
+{
+  "slug": "where-is-it-set-04",
+  "topic": "Угтвар үг",
+  "format": "where-is-it",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "en": "The ball is above the table.",
+      "answer": "above",
+      "options": [
+        "above",
+        "under",
+        "in front of"
+      ],
+      "mn": "Бөмбөг ширээн дээгүүр байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is in front of the table.",
+      "answer": "in front of",
+      "options": [
+        "in front of",
+        "above",
+        "under"
+      ],
+      "mn": "Бөмбөг ширээний өмнө байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is in the box.",
+      "answer": "in",
+      "options": [
+        "in",
+        "between",
+        "next to"
+      ],
+      "mn": "Бөмбөг хайрцган дотор байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is under the table.",
+      "answer": "under",
+      "options": [
+        "under",
+        "in",
+        "next to"
+      ],
+      "mn": "Бөмбөг ширээн доор байна.",
+      "audio": null
+    },
+    {
+      "en": "The ball is next to the table.",
+      "answer": "next to",
+      "options": [
+        "next to",
+        "between",
+        "on"
+      ],
+      "mn": "Бөмбөг ширээний хажууд байна.",
+      "audio": null
+    }
+  ]
+}

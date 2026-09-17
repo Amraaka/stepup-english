@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-feelings",
+  "topic": "Сэтгэл хөдлөл",
+  "format": "opposites",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "happy",
+      "en": "sad",
+      "ipa": "/sæd/",
+      "mn": "гунигтай",
+      "audio": null
+    },
+    {
+      "prompt": "love",
+      "en": "hate",
+      "ipa": "/heɪt/",
+      "mn": "үзэн ядах",
+      "audio": null
+    },
+    {
+      "prompt": "calm",
+      "en": "nervous",
+      "ipa": "/ˈnɝː.vəs/",
+      "mn": "сандарсан",
+      "audio": null
+    },
+    {
+      "prompt": "brave",
+      "en": "afraid",
+      "ipa": "/əˈfreɪd/",
+      "mn": "айсан",
+      "audio": null
+    },
+    {
+      "prompt": "interested",
+      "en": "bored",
+      "ipa": "/bɔːrd/",
+      "mn": "уйдсан",
+      "audio": null
+    }
+  ]
+}

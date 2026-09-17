@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-people",
+  "topic": "Хүн",
+  "format": "opposites",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "prompt": "young",
+      "en": "old",
+      "ipa": "/oʊld/",
+      "mn": "хөгшин",
+      "audio": null
+    },
+    {
+      "prompt": "rich",
+      "en": "poor",
+      "ipa": "/pʊr/",
+      "mn": "ядуу",
+      "audio": null
+    },
+    {
+      "prompt": "friend",
+      "en": "enemy",
+      "ipa": "/ˈen.ə.mi/",
+      "mn": "дайсан",
+      "audio": null
+    },
+    {
+      "prompt": "kind",
+      "en": "cruel",
+      "ipa": "/ˈkruː.əl/",
+      "mn": "хэрцгий",
+      "audio": null
+    },
+    {
+      "prompt": "hard-working",
+      "en": "lazy",
+      "ipa": "/ˈleɪ.zi/",
+      "mn": "залхуу",
+      "audio": null
+    }
+  ]
+}

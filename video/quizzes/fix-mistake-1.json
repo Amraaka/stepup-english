@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-1",
+  "topic": "Түгээмэл алдаа",
+  "format": "fix-mistake",
+  "question": "Зөв нь аль нь вэ?",
+  "accent": "coral",
+  "items": [
+    {
+      "en": "I really like it.",
+      "wrong": "I very like it.",
+      "mn": "Надад үнэхээр таалагдаж байна.",
+      "audio": "audio/fix-mistake-1/i-really-like-it-.mp3"
+    },
+    {
+      "en": "I am interested in music.",
+      "wrong": "I am interesting in music.",
+      "mn": "Би хөгжим сонирхдог.",
+      "audio": "audio/fix-mistake-1/i-am-interested-in-music-.mp3"
+    },
+    {
+      "en": "She has lived here for five years.",
+      "wrong": "She lives here since five years.",
+      "mn": "Тэр энд таван жил амьдарсан.",
+      "audio": "audio/fix-mistake-1/she-has-lived-here-for-five-years-.mp3"
+    },
+    {
+      "en": "I go to work by bus.",
+      "wrong": "I go to work with bus.",
+      "mn": "Би автобусаар ажилдаа явдаг.",
+      "audio": "audio/fix-mistake-1/i-go-to-work-by-bus-.mp3"
+    },
+    {
+      "en": "He said he was tired.",
+      "wrong": "He said he is tired.",
+      "mn": "Тэр ядарсан гэж хэлсэн.",
+      "audio": "audio/fix-mistake-1/he-said-he-was-tired-.mp3"
+    }
+  ]
+}

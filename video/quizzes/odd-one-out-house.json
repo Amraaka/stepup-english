@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-house",
+  "topic": "Гэр",
+  "format": "odd-one-out",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "sofa",
+        "bed",
+        "chair",
+        "river"
+      ],
+      "en": "river",
+      "mn": "Бусад нь тавилга",
+      "audio": "audio/odd-one-out-house/river.mp3"
+    },
+    {
+      "options": [
+        "kitchen",
+        "bedroom",
+        "bathroom",
+        "garden"
+      ],
+      "en": "garden",
+      "mn": "Бусад нь өрөө",
+      "audio": "audio/odd-one-out-house/garden.mp3"
+    },
+    {
+      "options": [
+        "fridge",
+        "oven",
+        "microwave",
+        "pillow"
+      ],
+      "en": "pillow",
+      "mn": "Бусад нь гал тогооны техник",
+      "audio": "audio/odd-one-out-house/pillow.mp3"
+    },
+    {
+      "options": [
+        "door",
+        "window",
+        "wall",
+        "cloud"
+      ],
+      "en": "cloud",
+      "mn": "Бусад нь байшингийн хэсэг",
+      "audio": "audio/odd-one-out-house/cloud.mp3"
+    },
+    {
+      "options": [
+        "plate",
+        "cup",
+        "bowl",
+        "blanket"
+      ],
+      "en": "blanket",
+      "mn": "Бусад нь аяга таваг",
+      "audio": "audio/odd-one-out-house/blanket.mp3"
+    }
+  ]
+}

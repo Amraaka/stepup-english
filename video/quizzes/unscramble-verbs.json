@@ -1,0 +1,39 @@
+{
+  "slug": "unscramble-verbs",
+  "topic": "Үйл үг",
+  "format": "unscramble",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "travel",
+      "ipa": "/ˈtræv.əl/",
+      "mn": "аялах",
+      "audio": "audio/unscramble-verbs/travel.mp3"
+    },
+    {
+      "en": "forget",
+      "ipa": "/fɚˈɡet/",
+      "mn": "мартах",
+      "audio": "audio/unscramble-verbs/forget.mp3"
+    },
+    {
+      "en": "learn",
+      "ipa": "/lɝːn/",
+      "mn": "сурах",
+      "audio": "audio/unscramble-verbs/learn.mp3"
+    },
+    {
+      "en": "carry",
+      "ipa": "/ˈker.i/",
+      "mn": "зөөх",
+      "audio": "audio/unscramble-verbs/carry.mp3"
+    },
+    {
+      "en": "answer",
+      "ipa": "/ˈæn.sɚ/",
+      "mn": "хариулах",
+      "audio": "audio/unscramble-verbs/answer.mp3"
+    }
+  ]
+}

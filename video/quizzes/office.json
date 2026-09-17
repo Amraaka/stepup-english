@@ -1,0 +1,48 @@
+{
+  "slug": "office",
+  "topic": "Оффисын хэрэгсэл",
+  "accent": "violet",
+  "style": "watercolor and ink sketch of a single object, soft grey tones with one warm accent, the object drawn cleanly and centered, the background is flat empty uniform pure white #ffffff with nothing painted on it, no background wash, no shadow, no scenery, no frame, no text, no logos",
+  "items": [
+    {
+      "en": "stapler",
+      "mn": "степлер",
+      "ipa": "/ˈsteɪ.plɚ/",
+      "imagePrompt": "a desktop stapler seen from the side",
+      "image": "img/office/stapler.png",
+      "audio": "audio/office/stapler.mp3"
+    },
+    {
+      "en": "scissors",
+      "mn": "хайч",
+      "ipa": "/ˈsɪz.ɚz/",
+      "imagePrompt": "a pair of open scissors",
+      "image": "img/office/scissors.png",
+      "audio": "audio/office/scissors.mp3"
+    },
+    {
+      "en": "eraser",
+      "mn": "баллуур",
+      "ipa": "/ɪˈreɪ.sɚ/",
+      "imagePrompt": "a small rectangular pencil eraser",
+      "image": "img/office/eraser.png",
+      "audio": "audio/office/eraser.mp3"
+    },
+    {
+      "en": "folder",
+      "mn": "хавтас",
+      "ipa": "/ˈfoʊl.dɚ/",
+      "imagePrompt": "a closed cardboard document folder",
+      "image": "img/office/folder.png",
+      "audio": "audio/office/folder.mp3"
+    },
+    {
+      "en": "notebook",
+      "mn": "дэвтэр",
+      "ipa": "/ˈnoʊt.bʊk/",
+      "imagePrompt": "a closed spiral notebook",
+      "image": "img/office/notebook.png",
+      "audio": "audio/office/notebook.mp3"
+    }
+  ]
+}

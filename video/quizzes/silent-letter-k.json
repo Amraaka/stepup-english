@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-k",
+  "topic": "Дуугүй K",
+  "format": "silent-letter",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "knee",
+      "silentIndex": 0,
+      "ipa": "/niː/",
+      "mn": "өвдөг",
+      "audio": "audio/silent-letter-k/knee.mp3"
+    },
+    {
+      "en": "know",
+      "silentIndex": 0,
+      "ipa": "/noʊ/",
+      "mn": "мэдэх",
+      "audio": "audio/silent-letter-k/know.mp3"
+    },
+    {
+      "en": "knock",
+      "silentIndex": 0,
+      "ipa": "/nɑːk/",
+      "mn": "тогших",
+      "audio": "audio/silent-letter-k/knock.mp3"
+    },
+    {
+      "en": "knot",
+      "silentIndex": 0,
+      "ipa": "/nɑːt/",
+      "mn": "зангилаа",
+      "audio": "audio/silent-letter-k/knot.mp3"
+    },
+    {
+      "en": "knit",
+      "silentIndex": 0,
+      "ipa": "/nɪt/",
+      "mn": "нэхэх",
+      "audio": "audio/silent-letter-k/knit.mp3"
+    }
+  ]
+}

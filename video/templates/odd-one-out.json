@@ -1,0 +1,30 @@
+{
+  "slug": "my-quiz",
+  "topic": "Илүүц үг",
+  "format": "odd-one-out",
+  "accent": "coral",
+  "items": [
+    {
+      "options": [
+        "apple",
+        "banana",
+        "carrot",
+        "grape"
+      ],
+      "en": "carrot",
+      "mn": "Бусад нь жимс",
+      "audio": null
+    },
+    {
+      "options": [
+        "red",
+        "blue",
+        "happy",
+        "green"
+      ],
+      "en": "happy",
+      "mn": "Бусад нь өнгө",
+      "audio": null
+    }
+  ]
+}

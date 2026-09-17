@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-weather",
+  "topic": "Цаг агаар",
+  "format": "opposites",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "prompt": "hot",
+      "en": "cold",
+      "ipa": "/koʊld/",
+      "mn": "хүйтэн",
+      "audio": null
+    },
+    {
+      "prompt": "wet",
+      "en": "dry",
+      "ipa": "/draɪ/",
+      "mn": "хуурай",
+      "audio": null
+    },
+    {
+      "prompt": "sunny",
+      "en": "cloudy",
+      "ipa": "/ˈklaʊ.di/",
+      "mn": "үүлэрхэг",
+      "audio": null
+    },
+    {
+      "prompt": "warm",
+      "en": "cool",
+      "ipa": "/kuːl/",
+      "mn": "сэрүүн",
+      "audio": null
+    },
+    {
+      "prompt": "bright",
+      "en": "dark",
+      "ipa": "/dɑːrk/",
+      "mn": "харанхуй",
+      "audio": null
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "transport",
+  "topic": "Тээврийн хэрэгсэл",
+  "accent": "coral",
+  "style": "hand-authored SVG: single continuous silhouette, ink #1a1a1f outline, flat fill, transparent background",
+  "items": [
+    {
+      "en": "bus",
+      "mn": "автобус",
+      "ipa": "/bʌs/",
+      "imagePrompt": "a city bus from the side",
+      "image": "img/transport/bus.svg",
+      "audio": "audio/transport/bus.mp3"
+    },
+    {
+      "en": "bicycle",
+      "mn": "дугуй",
+      "ipa": "/ˈbaɪ.sɪ.kəl/",
+      "imagePrompt": "a bicycle from the side",
+      "image": "img/transport/bicycle.svg",
+      "audio": "audio/transport/bicycle.mp3"
+    },
+    {
+      "en": "train",
+      "mn": "галт тэрэг",
+      "ipa": "/treɪn/",
+      "imagePrompt": "a train engine from the side",
+      "image": "img/transport/train.svg",
+      "audio": "audio/transport/train.mp3"
+    },
+    {
+      "en": "airplane",
+      "mn": "онгоц",
+      "ipa": "/ˈer.pleɪn/",
+      "imagePrompt": "an airplane seen from above",
+      "image": "img/transport/airplane.svg",
+      "audio": "audio/transport/airplane.mp3"
+    },
+    {
+      "en": "ship",
+      "mn": "усан онгоц",
+      "ipa": "/ʃɪp/",
+      "imagePrompt": "a ship on water",
+      "image": "img/transport/ship.svg",
+      "audio": "audio/transport/ship.mp3"
+    }
+  ]
+}

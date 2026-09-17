@@ -1,0 +1,63 @@
+{
+  "slug": "odd-one-out-1",
+  "topic": "Илүүц үг",
+  "format": "odd-one-out",
+  "accent": "coral",
+  "items": [
+    {
+      "options": [
+        "apple",
+        "banana",
+        "carrot",
+        "grape"
+      ],
+      "en": "carrot",
+      "mn": "Бусад нь жимс",
+      "audio": "audio/odd-one-out-1/carrot.mp3"
+    },
+    {
+      "options": [
+        "red",
+        "blue",
+        "happy",
+        "green"
+      ],
+      "en": "happy",
+      "mn": "Бусад нь өнгө",
+      "audio": "audio/odd-one-out-1/happy.mp3"
+    },
+    {
+      "options": [
+        "Monday",
+        "Friday",
+        "March",
+        "Sunday"
+      ],
+      "en": "March",
+      "mn": "Бусад нь гараг",
+      "audio": "audio/odd-one-out-1/march.mp3"
+    },
+    {
+      "options": [
+        "doctor",
+        "teacher",
+        "hospital",
+        "driver"
+      ],
+      "en": "hospital",
+      "mn": "Бусад нь мэргэжил",
+      "audio": "audio/odd-one-out-1/hospital.mp3"
+    },
+    {
+      "options": [
+        "run",
+        "swim",
+        "jump",
+        "chair"
+      ],
+      "en": "chair",
+      "mn": "Бусад нь үйл үг",
+      "audio": "audio/odd-one-out-1/chair.mp3"
+    }
+  ]
+}

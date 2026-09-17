@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-articles",
+  "topic": "Артикль",
+  "format": "fix-mistake",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "She is a doctor.",
+      "wrong": "She is doctor.",
+      "mn": "Тэр эмч.",
+      "audio": "audio/fix-mistake-articles/she-is-a-doctor.mp3"
+    },
+    {
+      "en": "The sun is hot.",
+      "wrong": "Sun is hot.",
+      "mn": "Нар халуун байна.",
+      "audio": "audio/fix-mistake-articles/the-sun-is-hot.mp3"
+    },
+    {
+      "en": "I have an idea.",
+      "wrong": "I have a idea.",
+      "mn": "Надад нэг санаа байна.",
+      "audio": "audio/fix-mistake-articles/i-have-an-idea.mp3"
+    },
+    {
+      "en": "He is an honest man.",
+      "wrong": "He is a honest man.",
+      "mn": "Тэр шударга хүн.",
+      "audio": "audio/fix-mistake-articles/he-is-an-honest-man.mp3"
+    },
+    {
+      "en": "I watched a movie last night.",
+      "wrong": "I watched movie last night.",
+      "mn": "Би өчигдөр орой кино үзсэн.",
+      "audio": "audio/fix-mistake-articles/i-watched-a-movie-last-night.mp3"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "word-stress-food",
+  "topic": "Хоол",
+  "format": "word-stress",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "tomato",
+      "syllables": [
+        "to",
+        "ma",
+        "to"
+      ],
+      "stressIndex": 1,
+      "ipa": "/təˈmeɪ.toʊ/",
+      "mn": "улаан лооль",
+      "audio": null
+    },
+    {
+      "en": "potato",
+      "syllables": [
+        "po",
+        "ta",
+        "to"
+      ],
+      "stressIndex": 1,
+      "ipa": "/pəˈteɪ.toʊ/",
+      "mn": "төмс",
+      "audio": null
+    },
+    {
+      "en": "chocolate",
+      "syllables": [
+        "choc",
+        "o",
+        "late"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈtʃɑːk.lət/",
+      "mn": "шоколад",
+      "audio": null
+    },
+    {
+      "en": "vegetable",
+      "syllables": [
+        "veg",
+        "e",
+        "ta",
+        "ble"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈvedʒ.tə.bəl/",
+      "mn": "ногоо",
+      "audio": null
+    },
+    {
+      "en": "dessert",
+      "syllables": [
+        "des",
+        "sert"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dɪˈzɝːt/",
+      "mn": "амттан",
+      "audio": null
+    }
+  ]
+}

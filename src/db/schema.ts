@@ -1,6 +1,7 @@
 import { sql } from "drizzle-orm";
 import {
   bigint,
+  boolean,
   index,
   integer,
   jsonb,
@@ -62,7 +63,13 @@ export const activityEvents = pgTable(
   (t) => [index("activity_events_user_occurred_idx").on(t.userId, t.occurredAt.desc())],
 );
 
-export type SavedWordSource = { clip?: string; seg?: number };
+/** Where a saved word came from (ADR 0016). */
+export type SavedWordSource =
+  | { kind: "clip"; clip: string; seg?: number }
+  | { kind: "text"; text: string; para: number };
+
+/** What the column may hold: rows saved before ADR 0016 are `{clip, seg}` without `kind`. */
+export type StoredWordSource = SavedWordSource | { kind?: undefined; clip?: string; seg?: number };
 
 /** A learner's saved word and its review state (ADR 0010). Meanings come from the glossary. */
 export const savedWords = pgTable(
@@ -73,13 +80,32 @@ export const savedWords = pgTable(
     lemma: text("lemma").notNull(),
     surface: text("surface").notNull(),
     sentence: text("sentence").notNull().default(""),
-    source: jsonb("source").$type<SavedWordSource>().notNull().default({}),
+    source: jsonb("source").$type<StoredWordSource>().notNull().default({}),
     box: smallint("box").notNull().default(0),
     dueAt: timestamp("due_at", { withTimezone: true }).notNull().defaultNow(),
     lastReviewedAt: timestamp("last_reviewed_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [unique().on(t.userId, t.lemma), index("saved_words_user_due_idx").on(t.userId, t.dueAt)],
+);
+
+export const REVIEW_ITEMS = ["word", "grammar"] as const;
+
+/** One answer in a word or mistake review; append-only (ADR 0015). */
+export const reviewLog = pgTable(
+  "review_log",
+  {
+    id: bigint("id", { mode: "number" }).primaryKey().generatedAlwaysAsIdentity(),
+    userId: uuid("user_id").notNull(),
+    item: text("item").$type<(typeof REVIEW_ITEMS)[number]>().notNull(),
+    /** word: lemma; grammar: "<slug>|<item_key>" */
+    itemRef: text("item_ref").notNull(),
+    correct: boolean("correct").notNull(),
+    boxBefore: smallint("box_before").notNull(),
+    boxAfter: smallint("box_after").notNull(),
+    reviewedAt: timestamp("reviewed_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("review_log_user_reviewed_idx").on(t.userId, t.reviewedAt.desc())],
 );
 
 export const grammarProgress = pgTable(
@@ -110,4 +136,15 @@ export const grammarReview = pgTable(
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (t) => [unique().on(t.userId, t.slug, t.itemKey), index("grammar_review_user_due_idx").on(t.userId, t.dueAt)],
+);
+
+/** One request to the paid pronunciation service, for the daily quota (ADR 0011). */
+export const pronunciationUsage = pgTable(
+  "pronunciation_usage",
+  {
+    id: bigint("id", { mode: "number" }).primaryKey().generatedAlwaysAsIdentity(),
+    userId: uuid("user_id").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("pronunciation_usage_user_created_idx").on(t.userId, t.createdAt.desc())],
 );

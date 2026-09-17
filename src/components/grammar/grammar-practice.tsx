@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import type { Exercise, PracticeItem } from "@/lib/grammar/types";
-import { isTypedCorrect } from "@/lib/grammar/check";
+import type { Exercise, GrammarLevel, PracticeAnswer, PracticeItem } from "@/lib/grammar/types";
+import { isAnswerCorrect } from "@/lib/grammar/check";
 import { PASS_RATIO } from "@/lib/grammar/lessons";
-import { finishPracticeAction, reviewGrammarAction } from "@/app/(site)/grammar/actions";
+import { finishCheckpointAction, finishPracticeAction, reviewGrammarAction } from "@/app/(site)/grammar/actions";
 import { useStats } from "@/components/stats-provider";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { ProgressBar } from "@/components/game/progress-bar";
@@ -13,7 +13,10 @@ import { Mascot } from "@/components/mascot";
 import { CheckIcon, XIcon } from "@/components/icons";
 
 type LessonRef = { slug: string; title: string };
-type Mode = { kind: "lesson"; slug: string; next: LessonRef | null } | { kind: "review" };
+type Mode =
+  | { kind: "lesson"; slug: string; next: LessonRef | null }
+  | { kind: "checkpoint"; level: GrammarLevel; slug: string }
+  | { kind: "review" };
 type Saved = { added: number; passed: boolean } | "failed" | null;
 
 const LABEL: Record<Exercise["kind"], string> = {
@@ -44,8 +47,11 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
   const [choice, setChoice] = useState<string | null>(null);
   const [typed, setTyped] = useState("");
   const [result, setResult] = useState<boolean | null>(null);
-  const [answers, setAnswers] = useState<{ key: string; correct: boolean }[]>([]);
+  const [answers, setAnswers] = useState<(PracticeAnswer & { correct: boolean })[]>([]);
   const [saved, setSaved] = useState<Saved>(null);
+  const [reviewFailed, setReviewFailed] = useState(false);
+  // Bumped on restart so a slow save from the previous attempt can't overwrite this one's result.
+  const attempt = useRef(0);
   const { isGuest } = useStats();
 
   const item = items[idx] as PracticeItem | undefined;
@@ -58,7 +64,7 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
     finishedRef.current = finished;
   }, [finished]);
   const flush = useMeasuredTime(
-    { module: "grammar", ref: mode.kind === "lesson" ? mode.slug : "review" },
+    { module: "grammar", ref: mode.kind === "review" ? "review" : mode.slug },
     { counting: () => !finishedRef.current },
   );
 
@@ -67,11 +73,17 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
 
   function check() {
     if (!item || checked) return;
-    const ex = item.exercise;
-    const ok = ex.kind === "type" ? isTypedCorrect(typed, ex.answers) : choice === ex.answer;
-    setAnswers((a) => [...a, { key: item.key, correct: ok }]);
+    const answer = item.exercise.kind === "type" ? typed : (choice ?? "");
+    const ok = isAnswerCorrect(item.exercise, answer);
+    setAnswers((a) => [...a, { slug: item.slug, key: item.key, answer, correct: ok }]);
     setResult(ok);
-    if (mode.kind === "review" && !isGuest) reviewGrammarAction(item.slug, item.key, ok).catch(() => {});
+    if (mode.kind === "review" && !isGuest) {
+      reviewGrammarAction(item.slug, item.key, answer)
+        .then((savedOk) => {
+          if (!savedOk) setReviewFailed(true);
+        })
+        .catch(() => setReviewFailed(true));
+    }
   }
 
   function advance() {
@@ -85,13 +97,22 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
   /** Runs once when the last answer is confirmed: log time, save a lesson result. */
   function finish() {
     flush(true);
-    if (mode.kind !== "lesson" || isGuest) return;
-    finishPracticeAction(mode.slug, answers)
-      .then((r) => setSaved(r ?? "failed"))
-      .catch(() => setSaved("failed"));
+    if (mode.kind === "review" || isGuest) return;
+    const sent = answers.map(({ slug, key, answer }) => ({ slug, key, answer }));
+    const save =
+      mode.kind === "lesson" ? finishPracticeAction(mode.slug, sent) : finishCheckpointAction(mode.level, sent);
+    const run = attempt.current;
+    save
+      .then((r) => {
+        if (attempt.current === run) setSaved(r ?? "failed");
+      })
+      .catch(() => {
+        if (attempt.current === run) setSaved("failed");
+      });
   }
 
   function restart() {
+    attempt.current += 1;
     advance();
     setIdx(0);
     setAnswers([]);
@@ -125,14 +146,24 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
         <p className="mt-1 max-w-[36ch] text-[15px] text-muted">
           {mode.kind === "review"
             ? "Давталт дууслаа. Зөв хариулсан асуулт хэд хоногийн дараа, алдсан нь дараагийн давталтад дахин гарна."
-            : score === items.length
+            : mode.kind === "checkpoint"
+              ? ratio >= PASS_RATIO
+                ? `${mode.level} түвшний цагуудыг сайн эзэмшсэн байна!`
+                : "Алдсан асуултын хичээлүүдээ дахин хараад, дахин оролдоод үзээрэй."
+              : score === items.length
               ? "Бүгдийг нь зөв хийлээ, гоё байна!"
               : ratio >= PASS_RATIO
                 ? "Сайн байна! Алдсан дүрмээ хичээл дээрээ дахин хараарай."
                 : "Хичээлээ дахин нэг уншаад, дахин оролдоод үзээрэй."}
         </p>
 
-        {mode.kind === "lesson" && (isGuest || saved !== null) && (
+        {mode.kind === "review" && reviewFailed && (
+          <p className="mt-3 max-w-[36ch] rounded-2xl bg-canvas px-4 py-2.5 text-sm">
+            Үр дүнг хадгалж чадсангүй. Дахин оролдоод үзээрэй.
+          </p>
+        )}
+
+        {mode.kind !== "review" && (isGuest || saved !== null) && (
           <p className="mt-3 max-w-[36ch] rounded-2xl bg-canvas px-4 py-2.5 text-sm">
             {isGuest || saved === null ? (
               <>
@@ -161,7 +192,7 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
               {mode.kind === "lesson" ? "Хичээл рүү буцах" : "Дүрэм рүү буцах"}
             </Link>
           )}
-          {mode.kind === "lesson" && (
+          {mode.kind !== "review" && (
             <button type="button" onClick={restart} className="h-12 rounded-2xl text-sm font-extrabold text-rose-text hover:bg-canvas">
               Дахин хийх
             </button>
@@ -188,7 +219,9 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
       <div className="flex items-center gap-3">
         <Link
           href={exitHref}
-          aria-label={mode.kind === "lesson" ? "Дасгалаас гарах" : "Давталтаас гарах"}
+          aria-label={
+            mode.kind === "lesson" ? "Дасгалаас гарах" : mode.kind === "checkpoint" ? "Шалгалтаас гарах" : "Давталтаас гарах"
+          }
           className="grid size-11 shrink-0 place-items-center rounded-full bg-surface text-muted hover:text-foreground"
         >
           <XIcon />
@@ -201,7 +234,8 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
 
       <section className="rounded-[28px] bg-surface p-5 sm:p-6">
         <p className="text-xs font-extrabold uppercase tracking-wide text-rose-text">
-          {item.lessonTitle} · {LABEL[ex.kind]}
+          {/* A checkpoint tests choosing the tense, so the lesson title would give the answer away. */}
+          {mode.kind === "checkpoint" ? `${mode.level} шалгалт` : item.lessonTitle} · {LABEL[ex.kind]}
         </p>
 
         {ex.kind === "choice" && (
@@ -277,6 +311,20 @@ export function GrammarPractice({ items: initialItems, mode }: { items: Practice
               ))}
             </div>
           </>
+        )}
+        {item.credit && (
+          <p className="mt-4 text-xs text-muted">
+            Өгүүлбэр:{" "}
+            <a
+              href={`https://tatoeba.org/en/sentences/show/${item.credit.tatoebaId}`}
+              target="_blank"
+              rel="noreferrer"
+              className="underline"
+            >
+              Tatoeba #{item.credit.tatoebaId}
+            </a>{" "}
+            (өөрчилсөн) · {item.credit.author} · {item.credit.license}
+          </p>
         )}
       </section>
 

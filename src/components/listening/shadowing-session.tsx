@@ -1,20 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { envelope, trimSilence } from "@/lib/audio/envelope";
-import { decodeMono, type MonoAudio } from "@/components/listening/decode-audio";
+import { useEffect, useRef, useState } from "react";
+import { decodeMono, decodeShapes, shapeOf, type Shape } from "@/components/listening/decode-audio";
 import { useRecorder } from "@/components/listening/use-recorder";
 import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
+import { useRecentInput } from "@/components/listening/use-recent-input";
 import { PronunciationPanel } from "@/components/listening/pronunciation-panel";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { ProgressBar } from "@/components/game/progress-bar";
 import { Mascot } from "@/components/mascot";
 import { MicIcon, PauseIcon, PlayIcon, XIcon } from "@/components/icons";
 
-type ClipInfo = { slug: string; title: string; audio: string };
+type ClipInfo = { slug: string; title: string; audio: string; durationSec: number };
 export type ShadowSentence = { start: number; end: number; text: string };
-type Shape = { values: number[]; sec: number };
 
 const BINS = 48;
 /** Keeps a take under the pronunciation service's limit and the server action body size. */
@@ -69,10 +68,11 @@ export function ShadowingSession({
   const [done, setDone] = useState(false);
   const [practiced, setPracticed] = useState<Set<number>>(() => new Set());
   const [minePlaying, setMinePlaying] = useState(false);
-  const [source, setSource] = useState<MonoAudio | null>(null);
+  const [shapes, setShapes] = useState<Shape[] | null>(null);
   const [mineShape, setMineShape] = useState<(Shape & { url: string }) | null>(null);
   const original = useSentenceAudio(clip.audio);
   const recorder = useRecorder();
+  const recentInput = useRecentInput();
   const mine = useRef<HTMLAudioElement | null>(null);
   const alternateTimer = useRef(0);
 
@@ -80,38 +80,36 @@ export function ShadowingSession({
   const rec = recorder.recording;
   const isRecording = recorder.status === "recording" || recorder.status === "requesting";
 
-  // Shadowing time counts toward speaking for this clip.
+  // Shadowing time counts toward speaking for this clip, only while the learner is using the page.
   const doneRef = useRef(done);
+  const busyRef = useRef(false);
   useEffect(() => {
     doneRef.current = done;
-  }, [done]);
-  const flush = useMeasuredTime({ module: "speaking", ref: clip.slug }, { counting: () => !doneRef.current });
+    busyRef.current = original.playing || minePlaying || isRecording;
+  }, [done, original.playing, minePlaying, isRecording]);
+  const flush = useMeasuredTime(
+    { module: "speaking", ref: clip.slug },
+    { counting: () => !doneRef.current && (busyRef.current || recentInput()), maxSec: Math.max(1800, clip.durationSec * 8) },
+  );
   useEffect(() => {
     if (done) flush(true);
   }, [done, flush]);
 
-  // Decode the clip once, for the loudness comparison.
+  // Loudness shapes of every sentence, computed once; the decoded clip itself isn't kept.
+  const sentencesRef = useRef(sentences);
   useEffect(() => {
     let alive = true;
     fetch(clip.audio)
       .then((r) => r.arrayBuffer())
-      .then(decodeMono)
-      .then((a) => alive && setSource(a))
+      .then((data) => decodeShapes(data, sentencesRef.current, BINS))
+      .then((s) => alive && setShapes(s))
       .catch(() => {});
     return () => {
       alive = false;
     };
   }, [clip.audio]);
 
-  const originalShape = useMemo<Shape | null>(() => {
-    if (!source || !sentence) return null;
-    const { samples, sampleRate } = source;
-    const cut = trimSilence(
-      samples.subarray(Math.floor(sentence.start * sampleRate), Math.floor(sentence.end * sampleRate)),
-      sampleRate,
-    );
-    return { values: envelope(cut, BINS), sec: cut.length / sampleRate };
-  }, [source, sentence]);
+  const originalShape = shapes?.[idx] ?? null;
 
   useEffect(() => {
     if (!rec) return;
@@ -119,10 +117,9 @@ export function ShadowingSession({
     rec.blob
       .arrayBuffer()
       .then(decodeMono)
-      .then(({ samples, sampleRate }) => {
+      .then((audio) => {
         if (!alive) return;
-        const cut = trimSilence(samples, sampleRate);
-        setMineShape({ values: envelope(cut, BINS), sec: cut.length / sampleRate, url: rec.url });
+        setMineShape({ ...shapeOf(audio, BINS), url: rec.url });
       })
       .catch(() => {});
     return () => {
@@ -136,7 +133,7 @@ export function ShadowingSession({
   useEffect(() => {
     rangeRef.current = sentence;
   });
-  const { playRange, stop } = original;
+  const { playRange, stop, prime } = original;
   useEffect(() => {
     const s = rangeRef.current;
     if (s && !done) playRange(s.start, s.end);
@@ -189,6 +186,8 @@ export function ShadowingSession({
   }
 
   function goTo(next: number) {
+    // The new sentence auto-plays from an effect; unlock the audio inside this tap for iOS.
+    prime();
     stopMine();
     if (rec) setPracticed((p) => new Set(p).add(idx));
     recorder.reset();
@@ -197,6 +196,7 @@ export function ShadowingSession({
   }
 
   function restart() {
+    prime();
     setPracticed(new Set());
     setIdx(0);
     setDone(false);
@@ -245,7 +245,11 @@ export function ShadowingSession({
         <Link
           href={`/listening/${clip.slug}`}
           aria-label="Дадлагаас гарах"
-          className="grid size-11 shrink-0 place-items-center rounded-full bg-surface text-muted hover:text-foreground"
+          // Leaving mid-recording or mid-permission-prompt could leave the mic on; stop first.
+          aria-disabled={isRecording}
+          tabIndex={isRecording ? -1 : undefined}
+          onClick={(e) => isRecording && e.preventDefault()}
+          className="grid size-11 shrink-0 place-items-center rounded-full bg-surface text-muted hover:text-foreground aria-disabled:pointer-events-none aria-disabled:opacity-40"
         >
           <XIcon />
         </Link>

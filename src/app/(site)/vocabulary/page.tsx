@@ -4,8 +4,6 @@ import { getSkill } from "@/lib/skills";
 import { TONE } from "@/lib/tones";
 import { getCurrentUser } from "@/lib/auth";
 import { getProfile } from "@/lib/activity";
-import { getClip } from "@/lib/listening/clips";
-import { entryForLemma } from "@/lib/listening/glossary";
 import { boxLabel, DAILY_REVIEW_CAP } from "@/lib/vocab/review";
 import { listSavedWords, reviewQueue } from "@/lib/vocab/words";
 import { deleteWordAction } from "./actions";
@@ -95,8 +93,7 @@ export default async function Page() {
           </h2>
           <ul className="mt-3 flex flex-col gap-2">
             {words.map((w) => {
-              const entry = entryForLemma(w.lemma);
-              const clip = w.clip ? getClip(w.clip) : null;
+              const { entry } = w;
               return (
                 <li key={w.id} className="flex items-center gap-3 rounded-2xl bg-surface py-3 pl-4 pr-2">
                   <div className="min-w-0 flex-1">
@@ -106,11 +103,11 @@ export default async function Page() {
                     </p>
                     <p className="mt-0.5 truncate text-xs text-muted">
                       <span className={`font-bold ${t.text}`}>{boxLabel(w.box)}</span>
-                      {clip && (
+                      {w.from && (
                         <>
                           {" · "}
-                          <Link href={`/listening/${clip.slug}`} className="hover:underline">
-                            {clip.title}
+                          <Link href={w.from.href} className="hover:underline">
+                            {w.from.title}
                           </Link>
                         </>
                       )}

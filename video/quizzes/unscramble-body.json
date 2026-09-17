@@ -1,0 +1,39 @@
+{
+  "slug": "unscramble-body",
+  "topic": "Бие",
+  "format": "unscramble",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "en": "finger",
+      "ipa": "/ˈfɪŋ.ɡɚ/",
+      "mn": "хуруу",
+      "audio": "audio/unscramble-body/finger.mp3"
+    },
+    {
+      "en": "shoulder",
+      "ipa": "/ˈʃoʊl.dɚ/",
+      "mn": "мөр",
+      "audio": "audio/unscramble-body/shoulder.mp3"
+    },
+    {
+      "en": "stomach",
+      "ipa": "/ˈstʌm.ək/",
+      "mn": "гэдэс",
+      "audio": "audio/unscramble-body/stomach.mp3"
+    },
+    {
+      "en": "tooth",
+      "ipa": "/tuːθ/",
+      "mn": "шүд",
+      "audio": "audio/unscramble-body/tooth.mp3"
+    },
+    {
+      "en": "elbow",
+      "ipa": "/ˈel.boʊ/",
+      "mn": "тохой",
+      "audio": "audio/unscramble-body/elbow.mp3"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "word-stress-adjectives",
+  "topic": "Тэмдэг нэр",
+  "format": "word-stress",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "comfortable",
+      "syllables": [
+        "com",
+        "for",
+        "ta",
+        "ble"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈkʌm.fɚ.tə.bəl/",
+      "mn": "тухтай",
+      "audio": "audio/word-stress-adjectives/comfortable.mp3"
+    },
+    {
+      "en": "expensive",
+      "syllables": [
+        "ex",
+        "pen",
+        "sive"
+      ],
+      "stressIndex": 1,
+      "ipa": "/ɪkˈspen.sɪv/",
+      "mn": "үнэтэй",
+      "audio": "audio/word-stress-adjectives/expensive.mp3"
+    },
+    {
+      "en": "delicious",
+      "syllables": [
+        "de",
+        "li",
+        "cious"
+      ],
+      "stressIndex": 1,
+      "ipa": "/dɪˈlɪʃ.əs/",
+      "mn": "амттай",
+      "audio": "audio/word-stress-adjectives/delicious.mp3"
+    },
+    {
+      "en": "different",
+      "syllables": [
+        "dif",
+        "fer",
+        "ent"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈdɪf.ɚ.ənt/",
+      "mn": "өөр",
+      "audio": "audio/word-stress-adjectives/different.mp3"
+    },
+    {
+      "en": "popular",
+      "syllables": [
+        "pop",
+        "u",
+        "lar"
+      ],
+      "stressIndex": 0,
+      "ipa": "/ˈpɑː.pjə.lɚ/",
+      "mn": "алдартай",
+      "audio": "audio/word-stress-adjectives/popular.mp3"
+    }
+  ]
+}

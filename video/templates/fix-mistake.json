@@ -1,0 +1,20 @@
+{
+  "slug": "my-quiz",
+  "topic": "Түгээмэл алдаа",
+  "format": "fix-mistake",
+  "accent": "coral",
+  "items": [
+    {
+      "en": "I really like it.",
+      "wrong": "I very like it.",
+      "mn": "Надад үнэхээр таалагдаж байна.",
+      "audio": null
+    },
+    {
+      "en": "I am interested in music.",
+      "wrong": "I am interesting in music.",
+      "mn": "Би хөгжим сонирхдог.",
+      "audio": null
+    }
+  ]
+}

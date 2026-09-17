@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-i-ee",
+  "topic": "hit / heat",
+  "format": "sound-pair",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "hit",
+        "heat"
+      ],
+      "hints": [
+        "/hɪt/",
+        "/hiːt/"
+      ],
+      "en": "heat",
+      "mn": "халуун",
+      "audio": "audio/sound-pair-i-ee/heat.mp3"
+    },
+    {
+      "options": [
+        "fill",
+        "feel"
+      ],
+      "hints": [
+        "/fɪl/",
+        "/fiːl/"
+      ],
+      "en": "fill",
+      "mn": "дүүргэх",
+      "audio": "audio/sound-pair-i-ee/fill.mp3"
+    },
+    {
+      "options": [
+        "still",
+        "steal"
+      ],
+      "hints": [
+        "/stɪl/",
+        "/stiːl/"
+      ],
+      "en": "steal",
+      "mn": "хулгайлах",
+      "audio": "audio/sound-pair-i-ee/steal.mp3"
+    },
+    {
+      "options": [
+        "bin",
+        "bean"
+      ],
+      "hints": [
+        "/bɪn/",
+        "/biːn/"
+      ],
+      "en": "bean",
+      "mn": "шош",
+      "audio": "audio/sound-pair-i-ee/bean.mp3"
+    },
+    {
+      "options": [
+        "lip",
+        "leap"
+      ],
+      "hints": [
+        "/lɪp/",
+        "/liːp/"
+      ],
+      "en": "lip",
+      "mn": "уруул",
+      "audio": "audio/sound-pair-i-ee/lip.mp3"
+    }
+  ]
+}

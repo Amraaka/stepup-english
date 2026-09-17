@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-w",
+  "topic": "Дуугүй W",
+  "format": "silent-letter",
+  "accent": "sky",
+  "look": "card",
+  "items": [
+    {
+      "en": "write",
+      "silentIndex": 0,
+      "ipa": "/raɪt/",
+      "mn": "бичих",
+      "audio": "audio/silent-letter-w/write.mp3"
+    },
+    {
+      "en": "wrist",
+      "silentIndex": 0,
+      "ipa": "/rɪst/",
+      "mn": "бугуй",
+      "audio": "audio/silent-letter-w/wrist.mp3"
+    },
+    {
+      "en": "answer",
+      "silentIndex": 3,
+      "ipa": "/ˈæn.sɚ/",
+      "mn": "хариулт",
+      "audio": "audio/silent-letter-w/answer.mp3"
+    },
+    {
+      "en": "sword",
+      "silentIndex": 1,
+      "ipa": "/sɔːrd/",
+      "mn": "сэлэм",
+      "audio": "audio/silent-letter-w/sword.mp3"
+    },
+    {
+      "en": "two",
+      "silentIndex": 1,
+      "ipa": "/tuː/",
+      "mn": "хоёр",
+      "audio": "audio/silent-letter-w/two.mp3"
+    }
+  ]
+}

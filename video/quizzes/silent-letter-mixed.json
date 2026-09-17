@@ -1,0 +1,44 @@
+{
+  "slug": "silent-letter-mixed",
+  "topic": "Дуугүй үсэг",
+  "format": "silent-letter",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "psychology",
+      "silentIndex": 0,
+      "ipa": "/saɪˈkɑː.lə.dʒi/",
+      "mn": "сэтгэл судлал",
+      "audio": "audio/silent-letter-mixed/psychology.mp3"
+    },
+    {
+      "en": "cupboard",
+      "silentIndex": 2,
+      "ipa": "/ˈkʌb.ɚd/",
+      "mn": "шүүгээ",
+      "audio": "audio/silent-letter-mixed/cupboard.mp3"
+    },
+    {
+      "en": "handsome",
+      "silentIndex": 3,
+      "ipa": "/ˈhæn.səm/",
+      "mn": "царайлаг",
+      "audio": "audio/silent-letter-mixed/handsome.mp3"
+    },
+    {
+      "en": "column",
+      "silentIndex": 5,
+      "ipa": "/ˈkɑː.ləm/",
+      "mn": "багана",
+      "audio": "audio/silent-letter-mixed/column.mp3"
+    },
+    {
+      "en": "raspberry",
+      "silentIndex": 3,
+      "ipa": "/ˈræz.ber.i/",
+      "mn": "бөөрөлзгөнө",
+      "audio": "audio/silent-letter-mixed/raspberry.mp3"
+    }
+  ]
+}

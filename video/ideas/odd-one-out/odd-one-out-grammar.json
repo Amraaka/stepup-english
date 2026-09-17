@@ -1,0 +1,64 @@
+{
+  "slug": "odd-one-out-grammar",
+  "topic": "Дүрэм",
+  "format": "odd-one-out",
+  "accent": "sun",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "quickly",
+        "slowly",
+        "happily",
+        "lovely"
+      ],
+      "en": "lovely",
+      "mn": "Бусад нь дайвар үг",
+      "audio": null
+    },
+    {
+      "options": [
+        "he",
+        "she",
+        "they",
+        "the"
+      ],
+      "en": "the",
+      "mn": "Бусад нь төлөөний үг",
+      "audio": null
+    },
+    {
+      "options": [
+        "in",
+        "on",
+        "under",
+        "and"
+      ],
+      "en": "and",
+      "mn": "Бусад нь угтвар үг",
+      "audio": null
+    },
+    {
+      "options": [
+        "children",
+        "women",
+        "men",
+        "boys"
+      ],
+      "en": "boys",
+      "mn": "Бусад нь дүрмийн бус олон тоо",
+      "audio": null
+    },
+    {
+      "options": [
+        "went",
+        "ate",
+        "saw",
+        "played"
+      ],
+      "en": "played",
+      "mn": "Бусад нь дүрмийн бус үйл үг",
+      "audio": null
+    }
+  ]
+}

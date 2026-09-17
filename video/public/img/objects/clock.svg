@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="100" r="68" fill="#d5f4e6"/>
+    <circle cx="100" cy="100" r="54"/>
+    <!-- hands -->
+    <path d="M100 100V62M100 100l28 18" stroke-width="8"/>
+    <circle cx="100" cy="100" r="6" fill="#1a1a1f" stroke="none"/>
+  </g>
+</svg>

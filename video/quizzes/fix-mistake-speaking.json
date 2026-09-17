@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-speaking",
+  "topic": "Ярианы алдаа",
+  "format": "fix-mistake",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "I agree with you.",
+      "wrong": "I am agree with you.",
+      "mn": "Би чамтай санал нэг байна.",
+      "audio": "audio/fix-mistake-speaking/i-agree-with-you.mp3"
+    },
+    {
+      "en": "Nice to meet you.",
+      "wrong": "Nice to meet with you.",
+      "mn": "Танилцсандаа баяртай байна.",
+      "audio": "audio/fix-mistake-speaking/nice-to-meet-you.mp3"
+    },
+    {
+      "en": "I am 25 years old.",
+      "wrong": "I have 25 years.",
+      "mn": "Би 25 настай.",
+      "audio": "audio/fix-mistake-speaking/i-am-25-years-old.mp3"
+    },
+    {
+      "en": "I told her the truth.",
+      "wrong": "I said her the truth.",
+      "mn": "Би түүнд үнэнийг хэлсэн.",
+      "audio": "audio/fix-mistake-speaking/i-told-her-the-truth.mp3"
+    },
+    {
+      "en": "What does this word mean?",
+      "wrong": "What means this word?",
+      "mn": "Энэ үг ямар утгатай вэ?",
+      "audio": "audio/fix-mistake-speaking/what-does-this-word-mean.mp3"
+    }
+  ]
+}

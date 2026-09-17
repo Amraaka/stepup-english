@@ -1,0 +1,44 @@
+{
+  "slug": "opposites-position",
+  "topic": "Байрлал",
+  "format": "opposites",
+  "accent": "mint",
+  "look": "night",
+  "items": [
+    {
+      "prompt": "up",
+      "en": "down",
+      "ipa": "/daʊn/",
+      "mn": "доош",
+      "audio": null
+    },
+    {
+      "prompt": "inside",
+      "en": "outside",
+      "ipa": "/ˌaʊtˈsaɪd/",
+      "mn": "гадна",
+      "audio": null
+    },
+    {
+      "prompt": "near",
+      "en": "far",
+      "ipa": "/fɑːr/",
+      "mn": "хол",
+      "audio": null
+    },
+    {
+      "prompt": "left",
+      "en": "right",
+      "ipa": "/raɪt/",
+      "mn": "баруун",
+      "audio": null
+    },
+    {
+      "prompt": "top",
+      "en": "bottom",
+      "ipa": "/ˈbɑː.təm/",
+      "mn": "ёроол",
+      "audio": null
+    }
+  ]
+}

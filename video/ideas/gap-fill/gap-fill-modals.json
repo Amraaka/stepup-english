@@ -1,0 +1,64 @@
+{
+  "slug": "gap-fill-modals",
+  "topic": "Модаль үг",
+  "format": "gap-fill",
+  "accent": "sky",
+  "look": "bold",
+  "items": [
+    {
+      "en": "You can't smoke here. It's not allowed.",
+      "sentence": "You ___ smoke here. It's not allowed.",
+      "options": [
+        "can't",
+        "must",
+        "should"
+      ],
+      "mn": "Энд тамхи татаж болохгүй.",
+      "audio": null
+    },
+    {
+      "en": "Can I open the window?",
+      "sentence": "___ I open the window?",
+      "options": [
+        "Can",
+        "Must",
+        "Am"
+      ],
+      "mn": "Цонх онгойлгож болох уу?",
+      "audio": null
+    },
+    {
+      "en": "You look tired. You should rest.",
+      "sentence": "You look tired. You ___ rest.",
+      "options": [
+        "should",
+        "can't",
+        "mustn't"
+      ],
+      "mn": "Чи ядарсан харагдаж байна. Амрах хэрэгтэй.",
+      "audio": null
+    },
+    {
+      "en": "I could swim when I was five.",
+      "sentence": "I ___ swim when I was five.",
+      "options": [
+        "could",
+        "can",
+        "must"
+      ],
+      "mn": "Би таван настайдаа сэлж чаддаг байсан.",
+      "audio": null
+    },
+    {
+      "en": "It might rain later, so take an umbrella.",
+      "sentence": "It ___ rain later, so take an umbrella.",
+      "options": [
+        "might",
+        "must",
+        "can't"
+      ],
+      "mn": "Дараа нь бороо орж магадгүй, шүхрээ ав.",
+      "audio": null
+    }
+  ]
+}

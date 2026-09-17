@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-v-w",
+  "topic": "v ба w",
+  "format": "sound-pair",
+  "accent": "sun",
+  "look": "night",
+  "items": [
+    {
+      "options": [
+        "vet",
+        "wet"
+      ],
+      "hints": [
+        "/vet/",
+        "/wet/"
+      ],
+      "en": "wet",
+      "mn": "нойтон",
+      "audio": null
+    },
+    {
+      "options": [
+        "vine",
+        "wine"
+      ],
+      "hints": [
+        "/vaɪn/",
+        "/waɪn/"
+      ],
+      "en": "wine",
+      "mn": "дарс",
+      "audio": null
+    },
+    {
+      "options": [
+        "veil",
+        "whale"
+      ],
+      "hints": [
+        "/veɪl/",
+        "/weɪl/"
+      ],
+      "en": "whale",
+      "mn": "халим",
+      "audio": null
+    },
+    {
+      "options": [
+        "verse",
+        "worse"
+      ],
+      "hints": [
+        "/vɝːs/",
+        "/wɝːs/"
+      ],
+      "en": "worse",
+      "mn": "илүү муу",
+      "audio": null
+    },
+    {
+      "options": [
+        "veal",
+        "wheel"
+      ],
+      "hints": [
+        "/viːl/",
+        "/wiːl/"
+      ],
+      "en": "wheel",
+      "mn": "дугуй",
+      "audio": null
+    }
+  ]
+}

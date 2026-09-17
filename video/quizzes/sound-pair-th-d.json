@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-th-d",
+  "topic": "they / day",
+  "format": "sound-pair",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "options": [
+        "they",
+        "day"
+      ],
+      "hints": [
+        "/ðeɪ/",
+        "/deɪ/"
+      ],
+      "en": "day",
+      "mn": "өдөр",
+      "audio": "audio/sound-pair-th-d/day.mp3"
+    },
+    {
+      "options": [
+        "then",
+        "den"
+      ],
+      "hints": [
+        "/ðen/",
+        "/den/"
+      ],
+      "en": "then",
+      "mn": "дараа нь",
+      "audio": "audio/sound-pair-th-d/then.mp3"
+    },
+    {
+      "options": [
+        "those",
+        "doze"
+      ],
+      "hints": [
+        "/ðoʊz/",
+        "/doʊz/"
+      ],
+      "en": "those",
+      "mn": "тэдгээр",
+      "audio": "audio/sound-pair-th-d/those.mp3"
+    },
+    {
+      "options": [
+        "there",
+        "dare"
+      ],
+      "hints": [
+        "/ðer/",
+        "/der/"
+      ],
+      "en": "there",
+      "mn": "тэнд",
+      "audio": "audio/sound-pair-th-d/there.mp3"
+    },
+    {
+      "options": [
+        "breathe",
+        "breed"
+      ],
+      "hints": [
+        "/briːð/",
+        "/briːd/"
+      ],
+      "en": "breed",
+      "mn": "үржүүлэх",
+      "audio": "audio/sound-pair-th-d/breed.mp3"
+    }
+  ]
+}

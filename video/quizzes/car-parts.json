@@ -1,0 +1,48 @@
+{
+  "slug": "car-parts",
+  "topic": "Машины эд анги",
+  "accent": "sky",
+  "style": "watercolor and ink sketch, soft grey tones with one warm accent, the object alone and fully isolated on a plain solid pure white background, no background wash, no coloured backdrop, no shadow or shading behind the object, no scenery, no frame or border, no text, no logos",
+  "items": [
+    {
+      "en": "headlight",
+      "mn": "урд гэрэл",
+      "ipa": "/ˈhed.laɪt/",
+      "imagePrompt": "close-up of a car headlight",
+      "image": "img/car-parts/headlight.png",
+      "audio": "audio/car-parts/headlight.mp3"
+    },
+    {
+      "en": "windshield",
+      "mn": "салхины шил",
+      "ipa": "/ˈwɪnd.ʃiːld/",
+      "imagePrompt": "a car windshield seen from the front",
+      "image": "img/car-parts/windshield.png",
+      "audio": "audio/car-parts/windshield.mp3"
+    },
+    {
+      "en": "steering wheel",
+      "mn": "жолоо",
+      "ipa": "/ˈstɪr.ɪŋ ˌwiːl/",
+      "imagePrompt": "a car steering wheel",
+      "image": "img/car-parts/steering-wheel.png",
+      "audio": "audio/car-parts/steering-wheel.mp3"
+    },
+    {
+      "en": "bumper",
+      "mn": "бампер",
+      "ipa": "/ˈbʌm.pɚ/",
+      "imagePrompt": "the front bumper of a car",
+      "image": "img/car-parts/bumper.png",
+      "audio": "audio/car-parts/bumper.mp3"
+    },
+    {
+      "en": "side mirror",
+      "mn": "хажуугийн толь",
+      "ipa": "/ˈsaɪd ˌmɪr.ɚ/",
+      "imagePrompt": "a car side mirror",
+      "image": "img/car-parts/side-mirror.png",
+      "audio": "audio/car-parts/side-mirror.mp3"
+    }
+  ]
+}

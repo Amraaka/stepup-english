@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-questions",
+  "topic": "Асуулт",
+  "format": "fix-mistake",
+  "accent": "violet",
+  "look": "card",
+  "items": [
+    {
+      "en": "Where do you live?",
+      "wrong": "Where you live?",
+      "mn": "Чи хаана амьдардаг вэ?",
+      "audio": null
+    },
+    {
+      "en": "What time is it?",
+      "wrong": "What time it is?",
+      "mn": "Хэдэн цаг болж байна вэ?",
+      "audio": null
+    },
+    {
+      "en": "Did you see her?",
+      "wrong": "Did you saw her?",
+      "mn": "Чи түүнийг харсан уу?",
+      "audio": null
+    },
+    {
+      "en": "Why are you sad?",
+      "wrong": "Why you are sad?",
+      "mn": "Чи яагаад гунигтай байна вэ?",
+      "audio": null
+    },
+    {
+      "en": "How much does it cost?",
+      "wrong": "How much it costs?",
+      "mn": "Энэ хэд вэ?",
+      "audio": null
+    }
+  ]
+}

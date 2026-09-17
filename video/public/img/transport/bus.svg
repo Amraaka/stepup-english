@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <!-- v2: windscreen, door and recessed wheels. v1 had wheels hanging outside a plain
+       box and read as a train carriage / caravan. -->
+  <g stroke="#1a1a1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- body with a rounded nose at the right -->
+    <path d="M26 58h124a24 24 0 0 1 24 24v56a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8V66a8 8 0 0 1 8-8z" fill="#ffe4dd"/>
+    <!-- side windows -->
+    <path d="M30 72h34v26H30zM72 72h34v26H72z" fill="#ff5a3c"/>
+    <!-- windscreen, angled into the nose -->
+    <path d="M118 72h24a18 18 0 0 1 18 18v8h-42z" fill="#ff5a3c"/>
+    <!-- door -->
+    <path d="M114 106v40" stroke-width="4"/>
+    <!-- wheel arches cut into the body -->
+    <circle cx="58" cy="146" r="17" fill="#1a1a1f"/>
+    <circle cx="140" cy="146" r="17" fill="#1a1a1f"/>
+    <circle cx="58" cy="146" r="6" fill="#ffe4dd" stroke="none"/>
+    <circle cx="140" cy="146" r="6" fill="#ffe4dd" stroke="none"/>
+  </g>
+</svg>

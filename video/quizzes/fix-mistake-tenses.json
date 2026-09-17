@@ -1,0 +1,39 @@
+{
+  "slug": "fix-mistake-tenses",
+  "topic": "Цаг",
+  "format": "fix-mistake",
+  "accent": "coral",
+  "look": "card",
+  "items": [
+    {
+      "en": "I went to Tokyo last year.",
+      "wrong": "I have gone to Tokyo last year.",
+      "mn": "Би өнгөрсөн жил Токио явсан.",
+      "audio": "audio/fix-mistake-tenses/i-went-to-tokyo-last-year.mp3"
+    },
+    {
+      "en": "I have lived here since 2020.",
+      "wrong": "I live here since 2020.",
+      "mn": "Би 2020 оноос хойш энд амьдарч байна.",
+      "audio": "audio/fix-mistake-tenses/i-have-lived-here-since-2020.mp3"
+    },
+    {
+      "en": "What are you doing now?",
+      "wrong": "What do you do now?",
+      "mn": "Чи одоо юу хийж байна?",
+      "audio": "audio/fix-mistake-tenses/what-are-you-doing-now.mp3"
+    },
+    {
+      "en": "She didn't come yesterday.",
+      "wrong": "She didn't came yesterday.",
+      "mn": "Тэр өчигдөр ирээгүй.",
+      "audio": "audio/fix-mistake-tenses/she-didn-t-come-yesterday.mp3"
+    },
+    {
+      "en": "I will call you when I arrive.",
+      "wrong": "I will call you when I will arrive.",
+      "mn": "Би ирэхдээ чам руу залгана.",
+      "audio": "audio/fix-mistake-tenses/i-will-call-you-when-i-arrive.mp3"
+    }
+  ]
+}

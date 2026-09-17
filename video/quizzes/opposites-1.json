@@ -1,0 +1,43 @@
+{
+  "slug": "opposites-1",
+  "topic": "Эсрэг утга",
+  "format": "opposites",
+  "accent": "sun",
+  "items": [
+    {
+      "prompt": "cheap",
+      "en": "expensive",
+      "ipa": "/ɪkˈspen.sɪv/",
+      "mn": "үнэтэй",
+      "audio": "audio/opposites-1/expensive.mp3"
+    },
+    {
+      "prompt": "early",
+      "en": "late",
+      "ipa": "/leɪt/",
+      "mn": "хоцорсон",
+      "audio": "audio/opposites-1/late.mp3"
+    },
+    {
+      "prompt": "empty",
+      "en": "full",
+      "ipa": "/fʊl/",
+      "mn": "дүүрэн",
+      "audio": "audio/opposites-1/full.mp3"
+    },
+    {
+      "prompt": "quiet",
+      "en": "loud",
+      "ipa": "/laʊd/",
+      "mn": "чанга",
+      "audio": "audio/opposites-1/loud.mp3"
+    },
+    {
+      "prompt": "borrow",
+      "en": "lend",
+      "ipa": "/lend/",
+      "mn": "зээлүүлэх",
+      "audio": "audio/opposites-1/lend.mp3"
+    }
+  ]
+}

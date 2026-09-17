@@ -1,0 +1,74 @@
+{
+  "slug": "sound-pair-2",
+  "topic": "Хоёр дуудлага",
+  "format": "sound-pair",
+  "accent": "mint",
+  "look": "bold",
+  "items": [
+    {
+      "options": [
+        "think",
+        "sink"
+      ],
+      "hints": [
+        "/θɪŋk/",
+        "/sɪŋk/"
+      ],
+      "en": "think",
+      "mn": "бодох",
+      "audio": "audio/sound-pair-2/think.mp3"
+    },
+    {
+      "options": [
+        "walk",
+        "work"
+      ],
+      "hints": [
+        "/wɑːk/",
+        "/wɝːk/"
+      ],
+      "en": "work",
+      "mn": "ажил",
+      "audio": "audio/sound-pair-2/work.mp3"
+    },
+    {
+      "options": [
+        "vest",
+        "west"
+      ],
+      "hints": [
+        "/vest/",
+        "/west/"
+      ],
+      "en": "west",
+      "mn": "баруун",
+      "audio": "audio/sound-pair-2/west.mp3"
+    },
+    {
+      "options": [
+        "pull",
+        "pool"
+      ],
+      "hints": [
+        "/pʊl/",
+        "/puːl/"
+      ],
+      "en": "pool",
+      "mn": "усан сан",
+      "audio": "audio/sound-pair-2/pool.mp3"
+    },
+    {
+      "options": [
+        "fan",
+        "van"
+      ],
+      "hints": [
+        "/fæn/",
+        "/væn/"
+      ],
+      "en": "fan",
+      "mn": "сэнс",
+      "audio": "audio/sound-pair-2/fan.mp3"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "slug": "gap-fill-2",
+  "topic": "Нөхөж бичих",
+  "format": "gap-fill",
+  "question": "Аль нь зөв бэ?",
+  "accent": "coral",
+  "look": "bold",
+  "items": [
+    {
+      "en": "I have made a decision.",
+      "sentence": "I have ___ a decision.",
+      "options": [
+        "made",
+        "done",
+        "taken"
+      ],
+      "mn": "Би шийдвэр гаргасан.",
+      "audio": "audio/gap-fill-2/i-have-made-a-decision-.mp3"
+    },
+    {
+      "en": "Can you do me a favour?",
+      "sentence": "Can you ___ me a favour?",
+      "options": [
+        "do",
+        "make",
+        "give"
+      ],
+      "mn": "Надад нэг тусламж үзүүлж чадах уу?",
+      "audio": "audio/gap-fill-2/can-you-do-me-a-favour-.mp3"
+    },
+    {
+      "en": "She takes a shower every morning.",
+      "sentence": "She ___ a shower every morning.",
+      "options": [
+        "takes",
+        "makes",
+        "does"
+      ],
+      "mn": "Тэр өглөө бүр шүршүүрт ордог.",
+      "audio": "audio/gap-fill-2/she-takes-a-shower-every-morning-.mp3"
+    },
+    {
+      "en": "They pay attention in class.",
+      "sentence": "They ___ attention in class.",
+      "options": [
+        "pay",
+        "give",
+        "make"
+      ],
+      "mn": "Тэд хичээл дээр анхаардаг.",
+      "audio": "audio/gap-fill-2/they-pay-attention-in-class-.mp3"
+    },
+    {
+      "en": "I need to make an appointment.",
+      "sentence": "I need to ___ an appointment.",
+      "options": [
+        "make",
+        "do",
+        "take"
+      ],
+      "mn": "Би цаг авах хэрэгтэй.",
+      "audio": "audio/gap-fill-2/i-need-to-make-an-appointment-.mp3"
+    }
+  ]
+}
