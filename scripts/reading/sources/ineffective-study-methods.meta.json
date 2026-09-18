@@ -1,0 +1,47 @@
+{
+  "slug": "ineffective-study-methods",
+  "title": "Avoid Ineffective Study Methods",
+  "summary": "Дахин унших, тодруулах нь шалгалтад бэлдэх хамгийн сайн арга биш гэдгийг тайлбарлана.",
+  "level": "B1",
+  "topic": "school",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/education-tips-avoid-ineffective-study-methods/3795956.html",
+    "license": "public-domain",
+    "credit": "John Russell · VOA Learning English",
+    "creditLine": "John Russell wrote this story for Learning English. George Grow was the editor."
+  },
+  "changes": "Headings, sign-off, credit line, the closing call for comments and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What does Mary Pyc say about rereading and highlighting?",
+      "options": [
+        "They are not the best ways to study",
+        "They are the best ways to study",
+        "They are worse than not studying"
+      ],
+      "answer": 0,
+      "explain": "Пайк \"both rereading and highlighting are ineffective study tools\" гэсэн. Гэхдээ огт хичээл давтахгүй байснаас дээр."
+    },
+    {
+      "prompt": "Which way to study does the text suggest?",
+      "options": [
+        "Testing yourself with flashcards",
+        "Reading the book three times",
+        "Underlining every sentence"
+      ],
+      "answer": 0,
+      "explain": "\"One idea is to test yourself\" гэж бичсэн. Флаш карт, туршилтын шалгалт тусалдаг."
+    },
+    {
+      "prompt": "Why does rereading give students a false feeling?",
+      "options": [
+        "The text feels familiar, so they think they know it",
+        "The book is too difficult for them to understand",
+        "They read too slowly to finish the whole book"
+      ],
+      "answer": 0,
+      "explain": "Дахин уншихад \"it is going to feel like you already know the information\" буюу мэддэг юм шиг санагддаг."
+    }
+  ]
+}

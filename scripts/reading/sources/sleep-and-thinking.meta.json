@@ -1,0 +1,47 @@
+{
+  "slug": "sleep-and-thinking",
+  "title": "Study Suggests Link Between Long Sleep Times, Cognitive Loss",
+  "summary": "Хэт бага эсвэл хэт их унтах нь ахмад хүмүүсийн бодох чадварт муу нөлөөлж болох тухай.",
+  "level": "B2",
+  "topic": "health",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/study-suggests-link-between-long-sleep-times-and-cognitive-loss/6307164.html",
+    "license": "public-domain",
+    "credit": "Hai Do · VOA Learning English",
+    "creditLine": "Hai Do wrote this story for Learning English. Caty Weaver was the editor."
+  },
+  "changes": "Heading, sign-off, credit line, quiz link and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What did the Washington University study find?",
+      "options": [
+        "Both too little and too much sleep were linked to worse thinking",
+        "Only people who slept too little had lower scores",
+        "Sleeping more always helped older people think better"
+      ],
+      "answer": 0,
+      "explain": "\"Short and long sleep times were associated with worse cognitive performance\" гэж судалгааг удирдсан Люси хэлсэн."
+    },
+    {
+      "prompt": "How old were the people in the study, on average?",
+      "options": [
+        "75",
+        "65",
+        "45"
+      ],
+      "answer": 0,
+      "explain": "\"The average age of the study subject was 75\" гэж бичсэн."
+    },
+    {
+      "prompt": "What does \"sweet spot\" mean in this text?",
+      "options": [
+        "The best middle range of sleep time",
+        "A kind of sugar that helps sleep",
+        "A quiet place to sleep"
+      ],
+      "answer": 0,
+      "explain": "Люси \"there is a middle range, or 'sweet spot,' for total sleep time\" гэсэн. Энд хамгийн тохиромжтой дунд хэмжээг хэлж байна."
+    }
+  ]
+}

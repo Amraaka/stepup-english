@@ -1,0 +1,47 @@
+{
+  "slug": "american-cookbooks",
+  "title": "Cookbooks Show American Culture",
+  "summary": "Америкийн хоолны номууд тухайн үеийн түүх, амьдралын хэв маягийг харуулдаг.",
+  "level": "B2",
+  "topic": "food",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/cookbooks-show-american-culture/7436473.html",
+    "license": "public-domain",
+    "credit": "Dora Mekouar, Faith Pirlo · VOA Learning English",
+    "creditLine": "Dora Mekouar reported this story for VOA News. Faith Pirlo adapted it for VOA Learning English."
+  },
+  "changes": "Sign-off, credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is the main idea of the text?",
+      "options": [
+        "Cookbooks teach us about history and life, not only recipes",
+        "Old cookbooks had better recipes than new ones",
+        "Americans stopped buying cookbooks because of the internet"
+      ],
+      "answer": 0,
+      "explain": "Эхэнд нь \"the literature offers more than just recipes\" гэж хэлсэн. Хоолны ном түүх, соёлыг бас харуулдаг."
+    },
+    {
+      "prompt": "When was the first American cookbook published?",
+      "options": [
+        "In 1796",
+        "In the 1930s",
+        "After the Civil War"
+      ],
+      "answer": 0,
+      "explain": "\"The first, published in 1796\" гэж бичсэн. Энэ нь Амелиа Симмонсын American Cookery ном."
+    },
+    {
+      "prompt": "If an old cookbook has many recipes for pickles, what does that tell you?",
+      "options": [
+        "People did not have refrigerators then",
+        "People did not like fresh food",
+        "The book was written for children"
+      ],
+      "answer": 0,
+      "explain": "Элиас \"you know that you are looking at a time without refrigeration\" гэж хэлсэн. Хөргөгчгүй үед хоолоо даршилж хадгалдаг байсан."
+    }
+  ]
+}

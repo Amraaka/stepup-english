@@ -1,0 +1,46 @@
+{
+  "slug": "voyager",
+  "title": "NASA Reconnects with Voyager, Longest Serving Mission in History",
+  "summary": "1977 онд хөөрсөн Voyager сансрын хөлгүүдтэй NASA дахин холбоо тогтоосон нь.",
+  "level": "B2",
+  "topic": "science",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/nasa-reconnects-with-voyager-longest-serving-mission-in-history/7872624.html",
+    "license": "public-domain",
+    "credit": "Bryan Lynn · VOA Learning English",
+    "creditLine": "Bryan Lynn wrote this story for VOA Learning English, based on reports from NASA."
+  },
+  "questions": [
+    {
+      "prompt": "What is this story mainly about?",
+      "options": [
+        "NASA fixing communication problems with Voyager",
+        "NASA building two new spacecraft to replace Voyager",
+        "NASA ending the Voyager mission later this year"
+      ],
+      "answer": 0,
+      "explain": "NASA \"has once again reconnected with its Voyager spacecraft\" гэж эхэлж, холбооны асуудлуудыг хэрхэн засаж байгааг өгүүлсэн."
+    },
+    {
+      "prompt": "How long does it take to receive data from the Voyagers?",
+      "options": [
+        "About one day",
+        "About one hour",
+        "About one week"
+      ],
+      "answer": 0,
+      "explain": "\"Its communication with the two Voyagers takes about one day to receive data\" гэж бичсэн."
+    },
+    {
+      "prompt": "Why have the Voyagers worked for so long, according to Suzanne Dodd?",
+      "options": [
+        "The engineers built in many backup systems",
+        "The spacecraft were repaired by astronauts",
+        "The spacecraft stay close to the sun"
+      ],
+      "answer": 0,
+      "explain": "\"The engineers who built them provided multiple backup systems\" гэж Додд хэлсэн."
+    }
+  ]
+}

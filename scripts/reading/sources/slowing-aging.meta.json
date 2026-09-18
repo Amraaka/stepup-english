@@ -1,0 +1,48 @@
+{
+  "slug": "slowing-aging",
+  "title": "Can Scientists Develop Pills That Slow Aging?",
+  "summary": "Хөгшрөлтийг удаашруулж, хүнийг удаан эрүүл байлгах эм хайж буй судалгааны тухай.",
+  "level": "C1",
+  "topic": "science",
+  "source": {
+    "name": "Frontiers for Young Minds",
+    "url": "https://kids.frontiersin.org/articles/10.3389/frym.2026.1904674",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Richard A. Miller, Steven Austad, Matt Kaeberlein · Frontiers for Young Minds",
+    "creditLine": "Copyright © 2026 Miller, Austad and Kaeberlein. This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms. Citation: Miller RA, Austad S and Kaeberlein M (2026) Can Scientists Develop Pills That Slow Aging?. Front. Young Minds. 14:1904674. doi: 10.3389/frym.2026.1904674"
+  },
+  "changes": "Excerpt: the section “Aging and Disease” and the first two paragraphs of “Can We Slow Aging?”. Headings, abstract, figures and reference numbers removed.",
+  "questions": [
+    {
+      "prompt": "What is the main idea of the text?",
+      "options": [
+        "Slowing aging could keep people healthy for longer.",
+        "Small dogs are always healthier than horses.",
+        "Older people should stop eating so many calories."
+      ],
+      "answer": 0,
+      "explain": "\"if researchers found a way to make aging run at a slower pace, people would stay healthier for longer\" гэж бичсэн. Энэ бол текстийн гол санаа."
+    },
+    {
+      "prompt": "What happens when mice eat 30%–40% fewer calories?",
+      "options": [
+        "They live about 30%–40% longer.",
+        "They get sick much more often.",
+        "They grow bigger than other mice."
+      ],
+      "answer": 0,
+      "explain": "Калорийг 30–40%-иар багасгахад \"can extend their lifespan by about 30%-40%\" гэж бичсэн. Өөрөөр хэлбэл илүү удаан амьдардаг."
+    },
+    {
+      "prompt": "What does “postpone” mean in the text?",
+      "options": [
+        "To delay",
+        "To stop forever",
+        "To speed up"
+      ],
+      "answer": 0,
+      "explain": "Текстэд \"postpone (delay)\" гэж хаалтанд тайлбарласан. Хойшлуулах гэсэн утгатай."
+    }
+  ]
+}

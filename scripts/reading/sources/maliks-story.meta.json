@@ -1,0 +1,48 @@
+{
+  "slug": "maliks-story",
+  "title": "Malik's Story",
+  "summary": "Дайнаас болж гэр бүлээ орхиж, Европт шинэ амьдрал эхэлсэн Маликийн түүх.",
+  "level": "A2",
+  "topic": "history-people",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0014/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by LIDA Italia, illustrated by Vilius Aistis Vilimas · LIDA Stories",
+    "creditLine": "Written by: LIDA Italia. Illustrated by: Vilius Aistis Vilimas. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "Why did Malik leave Afghanistan?",
+      "options": [
+        "He was afraid he would be killed.",
+        "He wanted to study at a university.",
+        "He got a job in a restaurant in Europe."
+      ],
+      "answer": 0,
+      "explain": "Дайн болж байхад \"I was afraid I would be killed\" гэж бичсэн. Тийм болохоор Европ руу явсан."
+    },
+    {
+      "prompt": "What is Malik's job now?",
+      "options": [
+        "He is a teacher.",
+        "He is a cook.",
+        "He is a driver."
+      ],
+      "answer": 0,
+      "explain": "Эхлээд ресторанд ажиллаад, дараа нь \"I became a teacher\" гэж бичсэн."
+    },
+    {
+      "prompt": "What does Malik want to do one day?",
+      "options": [
+        "Go back and help people in Afghanistan",
+        "Stay in Europe and never go back",
+        "Open a restaurant with his family"
+      ],
+      "answer": 0,
+      "explain": "Төгсгөлд \"I hope to go back to Afghanistan one day\" гэж, тэнд байгаа хүмүүст туслахыг хүсэж байгаагаа хэлсэн."
+    }
+  ]
+}

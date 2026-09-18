@@ -1,0 +1,45 @@
+{
+  "slug": "pearl-buck",
+  "title": "Pearl S. Buck: The First American Woman to Win a Nobel Prize in Literature",
+  "summary": "Нобелийн шагнал хүртсэн анхны америк эмэгтэй зохиолч Перл Бакийн амьдрал.",
+  "level": "A2",
+  "topic": "history-people",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/pearl-s-buck-the-first-american-woman-to-win-a-nobel-prize-in-literature-/7980858.html",
+    "license": "public-domain",
+    "credit": "Jim Tedder, John Russell · VOA Learning English"
+  },
+  "questions": [
+    {
+      "prompt": "Where did Pearl Buck live for nearly 40 years?",
+      "options": [
+        "In China",
+        "In Virginia",
+        "In New York"
+      ],
+      "answer": 0,
+      "explain": "Текстэд \"For nearly 40 years, China was her home\" гэж бичсэн."
+    },
+    {
+      "prompt": "What is The Good Earth about?",
+      "options": [
+        "A poor Chinese farmer and his wife",
+        "A rich American family in China",
+        "A young student in Virginia"
+      ],
+      "answer": 0,
+      "explain": "\"The Good Earth is the story of a poor Chinese man named Wang Lung\" гэж бичсэн. Тэр эхнэр О-Лантайгаа хамт газар авч тариалан эрхэлдэг."
+    },
+    {
+      "prompt": "What did Buck win in 1938?",
+      "options": [
+        "The Nobel Prize in Literature",
+        "The Pulitzer Prize",
+        "A farm in Pennsylvania"
+      ],
+      "answer": 0,
+      "explain": "\"In 1938, Buck became the first American woman to be awarded the Nobel Prize in Literature\" гэж бичсэн. Пулитцерийн шагналыг түүнээс өмнө, 1932 онд авсан."
+    }
+  ]
+}

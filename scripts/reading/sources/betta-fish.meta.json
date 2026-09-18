@@ -1,0 +1,47 @@
+{
+  "slug": "betta-fish",
+  "title": "How to Keep a Betta Fish",
+  "summary": "Гэртээ бетта загас тэжээхэд юу хэрэгтэй, яаж арчлах тухай.",
+  "level": "B1",
+  "topic": "daily-life",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/how-to-keep-a-betta-fish/6894375.html",
+    "license": "public-domain",
+    "credit": "Gregory Stachel · VOA Learning English",
+    "creditLine": "Gregory Stachel wrote this story for VOA Learning English."
+  },
+  "changes": "Headings, sign-off, credit line, quiz link and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is the text about?",
+      "options": [
+        "How to take care of a betta fish",
+        "Where betta fish live in the wild",
+        "How to catch fish in a river"
+      ],
+      "answer": 0,
+      "explain": "\"But how do you take care of a betta fish?\" гэж асуугаад сав, ус, хоол зэргийг тайлбарласан."
+    },
+    {
+      "prompt": "How often should you feed your betta fish?",
+      "options": [
+        "Once or twice a day",
+        "Once or twice a week",
+        "Every hour or two"
+      ],
+      "answer": 0,
+      "explain": "\"Feed your fish once to twice a day\" гэж бичсэн."
+    },
+    {
+      "prompt": "Why are male bettas usually kept alone?",
+      "options": [
+        "They often attack other fish",
+        "They need very cold water",
+        "They eat only plants"
+      ],
+      "answer": 0,
+      "explain": "Эр бетта \"aggressive\" буюу түрэмгий загас. \"male betta fish often attack other fish\" гэж бичсэн."
+    }
+  ]
+}

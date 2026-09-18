@@ -1,0 +1,48 @@
+{
+  "slug": "nz-minimum-wage",
+  "title": "Minimum wage to be increased in New Zealand",
+  "summary": "Шинэ Зеландад хөдөлмөрийн доод хөлс нэмэгдэх болсон, түүнд хүмүүсийн хандлага.",
+  "level": "B2",
+  "topic": "work-money",
+  "source": {
+    "name": "Wikinews",
+    "url": "https://en.wikinews.org/wiki/Minimum_wage_to_be_increased_in_New_Zealand",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+    "credit": "Wikinews contributors · Wikinews",
+    "creditLine": "Published Monday, December 18, 2006. The text of this article is licensed under the terms of the Creative Commons Attribution 2.5 License"
+  },
+  "changes": "Dateline, image, sources section and page links removed; three small grammar slips fixed (\"an increase of\", \"is dependent on\", \"women\").",
+  "questions": [
+    {
+      "prompt": "What is this news story about?",
+      "options": [
+        "New Zealand’s minimum wage will go up.",
+        "New Zealand will cut workers’ holidays.",
+        "Caregivers will get free job training."
+      ],
+      "answer": 0,
+      "explain": "Эхний өгүүлбэрт \"The minimum wage in New Zealand will be increased by 9.8%\" гэж бичсэн."
+    },
+    {
+      "prompt": "What will the new minimum wage for adults be?",
+      "options": [
+        "NZ$11.25 per hour",
+        "NZ$10.25 per hour",
+        "NZ$13.66 per hour"
+      ],
+      "answer": 0,
+      "explain": "\"NZ$11.25 per hour, an increase of $1.00 from the current wage of $10.25\" гэж бичсэн. $13.66 бол Ногоон намын тооцоолсон дүн."
+    },
+    {
+      "prompt": "Why is HealthCare Providers New Zealand worried?",
+      "options": [
+        "Without more funding, they cannot pay higher wages.",
+        "They want the wage increase to start sooner.",
+        "They want caregivers to earn only the minimum wage."
+      ],
+      "answer": 0,
+      "explain": "Мартин Тейлор \"you cannot pay out more than you are funded for\" гэж хэлсэн. Засгийн газраас нэмэлт мөнгө авахгүй бол цалин нэмэх боломжгүй гэсэн үг."
+    }
+  ]
+}

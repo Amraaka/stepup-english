@@ -1,0 +1,48 @@
+{
+  "slug": "simpson-desert-closed",
+  "title": "Australia's Simpson Desert to be closed for summer",
+  "summary": "Австралийн Симпсоны цөл зуны аагим халуунаас болж жил бүр хаагдах болсон тухай.",
+  "level": "B2",
+  "topic": "travel",
+  "source": {
+    "name": "Wikinews",
+    "url": "https://en.wikinews.org/wiki/Australia%27s_Simpson_Desert_to_be_closed_for_summer",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+    "credit": "Wikinews contributors · Wikinews",
+    "creditLine": "Published Tuesday, November 11, 2008. The text of this article is licensed under the terms of the Creative Commons Attribution 2.5 License"
+  },
+  "changes": "Dateline, sources section and page links removed; text otherwise unchanged.",
+  "questions": [
+    {
+      "prompt": "Why will the Simpson Desert close in summer?",
+      "options": [
+        "Extreme heat makes crossing it dangerous.",
+        "The park needs time to repair its roads.",
+        "Too many tourists visit it in summer."
+      ],
+      "answer": 0,
+      "explain": "\"temperatures of 40 to 50ºC ... were dangerous for people crossing the desert\" гэж бичсэн. Халуунаас болж хүмүүс амь насаа алдах эрсдэлтэй."
+    },
+    {
+      "prompt": "What will happen to people caught crossing the desert?",
+      "options": [
+        "They may pay a fine of up to A$1,000.",
+        "They will lose their driving licence.",
+        "They must leave Australia at once."
+      ],
+      "answer": 0,
+      "explain": "Сүүлийн өгүүлбэрт \"will face fines of up to A$1,000\" гэж бичсэн."
+    },
+    {
+      "prompt": "What does “inhospitable” mean in the text?",
+      "options": [
+        "Very hard to live or stay in",
+        "Friendly and welcoming to visitors",
+        "Full of trees, water and shade"
+      ],
+      "answer": 0,
+      "explain": "\"there are no trees and there is no shade and it’s so hot\" гэж тайлбарласан. Хүн байхад маш хүнд, аюултай газар гэсэн үг."
+    }
+  ]
+}

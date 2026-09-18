@@ -1,0 +1,47 @@
+{
+  "slug": "workations",
+  "title": "US Workers Secretly Take ‘Workations’",
+  "summary": "Америкт ажилчид даргадаа хэлэлгүй амралтын газраас ажилладаг болсон тухай.",
+  "level": "B2",
+  "topic": "work-money",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/us-workers-secretly-take-workations-/7642462.html",
+    "license": "public-domain",
+    "credit": "Dora Mekouar, Anna Matteo · VOA Learning English",
+    "creditLine": "Dora Mekouar reported this story for VOA News. Anna Matteo adapted it for VOA Learning English."
+  },
+  "changes": "Program intro and outro, sign-off, credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is a \"workation\"?",
+      "options": [
+        "Working from a vacation place",
+        "Taking a vacation at home",
+        "Working two jobs at once"
+      ],
+      "answer": 0,
+      "explain": "\"This is when employees work remotely from a vacation place without telling their boss\" гэж тайлбарласан."
+    },
+    {
+      "prompt": "What do some hotels offer to remote workers?",
+      "options": [
+        "Lower room prices and extra services",
+        "Free office computers and printers",
+        "Part-time jobs working at the hotel"
+      ],
+      "answer": 0,
+      "explain": "Жишээ нь Gray Havens Inn \"25 percent off the room rate\" болон өглөөний цай, бэлэг санал болгодог."
+    },
+    {
+      "prompt": "What does Rudi Riekstins think about workations?",
+      "options": [
+        "They can be good for workers and companies",
+        "They should always be kept secret from the boss",
+        "They make workers less creative at work"
+      ],
+      "answer": 0,
+      "explain": "Тэр \"workations can be good for both workers and employers\" гэж хэлсэн. Аз жаргалтай ажилчид илүү бүтээлч байдаг гэнэ."
+    }
+  ]
+}

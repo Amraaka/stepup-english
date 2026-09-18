@@ -1,0 +1,46 @@
+{
+  "slug": "yellowstone",
+  "title": "Yellowstone: The World’s First National Park",
+  "summary": "Дэлхийн анхны үндэсний цэцэрлэгт хүрээлэн Йеллоустоуны гейзер, зэрлэг амьтад.",
+  "level": "B1",
+  "topic": "nature",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/yellowstone-the-world-s-first-national-park/7974034.html",
+    "license": "public-domain",
+    "credit": "Andrew Smith · VOA Learning English",
+    "creditLine": "Andrew Smith wrote this story."
+  },
+  "questions": [
+    {
+      "prompt": "What was special about Yellowstone when it was established in 1872?",
+      "options": [
+        "It was the world’s first national park",
+        "It was the largest park in the world",
+        "It had the world’s only active volcano"
+      ],
+      "answer": 0,
+      "explain": "\"Yellowstone National Park in the western United States was the world’s first national park\" гэж эхэнд нь бичсэн."
+    },
+    {
+      "prompt": "What causes the geysers to shoot hot water out of the ground?",
+      "options": [
+        "Hot liquid rock under the park",
+        "Rain water from the mountains",
+        "Water from the Yellowstone River"
+      ],
+      "answer": 0,
+      "explain": "\"The pressure and heat cause geysers to shoot hot water out of the ground\" гэж бичсэн. Энэ даралт, халуун нь газар доорх \"a lake of hot liquid rock\"-оос үүсдэг."
+    },
+    {
+      "prompt": "Why is the geyser called \"Old Faithful\"?",
+      "options": [
+        "It erupts about every 90 minutes",
+        "It is the oldest geyser on Earth",
+        "It is the tallest geyser in the park"
+      ],
+      "answer": 0,
+      "explain": "\"it erupts about every 90 minutes\" гэж бичсэн. Тогтмол, найдвартай оргилдог болохоор \"faithful\" (үнэнч) гэж нэрлэсэн."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "coming-to-norway",
+  "title": "Coming to Norway",
+  "summary": "Сомалиас Норвегид ирээд сурч, шинэ амьдрал эхэлсэн охины түүх.",
+  "level": "B1",
+  "topic": "school",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0029/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by Aamiina, illustrated by Julie Cornelia van Walsum · LIDA Stories",
+    "creditLine": "Written by: Aamiina. Illustrated by: Julie Cornelia van Walsum. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "What is the story mainly about?",
+      "options": [
+        "A girl's new life and education in Norway",
+        "A family holiday in the snow in Norway",
+        "A mother who moves back to Somalia"
+      ],
+      "answer": 0,
+      "explain": "Тэр Норвегид сурч, \"Now I feel knowledgeable and happy\" гэж бичсэн. Ирээдүйд залуучуудтай ажиллахыг хүсдэг."
+    },
+    {
+      "prompt": "Why were they cold at the airport?",
+      "options": [
+        "They only had summer clothes.",
+        "Their suitcases were lost.",
+        "Nobody came to meet them."
+      ],
+      "answer": 0,
+      "explain": "Норвеги Сомали шиг дулаан гэж бодсон тул чемоданд нь \"only had summer clothes\" буюу зөвхөн зуны хувцас байсан."
+    },
+    {
+      "prompt": "What does \"we wept with joy\" mean?",
+      "options": [
+        "We cried because we were happy.",
+        "We laughed because it was cold.",
+        "We were sad and very tired."
+      ],
+      "answer": 0,
+      "explain": "Зургаан жил уулзаагүй ээжтэйгээ уулзаад баярласандаа уйлсан. Wept нь weep буюу уйлах гэдэг үгийн өнгөрсөн цаг."
+    }
+  ]
+}

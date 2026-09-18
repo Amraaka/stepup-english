@@ -5,21 +5,20 @@
 // Every tappable word should have an entry (directly, through `forms`, or inside a tagged
 // phrase). Exits with 1 when something is missing, so it can run before publishing.
 
-import { readdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { lookupWord, phraseAt, wordKey } from "@/lib/dictionary/glossary";
 import { isTappable } from "@/components/words/tappable-tokens";
 
-const DIR = join(process.cwd(), "src/content/reading");
-const slugs = process.argv.slice(2).length
-  ? process.argv.slice(2)
-  : readdirSync(DIR)
-      .filter((f) => f.endsWith(".json"))
-      .map((f) => f.slice(0, -5));
+const catalog = JSON.parse(readFileSync(join(process.cwd(), "src/content/reading/catalog.json"), "utf-8")) as {
+  slug: string;
+  paragraphs: string[][][];
+}[];
+const wanted = process.argv.slice(2);
+const texts = wanted.length ? catalog.filter((t) => wanted.includes(t.slug)) : catalog;
 
 let missingTotal = 0;
-for (const slug of slugs) {
-  const paragraphs = JSON.parse(readFileSync(join(DIR, `${slug}.json`), "utf-8")) as string[][][];
+for (const { slug, paragraphs } of texts) {
   const missing = new Map<string, { count: number; example: string }>();
   for (const sentence of paragraphs.flat()) {
     const keys = sentence.map(wordKey);

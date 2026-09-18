@@ -7,7 +7,7 @@ import { shortMeaning, type Card } from "@/lib/vocab/review";
 import { checkTypedWord, type TypedResult } from "@/lib/vocab/answer";
 import { hasCyrillic, latinGuesses } from "@/lib/text/keyboard";
 import { useSentenceAudio } from "@/components/listening/use-sentence-audio";
-import { CheckIcon, XIcon } from "@/components/icons";
+import { CheckIcon, SpeakerIcon, XIcon } from "@/components/icons";
 
 // Card types for the word review (ADR 0010, 0018). Each card calls `onAnswer` once, when the learner moves on.
 
@@ -18,15 +18,6 @@ export function speak(text: string) {
   u.lang = "en-US";
   u.rate = 0.9;
   window.speechSynthesis.speak(u);
-}
-
-function SpeakerIcon({ className }: { className: string }) {
-  return (
-    <svg viewBox="0 0 20 20" className={className} fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M3.5 7.5v5h3l4 3.5v-12l-4 3.5h-3Z" />
-      <path d="M13.5 7a4 4 0 0 1 0 6M15.8 4.8a7 7 0 0 1 0 10.4" />
-    </svg>
-  );
 }
 
 const WORD_CHAR = /[\p{L}\p{N}]/u;

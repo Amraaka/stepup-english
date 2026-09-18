@@ -1,0 +1,46 @@
+{
+  "slug": "writing-a-good-email",
+  "title": "How to Write a Good Email",
+  "summary": "Имэйлийн гарчиг, мэндчилгээ, үндсэн хэсэг, төгсгөлийг хэрхэн сайн бичих вэ.",
+  "level": "B1",
+  "topic": "work-money",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/how-to-write-a-good-email/5649722.html",
+    "license": "public-domain",
+    "credit": "Gregory Stachel · VOA Learning English"
+  },
+  "changes": "\"all together\" corrected to \"altogether\".",
+  "questions": [
+    {
+      "prompt": "Which part of an email does the receiver read first?",
+      "options": [
+        "The subject line",
+        "The closing",
+        "The signature"
+      ],
+      "answer": 0,
+      "explain": "\"The subject line is what the other person, or receiver, will read first\" гэж бичсэн."
+    },
+    {
+      "prompt": "How should you open a formal email when you know the person’s name?",
+      "options": [
+        "Dear Mister Brown,",
+        "Hello,",
+        "Good Morning,"
+      ],
+      "answer": 0,
+      "explain": "Албан ёсны имэйлд хүний нэрийг мэдэж байвал \"Dear [title] [family name],\" буюу \"Dear Mister Brown,\" гэж эхэлнэ."
+    },
+    {
+      "prompt": "Where should the most important information go in the body of the email?",
+      "options": [
+        "At the start",
+        "In the middle",
+        "At the end"
+      ],
+      "answer": 0,
+      "explain": "\"The most important information should come first\" гэж бичсэн. Чухал мэдээллээ эхэнд нь бичвэл хүлээн авагчийн цагийг хэмнэнэ."
+    }
+  ]
+}

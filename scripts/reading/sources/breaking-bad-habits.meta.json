@@ -1,0 +1,47 @@
+{
+  "slug": "breaking-bad-habits",
+  "title": "How to Break Bad Habits",
+  "summary": "Утсаа байн байн шалгах зэрэг муу зуршлаас хэрхэн салах тухай зөвлөгөө.",
+  "level": "B1",
+  "topic": "daily-life",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/how-to-break-bad-habits-/5654403.html",
+    "license": "public-domain",
+    "credit": "John Russell · VOA Learning English",
+    "creditLine": "John Russell wrote this story for VOA Learning English. George Grow was the editor."
+  },
+  "changes": "Headings, sign-off, credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is the main example of a bad habit in the text?",
+      "options": [
+        "Checking your phone while studying",
+        "Eating sweet snacks while you study",
+        "Staying up too late to finish homework"
+      ],
+      "answer": 0,
+      "explain": "Текст \"you feel the need to check your phone\" гэсэн жишээгээр эхэлж, үүнийг муу зуршил гэж нэрлэсэн."
+    },
+    {
+      "prompt": "Why does Wendy Wood suggest wearing a wristwatch?",
+      "options": [
+        "So you don't need your phone to check the time",
+        "So you know when to stop studying",
+        "So your family can see when you study"
+      ],
+      "answer": 0,
+      "explain": "Бугуйн цаг зүүвэл \"This will limit at least one reason for looking at the phone – checking the time\" гэж бичсэн."
+    },
+    {
+      "prompt": "In James Clear's four steps, what is a \"cue\"?",
+      "options": [
+        "A signal that starts a behavior",
+        "The reward you get after a behavior",
+        "A promise you make to a friend"
+      ],
+      "answer": 0,
+      "explain": "\"A cue is a signal. It tells your brain to do something\" гэж тайлбарласан."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "buying-clothes",
+  "title": "Buying Clothes",
+  "summary": "Али шинэ цамц авахаар худалдааны төв очсон ч хямдралтай өмд авсан тухай.",
+  "level": "A2",
+  "topic": "daily-life",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0021/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by Espen Stranger-Johannessen, illustrated by Sara Sahar Haidari · LIDA Stories",
+    "creditLine": "Written by: Espen Stranger-Johannessen. Illustrated by: Sara Sahar Haidari. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph, with very short pages of the same scene merged).",
+  "questions": [
+    {
+      "prompt": "What does Ali want to buy?",
+      "options": [
+        "A new shirt",
+        "A new phone",
+        "New shoes"
+      ],
+      "answer": 0,
+      "explain": "\"Ali's shirt is old. He needs a new one\" гэж бичсэн. Тэгээд худалдааны төв рүү явсан."
+    },
+    {
+      "prompt": "Where is the clothing store?",
+      "options": [
+        "On the other side of the mall",
+        "On the street next to Ali's house",
+        "Outside, across the street from the mall"
+      ],
+      "answer": 0,
+      "explain": "Худалдагч зааж өгөөд \"The clothing store is on the opposite side!\" гэж бичсэн. Opposite side гэдэг нь нөгөө тал."
+    },
+    {
+      "prompt": "Why does Ali buy trousers?",
+      "options": [
+        "They are on sale.",
+        "His old trousers are too small.",
+        "The shopkeeper tells him to."
+      ],
+      "answer": 0,
+      "explain": "\"He buys a new pair of trousers instead because they are on sale\" гэж бичсэн. On sale гэдэг нь хямдралтай гэсэн үг."
+    }
+  ]
+}

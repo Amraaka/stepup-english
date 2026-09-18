@@ -1,0 +1,46 @@
+{
+  "slug": "indiana-dunes",
+  "title": "Indiana Dunes Is America’s Newest National Park",
+  "summary": "Мичиган нуурын эргийн элсэн манхант Индиана Дюнс АНУ-ын хамгийн шинэ үндэсний парк болжээ.",
+  "level": "B2",
+  "topic": "nature",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/indiana-dunes-is-america-s-newest-national-park/4863861.html",
+    "license": "public-domain",
+    "credit": "Erika Celeste, Ashley Thompson · VOA Learning English",
+    "creditLine": "Erika Celeste reported this story for VOA News. Ashley Thompson adapted it for VOA Learning English, using earlier Learning English reports by Jerilyn Watson. Kelly Jean Kelly was the editor."
+  },
+  "questions": [
+    {
+      "prompt": "What is the main news in this story?",
+      "options": [
+        "Indiana Dunes became a national park",
+        "Indiana Dunes was closed to visitors",
+        "A new port was built on Lake Michigan"
+      ],
+      "answer": 0,
+      "explain": "\"It became Indiana Dunes National Park in February\" гэж бичсэн. Энэ бол АНУ-ын хамгийн шинэ үндэсний парк."
+    },
+    {
+      "prompt": "What created the sand dunes?",
+      "options": [
+        "Strong winds from Lake Michigan",
+        "People who worked in steel mills",
+        "Rivers that flow into the lake"
+      ],
+      "answer": 0,
+      "explain": "\"Strong winds from Lake Michigan ... created the park’s sand dunes over time\" гэж бичсэн."
+    },
+    {
+      "prompt": "Why do visitors say that the sand dunes \"sing\"?",
+      "options": [
+        "The sand makes a musical sound when people walk on it",
+        "Birds sing loudly in the dunes every morning",
+        "Music is played for visitors along the lakeshore"
+      ],
+      "answer": 0,
+      "explain": "\"The smooth sands ... make an almost musical sound when people walk on them\" гэж бичсэн."
+    }
+  ]
+}

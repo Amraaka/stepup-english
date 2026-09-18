@@ -1,0 +1,45 @@
+{
+  "slug": "gettysburg",
+  "title": "American Places – Gettysburg, Pennsylvania",
+  "summary": "АНУ-ын Иргэний дайны томоохон тулалдаан болсон Геттисбург хот, түүний музей.",
+  "level": "B1",
+  "topic": "travel",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/american-places-gettysburg-pennsylvania/7965779.html",
+    "license": "public-domain",
+    "credit": "Nancy Steinbach, Ashley Thompson, Mario Ritter Jr. · VOA Learning English"
+  },
+  "questions": [
+    {
+      "prompt": "When did the battle of Gettysburg begin?",
+      "options": [
+        "July 1, 1863",
+        "November 19, 1863",
+        "July 3, 1865"
+      ],
+      "answer": 0,
+      "explain": "\"The battle of Gettysburg began on July 1, 1863\" гэж бичсэн."
+    },
+    {
+      "prompt": "What is special about the cyclorama painting?",
+      "options": [
+        "It surrounds the people looking at it",
+        "It was painted by President Lincoln himself",
+        "It shows a large map of Washington, D.C."
+      ],
+      "answer": 0,
+      "explain": "\"This kind of artwork completely surrounds the people looking at it\" гэж бичсэн. Өөрөөр хэлбэл зураг үзэгчдийг бүх талаас нь тойрдог."
+    },
+    {
+      "prompt": "How long did Lincoln speak at Gettysburg?",
+      "options": [
+        "For just two minutes",
+        "For two hours",
+        "For three days"
+      ],
+      "answer": 0,
+      "explain": "\"Lincoln spoke for just two minutes\" гэж бичсэн. Энэ илтгэлийг \"The Gettysburg Address\" гэдэг."
+    }
+  ]
+}

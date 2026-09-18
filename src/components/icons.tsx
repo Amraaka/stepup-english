@@ -324,3 +324,12 @@ export function SignInIcon(p: P) {
     </svg>
   );
 }
+
+export function SpeakerIcon(p: P) {
+  return (
+    <svg {...base(p)}>
+      <path d="M3.5 7.5v5h3l4 3.5v-12l-4 3.5h-3Z" />
+      <path d="M13.5 7a4 4 0 0 1 0 6M15.8 4.8a7 7 0 0 1 0 10.4" />
+    </svg>
+  );
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "chekhov-joy",
+  "title": "Joy",
+  "summary": "Нэрээ сонинд гарсанд баярласан залуугийн тухай Чеховын хошин өгүүллэг.",
+  "level": "B2",
+  "topic": "stories",
+  "source": {
+    "name": "Standard Ebooks",
+    "url": "https://standardebooks.org/ebooks/anton-chekhov/short-fiction/constance-garnett/text/joy",
+    "license": "public-domain",
+    "credit": "Anton Chekhov, translated by Constance Garnett · Standard Ebooks",
+    "creditLine": "Standard Ebooks Uncopyright: “this Uncopyright page exists to tell you that the writing and artwork in this ebook are believed to be in the United States public domain” … “the contributors to this ebook release their contributions under the terms in the CC0 1.0 Universal Public Domain Dedication” Colophon: “translated from Russian between 1916 and 1922 by Constance Garnett.”"
+  },
+  "questions": [
+    {
+      "prompt": "Why is Mitya so happy?",
+      "options": [
+        "His name was printed in the newspaper.",
+        "He got a better job as a head clerk.",
+        "He won a lot of money at cards."
+      ],
+      "answer": 0,
+      "explain": "Митя \"now they have gone and published mine!\" гэж баярласан. Сонинд нэр нь гарсан нь түүнд их баяр болсон."
+    },
+    {
+      "prompt": "What had actually happened to Mitya?",
+      "options": [
+        "He fell under a horse and sledge.",
+        "He saved a merchant from a fire.",
+        "He was robbed in the street."
+      ],
+      "answer": 0,
+      "explain": "Сонинд \"slipped and fell under a horse belonging to a sledge-driver\" гэж бичсэн. Тэр согтуу явж байгаад морины доор орсон."
+    },
+    {
+      "prompt": "What does the story suggest about Mitya?",
+      "options": [
+        "He is proud to be in the news for any reason.",
+        "He is ashamed of his accident in the street.",
+        "He does not believe what newspapers say."
+      ],
+      "answer": 0,
+      "explain": "Сонинд осолд орж, согтуу явсан тухай нь гарсан ч тэр \"Now all Russia knows of me!\" гэж бахархаж байна. Ямар ч шалтгаанаар хамаагүй алдартай болохыг хүсдэг нь харагдаж байна."
+    }
+  ]
+}

@@ -83,6 +83,15 @@ export async function savedLemmas(userId: string): Promise<string[]> {
   return rows.map((r) => r.lemma);
 }
 
+/** Saved lemma → Leitner box, for the coverage estimate (ADR 0022). */
+export async function savedBoxes(userId: string): Promise<Record<string, number>> {
+  const rows = await db
+    .select({ lemma: savedWords.lemma, box: savedWords.box })
+    .from(savedWords)
+    .where(eq(savedWords.userId, userId));
+  return Object.fromEntries(rows.map((r) => [r.lemma, r.box]));
+}
+
 export async function listSavedWords(userId: string) {
   const rows = await db
     .select()

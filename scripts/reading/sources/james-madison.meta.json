@@ -1,0 +1,46 @@
+{
+  "slug": "james-madison",
+  "title": "James Madison, Father of America’s Constitution",
+  "summary": "Жеймс Мэдисоныг яагаад АНУ-ын Үндсэн хуулийн эцэг гэж нэрлэдэг тухай.",
+  "level": "B2",
+  "topic": "history-people",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/james-madison-father-of-america-s-constitution/7986616.html",
+    "license": "public-domain",
+    "credit": "Jill Robbins, Steve Ember, Faith Lapidus, Bryan Lynn · VOA Learning English",
+    "creditLine": "Jill Robbins, Steve Ember and Faith Lapidus reported on this story for VOA Learning English. Bryan Lynn adapted the reports."
+  },
+  "questions": [
+    {
+      "prompt": "Why is Madison called \"the father of the Constitution\"?",
+      "options": [
+        "For his work on a strong national government",
+        "For serving two terms as president",
+        "For leading the army in the Revolutionary War"
+      ],
+      "answer": 0,
+      "explain": "\"his actions in support of a strong national government and federal laws\" нь түүнийг \"Father of the Constitution\" гэж нэрлүүлсэн гэж бичсэн."
+    },
+    {
+      "prompt": "What did Madison do during the Constitutional Convention?",
+      "options": [
+        "He took very detailed notes",
+        "He led the army",
+        "He wrote newspaper stories"
+      ],
+      "answer": 0,
+      "explain": "\"Madison took very detailed notes during the Constitutional Convention\" гэж бичсэн."
+    },
+    {
+      "prompt": "What does \"ratify\" mean in this story?",
+      "options": [
+        "To vote to approve",
+        "To write a new law",
+        "To start a war"
+      ],
+      "answer": 0,
+      "explain": "Нийтлэлд \"ratify, or vote to approve\" гэж тайлбарласан. Өөрөөр хэлбэл санал өгч батлах гэсэн үг."
+    }
+  ]
+}

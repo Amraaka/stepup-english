@@ -1,0 +1,46 @@
+{
+  "slug": "wright-brothers",
+  "title": "Wilbur and Orville Wright: The First Airplane",
+  "summary": "Райт ах дүүс 1903 онд хөдөлгүүртэй онгоцоор дэлхийд анх удаа ниссэн.",
+  "level": "B1",
+  "topic": "technology",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/wilbur-and-orville-wright-the-first-airplane/7998765.html",
+    "license": "public-domain",
+    "credit": "Marilyn Rice Christiano, John Russell · VOA Learning English",
+    "creditLine": "Marilyn Rice Christiano wrote this story for VOA Learning English. John Russell adapted it."
+  },
+  "questions": [
+    {
+      "prompt": "What did the Wright brothers do?",
+      "options": [
+        "They flew the first airplane with an engine",
+        "They invented the first gas-filled balloon",
+        "They built the first vehicle to go into space"
+      ],
+      "answer": 0,
+      "explain": "\"They made the world's first flight in a machine that was heavier than air and powered by an engine\" гэж бичсэн."
+    },
+    {
+      "prompt": "How long was Orville in the air on the first flight?",
+      "options": [
+        "12 seconds",
+        "36 minutes",
+        "Five years"
+      ],
+      "answer": 0,
+      "explain": "\"Orville flew the plane 36 meters. He was in the air for 12 seconds\" гэж бичсэн. 36 нь метр, минут биш."
+    },
+    {
+      "prompt": "Why did the brothers test their ideas at Kitty Hawk?",
+      "options": [
+        "It had the best wind conditions",
+        "It was close to their home in Dayton",
+        "Many newspapers were there"
+      ],
+      "answer": 0,
+      "explain": "Тэдэнд \"the best place with the best wind conditions\" буюу салхины нөхцөл хамгийн сайтай газар хэрэгтэй байсан тул Kitty Hawk-ийг сонгосон."
+    }
+  ]
+}

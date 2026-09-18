@@ -1,0 +1,48 @@
+{
+  "slug": "finding-a-job",
+  "title": "Finding a Job",
+  "summary": "Гэр бүлдээ мөнгө олохын тулд ресторанд ажилд орохыг хичээсэн Алишагийн түүх.",
+  "level": "A2",
+  "topic": "work-money",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0001/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by Espen Stranger-Johannessen, illustrated by Sunniva Høiby-Øiset · LIDA Stories",
+    "creditLine": "Written by: Espen Stranger-Johannessen. Illustrated by: Sunniva Høiby-Øiset. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph, with very short pages of the same scene merged).",
+  "questions": [
+    {
+      "prompt": "What is the story mainly about?",
+      "options": [
+        "How Alisha gets a job in a restaurant",
+        "How Alisha opens her own restaurant",
+        "How Alisha finds a school for her children"
+      ],
+      "answer": 0,
+      "explain": "Алиша сургалтад суугаад дараагийн ярилцлага дээр \"she is offered the job\" буюу ажилд орсон."
+    },
+    {
+      "prompt": "Why did Alisha not get the first job?",
+      "options": [
+        "She had not trained as a chef.",
+        "She could not use the Internet.",
+        "She did not want to work evenings."
+      ],
+      "answer": 0,
+      "explain": "Менежер нь \"they need someone who has trained as a chef\" гэж хэлсэн. Алиша тогоочоор сурч байгаагүй."
+    },
+    {
+      "prompt": "What is a CV?",
+      "options": [
+        "A list of your work and your courses",
+        "A course about food and cooking",
+        "A job advert on the Internet"
+      ],
+      "answer": 0,
+      "explain": "Текстэд \"A CV is a description of all the work she has done and all the courses she has taken\" гэж тайлбарласан."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "tortoise-and-hare",
+  "title": "The Tortoise and the Hare",
+  "summary": "Удаан ч тууштай яст мэлхий хурдан туулайг уралдаанд хожсон Эзопын үлгэр.",
+  "level": "A2",
+  "topic": "stories",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/animals-stories-the-tortoise-and-the-hare/5239051.html",
+    "license": "public-domain",
+    "credit": "Anna Matteo · VOA Learning English",
+    "creditLine": "Now, it is time for Words and Their Stories, a weekly program from VOA Learning English. … Until next time … I'm Anna Matteo."
+  },
+  "changes": "Excerpt: the introduction about the expression \"slow and steady wins the race\" and the closing lines were left out; the story and its lesson are complete.",
+  "questions": [
+    {
+      "prompt": "Who won the race?",
+      "options": [
+        "Tortoise",
+        "Hare",
+        "Fox"
+      ],
+      "answer": 0,
+      "explain": "\"Tortoise won the race!\" гэж бичсэн."
+    },
+    {
+      "prompt": "Why did Hare stop under the tree?",
+      "options": [
+        "He wanted to rest and tease Tortoise",
+        "He hurt his leg and could not run",
+        "Fox told him to wait under the tree"
+      ],
+      "answer": 0,
+      "explain": "Туулай \"I'll just stay here under this tree and rest a bit\" гэж хэлсэн. Яст мэлхийг гүйцэж ирэхэд нь \"tease her some more\" буюу дахин шоолохоор хүлээж байсан."
+    },
+    {
+      "prompt": "What is the lesson of this story?",
+      "options": [
+        "Focused and determined people succeed",
+        "Fast animals always win their races",
+        "Rest often so you do not get tired"
+      ],
+      "answer": 0,
+      "explain": "\"The person who succeeds is ... the one who is the most focused and determined\" гэж сургамжийг нь бичсэн."
+    }
+  ]
+}

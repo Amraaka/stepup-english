@@ -1,0 +1,48 @@
+{
+  "slug": "talking-about-family",
+  "title": "Talking About Family",
+  "summary": "Хоёр хүн хүүхдүүдийнхээ тухай ярилцаж байгаа нь.",
+  "level": "A2",
+  "topic": "daily-life",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0025/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by Espen Stranger-Johannessen, illustrated by Billie Cejka Risnes · LIDA Stories",
+    "creditLine": "Written by: Espen Stranger-Johannessen. Illustrated by: Billie Cejka Risnes. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "What do the two people talk about?",
+      "options": [
+        "Their children",
+        "Their jobs",
+        "Their holidays"
+      ],
+      "answer": 0,
+      "explain": "Эхнийх нь \"Do you have any family?\" гэж асуугаад хоёулаа хүүхдүүдийнхээ тухай ярьсан."
+    },
+    {
+      "prompt": "How old is Mina?",
+      "options": [
+        "Four",
+        "Ten",
+        "Two"
+      ],
+      "answer": 0,
+      "explain": "\"Mina is four years old. She goes to preschool\" гэж хэлсэн. Мириам арван настай."
+    },
+    {
+      "prompt": "What does the son's mother want him to do after he graduates?",
+      "options": [
+        "Go to university",
+        "Get a job",
+        "Stay at home"
+      ],
+      "answer": 0,
+      "explain": "Хүү нь ажилд орохыг хүсдэг ч ээж нь \"I tell him he should go to university instead\" гэж хэлсэн."
+    }
+  ]
+}

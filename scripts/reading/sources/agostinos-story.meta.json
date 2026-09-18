@@ -1,0 +1,48 @@
+{
+  "slug": "agostinos-story",
+  "title": "Agostino's Story",
+  "summary": "Хоол хүргэгч Агостино бусад ажилчидтай хамт эрхийнхээ төлөө тэмцсэн түүх.",
+  "level": "B1",
+  "topic": "work-money",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0015/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by LIDA Italia, illustrated by Billie Cejka Risnes · LIDA Stories",
+    "creditLine": "Written by: LIDA Italia. Illustrated by: Billie Cejka Risnes. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "What is the main idea of the story?",
+      "options": [
+        "Delivery workers fought together for their rights.",
+        "Agostino found a well-paid job in an office.",
+        "Agostino moved to a new city with his daughters."
+      ],
+      "answer": 0,
+      "explain": "Агостино бусад хүргэгчидтэй нийлж \"We struggled to get more recognition and rights\" гэж бичсэн. Эцэст нь байдал сайжирч эхэлсэн."
+    },
+    {
+      "prompt": "How much does Agostino usually make in a day?",
+      "options": [
+        "40 euros",
+        "3 euros",
+        "25 euros"
+      ],
+      "answer": 0,
+      "explain": "\"I make 40€ per day\" гэж бичсэн. 3 евро бол нэг хүргэлтийн төлбөр."
+    },
+    {
+      "prompt": "What does \"all our hard work paid off\" mean?",
+      "options": [
+        "Our work finally brought good results.",
+        "We stopped working so hard.",
+        "Our work cost us a lot of money."
+      ],
+      "answer": 0,
+      "explain": "Дараагийн өгүүлбэрт компани торгууль төлж, ажилчдад байнгын ажил өгсөн гэж бичсэн. Тэгэхээр хичээл зүтгэл нь үр дүнгээ өгсөн гэсэн үг."
+    }
+  ]
+}

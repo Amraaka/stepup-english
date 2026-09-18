@@ -1,0 +1,48 @@
+{
+  "slug": "horseshoe-crabs",
+  "title": "Horseshoe Crabs: The Good, the Bad, and the Amazing",
+  "summary": "450 сая жил оршин тогтносон морин туурайт хавч болон түүний цэнхэр цусны ач холбогдол.",
+  "level": "B2",
+  "topic": "nature",
+  "source": {
+    "name": "Frontiers for Young Minds",
+    "url": "https://kids.frontiersin.org/articles/10.3389/frym.2026.1695228",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Winsor H. Watson III · Frontiers for Young Minds",
+    "creditLine": "Copyright © 2026 Watson III. This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms. Citation: Watson III WH (2026) Horseshoe Crabs: The Good, the Bad, and the Amazing. Front. Young Minds. 14:1695228. doi: 10.3389/frym.2026.1695228"
+  },
+  "changes": "Excerpt: the section “Where Do Horseshoe Crabs Live?” and the first three paragraphs of “Horseshoe Crab Blood”. Headings, abstract, figures, videos and reference numbers removed. One typo fixed (\"care\" → \"are\").",
+  "questions": [
+    {
+      "prompt": "What is this text mainly about?",
+      "options": [
+        "Where horseshoe crabs live and why their blood matters",
+        "How people catch and cook horseshoe crabs",
+        "Why horseshoe crabs are dangerous to swimmers"
+      ],
+      "answer": 0,
+      "explain": "Эхлээд хавч хаана амьдардагийг, дараа нь цус нь яагаад чухал болохыг өгүүлдэг. Тухайлбал \"it takes lots of LAL to supply all the hospitals\" гэж бичсэн."
+    },
+    {
+      "prompt": "Why is horseshoe crab blood blue?",
+      "options": [
+        "Its hemocyanin contains copper.",
+        "Its hemoglobin contains iron.",
+        "The crabs live in very cold water."
+      ],
+      "answer": 0,
+      "explain": "\"hemocyanin is a copper-containing molecule. So, when it binds oxygen, it turns blue\" гэж бичсэн. Бидний цус төмөртэй учраас улаан байдаг."
+    },
+    {
+      "prompt": "What does “hardy” most likely mean in the text?",
+      "options": [
+        "Strong and able to survive hard conditions",
+        "Very large and heavy compared to other crabs",
+        "Shy and difficult to find in the wild"
+      ],
+      "answer": 0,
+      "explain": "\"very hardy and can withstand many ... challenges\" гэсэн. Хүйтэн, халуун ус, давсжилт гээд хүнд нөхцөлийг даван туулдаг гэсэн утгатай."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "american-british-english",
+  "title": "American English vs. British English",
+  "summary": "Америк, Британи англи хэлний үг, үсэглэл, хэлц үгсийн ялгаа.",
+  "level": "B1",
+  "topic": "culture",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/words-and-their-stories-american-versus-british-english/3397694.html",
+    "license": "public-domain",
+    "credit": "Anna Matteo · VOA Learning English",
+    "creditLine": "Anna Matteo wrote this for VOA Learning English. Kelly Jean Kelly was the editor."
+  },
+  "changes": "Program intro, sign-off (\"I'm Anna Matteo. Cheers! I mean, thanks.\"), credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is the text mainly about?",
+      "options": [
+        "Differences between American and British English",
+        "The history of Independence Day in the United States",
+        "How to learn British idioms quickly and easily"
+      ],
+      "answer": 0,
+      "explain": "Эхэнд нь \"the two types of English can be very different\" гэж хэлээд үсэглэл, үг, хэлц үгийн ялгааг жишээгээр тайлбарласан."
+    },
+    {
+      "prompt": "What do British people call an elevator?",
+      "options": [
+        "A lift",
+        "A flat",
+        "A boot"
+      ],
+      "answer": 0,
+      "explain": "\"Here, we live in apartments with elevators. Over there, they live in flats with lifts.\" гэж бичсэн."
+    },
+    {
+      "prompt": "A British friend says, \"I've got the hump.\" How do they feel?",
+      "options": [
+        "A little annoyed",
+        "Very sick",
+        "Very happy"
+      ],
+      "answer": 0,
+      "explain": "\"they have a hump, it means they are mildly annoyed or upset\" гэж тайлбарласан."
+    }
+  ]
+}

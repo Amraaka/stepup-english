@@ -1,0 +1,48 @@
+{
+  "slug": "sound-of-birds",
+  "title": "The Sound of Birds in the Morning",
+  "summary": "Гэр бүлийн хүчирхийллээс зугтаж, аюулгүй газар олсон Юлиягийн түүх.",
+  "level": "B1",
+  "topic": "daily-life",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0028/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by LIDA Portugal, illustrated by Vilius Aistis Vilimas · LIDA Stories",
+    "creditLine": "Written by: LIDA Portugal. Illustrated by: Vilius Aistis Vilimas. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "Why did Yulia go to a women's shelter?",
+      "options": [
+        "Her husband was violent to her.",
+        "She lost her job as a cleaner.",
+        "Her village in Ukraine was too quiet."
+      ],
+      "answer": 0,
+      "explain": "Нөхөр нь түүн рүү хашгирч, зодож эхэлсэн. Эмнэлэгт түүнд \"domestic violence\" буюу гэр бүлийн хүчирхийлэл гэмт хэрэг гэдгийг хэлсэн."
+    },
+    {
+      "prompt": "What job did Yulia have in Portugal?",
+      "options": [
+        "Cleaner",
+        "Nurse",
+        "Cook"
+      ],
+      "answer": 0,
+      "explain": "\"She started working as a cleaner\" гэж бичсэн. Үйлчлүүлэгчид нь түүний ажилд их сэтгэл хангалуун байсан."
+    },
+    {
+      "prompt": "What does the sound of birds mean for Yulia?",
+      "options": [
+        "Feeling safe at home",
+        "Being afraid of her husband",
+        "Waking up too early for work"
+      ],
+      "answer": 0,
+      "explain": "Хамгаалах байранд тэр \"felt safer than she had in a long time\". Шувууны дуугаар сэрдэг байсан үеэсээ хойш анх удаа ийм аюулгүй санагдсан."
+    }
+  ]
+}

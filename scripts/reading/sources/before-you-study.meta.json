@@ -1,0 +1,47 @@
+{
+  "slug": "before-you-study",
+  "title": "Things to Do Before You Study",
+  "summary": "Хичээлээ давтахаас өмнө хийвэл санах ойд тус болох гурван зүйл.",
+  "level": "B1",
+  "topic": "school",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/things-to-do-before-you-study/5367797.html",
+    "license": "public-domain",
+    "credit": "John Russell · VOA Learning English",
+    "creditLine": "John Russell wrote this story for Learning English. Mario Ritter, Jr. was the editor."
+  },
+  "changes": "Headings, sign-off, credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What three things does the text talk about?",
+      "options": [
+        "Exercise, study location and pre-study tests",
+        "Sleep, healthy food and quiet background music",
+        "Teachers, textbooks and turning off your phone"
+      ],
+      "answer": 0,
+      "explain": "\"Three important ideas to think about before studying include exercise, study location and pre-study tests\" гэж бичсэн."
+    },
+    {
+      "prompt": "In the memory study, who remembered more words?",
+      "options": [
+        "People who learned in two different places",
+        "People who learned at one desk",
+        "People who read the list only once"
+      ],
+      "answer": 0,
+      "explain": "\"subjects who learned in two different contexts remembered an average of 24.4 words\" гэж бичсэн. Нэг газар сурсан хүмүүс дунджаар 15.9 үг л санасан."
+    },
+    {
+      "prompt": "What happened to students who took a test before learning?",
+      "options": [
+        "They failed the test but remembered more later",
+        "They passed the test and remembered more",
+        "They failed the test and gave up studying"
+      ],
+      "answer": 0,
+      "explain": "\"The students failed on the tests, but they were better able to remember the material\" гэж бичсэн."
+    }
+  ]
+}

@@ -127,7 +127,18 @@ export function TextReader({
         <a href={text.source.url} target="_blank" rel="noopener noreferrer" className="font-semibold underline">
           {text.source.credit}
         </a>
-        . Public domain. Уншсан хугацаа тань автоматаар бүртгэгдэнэ.
+        .{" "}
+        {text.source.license === "cc-by" && text.source.licenseUrl ? (
+          <>
+            <a href={text.source.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline">
+              CC BY
+            </a>{" "}
+            лицензтэй. {text.changes && <span lang="en">{text.changes} </span>}
+          </>
+        ) : (
+          "Public domain. "
+        )}
+        Уншсан хугацаа тань автоматаар бүртгэгдэнэ.
       </p>
 
       {words.sheet}

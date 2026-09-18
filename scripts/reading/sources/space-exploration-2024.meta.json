@@ -1,0 +1,46 @@
+{
+  "slug": "space-exploration-2024",
+  "title": "2024 Another Big Year for Space Exploration",
+  "summary": "2024 онд сар, астероид, Бархасбадь рүү хийсэн сансрын томоохон нислэгүүд.",
+  "level": "B2",
+  "topic": "science",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/another-big-year-for-space-exploration/7922471.html",
+    "license": "public-domain",
+    "credit": "Bryan Lynn · VOA Learning English",
+    "creditLine": "Bryan Lynn wrote this story for VOA Learning English."
+  },
+  "questions": [
+    {
+      "prompt": "What does this story do?",
+      "options": [
+        "It looks back at big space stories of 2024",
+        "It explains how to become an astronaut",
+        "It describes plans for a trip to Mars"
+      ],
+      "answer": 0,
+      "explain": "\"We take a look back at some of the biggest space stories of 2024\" гэж эхэнд нь бичсэн."
+    },
+    {
+      "prompt": "What did China’s Chang’e 6 spacecraft do?",
+      "options": [
+        "It brought back rock from the moon’s far side",
+        "It landed on the moon the wrong way up",
+        "It crashed into an asteroid in space"
+      ],
+      "answer": 0,
+      "explain": "Хятад \"the first country to ever collect and bring back lunar samples from the far side of the moon\" болсон гэж бичсэн."
+    },
+    {
+      "prompt": "Why did Wilmore and Williams stay in space longer than planned?",
+      "options": [
+        "Their spacecraft had technical problems",
+        "They wanted to do more experiments",
+        "Bad weather on Earth stopped the landing"
+      ],
+      "answer": 0,
+      "explain": "\"Ongoing technical issues with the Starliner spacecraft prevented a return trip\" гэж бичсэн. Тэд ердөө долоо хоног л байх ёстой байсан."
+    }
+  ]
+}

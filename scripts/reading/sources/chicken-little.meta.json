@@ -1,0 +1,47 @@
+{
+  "slug": "chicken-little",
+  "title": "Chicken Little",
+  "summary": "Тэнгэр унаж байна гэж айсан Chicken Little болон түүнд итгэсэн шувуудын үлгэр.",
+  "level": "A2",
+  "topic": "stories",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/american-stories-chicken-little/6947104.html",
+    "license": "public-domain",
+    "credit": "Mario Ritter Jr. · VOA Learning English",
+    "creditLine": "Mario Ritter, Jr. adapted this story for VOA Learning English from stories in the public domain."
+  },
+  "changes": "Excerpt: the introduction before the story was left out; the story itself is complete.",
+  "questions": [
+    {
+      "prompt": "Why did Chicken Little think the sky was falling?",
+      "options": [
+        "A flower petal fell on her tail",
+        "A big rock fell from the sky",
+        "Foxy Loxy told her so"
+      ],
+      "answer": 0,
+      "explain": "Үнээ цэцэг хазаж таслахад \"a flower petal fell on her tail\". Тэр үүнийг тэнгэр унаж байна гэж бодсон."
+    },
+    {
+      "prompt": "Who first told the other birds that the sky was falling?",
+      "options": [
+        "Chicken Little",
+        "Henny Penny",
+        "Foxy Loxy"
+      ],
+      "answer": 0,
+      "explain": "Шувууд бие биенээсээ асуухад эцэст нь бүгд \"Chicken Little told me\" гэж хариулдаг. Тэнгэр унаж байна гэж анх Chicken Little хэлсэн."
+    },
+    {
+      "prompt": "What probably happened to the birds at the end?",
+      "options": [
+        "The fox ate them",
+        "They went back home",
+        "They saw the sky fall"
+      ],
+      "answer": 0,
+      "explain": "Үнэг хаалгаа хаасны дараа \"no one ever saw Chicken Little or her friends again\". Тэднийг үнэг идсэн бололтой."
+    }
+  ]
+}

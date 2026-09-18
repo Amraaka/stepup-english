@@ -1,0 +1,47 @@
+{
+  "slug": "popular-american-foods",
+  "title": "Stories, Cooking Directions for Popular American Foods",
+  "summary": "Бургер, пицца, нагетс зэрэг Америкийн алдартай хоолны түүхийг хүүхдэд зориулж бичсэн ном.",
+  "level": "B1",
+  "topic": "food",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/stories-cooking-directions-for-popular-american-foods/5881964.html",
+    "license": "public-domain",
+    "credit": "Dan Friedell · VOA Learning English",
+    "creditLine": "Dan Friedell wrote this story for Learning English. Hai Do was the editor."
+  },
+  "changes": "Sign-off, credit line, the closing call for comments, quiz link and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is Kim Zachman's book about?",
+      "options": [
+        "The history of popular American foods",
+        "How to open and run a food truck",
+        "Healthy recipes for older Americans"
+      ],
+      "answer": 0,
+      "explain": "\"The book is about the history of American foods like cookies, chocolate, and cereal\" гэж бичсэн."
+    },
+    {
+      "prompt": "Who started the peanut butter and jelly sandwich?",
+      "options": [
+        "American soldiers",
+        "Children in Kansas",
+        "German immigrants"
+      ],
+      "answer": 0,
+      "explain": "\"The peanut butter and jelly sandwich got its start with American soldiers in World War I\" гэж бичсэн."
+    },
+    {
+      "prompt": "Why was the chicken nugget \"such a big deal\" for Zachman?",
+      "options": [
+        "It needed a lot of technology to make",
+        "It was the first food sold at McDonald's",
+        "It came from Italy"
+      ],
+      "answer": 0,
+      "explain": "Талхан бүрхүүл нь хөлдөөгөөд хайрахад ч ховхрохгүй байх ёстой байсан тул \"really required a lot of technology to make it happen\" гэж тэр хэлсэн."
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "first-television",
+  "title": "American Inventions: The Television",
+  "summary": "14 настайдаа телевизийн санааг олсон зохион бүтээгч Фило Фарнсвортын түүх.",
+  "level": "B1",
+  "topic": "technology",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/american-inventions-the-television-/7966519.html",
+    "license": "public-domain",
+    "credit": "Paul Thompson, John Russell · VOA Learning English",
+    "creditLine": "Paul Thompson wrote this story for VOA Learning English. John Russell adapted it."
+  },
+  "questions": [
+    {
+      "prompt": "Who is this story about?",
+      "options": [
+        "Philo Farnsworth, who invented television",
+        "Justin Tolman, a famous American scientist",
+        "The owner of a big company called RCA"
+      ],
+      "answer": 0,
+      "explain": "Энэ нийтлэл \"Philo Taylor Farnsworth\" буюу телевиз зохион бүтээсэн хүний амьдралын тухай."
+    },
+    {
+      "prompt": "How old was Philo when he had the idea for television?",
+      "options": [
+        "Fourteen",
+        "Twenty",
+        "Six"
+      ],
+      "answer": 0,
+      "explain": "\"The inventor came up with the idea when he was just fourteen years old\" гэж бичсэн."
+    },
+    {
+      "prompt": "Philo thought the famous scientists were wrong. What did he believe?",
+      "options": [
+        "The device had to be electronic",
+        "The device had to be mechanical",
+        "The device had to be very large"
+      ],
+      "answer": 0,
+      "explain": "\"Philo believed such a device would have to be electronic\" гэж бичсэн. Тэр механик төхөөрөмж ажиллахгүй гэж үзсэн."
+    }
+  ]
+}

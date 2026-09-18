@@ -1,0 +1,47 @@
+{
+  "slug": "statue-of-liberty",
+  "title": "The Statue of Liberty: ‘Enlightening the World’ for Nearly 150 Years",
+  "summary": "Францаас бэлэглэсэн Эрх чөлөөний хөшөө хэрхэн бүтээгдэж, Нью-Йоркт ирсэн түүх.",
+  "level": "B1",
+  "topic": "travel",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/a-century-later-statue-of-liberty-still-attracts-millions/7979834.html",
+    "license": "public-domain",
+    "credit": "Jerry Watson, Anna Matteo · VOA Learning English",
+    "creditLine": "Jerry Watson wrote this story, and Anna Matteo adapted it for VOA Learning English."
+  },
+  "questions": [
+    {
+      "prompt": "Who gave the Statue of Liberty to the United States?",
+      "options": [
+        "The people of France",
+        "The people of Britain",
+        "President Grover Cleveland"
+      ],
+      "answer": 0,
+      "explain": "\"Lady Liberty ... was a gift from the people of France\" гэж бичсэн."
+    },
+    {
+      "prompt": "In how many pieces did the statue travel to New York?",
+      "options": [
+        "About 350 pieces",
+        "About 200 pieces",
+        "In one piece"
+      ],
+      "answer": 0,
+      "explain": "\"Workers separated the statue into 350 pieces\" гэж бичсэн. 200 гэдэг нь модон хайрцагны тоо."
+    },
+    {
+      "prompt": "What do the seven points on the crown represent?",
+      "options": [
+        "Freedom shining on the seas and continents",
+        "The seven people who built the statue",
+        "The seven years of work on the statue"
+      ],
+      "answer": 0,
+      "explain": "\"Each point is meant to represent the light of freedom as it shines on the seven seas and seven continents\" гэж тайлбарласан."
+    }
+  ],
+  "changes": "A duplicated caption line about the pedestal removed."
+}

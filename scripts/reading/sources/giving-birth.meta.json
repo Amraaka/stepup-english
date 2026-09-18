@@ -1,0 +1,48 @@
+{
+  "slug": "giving-birth",
+  "title": "Giving Birth",
+  "summary": "Жирэмсэн хоёр эмэгтэй эмчид эрт очиж, эрүүл хүүхэд төрүүлсэн түүх.",
+  "level": "B1",
+  "topic": "health",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0016/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by LIDA Norge, illustrated by Sara Dorthea Johannesen · LIDA Stories",
+    "creditLine": "Written by: LIDA Norge. Illustrated by: Sara Dorthea Johannesen. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "What is the text mostly about?",
+      "options": [
+        "Two women getting health care when pregnant",
+        "Two women looking for work in Europe",
+        "Two doctors working in a hospital in Italy"
+      ],
+      "answer": 0,
+      "explain": "Селамавит, Инга хоёр жирэмсэн байхдаа эмч, эх баригчид үзүүлж, \"Both women gave birth to healthy babies\" гэж төгссөн."
+    },
+    {
+      "prompt": "What did the doctor find out about Selamawit?",
+      "options": [
+        "She had a kind of diabetes.",
+        "She was going to have twins.",
+        "She had to take folic acid."
+      ],
+      "answer": 0,
+      "explain": "Эмч шинжилгээ хийгээд \"Selamawit had a kind of diabetes that some pregnant women get\" гэж олсон. Folic acid уухыг Ингад зөвлөсөн."
+    },
+    {
+      "prompt": "What is antenatal care?",
+      "options": [
+        "Help for women during pregnancy",
+        "Help for babies after they are born",
+        "A course about healthy food"
+      ],
+      "answer": 0,
+      "explain": "Текстэд \"This means that they will get help during their pregnancies\" гэж тайлбарласан."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "standing-out",
+  "title": "Standing Out for the Right Reason",
+  "summary": "Өндөр нуруу нь аюул биш, давуу тал болсон Эдсоны түүх.",
+  "level": "B1",
+  "topic": "history-people",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0027/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by LIDA Portugal, illustrated by Sunniva Høiby-Øiset · LIDA Stories",
+    "creditLine": "Written by: LIDA Portugal. Illustrated by: Sunniva Høiby-Øiset. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph).",
+  "questions": [
+    {
+      "prompt": "What is the story mainly about?",
+      "options": [
+        "A tall boy who finds safety and success in Portugal",
+        "A boy who becomes a soldier in Angola",
+        "A teacher who starts a basketball team in Angola"
+      ],
+      "answer": 0,
+      "explain": "Эдсон Португалд очоод сагсан бөмбөгөөр амжилт гаргаж, одоо \"trains refugee children\" буюу бусдад тусалдаг болсон."
+    },
+    {
+      "prompt": "Why did Edson's mother send him to Portugal?",
+      "options": [
+        "She was afraid they would make him a soldier.",
+        "She wanted him to play basketball there.",
+        "His aunt needed help at home."
+      ],
+      "answer": 0,
+      "explain": "Хүүхдүүдийг цэрэгт татдаг хүмүүс түүн шиг хөвгүүдийг хайж байсан тул \"His mother was afraid they would take him\" гэж бичсэн."
+    },
+    {
+      "prompt": "In \"Because of his height he stood out\", what does \"stood out\" mean?",
+      "options": [
+        "People noticed him easily.",
+        "He stood outside the house.",
+        "He hid from other people."
+      ],
+      "answer": 0,
+      "explain": "\"Because of his height he stood out\" гэдэг нь Эдсон их өндөр болохоор бусдаас ялгарч, хүмүүс түүнийг амархан анзаардаг байсан гэсэн үг."
+    }
+  ]
+}

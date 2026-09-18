@@ -1,0 +1,45 @@
+{
+  "slug": "reasonable-learning-goals",
+  "title": "Start New Year by Setting Reasonable Learning Goals",
+  "summary": "Дуудлагаа төрөлх хэлтэн шиг болгох албагүй, бодитой зорилго тавих нь чухал.",
+  "level": "B2",
+  "topic": "school",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/start-the-new-year-by-setting-reasonable-learning-goals-/3637982.html",
+    "license": "public-domain",
+    "credit": "John Russell · VOA Learning English"
+  },
+  "questions": [
+    {
+      "prompt": "According to Eli Hinkel, why is it hard for adults to sound exactly like a native speaker?",
+      "options": [
+        "The brain loses some control over the mouth muscles",
+        "Adults do not practice speaking English enough",
+        "English sounds keep changing from year to year"
+      ],
+      "answer": 0,
+      "explain": "Хинкелийн хэлснээр бие өсөж дууссаны дараа \"the brain loses some of its ability to change the way it controls the muscles of the mouth\" буюу тархи амны булчинг удирдах чадвараа хэсэгчлэн алддаг."
+    },
+    {
+      "prompt": "What does Marla Yoshida call a reasonable goal?",
+      "options": [
+        "Being understood easily",
+        "Losing your accent in five lessons",
+        "Sounding like a native speaker"
+      ],
+      "answer": 0,
+      "explain": "\"That's a reasonable goal: being understood easily\" гэж хэлсэн."
+    },
+    {
+      "prompt": "What does the article suggest you do first?",
+      "options": [
+        "Pick one or two hard sounds to work on",
+        "Buy software that removes your accent",
+        "Stop speaking your native language at home"
+      ],
+      "answer": 0,
+      "explain": "Эхлээд \"Choose one or two sounds that are difficult for you to pronounce\" буюу хэцүү нэг хоёр авиа сонгоод, түүнийгээ сайжруулахыг зөвлөсөн."
+    }
+  ]
+}

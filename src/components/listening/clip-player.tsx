@@ -4,10 +4,13 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Clip } from "@/lib/listening/types";
 import type { Glossary } from "@/lib/dictionary/lookup";
+import type { Fit } from "@/lib/dictionary/coverage";
 import { fmtClock } from "@/lib/listening/clips";
 import { useMeasuredTime } from "@/components/use-measured-time";
 import { useWordPick } from "@/components/words/use-word-pick";
 import { TappableTokens } from "@/components/words/tappable-tokens";
+import { FIT_LABEL, FIT_PILL } from "@/components/words/coverage";
+import { WordPreview, type PreviewWord } from "@/components/listening/word-preview";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -30,7 +33,20 @@ function activeIndex(clip: Clip, t: number): number {
   return idx;
 }
 
-export function ClipPlayer({ clip, glossary, savedLemmas }: { clip: Clip; glossary: Glossary; savedLemmas: string[] }) {
+/** How much of the clip the learner probably understands, and the new words to look at first (ADR 0022). */
+export type ClipEstimate = { percent: number; fit: Fit; preview: PreviewWord[] };
+
+export function ClipPlayer({
+  clip,
+  glossary,
+  savedLemmas,
+  estimate,
+}: {
+  clip: Clip;
+  glossary: Glossary;
+  savedLemmas: string[];
+  estimate: ClipEstimate;
+}) {
   const audio = useRef<HTMLAudioElement>(null);
   const segEls = useRef<(HTMLParagraphElement | null)[]>([]);
   const [playing, setPlaying] = useState(false);
@@ -38,6 +54,8 @@ export function ClipPlayer({ clip, glossary, savedLemmas }: { clip: Clip; glossa
   const [slow, setSlow] = useState(false);
   const [showText, setShowText] = useState(true);
   const [loadError, setLoadError] = useState(false);
+  // The new-word preview shows until the first listen.
+  const [preview, setPreview] = useState(estimate.preview.length > 0);
   const resumeAfterPick = useRef(false);
   const active = activeIndex(clip, time);
 
@@ -125,7 +143,10 @@ export function ClipPlayer({ clip, glossary, savedLemmas }: { clip: Clip; glossa
         ref={audio}
         src={clip.audio}
         preload="metadata"
-        onPlay={() => setPlaying(true)}
+        onPlay={() => {
+          setPlaying(true);
+          setPreview(false);
+        }}
         onPause={() => setPlaying(false)}
         onEnded={onEnded}
         onTimeUpdate={(e) => !playing && setTime(e.currentTarget.currentTime)}
@@ -147,8 +168,21 @@ export function ClipPlayer({ clip, glossary, savedLemmas }: { clip: Clip; glossa
           <span className="rounded-full bg-sky-soft px-2.5 py-0.5 text-xs font-extrabold text-sky-text">{clip.level}</span>
           <span>{fmtClock(clip.durationSec)}</span>
           <span>{clip.source.name}</span>
+          <span className={`rounded-full px-2.5 py-0.5 text-xs font-extrabold ${FIT_PILL[estimate.fit]}`}>
+            {estimate.percent}% мэддэг үг · {FIT_LABEL[estimate.fit]}
+          </span>
         </p>
       </header>
+
+      {preview && (
+        <WordPreview
+          words={estimate.preview}
+          sentences={sentences}
+          onTap={words.tap}
+          onStart={play}
+          onDismiss={() => setPreview(false)}
+        />
+      )}
 
       {loadError && (
         <p role="alert" className="rounded-2xl bg-coral-soft px-4 py-3 text-sm font-semibold text-coral-a-text">

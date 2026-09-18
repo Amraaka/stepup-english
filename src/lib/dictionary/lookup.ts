@@ -54,10 +54,15 @@ export function makeLookup(g: Glossary) {
       return lemma && g.lemmas[lemma] ? { lemma, ...g.lemmas[lemma] } : null;
     },
 
-    /** Entry for a saved lemma — a word ("serve") or a phrase ("give up"). */
+    /**
+     * Entry for a saved lemma — a word ("serve") or a phrase ("give up"). A lemma that later became a form
+     * ("tips" → "tip") gets its base entry, so words saved before the change still show a meaning.
+     */
     entryForLemma(lemma: string): GlossEntry | null {
       const e = g.lemmas[lemma] ?? g.phrases[lemma];
-      return e ? { lemma, ...e } : null;
+      if (e) return { lemma, ...e };
+      const base = g.forms[lemma];
+      return base && g.lemmas[base] ? { lemma: base, ...g.lemmas[base] } : null;
     },
 
     /** The dictionary phrase covering token `i`, as a [start, end) token range. Inflected words match too ("national parks"). */

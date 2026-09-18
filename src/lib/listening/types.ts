@@ -11,6 +11,10 @@ export type ClipSource = {
   license: "public-domain" | "cc-by" | "permission";
   /** Credit line shown under the transcript. */
   credit: string;
+  /** Licence deed, for CC texts. */
+  licenseUrl?: string;
+  /** The credit or licence line exactly as printed at the source, kept for our records. */
+  creditLine?: string;
 };
 
 /** One sentence of the transcript, with audio timings in seconds. */

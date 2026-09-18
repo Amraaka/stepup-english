@@ -1,0 +1,48 @@
+{
+  "slug": "high-altitude-internet",
+  "title": "Flying High to Bring the Internet Everywhere",
+  "summary": "Стратосферт нисдэг HAPS төхөөрөмж алслагдсан газарт интернэт хүргэх тухай.",
+  "level": "B2",
+  "topic": "technology",
+  "source": {
+    "name": "Frontiers for Young Minds",
+    "url": "https://kids.frontiersin.org/articles/10.3389/frym.2025.1572268",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Mohamed-Slim Alouini, Mariette DiChristina · Frontiers for Young Minds",
+    "creditLine": "Copyright © 2025 Alouini and DiChristina. This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms. Citation: Alouini MS and DiChristina M (2025) Flying High to Bring the Internet Everywhere. Front. Young Minds. 13:1572268. doi: 10.3389/frym.2025.1572268"
+  },
+  "changes": "Excerpt: the sections “The World Needs Better Connectivity” and “Emerging Technology: High-Altitude Platform Stations” only. Headings, abstract, figures, glossary and reference numbers removed.",
+  "questions": [
+    {
+      "prompt": "What is the main idea of the text?",
+      "options": [
+        "HAPS could bring fast internet to remote places.",
+        "Satellites are the best way to reach remote places.",
+        "Airplanes should carry internet cables to villages."
+      ],
+      "answer": 0,
+      "explain": "Текстэд HAPS \"can provide connectivity to large areas\" гэж бичсэн. Уул, цөл зэрэг алслагдсан газарт интернэт хүргэж чадна гэсэн үг."
+    },
+    {
+      "prompt": "How high above Earth do HAPS operate?",
+      "options": [
+        "About 20 km",
+        "Over 35,000 km",
+        "About 2 km"
+      ],
+      "answer": 0,
+      "explain": "\"about 20 km above the Earth\" гэж бичсэн. 35,000 км гэдэг нь хиймэл дагуулын өндөр."
+    },
+    {
+      "prompt": "In the text, what is “latency”?",
+      "options": [
+        "A time delay in communications",
+        "A kind of light solar panel",
+        "The height of a satellite"
+      ],
+      "answer": 0,
+      "explain": "\"This distance causes a time delay, called latency\" гэж тайлбарласан. Жишээ нь видео дуудлагын үеэр мэдрэгддэг саатал."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "slug": "jack-frost",
+  "title": "The Story of Jack Frost",
+  "summary": "Jack Frost бол өвлийг хүн дүрээр төсөөлсөн дүр бөгөөд өвлийн хэллэгүүдийг танилцуулна.",
+  "level": "B1",
+  "topic": "culture",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/the-story-of-jack-frost-/7932530.html",
+    "license": "public-domain",
+    "credit": "Anna Matteo · VOA Learning English"
+  },
+  "questions": [
+    {
+      "prompt": "What does Jack Frost represent?",
+      "options": [
+        "The coming of cold winter days",
+        "A famous American poet from the past",
+        "A kind of warm coat for winter"
+      ],
+      "answer": 0,
+      "explain": "\"Jack Frost represents the coming of dark, cold days\" гэж бичсэн. Өөрөөр хэлбэл хүйтэн, харанхуй өвөл ирж байгааг илэрхийлдэг."
+    },
+    {
+      "prompt": "What does “bundle up” mean?",
+      "options": [
+        "Wear enough warm clothing",
+        "Stay at home where it is warm",
+        "Call a taxi instead of walking"
+      ],
+      "answer": 0,
+      "explain": "\"You should wear enough clothing to stay warm\" гэж тайлбарласан. Bundle up гэдэг нь дулаан хувцаслах."
+    },
+    {
+      "prompt": "What happens at the end of the conversation?",
+      "options": [
+        "The person going on a date agrees to wear the warm coat",
+        "The person going on a date walks to the restaurant",
+        "The taxi has an accident on the ice"
+      ],
+      "answer": 0,
+      "explain": "\"You win! Give me your coat!\" гэж хэлээд дулаан хүрмийг өмсөхөөр зөвшөөрсөн."
+    }
+  ]
+}

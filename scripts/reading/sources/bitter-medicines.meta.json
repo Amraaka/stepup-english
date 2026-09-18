@@ -1,0 +1,48 @@
+{
+  "slug": "bitter-medicines",
+  "title": "Turning Kids’ Medicines From Bitter to Better",
+  "summary": "Эрдэмтэд хүүхдийн эмийн гашуун амтыг хэрхэн дарж, амттай болгодог тухай.",
+  "level": "B2",
+  "topic": "health",
+  "source": {
+    "name": "Frontiers for Young Minds",
+    "url": "https://kids.frontiersin.org/articles/10.3389/frym.2026.1881366",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Catherine Tuleu, Jennifer Walsh · Frontiers for Young Minds",
+    "creditLine": "Copyright © 2026 Tuleu and Walsh. This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY). The use, distribution or reproduction in other forums is permitted, provided the original author(s) and the copyright owner(s) are credited and that the original publication in this journal is cited, in accordance with accepted academic practice. No use, distribution or reproduction is permitted which does not comply with these terms. Citation: Tuleu C and Walsh J (2026) Turning Kids’ Medicines From Bitter to Better. Front. Young Minds. 14:1881366. doi: 10.3389/frym.2026.1881366"
+  },
+  "changes": "Excerpt: the sections “Medicines Often Taste Bitter” and “Designing Medicines With Children In Mind”, the opening paragraph of “How Do Scientists ‘Hide’ Bad Tastes?” and the subsection “Using Palatable Excipients”. Headings, abstract, figures and reference numbers removed.",
+  "questions": [
+    {
+      "prompt": "What problem does the text describe?",
+      "options": [
+        "Many medicines taste too bitter for children.",
+        "Children often take too much medicine.",
+        "Medicines are too expensive for families."
+      ],
+      "answer": 0,
+      "explain": "\"sometimes medicines taste so bitter that kids do not want to take them\" гэж бичсэн. Тийм учраас эрдэмтэд эмийг амттай болгохыг хичээж байна."
+    },
+    {
+      "prompt": "Why is it a good idea to rinse your mouth after some medicines?",
+      "options": [
+        "The sucrose in them can harm your teeth.",
+        "The flavors in them can make you feel sick.",
+        "Water helps the medicine work faster."
+      ],
+      "answer": 0,
+      "explain": "\"sucrose can cause tooth decay\" гэж бичсэн. Тиймээс сахартай эм уусны дараа амаа усаар зайлахыг зөвлөж байна."
+    },
+    {
+      "prompt": "What does “palatable” mean?",
+      "options": [
+        "Tasty and pleasant",
+        "Bitter and strong",
+        "Safe for children"
+      ],
+      "answer": 0,
+      "explain": "Текстэд \"Something palatable is tasty, enjoyable, and pleasant\" гэж шууд тайлбарласан."
+    }
+  ]
+}

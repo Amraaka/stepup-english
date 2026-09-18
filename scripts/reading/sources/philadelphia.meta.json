@@ -1,0 +1,46 @@
+{
+  "slug": "philadelphia",
+  "title": "Philadelphia: a City Famous for its History",
+  "summary": "Филадельфи бол АНУ-ын түүхэнд чухал байр суурьтай, музей, хоолоороо алдартай хот.",
+  "level": "B1",
+  "topic": "travel",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/philadelphia-a-city-famous-for-its-history-/7983180.html",
+    "license": "public-domain",
+    "credit": "Nancy Steinbach, John Russell · VOA Learning English",
+    "creditLine": "Nancy Steinbach wrote this story for VOA Learning English. John Russell adapted it."
+  },
+  "questions": [
+    {
+      "prompt": "What is Philadelphia most famous for?",
+      "options": [
+        "Its important place in American history",
+        "Its many tall and modern office buildings",
+        "Its large and famous sports stadiums"
+      ],
+      "answer": 0,
+      "explain": "\"Philadelphia is famous for holding an important place in American history\" гэж бичсэн."
+    },
+    {
+      "prompt": "What happened in Independence Hall?",
+      "options": [
+        "Leaders declared independence there",
+        "William Penn was born there",
+        "People buy cheesesteaks there"
+      ],
+      "answer": 0,
+      "explain": "\"That was where colonial leaders declared independence\" гэж бичсэн. Энэ бол Independence Hall."
+    },
+    {
+      "prompt": "The best Philly cheesesteak is \"the subject of much debate.\" What does this mean?",
+      "options": [
+        "People do not agree about it",
+        "Nobody likes cheesesteak",
+        "The sandwich is very expensive"
+      ],
+      "answer": 0,
+      "explain": "\"Subject of much debate\" гэдэг нь хүмүүс энэ талаар маргалддаг, санал нийлдэггүй гэсэн үг."
+    }
+  ]
+}

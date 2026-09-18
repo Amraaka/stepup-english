@@ -1,0 +1,48 @@
+{
+  "slug": "kipchoge-marathon",
+  "title": "Eliud Kipchoge of Kenya runs marathon under two hours",
+  "summary": "Кенийн гүйгч Элиуд Кипчоге марафоныг хоёр цаг хүрэхгүй хугацаанд гүйсэн тухай.",
+  "level": "B2",
+  "topic": "history-people",
+  "source": {
+    "name": "Wikinews",
+    "url": "https://en.wikinews.org/wiki/Eliud_Kipchoge_of_Kenya_runs_marathon_under_two_hours",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+    "credit": "Wikinews contributors · Wikinews",
+    "creditLine": "Published Sunday, October 13, 2019. The text of this article is licensed under the terms of the Creative Commons Attribution 2.5 License"
+  },
+  "changes": "Dateline, sources section, page links and the “Have an opinion on this story?” prompt removed; text otherwise unchanged.",
+  "questions": [
+    {
+      "prompt": "What did Eliud Kipchoge do?",
+      "options": [
+        "He ran a marathon in under two hours.",
+        "He set an official world record in Vienna.",
+        "He won an Olympic gold medal in Berlin."
+      ],
+      "answer": 0,
+      "explain": "\"Eliud Kipchoge from Kenya ran a marathon in less than two hours\" гэж бичсэн. Гэхдээ энэ нь албан ёсны дэлхийн рекорд биш."
+    },
+    {
+      "prompt": "Why was his time not an official world record?",
+      "options": [
+        "It was not an open race.",
+        "He ran without any other runners.",
+        "The course was shorter than a marathon."
+      ],
+      "answer": 0,
+      "explain": "\"it was not an 'open race' of the IAAF\" гэж бичсэн. Түүнтэй хамт 42 гүйгч гүйсэн, зам нь бүтэн 42.195 км байсан."
+    },
+    {
+      "prompt": "Who were the “pacemakers” in this text?",
+      "options": [
+        "Supporting runners who ran with him",
+        "Doctors who checked the runners",
+        "Fans who watched the race"
+      ],
+      "answer": 0,
+      "explain": "\"42 pacemakers — supporting runners\" гэж тайлбарласан, \"They ran with Kipchoge\" гэж бичсэн. Тэд түүнтэй хамт гүйж туслсан."
+    }
+  ]
+}

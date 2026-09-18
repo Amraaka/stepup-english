@@ -1,0 +1,47 @@
+{
+  "slug": "thanksgiving-tradition",
+  "title": "Thanksgiving: An American Tradition",
+  "summary": "Америкчууд Талархлын баярыг хэрхэн тэмдэглэдэг, юу иддэг тухай.",
+  "level": "B1",
+  "topic": "culture",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/thanksgiving-american-tradition-2017/4117570.html",
+    "license": "public-domain",
+    "credit": "Ashley Thompson · VOA Learning English",
+    "creditLine": "Ashley Thompson wrote this story for Learning English. It was first published in 2017."
+  },
+  "changes": "Headings, sign-offs, credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "When do Americans celebrate Thanksgiving?",
+      "options": [
+        "On the fourth Thursday in November",
+        "On the first Sunday in October",
+        "On the last day of the year"
+      ],
+      "answer": 0,
+      "explain": "\"Thanksgiving is celebrated every year on the fourth Thursday in November\" гэж бичсэн."
+    },
+    {
+      "prompt": "What is the star of most Thanksgiving dinners?",
+      "options": [
+        "A roasted turkey",
+        "Pumpkin pie",
+        "Mashed potatoes"
+      ],
+      "answer": 0,
+      "explain": "\"The star of most Thanksgiving dinners is a roasted turkey\" гэж бичсэн."
+    },
+    {
+      "prompt": "What is a \"potluck\"?",
+      "options": [
+        "A meal where every guest brings food",
+        "A big meal at a restaurant",
+        "A race on Thanksgiving morning"
+      ],
+      "answer": 0,
+      "explain": "\"This is a meal where everyone who is invited brings food to share\" гэж тайлбарласан."
+    }
+  ]
+}

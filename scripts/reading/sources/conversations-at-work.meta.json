@@ -1,0 +1,47 @@
+{
+  "slug": "conversations-at-work",
+  "title": "Tips for Better Conversations in English at Work",
+  "summary": "Ажил дээрээ үйлчлүүлэгчтэй англиар ярихад туслах дөрвөн энгийн арга.",
+  "level": "A2",
+  "topic": "work-money",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/tips-for-better-conversations-at-work/5726549.html",
+    "license": "public-domain",
+    "credit": "Jill Robbins · VOA Learning English",
+    "creditLine": "Jill Robbins wrote this story for VOA Learning English. Ashley Thompson was the editor."
+  },
+  "changes": "Headings, sign-off, credit line and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What did Emre ask for help with?",
+      "options": [
+        "Listening to customers in English",
+        "Writing emails to his boss",
+        "Finding a new job"
+      ],
+      "answer": 0,
+      "explain": "Эмрэ \"asked for advice on how he can improve his listening skills\" гэж бичсэн. Тэр үйлчлүүлэгчидтэй англиар ярьдаг."
+    },
+    {
+      "prompt": "What is the first strategy?",
+      "options": [
+        "Predict what you will hear",
+        "Rehearse your answers",
+        "Speak more slowly"
+      ],
+      "answer": 0,
+      "explain": "\"The first strategy is to predict what you will hear\" гэж бичсэн. Бусад гурав нь: анхааралтай сонсох, тодруулж асуух, хариултаа урьдчилан давтах."
+    },
+    {
+      "prompt": "What does \"rehearse\" mean in the text?",
+      "options": [
+        "Practice before you really do something",
+        "Answer a customer very quickly and politely",
+        "Ask the customer to say it again slowly"
+      ],
+      "answer": 0,
+      "explain": "Хариултаа \"rehearse them in your free time\" гээд \"practice saying them out loud\" гэж тайлбарласан. Rehearse гэдэг нь бодитоор хийхээсээ өмнө урьдчилан давтаж бэлдэх гэсэн үг."
+    }
+  ]
+}

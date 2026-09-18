@@ -1,0 +1,46 @@
+{
+  "slug": "robert-goddard",
+  "title": "American Inventors: Rocket Scientist Robert Goddard",
+  "summary": "Орчин үеийн пуужингийн эцэг гэгддэг эрдэмтэн Роберт Годдардын тухай.",
+  "level": "B1",
+  "topic": "history-people",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/american-inventors-rocket-scientist-robert-goddard/7979682.html",
+    "license": "public-domain",
+    "credit": "Shirley Griffith, Bryan Lynn · VOA Learning English",
+    "creditLine": "Shirley Griffith reported on this story for VOA Learning English. Bryan Lynn adapted it."
+  },
+  "questions": [
+    {
+      "prompt": "What is Robert Goddard known for?",
+      "options": [
+        "His work on rockets",
+        "His work on airplanes",
+        "His work on weather balloons"
+      ],
+      "answer": 0,
+      "explain": "NASA түүнийг \"the father of modern rocket propulsion\" гэж нэрлэдэг."
+    },
+    {
+      "prompt": "What did Goddard launch in 1926?",
+      "options": [
+        "The world’s first liquid-fuel rocket",
+        "The first rocket that reached the moon",
+        "The first weather balloon with a camera"
+      ],
+      "answer": 0,
+      "explain": "\"The next year, he successfully launched the world's first liquid-fuel rocket\" гэж бичсэн. Өмнөх он нь 1925."
+    },
+    {
+      "prompt": "Why did many people think Goddard was foolish?",
+      "options": [
+        "He said a rocket could someday reach the moon",
+        "He used liquid fuel in all of his rockets",
+        "He took money from the Smithsonian Institution"
+      ],
+      "answer": 0,
+      "explain": "Годдард пуужин хэзээ нэгэн цагт саранд хүрч болно гэж бичсэн (\"a rocket someday reaching the moon\"). Тэр үед энэ нь хэрэгжих боломжгүй мэт санагдаж байсан."
+    }
+  ]
+}

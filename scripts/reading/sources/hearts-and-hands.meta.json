@@ -1,0 +1,46 @@
+{
+  "slug": "hearts-and-hands",
+  "title": "Hearts and Hands",
+  "summary": "Гавтай хоёр эрийн нэг нь галт тэргэнд хуучин танил бүсгүйтэйгээ тааралдсан өгүүллэг.",
+  "level": "C1",
+  "topic": "stories",
+  "source": {
+    "name": "Standard Ebooks",
+    "url": "https://standardebooks.org/ebooks/o-henry/short-fiction/text/hearts-and-hands",
+    "license": "public-domain",
+    "credit": "O. Henry · Standard Ebooks",
+    "creditLine": "Standard Ebooks Uncopyright: “this Uncopyright page exists to tell you that the writing and artwork in this ebook are believed to be in the United States public domain” … “the contributors to this ebook release their contributions under the terms in the CC0 1.0 Universal Public Domain Dedication”"
+  },
+  "questions": [
+    {
+      "prompt": "What is the surprise at the end of the story?",
+      "options": [
+        "Easton is the prisoner, not the marshal.",
+        "Miss Fairchild is also working as a marshal.",
+        "The glum-faced man is Easton’s older brother."
+      ],
+      "answer": 0,
+      "explain": "Төгсгөлд \"did you ever know an officer to handcuff a prisoner to his right hand?\" гэж асуусан. Үнэндээ гэмт хэрэгтэн нь Истон, маршал нь нөгөө эр байсан гэсэн үг."
+    },
+    {
+      "prompt": "Where are the two men going?",
+      "options": [
+        "To Leavenworth prison",
+        "Back home to Washington",
+        "To a summer house in Denver"
+      ],
+      "answer": 0,
+      "explain": "\"He’s taking me to Leavenworth prison\" гэж бичсэн. Истон ч \"I must go on to Leavenworth\" гэж хэлсэн."
+    },
+    {
+      "prompt": "Why did the glum-faced man speak to Miss Fairchild?",
+      "options": [
+        "To keep Easton’s secret from her",
+        "To ask her to lend him money",
+        "To tell her Easton was guilty"
+      ],
+      "answer": 0,
+      "explain": "Тэр эр \"I see you’re acquainted with the marshall here\" гэж Истоныг маршал гэж хэлсэн. Ингэж бүсгүйд үнэнийг мэдэгдэлгүй Истоны нэрийг хамгаалсан."
+    }
+  ]
+}

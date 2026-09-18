@@ -1,0 +1,47 @@
+{
+  "slug": "birdsong-happiness",
+  "title": "Can Birdsong Make You Happier?",
+  "summary": "Олон төрлийн шувууны дуу сонсох нь хүнийг илүү аз жаргалтай болгож магадгүй.",
+  "level": "B1",
+  "topic": "health",
+  "source": {
+    "name": "VOA Learning English",
+    "url": "https://learningenglish.voanews.com/a/can-birdsong-make-you-happier-/5867098.html",
+    "license": "public-domain",
+    "credit": "Anna Matteo · VOA Learning English",
+    "creditLine": "Anna Matteo wrote this story for VOA Learning English. Susan Shand was the editor."
+  },
+  "changes": "Program intro, headings, sign-off, credit line, quiz link and the Words in This Story list removed.",
+  "questions": [
+    {
+      "prompt": "What is the main idea of the text?",
+      "options": [
+        "Hearing many kinds of birds may make us happier",
+        "Birds in big cities sing more loudly than wild birds",
+        "Birds sing more when people are happy and relaxed"
+      ],
+      "answer": 0,
+      "explain": "Эхэнд нь \"hearing diverse birdsongs may help increase our happiness\" гэж гол санааг хэлсэн."
+    },
+    {
+      "prompt": "Why did the Cal Poly team do the study in the summer?",
+      "options": [
+        "To avoid disturbing birds in breeding season",
+        "There are more hikers on the trails in summer",
+        "Birds sing more loudly in the summer months"
+      ],
+      "answer": 0,
+      "explain": "Хавар бол шувуудын үржлийн улирал учраас \"We didn’t want to disturb the birds too much\" гэж Ферраро тайлбарласан."
+    },
+    {
+      "prompt": "What does Ferraro suggest people plant?",
+      "options": [
+        "Native trees and flowers",
+        "Pretty plants from other countries",
+        "Vegetables in their gardens"
+      ],
+      "answer": 0,
+      "explain": "Тэр \"I would recommend planting native trees and flowers\" гэж хэлсэн. Тухайн нутгийн ургамлыг л шувууд ашиглаж чаддаг."
+    }
+  ]
+}

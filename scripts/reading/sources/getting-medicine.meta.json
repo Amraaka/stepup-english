@@ -1,0 +1,48 @@
+{
+  "slug": "getting-medicine",
+  "title": "Getting Medicine",
+  "summary": "Шүд нь өвдсөн Том эмийн сангаас өвдөлт намдаах эм авч байгаа нь.",
+  "level": "A1",
+  "topic": "health",
+  "source": {
+    "name": "LIDA Stories",
+    "url": "https://lidastories.net/uk/stories/en/0017/",
+    "license": "cc-by",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "credit": "Written by Espen Stranger-Johannessen, illustrated by Sara Rumen Krotev · LIDA Stories",
+    "creditLine": "Written by: Espen Stranger-Johannessen. Illustrated by: Sara Rumen Krotev. This work is licensed under a Creative Commons Attribution 4.0 International License."
+  },
+  "changes": "Images and audio removed; the picture-book pages were joined into paragraphs (one page per paragraph, with very short pages of the same scene merged).",
+  "questions": [
+    {
+      "prompt": "Why does Tom go to the pharmacy?",
+      "options": [
+        "He has a toothache.",
+        "He has a headache.",
+        "He wants to buy food."
+      ],
+      "answer": 0,
+      "explain": "Эхэнд \"Tom has a toothache\" гэж бичсэн. Шүдний эмчид очихоосоо өмнө өвдөлтөө намдаах юм хэрэгтэй болсон."
+    },
+    {
+      "prompt": "How much do the painkillers cost?",
+      "options": [
+        "Nine euros",
+        "Five euros",
+        "Ten euros"
+      ],
+      "answer": 0,
+      "explain": "Эмийн сангийн ажилтан \"They cost nine euros\" гэж хэлсэн."
+    },
+    {
+      "prompt": "Who can give Tom a prescription for stronger medicine?",
+      "options": [
+        "His dentist or doctor",
+        "The man at the shop",
+        "His friend at work"
+      ],
+      "answer": 0,
+      "explain": "\"You will need to get a prescription from your dentist or doctor\" гэж хэлсэн. Prescription гэдэг нь эмчийн жор."
+    }
+  ]
+}
