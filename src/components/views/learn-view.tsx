@@ -108,7 +108,7 @@ export function LearnView({ plan }: { plan: LearnPlan }) {
         )}
       </section>
 
-      <ul className="grid gap-3 lg:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-3 lg:grid-cols-2">
         {plan.tracks.map((track) => (
           <TrackCard key={track.id} track={track} />
         ))}
